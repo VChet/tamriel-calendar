@@ -1,0 +1,40 @@
+{
+  "name": "tamriel-calendar",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --force",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.ts --ignore-path .gitignore",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:ts": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "pinia": "^2.0.36",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@types/node": "^20.1.1",
+    "@vitejs/plugin-vue": "^4.2.1",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "@vue/tsconfig": "^0.3.2",
+    "@vueuse/core": "^10.1.2",
+    "eslint": "^8.40.0",
+    "eslint-plugin-vue": "^9.11.1",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
+    "typescript": "~5.0.4",
+    "vite": "^4.3.5",
+    "vite-plugin-pwa": "^0.14.7",
+    "vue-tsc": "^1.6.4",
+    "workbox-core": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4"
+  }
+}

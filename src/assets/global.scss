@@ -1,0 +1,49 @@
+:root {
+  --color-background: #fbf4e1;
+  --color-text: #2c2203;
+  --color-highlight: #d63a24;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1;
+  }
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  &.router-link-active {
+    color: var(--color-highlight);
+  }
+}

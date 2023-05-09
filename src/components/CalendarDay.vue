@@ -1,0 +1,48 @@
+<template>
+  <div :class="classList">
+    {{ day.format("D") }}
+  </div>
+</template>
+<script setup lang="ts">
+import { computed, defineProps } from "vue";
+import dayjs from "dayjs";
+import isToday from "dayjs/plugin/isToday";
+dayjs.extend(isToday);
+
+const props = withDefaults(
+  defineProps<{
+    day: dayjs.Dayjs;
+    small?: boolean;
+  }>(),
+  { small: false }
+);
+
+const classList = computed<Record<string, boolean>>(() => {
+  const key = "calendar-day";
+  return {
+    [key]: true,
+    [`${key}--current`]: dayjs(props.day).isToday(),
+    [`${key}--small`]: props.small
+  };
+});
+</script>
+<style lang="scss">
+.calendar-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 14px;
+  &--small {
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+  }
+  &--current {
+    color: #fff;
+    background-color: var(--color-highlight);
+  }
+}
+</style>
