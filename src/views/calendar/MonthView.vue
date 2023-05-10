@@ -1,53 +1,50 @@
 <template>
-  <section>
-    <div class="month">
-      <div>{{ month.format("MMMM") }}</div>
-      <div>{{ month.format("YYYY") }}</div>
+  <section class="month-view">
+    <div v-for="month in months" :key="month.value" class="month">
+      <div class="month__title">
+        <div>{{ dayjs().month(month.value).format("MMMM") }}</div>
+        <div>{{ dayjs().month(month.value).format("YYYY") }}</div>
+      </div>
+      <CalendarWeekdays />
+      <ul class="month__days">
+        <li v-for="(day, index) in month.days" :key="index" :style="day.styles">
+          <CalendarDay :day="day.value" />
+        </li>
+      </ul>
     </div>
-    <CalendarWeekdays />
-    <ul class="days">
-      <li v-for="(day, index) in days" :key="index">
-        <CalendarDay :day="day" />
-      </li>
-    </ul>
   </section>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import dayjs from "dayjs";
-import isToday from "dayjs/plugin/isToday";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
-dayjs.extend(isToday);
+import { Month } from "@/classes/Month";
+import dayjs from "dayjs";
 
-const currentDay = dayjs();
-
-const month = ref(currentDay.startOf("month"));
-const daysInMonth = month.value.daysInMonth();
-const days = computed(() => {
-  const arr = [];
-  const startOfWeek = month.value.startOf("week");
-  for (let i = 0; i < daysInMonth; i++) {
-    arr.push(startOfWeek.add(i, "day"));
-  }
-  return arr;
-});
+const current = dayjs();
+const months = new Array(6).fill(0).map((_, index) => new Month(current.add(index, "month")));
 </script>
-<style lang="scss" scoped>
-.month {
-  width: 100%;
+<style lang="scss">
+.month-view {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  div {
-    font-size: 20px;
-    font-weight: bold;
+  flex-direction: column;
+  gap: 30px;
+  .month {
+    &__title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      div {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    &__days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+    }
   }
-}
-.days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
 }
 </style>

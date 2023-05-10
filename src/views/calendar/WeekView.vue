@@ -1,35 +1,33 @@
 <template>
   <section>
     <CalendarWeekdays />
-    <ul class="days">
-      <li v-for="(day, index) in days" :key="index">
-        <CalendarDay :day="day" />
+    <ul v-if="week" class="days">
+      <li v-for="(day, index) in week.days" :key="index">
+        <CalendarDay
+          :day="day.value"
+          :active="dayjs(day.value).isSame(selectedDay, 'day')"
+          @click="selectedDay = day.value"
+        />
       </li>
     </ul>
-    <div class="current-day">
-      <div class="current-day__day">{{ currentDay.format("D") }}</div>
-      <div class="current-day__month">{{ currentDay.format("MMMM") }}</div>
-      <div class="current-day__weekday">{{ currentDay.format("dddd") }}</div>
+    <div v-if="selectedDay" class="current-day">
+      <div class="current-day__day">{{ selectedDay.format("D") }}</div>
+      <div class="current-day__month">{{ selectedDay.format("MMMM") }}</div>
+      <div class="current-day__weekday">{{ selectedDay.format("dddd") }}</div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import dayjs from "dayjs";
+
+import { Week } from "@/classes/Week";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 
-const currentDay = dayjs();
-
-const week = ref(currentDay.startOf("week"));
-const days = computed(() => {
-  const arr = [];
-  for (let i = 0; i < 7; i++) {
-    arr.push(week.value.add(i, "day"));
-  }
-  return arr;
-});
+const week = ref(new Week(dayjs()));
+const selectedDay = ref(dayjs());
 </script>
 <style lang="scss" scoped>
 .days {

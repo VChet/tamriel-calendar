@@ -12,9 +12,10 @@ dayjs.extend(isToday);
 const props = withDefaults(
   defineProps<{
     day: dayjs.Dayjs;
+    active?: boolean;
     small?: boolean;
   }>(),
-  { small: false }
+  { small: false, active: false }
 );
 
 const classList = computed<Record<string, boolean>>(() => {
@@ -22,6 +23,7 @@ const classList = computed<Record<string, boolean>>(() => {
   return {
     [key]: true,
     [`${key}--current`]: dayjs(props.day).isToday(),
+    [`${key}--active`]: props.active,
     [`${key}--small`]: props.small
   };
 });
@@ -43,6 +45,9 @@ const classList = computed<Record<string, boolean>>(() => {
   &--current {
     color: #fff;
     background-color: var(--color-highlight);
+  }
+  &--active {
+    border: 2px solid var(--color-highlight);
   }
 }
 </style>

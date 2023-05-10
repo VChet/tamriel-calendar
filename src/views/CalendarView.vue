@@ -3,7 +3,7 @@
     <header>
       <ul>
         <li>
-          <RouterLink to="/day" class="tab">День</RouterLink>
+          <RouterLink to="/week" class="tab">Неделя</RouterLink>
         </li>
         <li>
           <RouterLink to="/month" class="tab">Месяц</RouterLink>
@@ -13,11 +13,17 @@
         </li>
       </ul>
     </header>
-    <RouterView class="container" />
+    <RouterView v-slot="{ Component }" class="container">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </RouterView>
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterLink, RouterView } from "vue-router";
+</script>
 <style lang="scss" scoped>
 header {
   padding: 15px;
