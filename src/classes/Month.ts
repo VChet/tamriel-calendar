@@ -12,7 +12,7 @@ export class Month {
     let current = date.startOf("month");
     while (current <= date.endOf("month")) {
       this.weeks.push(new Week(current));
-      current = current.add(1, "week");
+      current = current.add(1, "week").startOf("week");
     }
   }
 
