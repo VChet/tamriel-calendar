@@ -6,11 +6,11 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 import "./assets/global.scss";
-import tamrielRu from "@/assets/tamriel-ru";
+import tamrielEn from "@/assets/tamriel-en";
 
 const pinia = createPinia();
 
-locale(tamrielRu);
+locale(tamrielEn);
 
 useRegisterSW({
   immediate: true,
