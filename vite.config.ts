@@ -12,6 +12,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
   manifest: {
     name: "Tamriel Calendar",
+    short_name: "Tamriel Calendar",
     description: "Calendar with the system of reckoning used in The Elder Scrolls universe",
     theme_color: "#fbf4e1",
     background_color: "#fbf4e1",
