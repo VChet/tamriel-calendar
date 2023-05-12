@@ -13,7 +13,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   manifest: {
     name: "Tamriel Calendar",
     short_name: "Tamriel Calendar",
-    description: "Календарь с системой исчисления принятой во вселенной The Elder Scrolls",
+    description: "Calendar with the system of reckoning used in The Elder Scrolls universe",
     theme_color: "#fbf4e1",
     icons: [
       {
