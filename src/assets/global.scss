@@ -43,6 +43,7 @@ ul {
 a {
   color: var(--color-text);
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
   &.router-link-active {
     color: var(--color-highlight);
   }
