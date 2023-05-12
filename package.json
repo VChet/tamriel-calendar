@@ -1,7 +1,7 @@
 {
   "name": "tamriel-calendar",
   "version": "0.0.0",
-  "private": true,
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "vite --force",
     "build": "vite build",
