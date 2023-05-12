@@ -16,13 +16,13 @@ const days = dayjs.weekdaysShort(true);
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  text-align: center;
   margin-bottom: 10px;
+  text-align: center;
   li {
-    text-transform: capitalize;
     font-size: 14px;
-    color: #b4aea0;
     font-weight: bold;
+    color: #b4aea0;
+    text-transform: capitalize;
     &:nth-last-child(-n + 2) {
       color: var(--color-highlight);
     }

@@ -34,8 +34,8 @@ import birthsigns from "@/assets/birthsigns.json";
     li {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 10px;
+      align-items: center;
       font-size: 12px;
       font-weight: bold;
       img {

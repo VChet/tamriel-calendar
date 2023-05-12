@@ -31,9 +31,9 @@ const months = new Array(6).fill(0).map((_, index) => new Month(current.add(inde
   gap: 30px;
   .month {
     &__title {
-      width: 100%;
       display: flex;
       justify-content: space-between;
+      width: 100%;
       margin-bottom: 15px;
       div {
         font-size: 20px;

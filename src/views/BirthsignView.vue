@@ -27,8 +27,8 @@ const sign = birthsigns[index];
     font-size: 28px;
   }
   &__subtitle {
-    color: #a59e8c;
     margin-top: 15px;
+    color: #a59e8c;
   }
   &__description {
     margin-top: 25px;

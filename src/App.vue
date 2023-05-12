@@ -30,8 +30,8 @@ import { RouterLink, RouterView } from "vue-router";
   bottom: 0;
   width: 100%;
   padding: 20px;
-  border-top: 1px solid #b9b2a2;
   background-color: var(--color-background);
+  border-top: 1px solid #b9b2a2;
   ul {
     display: flex;
     justify-content: space-between;

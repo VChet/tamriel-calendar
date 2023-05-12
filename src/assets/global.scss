@@ -3,43 +3,38 @@
   --color-text: #2c2203;
   --color-highlight: #d63a24;
 }
-
 *,
 *::before,
 *::after {
+  position: relative;
   box-sizing: border-box;
   margin: 0;
-  position: relative;
-  font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
 }
-
 body {
   min-height: 100vh;
   font-size: 16px;
   color: var(--color-text);
   background-color: var(--color-background);
 }
-
 ul {
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
-
 #app {
-  max-width: 1280px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0;
-  font-weight: normal;
   display: flex;
   flex-direction: column;
+  max-width: 1280px;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0 auto;
+  font-weight: normal;
   main {
     flex: 1;
   }
 }
-
 a {
   color: var(--color-text);
   text-decoration: none;

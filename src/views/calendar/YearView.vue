@@ -34,9 +34,9 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
   gap: 30px;
   .year {
     &__title {
+      margin-bottom: 30px;
       font-size: 24px;
       font-weight: bold;
-      margin-bottom: 30px;
     }
     &__months {
       display: grid;
@@ -45,9 +45,9 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
     }
     .month {
       &__title {
+        margin-bottom: 12px;
         font-size: 12px;
         font-weight: bold;
-        margin-bottom: 12px;
         &--current {
           color: var(--color-highlight);
         }

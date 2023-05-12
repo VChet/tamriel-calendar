@@ -39,8 +39,8 @@ watch(locale, setLocale);
   }
   header {
     padding: 15px;
-    border-bottom: 1px solid #b9b2a2;
     text-align: center;
+    border-bottom: 1px solid #b9b2a2;
   }
   &__list {
     li {

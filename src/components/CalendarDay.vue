@@ -35,8 +35,8 @@ const classList = computed<Record<string, boolean>>(() => {
   justify-content: center;
   width: 35px;
   height: 35px;
-  border-radius: 50%;
   font-size: 14px;
+  border-radius: 50%;
   &--small {
     width: 15px;
     height: 15px;

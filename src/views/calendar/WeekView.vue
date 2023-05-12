@@ -38,9 +38,9 @@ const selectedDay = ref(dayjs());
 .current-day {
   display: flex;
   flex-direction: column;
+  gap: 15px;
   align-items: center;
   margin-top: 35px;
-  gap: 15px;
   &__day {
     font-size: 36px;
     font-weight: bold;

@@ -17,5 +17,8 @@
   ],
   "ignoreFiles": [
     "dist/**/*css"
-  ]
+  ],
+  "rules": {
+    "rule-empty-line-before": "never"
+  }
 }
