@@ -7,9 +7,20 @@ module.exports = {
     "eslint:recommended",
     "plugin:vue/base",
     "plugin:vue/vue3-recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "@vue/eslint-config-typescript",
     "@vue/eslint-config-prettier"
   ],
+  plugins: ["@typescript-eslint", "import"],
+  settings: {
+    "import/resolver": {
+      typescript: true,
+      node: true
+    },
+    lintAllEsApis: true
+  },
+  env: { browser: true },
   parserOptions: {
     ecmaVersion: "latest"
   },
@@ -27,6 +38,15 @@ module.exports = {
         endOfLine: "auto"
       }
     ],
-    "max-len": ["error", { code: 120, ignoreUrls: true }]
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        groups: ["external", "builtin", "internal", "parent", "index", "sibling", "object", "type"]
+      }
+    ],
+    "max-len": ["error", { code: 120, ignoreUrls: true }],
+    "import/no-unresolved": ["error", { ignore: ["^virtual:"] }],
+    "import/no-named-as-default-member": "off"
   }
 };

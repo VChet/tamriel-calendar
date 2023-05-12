@@ -30,6 +30,8 @@
     "@vue/tsconfig": "^0.3.2",
     "@vueuse/core": "^10.1.2",
     "eslint": "^8.40.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-vue": "^9.11.1",
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.6",
