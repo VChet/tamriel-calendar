@@ -21,7 +21,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import dayjs from "dayjs";
-
 import { Week } from "@/classes/Week";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";

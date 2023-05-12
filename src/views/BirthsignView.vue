@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import birthsigns from "@/assets/birthsigns.json";
 import { useRoute } from "vue-router";
+import birthsigns from "@/assets/birthsigns.json";
 const route = useRoute();
 const index = Number(route.params.sign);
 const sign = birthsigns[index];

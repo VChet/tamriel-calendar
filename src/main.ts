@@ -1,16 +1,12 @@
 import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
-
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { createPinia } from "pinia";
-
+import messages from "@/i18n/messages";
+import { setLocale, settings } from "@/store/settings";
 import App from "./App.vue";
 import router from "./router";
-
-import messages from "@/i18n/messages";
-
 import "./assets/global.scss";
-import { setLocale, settings } from "@/store/settings";
 
 const pinia = createPinia();
 

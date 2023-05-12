@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
+import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import { Month } from "@/classes/Month";
-import dayjs from "dayjs";
 
 const current = dayjs();
 const months = new Array(6).fill(0).map((_, index) => new Month(current.add(index, "month")));
