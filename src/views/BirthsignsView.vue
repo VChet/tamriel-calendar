@@ -1,6 +1,6 @@
 <template>
   <main class="container birthsigns-view">
-    <h1>Знаки рождения</h1>
+    <h1>{{ $t("birthsigns") }}</h1>
     <ul class="birthsigns-view__list">
       <RouterLink
         v-for="(sign, index) in birthsigns"

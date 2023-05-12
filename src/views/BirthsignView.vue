@@ -2,7 +2,7 @@
   <main class="container birthsign-view">
     <img class="birthsign-view__image" :src="`/img/birthsigns/${sign.image}.webp`" :alt="sign.name" />
     <h1 class="birthsign-view__title">{{ sign.name }}</h1>
-    <div v-if="sign.month" class="birthsign-view__subtitle">Месяц {{ sign.month }}</div>
+    <div v-if="sign.month" class="birthsign-view__subtitle">{{ $t("month") }} {{ sign.month }}</div>
     <div class="birthsign-view__description">{{ sign.description }}</div>
   </main>
 </template>

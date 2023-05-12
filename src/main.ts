@@ -1,16 +1,27 @@
 import { createApp } from "vue";
-import { locale } from "dayjs";
+import { createI18n } from "vue-i18n";
+
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { createPinia } from "pinia";
 
 import App from "./App.vue";
 import router from "./router";
+
+import messages from "@/i18n/messages";
+
 import "./assets/global.scss";
-import tamrielEn from "@/assets/tamriel-en";
+import { setLocale, settings } from "@/store/settings";
 
 const pinia = createPinia();
 
-locale(tamrielEn);
+export const i18n = createI18n({
+  locale: "en",
+  fallbackLocale: "ru",
+  legacy: false,
+  messages
+});
+
+setLocale(settings.value.locale);
 
 useRegisterSW({
   immediate: true,
@@ -26,4 +37,4 @@ useRegisterSW({
   }
 });
 
-createApp(App).use(pinia).use(router).mount("#app");
+createApp(App).use(pinia).use(i18n).use(router).mount("#app");

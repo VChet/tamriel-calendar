@@ -4,13 +4,13 @@
     <nav>
       <ul>
         <li>
-          <RouterLink to="/calendar">Календарь</RouterLink>
+          <RouterLink to="/calendar">{{ $t("calendar") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/birthsigns">Знаки рождения</RouterLink>
+          <RouterLink to="/birthsigns">{{ $t("birthsigns") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/settings">Настройки</RouterLink>
+          <RouterLink to="/settings">{{ $t("settings") }}</RouterLink>
         </li>
       </ul>
     </nav>

@@ -3,13 +3,13 @@
     <header>
       <ul>
         <li>
-          <RouterLink to="/week" class="tab">Неделя</RouterLink>
+          <RouterLink to="/week" class="tab">{{ $t("week") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/month" class="tab">Месяц</RouterLink>
+          <RouterLink to="/month" class="tab">{{ $t("month") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/year" class="tab">Год</RouterLink>
+          <RouterLink to="/year" class="tab">{{ $t("year") }}</RouterLink>
         </li>
       </ul>
     </header>

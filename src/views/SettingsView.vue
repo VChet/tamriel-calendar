@@ -1,10 +1,10 @@
 <template>
   <main class="settings-view">
-    <header>Настройки</header>
+    <header>{{ $t("settings") }}</header>
     <article class="container">
       <ul class="settings-view__list">
         <li>
-          Оригинальный дизайн
+          {{ $t("settingsPage.design") }}
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
         <li>
@@ -12,11 +12,11 @@
         </li>
         <li class="settings-view__list-language">
           <label>
-            <input v-model="locale" type="radio" value="tamriel-en" />
+            <input v-model="locale" type="radio" value="en" />
             English
           </label>
           <label>
-            <input v-model="locale" type="radio" value="tamriel-ru" />
+            <input v-model="locale" type="radio" value="ru" />
             Русский
           </label>
         </li>
@@ -26,13 +26,11 @@
 </template>
 
 <script setup lang="ts">
-import { watch } from "vue";
-import { storeToRefs } from "pinia";
-import { useSettingsStore } from "@/store/settings";
+import { ref, watch } from "vue";
+import { settings, setLocale } from "@/store/settings";
 
-const settings = useSettingsStore();
-const { dayjsLocale: locale } = storeToRefs(settings);
-watch(locale, (newLocale) => settings.setLocale(newLocale));
+const locale = ref(settings.value.locale);
+watch(locale, setLocale);
 </script>
 <style lang="scss">
 .settings-view {
