@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": [
+    "stylelint-stylistic",
+    "stylelint-order",
+    "stylelint-declaration-block-no-ignored-properties"
+  ],
+  "customSyntax": "postcss-scss",
+  "overrides": [
+    {
+      "files": ["**/*.vue"],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "ignoreFiles": [
+    "dist/**/*css"
+  ]
+}
