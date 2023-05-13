@@ -7,6 +7,9 @@
           {{ $t("settingsPage.design") }}
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
+        <li v-if="needRefresh">
+          <button type="button" @click="updateServiceWorker(true)">{{ $t("settingsPage.update") }}</button>
+        </li>
         <li>
           <a href="https://github.com/VChet/tamriel-calendar">GitHub</a>
         </li>
@@ -27,8 +30,9 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { settings, setLocale } from "@/store/settings";
+import { settings, setLocale, useSettingsStore } from "@/store/settings";
 
+const { needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, setLocale);
 </script>

@@ -9,7 +9,8 @@ const messages: I18nOptions["messages"] = {
     month: "Month",
     year: "Year",
     settingsPage: {
-      design: "Original design by"
+      design: "Original design by",
+      update: "Update app"
     }
   },
   ru: {
@@ -20,7 +21,8 @@ const messages: I18nOptions["messages"] = {
     month: "Месяц",
     year: "Год",
     settingsPage: {
-      design: "Оригинальный дизайн"
+      design: "Оригинальный дизайн",
+      update: "Обновить приложение"
     }
   }
 };
