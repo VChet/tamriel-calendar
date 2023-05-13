@@ -3,15 +3,10 @@
     <header>{{ $t("settings") }}</header>
     <article class="container">
       <ul class="settings-view__list">
-        <li>
-          {{ $t("settingsPage.design") }}
-          <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
-        </li>
         <li v-if="needRefresh">
-          <button type="button" @click="updateServiceWorker(true)">{{ $t("settingsPage.update") }}</button>
-        </li>
-        <li>
-          <a href="https://github.com/VChet/tamriel-calendar">GitHub</a>
+          <button class="button button--block" type="button" @click="updateServiceWorker(true)">
+            {{ $t("settingsPage.update") }}
+          </button>
         </li>
         <li class="settings-view__list-language">
           <label>
@@ -22,6 +17,13 @@
             <input v-model="locale" type="radio" value="ru" />
             Русский
           </label>
+        </li>
+        <li>
+          <a href="https://github.com/VChet/tamriel-calendar">GitHub</a>
+        </li>
+        <li>
+          {{ $t("settingsPage.design") }}
+          <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
       </ul>
     </article>

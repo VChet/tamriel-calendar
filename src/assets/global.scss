@@ -43,3 +43,28 @@ a {
     color: var(--color-highlight);
   }
 }
+.button {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  color: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #281F10;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  transition: transform .2s;
+  &--block {
+    width: 100%;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: #52493a;
+  }
+  &:active {
+    transform: scale(.99);
+  }
+}
