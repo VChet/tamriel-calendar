@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import { VitePWA, type VitePWAOptions } from "vite-plugin-pwa";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import { fileURLToPath, URL } from "node:url";
+import { execSync } from "node:child_process";
 
 const pwaOptions: Partial<VitePWAOptions> = {
   base: "/",
@@ -38,6 +39,8 @@ const pwaOptions: Partial<VitePWAOptions> = {
   workbox: { sourcemap: true }
 };
 
+const commitHash = execSync("git rev-parse --short HEAD").toString();
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), VitePWA(pwaOptions), VueI18nPlugin({})],
@@ -45,5 +48,8 @@ export default defineConfig({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))
     }
+  },
+  define: {
+    "import.meta.env.__COMMIT_HASH__": JSON.stringify(commitHash)
   }
 });

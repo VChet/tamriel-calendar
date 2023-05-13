@@ -5,3 +5,11 @@ declare module "*.vue" {
   const Component: ComponentOptions;
   export default Component;
 }
+
+interface ImportMetaEnv {
+  readonly __COMMIT_HASH__: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
