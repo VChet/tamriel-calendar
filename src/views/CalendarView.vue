@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main ref="swipeContainer">
     <header>
       <ul>
         <li>
@@ -22,7 +22,27 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { UseSwipeDirection, useSwipe } from "@vueuse/core";
+import { ref } from "vue";
+import { RouterLink, RouterView, useRouter } from "vue-router";
+
+const calendarPages = ["Week", "Month", "Year"];
+
+const router = useRouter();
+
+const currentPageIndex = ref(calendarPages.indexOf(router.currentRoute.value.name as string));
+const swipeContainer = ref<HTMLElement>();
+useSwipe(swipeContainer, {
+  onSwipeEnd: (_: TouchEvent, direction: UseSwipeDirection) => {
+    if (direction === "right" && currentPageIndex.value > 0) {
+      router.push({ name: calendarPages[currentPageIndex.value - 1] });
+      currentPageIndex.value = currentPageIndex.value - 1;
+    } else if (direction === "left" && currentPageIndex.value < calendarPages.length - 1) {
+      router.push({ name: calendarPages[currentPageIndex.value + 1] });
+      currentPageIndex.value = currentPageIndex.value + 1;
+    }
+  }
+});
 </script>
 <style lang="scss" scoped>
 header {
