@@ -1,10 +1,20 @@
 import dayjs from "dayjs";
-import { useStorage } from "@vueuse/core";
+import { createGlobalState, useStorage } from "@vueuse/core";
+import { useRegisterSW } from "virtual:pwa-register/vue";
 import { i18n } from "@/main";
 import tamrielEn from "@/assets/tamriel-en";
 import tamrielRu from "@/assets/tamriel-ru";
 
 export const settings = useStorage("settings", { locale: "en" });
+
+export const useSettingsStore = createGlobalState(() => {
+  const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });
+
+  return {
+    needRefresh,
+    updateServiceWorker
+  };
+});
 
 function getDayJSLocaleData(locale: string) {
   switch (locale) {

@@ -1,6 +1,5 @@
 import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
-import { useRegisterSW } from "virtual:pwa-register/vue";
 import { createPinia } from "pinia";
 import messages from "@/i18n/messages";
 import { setLocale, settings } from "@/store/settings";
@@ -18,19 +17,5 @@ export const i18n = createI18n({
 });
 
 setLocale(settings.value.locale);
-
-useRegisterSW({
-  immediate: true,
-  onRegistered(registration) {
-    if (registration) {
-      /* eslint-disable no-console */
-      console.log("Service worker registered");
-    }
-  },
-  onRegisterError(error) {
-    /* eslint-disable no-console */
-    console.error(error);
-  }
-});
 
 createApp(App).use(pinia).use(i18n).use(router).mount("#app");
