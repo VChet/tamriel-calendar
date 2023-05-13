@@ -8,7 +8,7 @@
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
         <li v-if="needRefresh">
-          <button @click="() => updateServiceWorker()">{{ $t("settingsPage.update") }}</button>
+          <button type="button" @click="updateServiceWorker(true)">{{ $t("settingsPage.update") }}</button>
         </li>
         <li>
           <a href="https://github.com/VChet/tamriel-calendar">GitHub</a>
