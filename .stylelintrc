@@ -19,6 +19,7 @@
     "dist/**/*css"
   ],
   "rules": {
+    "stylistic/color-hex-case": "lower",
     "rule-empty-line-before": "never"
   }
 }
