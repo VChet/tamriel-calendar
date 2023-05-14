@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { UseSwipeDirection, useSwipe } from "@vueuse/core";
+import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
 import { ref } from "vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 
