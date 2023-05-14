@@ -25,6 +25,7 @@
           {{ $t("settingsPage.design") }}
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
+        <li>{{ $t("settingsPage.appVersion") }}: {{ commitHash }}</li>
       </ul>
     </article>
   </main>
@@ -33,6 +34,8 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import { settings, setLocale, useSettingsStore } from "@/store/settings";
+
+const commitHash = import.meta.env.__COMMIT_HASH__;
 
 const { needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
