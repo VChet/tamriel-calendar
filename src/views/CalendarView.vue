@@ -1,15 +1,19 @@
 <template>
-  <main ref="swipeContainer">
-    <header>
-      <ul>
+  <main ref="swipeContainer" class="calendar-view">
+    <template v-if="isSwiping && ['left', 'right'].includes(direction)">
+      <div v-if="direction === 'right' && currentPageIndex > 0" :class="arrowClassList">&lt;</div>
+      <div v-if="direction === 'left' && currentPageIndex < calendarPages.length - 1" :class="arrowClassList">&gt;</div>
+    </template>
+    <header class="calendar-view__header">
+      <ul class="tabs">
         <li>
-          <RouterLink to="/week" class="tab">{{ $t("week") }}</RouterLink>
+          <RouterLink to="/week" class="tabs__tab" active-class="tabs__tab--active">{{ $t("week") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/month" class="tab">{{ $t("month") }}</RouterLink>
+          <RouterLink to="/month" class="tabs__tab" active-class="tabs__tab--active">{{ $t("month") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/year" class="tab">{{ $t("year") }}</RouterLink>
+          <RouterLink to="/year" class="tabs__tab" active-class="tabs__tab--active">{{ $t("year") }}</RouterLink>
         </li>
       </ul>
     </header>
@@ -23,7 +27,7 @@
 
 <script setup lang="ts">
 import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
@@ -33,7 +37,7 @@ const calendarPages = route.matched[0].children.map(({ name }) => name);
 
 const currentPageIndex = ref(calendarPages.indexOf(route.name as string));
 const swipeContainer = ref<HTMLElement | null>(null);
-useSwipe(swipeContainer, {
+const { isSwiping, direction } = useSwipe(swipeContainer, {
   onSwipeEnd: (_: TouchEvent, direction: UseSwipeDirection) => {
     if (direction === "right" && currentPageIndex.value > 0) {
       navigateToPage(currentPageIndex.value - 1);
@@ -42,6 +46,13 @@ useSwipe(swipeContainer, {
     }
   }
 });
+const arrowClassList = computed<Record<string, boolean>>(() => {
+  const key = "calendar-view__arrow";
+  return {
+    [key]: true,
+    [`${key}--${direction.value}`]: !!direction.value
+  };
+});
 
 function navigateToPage(pageIndex: number) {
   const name = calendarPages[pageIndex];
@@ -49,22 +60,44 @@ function navigateToPage(pageIndex: number) {
   currentPageIndex.value = pageIndex;
 }
 </script>
-<style lang="scss" scoped>
-header {
-  padding: 15px;
-  border-bottom: 1px solid #b9b2a2;
-  ul {
+<style lang="scss">
+.calendar-view {
+  &__arrow {
+    position: fixed;
+    top: 50vh;
+    z-index: 10;
     display: flex;
-    gap: 25px;
+    align-items: center;
     justify-content: center;
-    .tab {
-      display: inline-block;
-      padding: 6px 15px;
-      color: var(--color-text);
-      &.router-link-active {
-        color: #fff;
-        background-color: #52493a;
-        border-radius: 24px;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    background: #52493a;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    &--left {
+      right: 10px;
+    }
+    &--right {
+      left: 10px;
+    }
+  }
+  &__header {
+    padding: 15px;
+    border-bottom: 1px solid #b9b2a2;
+    .tabs {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      &__tab {
+        display: inline-block;
+        padding: 6px 15px;
+        color: var(--color-text);
+        &--active {
+          color: #fff;
+          background-color: #52493a;
+          border-radius: 24px;
+        }
       }
     }
   }
