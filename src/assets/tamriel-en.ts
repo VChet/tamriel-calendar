@@ -1,6 +1,6 @@
 const weekdays = ["sundas", "morndas", "tirdas", "middas", "turdas", "fredas", "loredas"];
 const weekdaysShort = ["sun", "mon", "tir", "mid", "tur", "fre", "lor"];
-const weekdaysMin = ["su", "mo", "ti", "mi", "tu", "fr", "lo"];
+const weekdaysMin = ["s", "m", "t", "m", "t", "f", "l"];
 const months = [
   "Morning Star",
   "Sun's Dawn",
