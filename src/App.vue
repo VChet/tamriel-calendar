@@ -31,13 +31,15 @@ const pages = [
   position: sticky;
   bottom: 0;
   width: 100%;
-  padding: 20px 40px;
+  padding: 0 20px;
   background-color: var(--color-background);
   border-top: 1px solid #b9b2a2;
   ul {
     display: flex;
     justify-content: space-between;
     .nav-tab {
+      display: inline-block;
+      padding: 20px;
       font-size: 14px;
       font-weight: bold;
       color: #837a6b;
