@@ -32,6 +32,7 @@ const selectedDay = ref(dayjs());
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
   text-align: center;
 }
 .current-day {

@@ -43,6 +43,7 @@ const months = new Array(6).fill(0).map((_, index) => new Month(current.add(inde
     &__days {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
+      gap: 16px;
       text-align: center;
     }
   }

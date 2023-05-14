@@ -16,6 +16,7 @@ const days = dayjs.weekdaysShort(true);
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
   margin-bottom: 10px;
   text-align: center;
   li {
