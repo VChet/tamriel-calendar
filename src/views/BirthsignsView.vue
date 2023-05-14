@@ -25,12 +25,15 @@ import birthsigns from "@/assets/birthsigns.json";
 <style lang="scss">
 .birthsigns-view {
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    font-size: 28px;
+    font-weight: bold;
   }
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px 10px;
+    row-gap: 50px;
+    justify-content: space-between;
     li {
       display: flex;
       flex-direction: column;
@@ -39,8 +42,8 @@ import birthsigns from "@/assets/birthsigns.json";
       font-size: 12px;
       font-weight: bold;
       img {
-        max-width: 90px;
-        max-height: 90px;
+        max-width: 120px;
+        max-height: 120px;
       }
     }
   }

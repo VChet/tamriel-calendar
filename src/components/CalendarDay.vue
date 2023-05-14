@@ -51,8 +51,8 @@ const classList = computed<Record<string, boolean>>(() => {
     }
   }
   &--small {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     font-size: 10px;
   }
   &--current {

@@ -3,14 +3,10 @@
   <footer class="main-nav">
     <nav>
       <ul>
-        <li>
-          <RouterLink to="/calendar">{{ $t("calendar") }}</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/birthsigns">{{ $t("birthsigns") }}</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/settings">{{ $t("settings") }}</RouterLink>
+        <li v-for="{ route, token } in pages" :key="route">
+          <RouterLink :to="route" class="nav-tab" active-class="nav-tab--active">
+            {{ $t(token) }}
+          </RouterLink>
         </li>
       </ul>
     </nav>
@@ -19,6 +15,12 @@
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+
+const pages = [
+  { route: "/calendar", token: "calendar" },
+  { route: "/birthsigns", token: "birthsigns" },
+  { route: "/settings", token: "settings" }
+];
 </script>
 
 <style lang="scss">
@@ -29,12 +31,20 @@ import { RouterLink, RouterView } from "vue-router";
   position: sticky;
   bottom: 0;
   width: 100%;
-  padding: 20px;
+  padding: 20px 40px;
   background-color: var(--color-background);
   border-top: 1px solid #b9b2a2;
   ul {
     display: flex;
     justify-content: space-between;
+    .nav-tab {
+      font-size: 14px;
+      font-weight: bold;
+      color: #837a6b;
+      &--active {
+        color: #d83c23;
+      }
+    }
   }
 }
 </style>

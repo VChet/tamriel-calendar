@@ -21,17 +21,18 @@ const sign = birthsigns[index];
   &__image {
     align-self: center;
     max-width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   &__title {
-    font-size: 28px;
+    font-size: 24px;
+    font-weight: bold;
   }
   &__subtitle {
-    margin-top: 15px;
+    margin-top: 16px;
     color: #a59e8c;
   }
   &__description {
-    margin-top: 25px;
+    margin-top: 30px;
   }
 }
 </style>

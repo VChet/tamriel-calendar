@@ -36,7 +36,7 @@ const months = new Array(6).fill(0).map((_, index) => new Month(current.add(inde
       width: 100%;
       margin-bottom: 15px;
       div {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
       }
     }

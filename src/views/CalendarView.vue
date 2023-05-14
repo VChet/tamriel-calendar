@@ -87,11 +87,12 @@ function navigateToPage(pageIndex: number) {
     border-bottom: 1px solid #b9b2a2;
     .tabs {
       display: flex;
-      gap: 25px;
+      gap: 18px;
       justify-content: center;
       &__tab {
         display: inline-block;
-        padding: 6px 15px;
+        padding: 6px 12px;
+        font-size: 14px;
         color: var(--color-text);
         &--active {
           color: #fff;

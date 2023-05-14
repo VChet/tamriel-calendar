@@ -38,18 +38,20 @@ const selectedDay = ref(dayjs());
 .current-day {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 40px;
   &__day {
-    font-size: 36px;
+    margin-bottom: 26px;
+    font-size: 70px;
     font-weight: bold;
   }
   &__month {
-    font-size: 30px;
+    margin-bottom: 16px;
+    font-size: 26px;
     font-weight: bold;
   }
   &__weekday {
+    font-size: 16px;
     color: #a49d8b;
     text-transform: capitalize;
   }

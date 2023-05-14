@@ -1,6 +1,6 @@
 <template>
   <main class="settings-view">
-    <header>{{ $t("settings") }}</header>
+    <header class="settings-view__header">{{ $t("settings") }}</header>
     <article class="container">
       <ul class="settings-view__list">
         <li v-if="needRefresh">
@@ -46,14 +46,15 @@ watch(locale, setLocale);
   .container {
     padding: 10px 0;
   }
-  header {
+  &__header {
     padding: 15px;
+    font-weight: bold;
     text-align: center;
     border-bottom: 1px solid #b9b2a2;
   }
   &__list {
     li {
-      padding: 10px 15px;
+      padding: 15px;
       &:not(:last-of-type) {
         border-bottom: 1px solid #b9b2a2;
       }

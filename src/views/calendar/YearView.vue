@@ -31,22 +31,22 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
 .year-view {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
   .year {
     &__title {
-      margin-bottom: 30px;
-      font-size: 24px;
+      margin-bottom: 40px;
+      font-size: 20px;
       font-weight: bold;
     }
     &__months {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px 15px;
+      gap: 20px 15px;
     }
     .month {
       &__title {
-        margin-bottom: 12px;
-        font-size: 12px;
+        margin-bottom: 16px;
+        font-size: 16px;
         font-weight: bold;
         &--current {
           color: var(--color-highlight);
