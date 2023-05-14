@@ -24,25 +24,30 @@
 <script setup lang="ts">
 import { UseSwipeDirection, useSwipe } from "@vueuse/core";
 import { ref } from "vue";
-import { RouterLink, RouterView, useRouter } from "vue-router";
+import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 
-const calendarPages = ["Week", "Month", "Year"];
-
+const route = useRoute();
 const router = useRouter();
 
-const currentPageIndex = ref(calendarPages.indexOf(router.currentRoute.value.name as string));
-const swipeContainer = ref<HTMLElement>();
+const calendarPages = route.matched[0].children.map(({ name }) => name);
+
+const currentPageIndex = ref(calendarPages.indexOf(route.name as string));
+const swipeContainer = ref<HTMLElement | null>(null);
 useSwipe(swipeContainer, {
   onSwipeEnd: (_: TouchEvent, direction: UseSwipeDirection) => {
     if (direction === "right" && currentPageIndex.value > 0) {
-      router.push({ name: calendarPages[currentPageIndex.value - 1] });
-      currentPageIndex.value = currentPageIndex.value - 1;
+      navigateToPage(currentPageIndex.value - 1);
     } else if (direction === "left" && currentPageIndex.value < calendarPages.length - 1) {
-      router.push({ name: calendarPages[currentPageIndex.value + 1] });
-      currentPageIndex.value = currentPageIndex.value + 1;
+      navigateToPage(currentPageIndex.value + 1);
     }
   }
 });
+
+function navigateToPage(pageIndex: number) {
+  const name = calendarPages[pageIndex];
+  router.push({ name });
+  currentPageIndex.value = pageIndex;
+}
 </script>
 <style lang="scss" scoped>
 header {
