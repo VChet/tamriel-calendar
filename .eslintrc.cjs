@@ -45,8 +45,9 @@ module.exports = {
         groups: ["external", "builtin", "internal", "parent", "index", "sibling", "object", "type"]
       }
     ],
-    "max-len": ["error", { code: 120, ignoreUrls: true }],
     "import/no-unresolved": ["error", { ignore: ["^virtual:"] }],
-    "import/no-named-as-default-member": "off"
+    "import/no-named-as-default-member": "off",
+    "max-len": ["error", { code: 120, ignoreUrls: true }],
+    "operator-assignment": ["error", "always"]
   }
 };
