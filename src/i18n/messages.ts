@@ -8,6 +8,10 @@ const messages: I18nOptions["messages"] = {
     week: "Week",
     month: "Month",
     year: "Year",
+    calendarPage: {
+      festivities: "Festivities",
+      summoningDays: "Daedra Summoning Days"
+    },
     settingsPage: {
       design: "Original design by",
       update: "Update app",
@@ -21,6 +25,10 @@ const messages: I18nOptions["messages"] = {
     week: "Неделя",
     month: "Месяц",
     year: "Год",
+    calendarPage: {
+      festivities: "Праздники",
+      summoningDays: "Дни вызова даэдра"
+    },
     settingsPage: {
       design: "Оригинальный дизайн",
       update: "Обновить приложение",

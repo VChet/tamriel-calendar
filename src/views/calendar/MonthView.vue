@@ -8,7 +8,7 @@
       <CalendarWeekdays />
       <ul class="month__days">
         <li v-for="(day, index) in month.days" :key="index" :style="day.styles">
-          <CalendarDay :day="day.value" />
+          <CalendarDay :day="day.value" :festivity="day.hasFestivity" />
         </li>
       </ul>
     </div>

@@ -5,15 +5,26 @@
       <li v-for="(day, index) in week.days" :key="index">
         <CalendarDay
           :day="day.value"
-          :active="dayjs(day.value).isSame(selectedDay, 'day')"
-          @click="selectedDay = day.value"
+          :active="selectedDay?.value === day.value"
+          :festivity="day.hasFestivity"
+          @click="selectedDay = day"
         />
       </li>
     </ul>
     <div v-if="selectedDay" class="current-day">
-      <div class="current-day__day">{{ selectedDay.format("D") }}</div>
-      <div class="current-day__month">{{ selectedDay.format("MMMM") }}</div>
-      <div class="current-day__weekday">{{ selectedDay.format("dddd") }}</div>
+      <div class="current-day__day">{{ selectedDay.value.format("D") }}</div>
+      <div class="current-day__month">{{ selectedDay.value.format("MMMM") }}</div>
+      <div class="current-day__weekday">{{ selectedDay.value.format("dddd") }}</div>
+      <section v-if="selectedDay.hasFestivity" class="current-day__festivities">
+        <div v-if="selectedDay.holiday" class="current-day__festivities">
+          <div class="current-day__festivities-title">{{ $t("calendarPage.festivities") }}</div>
+          <FestivityCard :festivity="selectedDay.holiday" />
+        </div>
+        <div v-if="selectedDay.summoningDay" class="current-day__festivities">
+          <div class="current-day__festivities-title">{{ $t("calendarPage.summoningDays") }}</div>
+          <FestivityCard :festivity="selectedDay.summoningDay" />
+        </div>
+      </section>
     </div>
   </section>
 </template>
@@ -21,12 +32,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import dayjs from "dayjs";
-import { Week } from "@/classes/Week";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
+import FestivityCard from "@/components/FestivityCard.vue";
+import { Week } from "@/classes/Week";
+import { Day } from "@/classes/Day";
 
 const week = ref(new Week(dayjs()));
-const selectedDay = ref(dayjs());
+const selectedDay = ref<Day | null>(week.value.currentDay);
 </script>
 <style lang="scss" scoped>
 .days {
@@ -54,6 +67,14 @@ const selectedDay = ref(dayjs());
     font-size: 16px;
     color: #a49d8b;
     text-transform: capitalize;
+  }
+  &__festivities {
+    margin-top: 30px;
+    &-title {
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #d21a02;
+    }
   }
 }
 </style>

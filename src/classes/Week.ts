@@ -1,8 +1,10 @@
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
+import isToday from "dayjs/plugin/isToday";
 import { Day } from "@/classes/Day";
 
 dayjs.extend(weekOfYear);
+dayjs.extend(isToday);
 
 export class Week {
   value: number;
@@ -22,5 +24,8 @@ export class Week {
 
   get isCurrent() {
     return dayjs().isSame(dayjs().year(this.year).week(this.value), "week");
+  }
+  get currentDay(): Day | null {
+    return this.days.find((day) => dayjs(day.value).isToday()) ?? null;
   }
 }
