@@ -44,10 +44,14 @@ const classList = computed<Record<string, boolean>>(() => {
   &--festivity {
     &::after {
       position: absolute;
-      top: 100%;
+      top: 60%;
       font-size: 16px;
       color: var(--color-highlight);
       content: "✶";
+    }
+    &.calendar-day--active::after,
+    &.calendar-day--current::after {
+      top: 100%;
     }
   }
   &--small {
