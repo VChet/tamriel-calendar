@@ -31,7 +31,7 @@ const pages = [
   position: sticky;
   bottom: 0;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
   background-color: var(--color-background);
   border-top: 1px solid #b9b2a2;
   ul {

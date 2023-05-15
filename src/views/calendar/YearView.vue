@@ -46,7 +46,7 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
     .month {
       &__title {
         margin-bottom: 16px;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: bold;
         &--current {
           color: var(--color-highlight);
