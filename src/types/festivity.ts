@@ -4,3 +4,10 @@ export interface Festivity {
   image: string;
   description: string;
 }
+
+export interface Birthsign {
+  name: string;
+  month: string;
+  image: string;
+  description: string;
+}

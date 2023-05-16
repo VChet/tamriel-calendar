@@ -3,7 +3,7 @@
     <h1>{{ $t("birthsigns") }}</h1>
     <ul class="birthsigns-view__list">
       <RouterLink
-        v-for="(sign, index) in birthsigns"
+        v-for="(sign, index) in birthsigns.values()"
         :key="index"
         v-slot="{ navigate }"
         :to="`/birthsign/${index}`"
@@ -20,7 +20,8 @@
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import birthsigns from "@/assets/birthsigns.json";
+import { useFestivitiesStore } from "@/store/festivities";
+const { birthsigns } = useFestivitiesStore();
 </script>
 <style lang="scss">
 .birthsigns-view {
