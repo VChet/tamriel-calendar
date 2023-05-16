@@ -6,6 +6,7 @@ import SettingsView from "@/views/SettingsView.vue";
 import WeekView from "@/views/calendar/WeekView.vue";
 import MonthView from "@/views/calendar/MonthView.vue";
 import YearView from "@/views/calendar/YearView.vue";
+import FestivityView from "@/views/FestivityView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +38,11 @@ const router = createRouter({
           component: YearView
         }
       ]
+    },
+    {
+      path: "/festivity",
+      name: "Festivity",
+      component: FestivityView
     },
     {
       path: "/birthsigns",

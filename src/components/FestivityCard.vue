@@ -1,21 +1,24 @@
 <template>
-  <div class="festivity-card">
-    <div>
-      <div class="festivity-card__title">
-        {{ festivity.name }}
+  <RouterLink :to="{ name: 'Festivity', query: { type, date: festivity.date } }">
+    <div class="festivity-card">
+      <div>
+        <div class="festivity-card__title">
+          {{ festivity.name }}
+        </div>
+        <div class="festivity-card__description">
+          {{ festivity.description }}
+        </div>
       </div>
-      <div class="festivity-card__description">
-        {{ festivity.description }}
-      </div>
+      <img v-if="festivity.image" :src="festivity.image" :alt="`${festivity.name} illustration`" />
     </div>
-    <img v-if="festivity.image" :src="festivity.image" />
-  </div>
+  </RouterLink>
 </template>
 
 <script setup lang="ts">
-import { Festivity } from "@/types/festivity";
+import { Holiday, SummoningDay } from "@/classes/Festivity";
 
-defineProps<{ festivity: Festivity }>();
+const props = defineProps<{ festivity: Holiday | SummoningDay }>();
+const type = props.festivity instanceof Holiday ? "holiday" : "summoningDay";
 </script>
 <style lang="scss">
 .festivity-card {
