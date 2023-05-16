@@ -2,8 +2,8 @@
   <section class="month-view">
     <div v-for="month in months" :key="month.value" class="month">
       <div class="month__title">
-        <div>{{ dayjs().month(month.value).format("MMMM") }}</div>
-        <div>{{ dayjs().month(month.value).format("YYYY") }}</div>
+        <div>{{ month.monthName }}</div>
+        <div>{{ month.yearName }}</div>
       </div>
       <CalendarWeekdays />
       <ul class="month__days">

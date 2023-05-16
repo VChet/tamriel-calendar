@@ -21,8 +21,21 @@ export class Day {
   get isCurrent(): boolean {
     return dayjs().isSame(this.value, "day");
   }
+
   get hasFestivity(): boolean {
     return !!this.holiday || !!this.summoningDay;
+  }
+
+  get dayName(): string {
+    return this.value.format("D");
+  }
+
+  get monthName(): string {
+    return this.value.format("MMMM");
+  }
+
+  get weekdayName(): string {
+    return this.value.format("dddd");
   }
 
   get styles(): CSSProperties {
