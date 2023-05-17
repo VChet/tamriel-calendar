@@ -4,7 +4,7 @@
       <div v-if="direction === 'right' && currentPageIndex > 0" :class="arrowClassList">&lt;</div>
       <div v-if="direction === 'left' && currentPageIndex < calendarPages.length - 1" :class="arrowClassList">&gt;</div>
     </template>
-    <header class="calendar-view__header">
+    <header class="header">
       <ul class="tabs">
         <li>
           <RouterLink to="/week" class="tabs__tab" active-class="tabs__tab--active">{{ $t("week") }}</RouterLink>
@@ -82,23 +82,19 @@ function navigateToPage(pageIndex: number) {
       left: 10px;
     }
   }
-  &__header {
-    padding: 15px;
-    border-bottom: 1px solid #b9b2a2;
-    .tabs {
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      &__tab {
-        display: inline-block;
-        padding: 6px 12px;
-        font-size: 14px;
-        color: var(--color-text);
-        &--active {
-          color: #fff;
-          background-color: #52493a;
-          border-radius: 24px;
-        }
+  .tabs {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    &__tab {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 14px;
+      color: var(--color-text);
+      &--active {
+        color: #fff;
+        background-color: #52493a;
+        border-radius: 24px;
       }
     }
   }

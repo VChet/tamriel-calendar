@@ -1,23 +1,29 @@
 <template>
-  <main v-if="festivity" class="container festivity">
-    <img
-      v-if="festivity.image"
-      class="festivity__image"
-      :src="`/img/festivities/${festivity.image}.webp`"
-      :alt="festivity.name"
-    />
-    <h1 class="festivity__title">{{ festivity.name }}</h1>
-    <div class="festivity__subtitle">{{ festivity.monthName }}</div>
-    <div class="festivity__description">{{ festivity.description }}</div>
+  <main v-if="festivity">
+    <header class="header">
+      <button class="icon-button" type="button" @click="router.back">&lt;</button>
+    </header>
+    <section class="container festivity">
+      <img
+        v-if="festivity.image"
+        class="festivity__image"
+        :src="`/img/festivities/${festivity.image}.webp`"
+        :alt="festivity.name"
+      />
+      <h1 class="festivity__title">{{ festivity.name }}</h1>
+      <div class="festivity__subtitle">{{ festivity.monthName }}</div>
+      <div class="festivity__description">{{ festivity.description }}</div>
+    </section>
   </main>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const route = useRoute();
+const router = useRouter();
 const { type, date } = route.query;
 const { holidays, summoningDays } = useFestivitiesStore();
 const festivity = computed(() => {
