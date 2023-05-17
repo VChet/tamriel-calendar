@@ -17,7 +17,7 @@ class FestivityBase implements Festivity {
   }
 
   get monthName(): string {
-    return dayjs(this.date, "DD/MM").format("MMMM");
+    return dayjs(this.date, "DD/MM").format("D MMMM");
   }
 }
 

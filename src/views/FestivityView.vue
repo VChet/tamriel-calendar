@@ -7,7 +7,7 @@
       :alt="festivity.name"
     />
     <h1 class="festivity__title">{{ festivity.name }}</h1>
-    <div class="festivity__subtitle">{{ $t("month") }} {{ festivity.monthName }}</div>
+    <div class="festivity__subtitle">{{ festivity.monthName }}</div>
     <div class="festivity__description">{{ festivity.description }}</div>
   </main>
 </template>
