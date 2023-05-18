@@ -1,5 +1,5 @@
 <template>
-  <main class="container birthsign-view">
+  <main v-if="sign" class="container birthsign-view">
     <img class="birthsign-view__image" :src="`/img/birthsigns/${sign.image}.webp`" :alt="sign.name" />
     <h1 class="birthsign-view__title">{{ sign.name }}</h1>
     <div v-if="sign.month" class="birthsign-view__subtitle">
@@ -12,10 +12,13 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import dayjs from "dayjs";
-import birthsigns from "@/assets/birthsigns.json";
+import { computed } from "vue";
+import { useFestivitiesStore } from "@/store/festivities";
+
 const route = useRoute();
-const index = Number(route.params.sign);
-const sign = birthsigns[index];
+
+const { birthsigns } = useFestivitiesStore();
+const sign = computed(() => birthsigns.get(route.params.sign as string));
 </script>
 <style lang="scss">
 .birthsign-view {

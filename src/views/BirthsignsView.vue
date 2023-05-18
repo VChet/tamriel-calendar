@@ -3,10 +3,10 @@
     <h1>{{ $t("birthsigns") }}</h1>
     <ul class="birthsigns-view__list">
       <RouterLink
-        v-for="(sign, index) in birthsigns.values()"
-        :key="index"
+        v-for="sign in birthsigns.values()"
+        :key="sign.name"
         v-slot="{ navigate }"
-        :to="`/birthsign/${index}`"
+        :to="`/birthsign/${sign.month}`"
         custom
       >
         <li role="link" @click="navigate">
