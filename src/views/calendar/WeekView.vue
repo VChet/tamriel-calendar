@@ -47,6 +47,12 @@ const selectedDay = ref<Day | null>(week.value.currentDay);
   grid-template-columns: repeat(7, 1fr);
   gap: 16px;
   text-align: center;
+  .calendar-day {
+    cursor: pointer;
+    &:hover:not(&--current) {
+      color: var(--color-highlight);
+    }
+  }
 }
 .current-day {
   display: flex;
