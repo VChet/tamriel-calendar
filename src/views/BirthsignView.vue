@@ -3,7 +3,7 @@
     <header class="header">
       <button class="icon-button" type="button" @click="router.back">&lt;</button>
     </header>
-    <section class="container birthsign">
+    <section v-if="sign" class="container birthsign">
       <img class="birthsign__image" :src="`/img/birthsigns/${sign.image}.webp`" :alt="sign.name" />
       <h1 class="birthsign__title">{{ sign.name }}</h1>
       <div v-if="sign.month" class="birthsign__subtitle">
@@ -17,11 +17,14 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
 import dayjs from "dayjs";
-import birthsigns from "@/assets/birthsigns.json";
-const route = useRoute();
+import { computed } from "vue";
+import { useFestivitiesStore } from "@/store/festivities";
+
 const router = useRouter();
-const index = Number(route.params.sign);
-const sign = birthsigns[index];
+const route = useRoute();
+
+const { birthsigns } = useFestivitiesStore();
+const sign = computed(() => birthsigns.get(route.params.sign as string));
 </script>
 <style lang="scss">
 .birthsign {
