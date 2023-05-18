@@ -8,7 +8,10 @@
       <CalendarWeekdays />
       <ul class="month__days">
         <li v-for="(day, index) in month.days" :key="index" :style="day.styles">
-          <CalendarDay :day="day.value" :festivity="day.hasFestivity" />
+          <RouterLink v-if="day.hasFestivity" :to="festivityLink(day)">
+            <CalendarDay :day="day.value" :festivity="day.hasFestivity" />
+          </RouterLink>
+          <CalendarDay v-else :day="day.value" />
         </li>
       </ul>
     </div>
@@ -20,9 +23,20 @@ import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import { Month } from "@/classes/Month";
+import { Day } from "@/classes/Day";
 
 const current = dayjs();
 const months = new Array(6).fill(0).map((_, index) => new Month(current.add(index, "month")));
+
+function festivityLink(day: Day) {
+  if (day.holiday) {
+    return { name: "Festivity", query: { type: "holiday", date: day.holiday.date } };
+  } else if (day.summoningDay) {
+    return { name: "Festivity", query: { type: "summoningDay", date: day.summoningDay.date } };
+  } else {
+    return {};
+  }
+}
 </script>
 <style lang="scss">
 .month-view {
