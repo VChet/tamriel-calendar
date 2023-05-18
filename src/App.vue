@@ -38,7 +38,7 @@ import { IconCalendarEvent, IconComet, IconSettings } from "@tabler/icons-vue";
   width: 100%;
   padding: 0 10px;
   background-color: var(--color-background);
-  border-top: 1px solid #b9b2a2;
+  border-top: 1px solid var(--color-border);
   ul {
     display: flex;
     align-items: center;

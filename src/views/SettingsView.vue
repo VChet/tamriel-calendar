@@ -54,7 +54,7 @@ watch(locale, setLocale);
     li {
       padding: 15px;
       &:not(:last-of-type) {
-        border-bottom: 1px solid #b9b2a2;
+        border-bottom: 1px solid var(--color-border);
       }
     }
     a {

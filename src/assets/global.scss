@@ -2,6 +2,9 @@
   --color-background: #fbf4e1;
   --color-text: #2c2203;
   --color-highlight: #d63a24;
+  --color-border: #b9b2a2;
+  --color-button: #281f10;
+  --color-button-hover: #52493a;
 }
 *,
 *::before,
@@ -56,7 +59,7 @@ a {
   display: flex;
   justify-content: center;
   padding: 10px 15px;
-  border-bottom: 1px solid #b9b2a2;
+  border-bottom: 1px solid var(--color-border);
   &--left {
     justify-content: flex-start;
   }
@@ -70,7 +73,7 @@ a {
   color: #fff;
   white-space: nowrap;
   cursor: pointer;
-  background: #281f10;
+  background: var(--color-button);
   border: none;
   border-radius: 8px;
   outline: none;
@@ -80,7 +83,7 @@ a {
   }
   &:hover,
   &:focus-visible {
-    background-color: #52493a;
+    background-color: var(--color-button-hover);
   }
   &:active {
     transform: scale(.99);
@@ -90,7 +93,7 @@ a {
   display: inline-grid;
   place-items: center;
   padding: 0;
-  color: #281f10;
+  color: var(--color-button);
   cursor: pointer;
   background: none;
   border: none;
@@ -101,6 +104,6 @@ a {
   }
   &:hover,
   &:focus-visible {
-    color: #52493a;
+    color: var(--color-button-hover);
   }
 }
