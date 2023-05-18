@@ -20,6 +20,14 @@ export class Month {
     return dayjs().isSame(dayjs().year(this.year).month(this.value), "month");
   }
 
+  get monthName(): string {
+    return dayjs().month(this.value).format("MMMM");
+  }
+
+  get yearName(): string {
+    return dayjs().year(this.year).format("YYYY");
+  }
+
   get days(): Day[] {
     return this.weeks.flatMap((week) => week.days);
   }

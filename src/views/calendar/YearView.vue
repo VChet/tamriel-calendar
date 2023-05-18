@@ -5,7 +5,7 @@
       <ul class="year__months">
         <li v-for="month in year.months" :key="month.value" class="month">
           <h2 class="month__title" :class="{ 'month__title--current': month.isCurrent }">
-            {{ dayjs().month(month.value).format("MMMM") }}
+            {{ month.monthName }}
           </h2>
           <ul class="month__days">
             <li v-for="(day, dayIndex) in month.days" :key="dayIndex" class="day" :style="day.styles">

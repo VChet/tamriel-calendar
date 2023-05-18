@@ -12,9 +12,9 @@
       </li>
     </ul>
     <div v-if="selectedDay" class="current-day">
-      <div class="current-day__day">{{ selectedDay.value.format("D") }}</div>
-      <div class="current-day__month">{{ selectedDay.value.format("MMMM") }}</div>
-      <div class="current-day__weekday">{{ selectedDay.value.format("dddd") }}</div>
+      <div class="current-day__day">{{ selectedDay.dayName }}</div>
+      <div class="current-day__month">{{ selectedDay.monthName }}</div>
+      <div class="current-day__weekday">{{ selectedDay.weekdayName }}</div>
       <section v-if="selectedDay.hasFestivity" class="current-day__festivities">
         <div v-if="selectedDay.holiday" class="current-day__festivities">
           <div class="current-day__festivities-title">{{ $t("calendarPage.festivities") }}</div>

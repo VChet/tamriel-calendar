@@ -43,6 +43,13 @@ a {
     color: var(--color-highlight);
   }
 }
+.container {
+  padding: 30px 15px;
+}
+.header {
+  padding: 15px;
+  border-bottom: 1px solid #b9b2a2;
+}
 .button {
   display: inline-flex;
   gap: 4px;
@@ -66,5 +73,21 @@ a {
   }
   &:active {
     transform: scale(.99);
+  }
+}
+.icon-button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #281f10;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  &:hover,
+  &:focus-visible {
+    color: #52493a;
   }
 }

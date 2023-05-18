@@ -24,9 +24,6 @@ const pages = [
 </script>
 
 <style lang="scss">
-.container {
-  padding: 30px 15px;
-}
 .main-nav {
   position: sticky;
   bottom: 0;

@@ -22,7 +22,7 @@ export class Week {
     }
   }
 
-  get isCurrent() {
+  get isCurrent(): boolean {
     return dayjs().isSame(dayjs().year(this.year).week(this.value), "week");
   }
   get currentDay(): Day | null {
