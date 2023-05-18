@@ -1,8 +1,12 @@
 <template>
   <main ref="swipeContainer" class="calendar-view">
     <template v-if="isSwiping && ['left', 'right'].includes(direction)">
-      <div v-if="direction === 'right' && currentPageIndex > 0" :class="arrowClassList">&lt;</div>
-      <div v-if="direction === 'left' && currentPageIndex < calendarPages.length - 1" :class="arrowClassList">&gt;</div>
+      <div v-if="direction === 'right' && currentPageIndex > 0" :class="arrowClassList">
+        <IconChevronLeft />
+      </div>
+      <div v-if="direction === 'left' && currentPageIndex < calendarPages.length - 1" :class="arrowClassList">
+        <IconChevronRight />
+      </div>
     </template>
     <header class="header">
       <ul class="tabs">
@@ -29,6 +33,7 @@
 import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
 import { computed, ref } from "vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -66,15 +71,18 @@ function navigateToPage(pageIndex: number) {
     position: fixed;
     top: 50vh;
     z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     width: 24px;
     height: 24px;
     color: #fff;
     background: #52493a;
     border-radius: 50%;
     transform: translateY(-50%);
+    svg {
+      width: 18px;
+      height: 18px;
+    }
     &--left {
       right: 10px;
     }

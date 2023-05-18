@@ -1,7 +1,9 @@
 <template>
   <main v-if="festivity">
-    <header class="header">
-      <button class="icon-button" type="button" @click="router.back">&lt;</button>
+    <header class="header header--left">
+      <button class="icon-button" type="button" @click="router.back">
+        <IconChevronLeft />
+      </button>
     </header>
     <section class="container festivity">
       <img
@@ -20,6 +22,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { IconChevronLeft } from "@tabler/icons-vue";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const route = useRoute();

@@ -47,8 +47,13 @@ a {
   padding: 30px 15px;
 }
 .header {
-  padding: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 15px;
   border-bottom: 1px solid #b9b2a2;
+  &--left {
+    justify-content: flex-start;
+  }
 }
 .button {
   display: inline-flex;
@@ -76,16 +81,18 @@ a {
   }
 }
 .icon-button {
-  width: 24px;
-  height: 24px;
+  display: inline-grid;
+  place-items: center;
   padding: 0;
-  font-size: 28px;
-  font-weight: bold;
   color: #281f10;
   cursor: pointer;
   background: none;
   border: none;
   outline: none;
+  svg {
+    width: 28px;
+    height: 28px;
+  }
   &:hover,
   &:focus-visible {
     color: #52493a;

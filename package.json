@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "^0.10.0",
+    "@tabler/icons-vue": "^2.19.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vueuse/core": "^10.1.2",
     "dayjs": "^1.11.7",

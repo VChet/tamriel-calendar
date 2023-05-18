@@ -3,9 +3,22 @@
   <footer class="main-nav">
     <nav>
       <ul>
-        <li v-for="{ route, token } in pages" :key="route">
-          <RouterLink :to="route" class="nav-tab" active-class="nav-tab--active">
-            {{ $t(token) }}
+        <li>
+          <RouterLink to="/calendar" class="nav-tab" active-class="nav-tab--active">
+            <IconCalendarEvent />
+            {{ $t("calendar") }}
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/birthsigns" class="nav-tab" active-class="nav-tab--active">
+            <IconComet />
+            {{ $t("birthsigns") }}
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/settings" class="nav-tab" active-class="nav-tab--active">
+            <IconSettings />
+            {{ $t("settings") }}
           </RouterLink>
         </li>
       </ul>
@@ -15,12 +28,7 @@
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-
-const pages = [
-  { route: "/calendar", token: "calendar" },
-  { route: "/birthsigns", token: "birthsigns" },
-  { route: "/settings", token: "settings" }
-];
+import { IconCalendarEvent, IconComet, IconSettings } from "@tabler/icons-vue";
 </script>
 
 <style lang="scss">
@@ -33,15 +41,23 @@ const pages = [
   border-top: 1px solid #b9b2a2;
   ul {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     .nav-tab {
-      display: inline-block;
-      padding: 20px;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 15px;
       font-size: 14px;
       font-weight: bold;
       color: #837a6b;
       &--active {
         color: #d83c23;
+      }
+      svg {
+        width: 30px;
+        height: 30px;
       }
     }
   }

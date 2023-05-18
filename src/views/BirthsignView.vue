@@ -1,7 +1,9 @@
 <template>
   <main>
-    <header class="header">
-      <button class="icon-button" type="button" @click="router.back">&lt;</button>
+    <header class="header header--left">
+      <button class="icon-button" type="button" @click="router.back">
+        <IconChevronLeft />
+      </button>
     </header>
     <section v-if="sign" class="container birthsign">
       <img class="birthsign__image" :src="`/img/birthsigns/${sign.image}.webp`" :alt="sign.name" />
@@ -18,6 +20,7 @@
 import { useRoute, useRouter } from "vue-router";
 import dayjs from "dayjs";
 import { computed } from "vue";
+import { IconChevronLeft } from "@tabler/icons-vue";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const router = useRouter();
