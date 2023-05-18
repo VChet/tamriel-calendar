@@ -33,16 +33,13 @@ ul {
   list-style: none;
 }
 #app {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr min-content;
   max-width: 1280px;
   min-height: 100vh;
   padding: 0;
   margin: 0 auto;
   font-weight: normal;
-  main {
-    flex: 1;
-  }
 }
 a {
   color: var(--color-text);
