@@ -16,6 +16,7 @@
   font-weight: normal;
 }
 * {
+  -webkit-tap-highlight-color: transparent;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
     display: none;
@@ -44,7 +45,6 @@ ul {
 a {
   color: var(--color-text);
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
   &.router-link-active {
     color: var(--color-highlight);
   }
