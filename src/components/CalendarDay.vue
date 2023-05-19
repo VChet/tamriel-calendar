@@ -39,9 +39,11 @@ const classList = computed<Record<string, boolean>>(() => {
   width: 35px;
   height: 35px;
   font-size: 14px;
+  user-select: none;
   border: 2px solid transparent;
   border-radius: 50%;
   &--festivity {
+    cursor: pointer;
     &::after {
       position: absolute;
       top: 60%;
@@ -58,6 +60,7 @@ const classList = computed<Record<string, boolean>>(() => {
     width: 16px;
     height: 16px;
     font-size: 10px;
+    cursor: default;
   }
   &--current {
     color: #fff;

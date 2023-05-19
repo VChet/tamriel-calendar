@@ -2,6 +2,9 @@
   --color-background: #fbf4e1;
   --color-text: #2c2203;
   --color-highlight: #d63a24;
+  --color-border: #b9b2a2;
+  --color-button: #281f10;
+  --color-button-hover: #52493a;
 }
 *,
 *::before,
@@ -11,6 +14,13 @@
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 body {
   min-height: 100vh;
@@ -24,21 +34,17 @@ ul {
   list-style: none;
 }
 #app {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr min-content;
   max-width: 1280px;
   min-height: 100vh;
   padding: 0;
   margin: 0 auto;
   font-weight: normal;
-  main {
-    flex: 1;
-  }
 }
 a {
   color: var(--color-text);
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
   &.router-link-active {
     color: var(--color-highlight);
   }
@@ -47,8 +53,13 @@ a {
   padding: 30px 15px;
 }
 .header {
-  padding: 15px;
-  border-bottom: 1px solid #b9b2a2;
+  display: flex;
+  justify-content: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--color-border);
+  &--left {
+    justify-content: flex-start;
+  }
 }
 .button {
   display: inline-flex;
@@ -59,7 +70,7 @@ a {
   color: #fff;
   white-space: nowrap;
   cursor: pointer;
-  background: #281f10;
+  background: var(--color-button);
   border: none;
   border-radius: 8px;
   outline: none;
@@ -69,25 +80,27 @@ a {
   }
   &:hover,
   &:focus-visible {
-    background-color: #52493a;
+    background-color: var(--color-button-hover);
   }
   &:active {
     transform: scale(.99);
   }
 }
 .icon-button {
-  width: 24px;
-  height: 24px;
+  display: inline-grid;
+  place-items: center;
   padding: 0;
-  font-size: 28px;
-  font-weight: bold;
-  color: #281f10;
+  color: var(--color-button);
   cursor: pointer;
   background: none;
   border: none;
   outline: none;
+  svg {
+    width: 28px;
+    height: 28px;
+  }
   &:hover,
   &:focus-visible {
-    color: #52493a;
+    color: var(--color-button-hover);
   }
 }
