@@ -10,7 +10,9 @@ export const useFestivitiesStore = createGlobalState(() => {
 
   async function setFestivitiesData(locale: string) {
     const holidaysPromise: Promise<{ default: Array<Festivity> }> = import(`@/assets/holidays/${locale}.json`);
-    const summoningDaysPromise = import(`@/assets/summoningDays.json`);
+    const summoningDaysPromise: Promise<{ default: Array<Festivity> }> = import(
+      `@/assets/summoningDays/${locale}.json`
+    );
     const birthsignsPromise: Promise<{ default: Array<Birthsign> }> = import(`@/assets/birthsigns/${locale}.json`);
 
     const data = await Promise.all([holidaysPromise, summoningDaysPromise, birthsignsPromise]);
