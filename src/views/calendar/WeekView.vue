@@ -30,16 +30,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import FestivityCard from "@/components/FestivityCard.vue";
 import { Week } from "@/classes/Week";
 import { Day } from "@/classes/Day";
+import { useFestivitiesStore } from "@/store/festivities";
+
+const { holidays } = useFestivitiesStore();
 
 const week = ref(new Week(dayjs()));
 const selectedDay = ref<Day | null>(week.value.currentDay);
+
+watch(holidays, () => {
+  week.value = new Week(dayjs());
+  selectedDay.value = week.value.currentDay;
+});
 </script>
 <style lang="scss" scoped>
 .days {

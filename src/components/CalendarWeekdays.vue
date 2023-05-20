@@ -8,9 +8,12 @@
 <script setup lang="ts">
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
+import { watch, ref } from "vue";
+import { settings } from "@/store/settings";
 dayjs.extend(localeData);
 
-const days = dayjs.weekdaysShort(true);
+const days = ref(dayjs.weekdaysShort(true));
+watch(settings, () => (days.value = dayjs.weekdaysShort(true)));
 </script>
 <style lang="scss">
 .calendar-weekdays {

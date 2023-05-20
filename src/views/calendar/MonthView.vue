@@ -20,13 +20,21 @@
 
 <script setup lang="ts">
 import dayjs from "dayjs";
+import { watch, ref } from "vue";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import { Month } from "@/classes/Month";
 import { Day } from "@/classes/Day";
+import { useFestivitiesStore } from "@/store/festivities";
 
 const current = dayjs();
-const months = new Array(6).fill(0).map((_, index) => new Month(current.add(index, "month")));
+const months = ref(new Array(6).fill(0).map((_, index) => new Month(current.add(index, "month"))));
+
+const { holidays } = useFestivitiesStore();
+
+watch(holidays, () => {
+  months.value = new Array(6).fill(0).map((_, index) => new Month(current.add(index, "month")));
+});
 
 function festivityLink(day: Day) {
   if (day.holiday) {
