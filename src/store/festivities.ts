@@ -1,6 +1,6 @@
 import { createGlobalState } from "@vueuse/core";
 import { ref, unref } from "vue";
-import { Birthsign } from "@/types/festivity";
+import { type Birthsign, type Festivity } from "@/types/festivity";
 import { Holiday, SummoningDay } from "@/classes/Festivity";
 
 export const useFestivitiesStore = createGlobalState(() => {
@@ -9,7 +9,7 @@ export const useFestivitiesStore = createGlobalState(() => {
   const birthsigns = ref<Map<string, Birthsign>>(new Map());
 
   async function setFestivitiesData(locale: string) {
-    const holidaysPromise: Promise<{ default: Array<Holiday> }> = import(`@/assets/holidays/${locale}.json`);
+    const holidaysPromise: Promise<{ default: Array<Festivity> }> = import(`@/assets/holidays/${locale}.json`);
     const summoningDaysPromise = import(`@/assets/summoningDays.json`);
     const birthsignsPromise: Promise<{ default: Array<Birthsign> }> = import(`@/assets/birthsigns/${locale}.json`);
 
