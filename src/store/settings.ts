@@ -30,6 +30,7 @@ export function setLocale(locale: string) {
 
   dayjs.locale(getDayJSLocaleData(locale));
   i18n.global.locale.value = locale;
+  document.querySelector("html")?.setAttribute("lang", locale);
   settings.value.locale = locale;
   setFestivitiesData(locale);
 }
