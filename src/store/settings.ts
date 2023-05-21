@@ -1,17 +1,24 @@
 import dayjs from "dayjs";
 import { createGlobalState, useStorage } from "@vueuse/core";
 import { useRegisterSW } from "virtual:pwa-register/vue";
+import { ref } from "vue";
 import { i18n } from "@/main";
 import tamrielEn from "@/assets/tamriel-en";
 import tamrielRu from "@/assets/tamriel-ru";
+import { Day } from "@/classes/Day";
 import { useFestivitiesStore } from "./festivities";
 
 export const settings = useStorage("settings", { locale: "en" });
 
 export const useSettingsStore = createGlobalState(() => {
   const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });
+  const selectedCalendar = ref<string>("");
+  const selectedDay = ref<Day | null>(null);
 
   return {
+    selectedCalendar,
+    selectedDay,
+
     needRefresh,
     updateServiceWorker
   };

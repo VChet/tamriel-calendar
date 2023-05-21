@@ -21,22 +21,20 @@
         </li>
       </ul>
     </header>
-    <RouterView v-slot="{ Component }" class="container">
-      <keep-alive>
-        <component :is="Component" />
-      </keep-alive>
-    </RouterView>
+    <RouterView class="container"></RouterView>
   </main>
 </template>
 
 <script setup lang="ts">
 import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";
+import { useSettingsStore } from "@/store/settings";
 
 const route = useRoute();
 const router = useRouter();
+const { selectedCalendar, selectedDay } = useSettingsStore();
 
 const calendarPages = route.matched[0].children.map(({ name }) => name);
 
@@ -59,10 +57,15 @@ const arrowClassList = computed<Record<string, boolean>>(() => {
   };
 });
 
+watch(router.currentRoute, () => {
+  currentPageIndex.value = calendarPages.indexOf(route.name as string);
+  selectedCalendar.value = route.name as string;
+  selectedDay.value = null;
+});
+
 function navigateToPage(pageIndex: number) {
   const name = calendarPages[pageIndex];
   router.push({ name });
-  currentPageIndex.value = pageIndex;
 }
 </script>
 <style lang="scss">

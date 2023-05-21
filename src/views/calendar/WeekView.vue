@@ -5,7 +5,7 @@
       <li v-for="(day, index) in week.days" :key="index">
         <CalendarDay
           :day="day.value"
-          :active="selectedDay?.value === day.value"
+          :active="selectedDay?.dayName === day.dayName"
           :festivity="day.hasFestivity"
           @click="selectedDay = day"
         />
@@ -36,10 +36,17 @@ import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import FestivityCard from "@/components/FestivityCard.vue";
 import { Week } from "@/classes/Week";
-import { Day } from "@/classes/Day";
+import { useSettingsStore } from "@/store/settings";
+
+const { selectedDay } = useSettingsStore();
 
 const week = ref(new Week(dayjs()));
-const selectedDay = ref<Day | null>(week.value.currentDay);
+if (!selectedDay.value) {
+  selectedDay.value = week.value.currentDay;
+} else if (selectedDay.value && !week.value.days.find((day) => day.weekdayName === selectedDay.value?.weekdayName)) {
+  selectedDay.value =
+    week.value.days.find((day) => day.dayName === selectedDay.value?.dayName) || week.value.currentDay;
+}
 </script>
 <style lang="scss" scoped>
 .days {

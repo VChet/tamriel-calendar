@@ -7,6 +7,7 @@ import WeekView from "@/views/calendar/WeekView.vue";
 import MonthView from "@/views/calendar/MonthView.vue";
 import YearView from "@/views/calendar/YearView.vue";
 import FestivityView from "@/views/FestivityView.vue";
+import { useSettingsStore } from "./store/settings";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,14 @@ const router = createRouter({
       name: "Calendar",
       component: CalendarView,
       redirect: { name: "Week" },
+      beforeEnter(to, _from, next) {
+        const { selectedCalendar } = useSettingsStore();
+        if (selectedCalendar.value && to.name !== selectedCalendar.value) {
+          next({ name: selectedCalendar.value });
+        } else {
+          next();
+        }
+      },
       children: [
         {
           path: "/week",
