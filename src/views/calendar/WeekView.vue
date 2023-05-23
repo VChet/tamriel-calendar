@@ -68,16 +68,15 @@ if (!selectedDay.value) {
   margin-top: 40px;
   &__day {
     margin-bottom: 26px;
-    font-size: 70px;
+    font-size: 4.5rem;
     font-weight: bold;
   }
   &__month {
     margin-bottom: 16px;
-    font-size: 26px;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   &__weekday {
-    font-size: 16px;
     color: #a49d8b;
     text-transform: capitalize;
   }

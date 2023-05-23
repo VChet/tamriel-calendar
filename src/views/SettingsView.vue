@@ -63,8 +63,8 @@ watch(locale, setLocale);
     }
     &-language {
       display: flex;
-      align-items: center;
       gap: 12px;
+      align-items: center;
       label:has(input) {
         cursor: pointer;
       }

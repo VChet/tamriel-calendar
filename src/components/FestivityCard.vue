@@ -37,7 +37,7 @@ const type = props.festivity instanceof Holiday ? "holiday" : "summoningDay";
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 </style>

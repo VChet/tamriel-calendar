@@ -50,7 +50,7 @@ function festivityLink(day: Day) {
       width: 100%;
       margin-bottom: 15px;
       div {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
       }
     }

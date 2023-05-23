@@ -39,7 +39,7 @@ const sign = computed(() => birthsigns.get(route.params.sign as string));
     margin-bottom: 40px;
   }
   &__title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   &__subtitle {

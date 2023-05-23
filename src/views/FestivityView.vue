@@ -48,7 +48,7 @@ const festivity = computed(() => {
     margin-bottom: 40px;
   }
   &__title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   &__subtitle {

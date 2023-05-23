@@ -38,16 +38,21 @@ const classList = computed<Record<string, boolean>>(() => {
   justify-content: center;
   width: 35px;
   height: 35px;
-  font-size: 14px;
+  font-size: 0.875rem;
   user-select: none;
   border: 2px solid transparent;
   border-radius: 50%;
+
+  @media (width >= 768px) {
+    width: 40px;
+    height: 40px;
+  }
   &--festivity {
     cursor: pointer;
     &::after {
       position: absolute;
       top: 60%;
-      font-size: 16px;
+      font-size: 1rem;
       color: var(--color-highlight);
       content: "✶";
     }
@@ -59,8 +64,13 @@ const classList = computed<Record<string, boolean>>(() => {
   &--small {
     width: 16px;
     height: 16px;
-    font-size: 10px;
+    font-size: 0.625rem;
     cursor: default;
+
+    @media (width >= 768px) {
+      width: 24px;
+      height: 24px;
+    }
   }
   &--current {
     color: #fff;

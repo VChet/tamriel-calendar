@@ -27,7 +27,7 @@ const { birthsigns } = useFestivitiesStore();
 .birthsigns-view {
   h1 {
     margin-bottom: 60px;
-    font-size: 28px;
+    font-size: 1.875rem;
     font-weight: bold;
   }
   &__list {
@@ -40,7 +40,7 @@ const { birthsigns } = useFestivitiesStore();
       flex-direction: column;
       gap: 10px;
       align-items: center;
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: bold;
       cursor: pointer;
       &:hover {

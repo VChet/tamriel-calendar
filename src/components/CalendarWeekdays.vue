@@ -20,7 +20,7 @@ const days = dayjs.weekdaysShort(true);
   place-items: center;
   margin-bottom: 10px;
   li {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     color: #b4aea0;
     text-transform: capitalize;

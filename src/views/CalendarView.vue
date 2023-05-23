@@ -99,8 +99,12 @@ function navigateToPage(pageIndex: number) {
     &__tab {
       display: inline-block;
       padding: 6px 12px;
-      font-size: 14px;
+      font-size: 0.875rem;
       color: var(--color-text);
+
+      @media (width >= 768px) {
+        padding: 8px 14px;
+      }
       &--active {
         color: #fff;
         background-color: #52493a;

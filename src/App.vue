@@ -49,9 +49,13 @@ import { IconCalendarEvent, IconComet, IconSettings } from "@tabler/icons-vue";
       gap: 8px;
       align-items: center;
       padding: 10px 15px;
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: bold;
       color: #837a6b;
+
+      @media (width >= 768px) {
+        flex-direction: row;
+      }
       &--active {
         color: #d83c23;
       }
