@@ -9,13 +9,10 @@
           </button>
         </li>
         <li class="settings-view__list-language">
-          <label>
-            <input v-model="locale" type="radio" value="en" />
-            English
-          </label>
-          <label>
-            <input v-model="locale" type="radio" value="ru" />
-            Русский
+          {{ $t("settingsPage.language") }}:
+          <label v-for="lang in availableLocales" :key="lang.code">
+            <input v-model="locale" type="radio" :value="lang.code" />
+            {{ lang.label }}
           </label>
         </li>
         <li>
@@ -37,6 +34,10 @@ import { settings, setLocale, useSettingsStore } from "@/store/settings";
 
 const commitHash = import.meta.env.__COMMIT_HASH__;
 
+const availableLocales = [
+  { code: "en", label: "English" },
+  { code: "ru", label: "Русский" }
+];
 const { needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, setLocale);
@@ -62,7 +63,11 @@ watch(locale, setLocale);
     }
     &-language {
       display: flex;
-      gap: 16px;
+      align-items: center;
+      gap: 12px;
+      label:has(input) {
+        cursor: pointer;
+      }
     }
   }
 }

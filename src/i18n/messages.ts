@@ -13,6 +13,7 @@ const messages: I18nOptions["messages"] = {
       summoningDays: "Daedra Summoning Days"
     },
     settingsPage: {
+      language: "Language",
       design: "Original design by",
       update: "Update app",
       appVersion: "App version"
@@ -30,6 +31,7 @@ const messages: I18nOptions["messages"] = {
       summoningDays: "Дни вызова даэдра"
     },
     settingsPage: {
+      language: "Язык",
       design: "Оригинальный дизайн",
       update: "Обновить приложение",
       appVersion: "Версия приложения"
