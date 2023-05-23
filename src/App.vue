@@ -1,9 +1,5 @@
 <template>
-  <RouterView v-slot="{ Component }" class="container">
-    <keep-alive>
-      <component :is="Component" />
-    </keep-alive>
-  </RouterView>
+  <RouterView class="container"></RouterView>
   <footer class="main-nav">
     <nav>
       <ul>
