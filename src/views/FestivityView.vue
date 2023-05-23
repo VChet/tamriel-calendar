@@ -1,7 +1,7 @@
 <template>
   <main v-if="festivity">
     <header class="header header--left">
-      <button class="icon-button" type="button" @click="router.back">
+      <button class="icon-button" type="button" :title="$t('back')" @click="router.push({ name: 'Calendar' })">
         <IconChevronLeft />
       </button>
     </header>

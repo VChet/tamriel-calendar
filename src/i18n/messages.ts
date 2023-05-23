@@ -8,6 +8,7 @@ const messages: I18nOptions["messages"] = {
     week: "Week",
     month: "Month",
     year: "Year",
+    back: "Back",
     calendarPage: {
       festivities: "Festivities",
       summoningDays: "Daedra Summoning Days"
@@ -26,6 +27,7 @@ const messages: I18nOptions["messages"] = {
     week: "Неделя",
     month: "Месяц",
     year: "Год",
+    back: "Назад",
     calendarPage: {
       festivities: "Праздники",
       summoningDays: "Дни вызова даэдра"
