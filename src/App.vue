@@ -1,6 +1,6 @@
 <template>
   <RouterView />
-  <footer class="main-nav">
+  <footer v-if="router.currentRoute.value.name !== 'Onboarding'" class="main-nav">
     <nav>
       <ul>
         <li>
@@ -27,8 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { useRouter, RouterLink, RouterView } from "vue-router";
 import { IconCalendarEvent, IconComet, IconSettings } from "@tabler/icons-vue";
+const router = useRouter();
 </script>
 
 <style lang="scss">

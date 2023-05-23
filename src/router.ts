@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import OnboardingView from "@/views/OnboardingView.vue";
 import CalendarView from "@/views/CalendarView.vue";
 import BirthsignsView from "@/views/BirthsignsView.vue";
 import BirthsignView from "@/views/BirthsignView.vue";
@@ -16,6 +17,11 @@ const router = createRouter({
       path: "/",
       name: "Home",
       redirect: { name: "Calendar" }
+    },
+    {
+      path: "/onboarding",
+      name: "Onboarding",
+      component: OnboardingView
     },
     {
       path: "/calendar",
@@ -73,6 +79,15 @@ const router = createRouter({
       redirect: { name: "Home", params: {} }
     }
   ]
+});
+
+router.beforeEach((to, _from, next) => {
+  const hasOnboardingCookie = document.cookie.includes("onboarding=true");
+  if (!hasOnboardingCookie && to.name !== "Onboarding") {
+    next("/onboarding");
+  } else {
+    next();
+  }
 });
 
 export default router;
