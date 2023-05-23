@@ -55,6 +55,7 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
       &__days {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
+        place-items: center;
       }
     }
   }

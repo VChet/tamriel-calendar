@@ -53,7 +53,7 @@ if (!selectedDay.value) {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 16px;
-  text-align: center;
+  place-items: center;
   .calendar-day {
     cursor: pointer;
     &:hover:not(&--current) {

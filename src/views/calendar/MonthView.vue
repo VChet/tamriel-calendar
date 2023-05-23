@@ -58,7 +58,7 @@ function festivityLink(day: Day) {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 16px;
-      text-align: center;
+      place-items: center;
     }
   }
 }

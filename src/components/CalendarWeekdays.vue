@@ -17,8 +17,8 @@ const days = dayjs.weekdaysShort(true);
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 16px;
+  place-items: center;
   margin-bottom: 10px;
-  text-align: center;
   li {
     font-size: 14px;
     font-weight: bold;
