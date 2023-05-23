@@ -1,5 +1,5 @@
 <template>
-  <RouterView class="container"></RouterView>
+  <RouterView class="container" />
   <footer class="main-nav">
     <nav>
       <ul>

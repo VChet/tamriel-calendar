@@ -47,6 +47,14 @@ module.exports = {
     ],
     "import/no-unresolved": ["error", { ignore: ["^virtual:"] }],
     "import/no-named-as-default-member": "off",
+    "vue/html-self-closing": [
+      "error",
+      {
+        html: { void: "always", normal: "always", component: "always" },
+        svg: "always",
+        math: "always"
+      }
+    ],
     "max-len": ["error", { code: 120, ignoreUrls: true }],
     "operator-assignment": ["error", "always"]
   }

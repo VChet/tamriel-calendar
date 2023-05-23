@@ -21,7 +21,7 @@
         </li>
       </ul>
     </header>
-    <RouterView class="container"></RouterView>
+    <RouterView class="container" />
   </main>
 </template>
 
