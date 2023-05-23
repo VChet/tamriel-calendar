@@ -38,7 +38,7 @@ const { selectedCalendar, selectedDay } = useSettingsStore();
 
 const calendarPages = route.matched[0].children.map(({ name }) => name);
 
-const currentPageIndex = ref(calendarPages.indexOf(route.name as string));
+const currentPageIndex = computed(() => calendarPages.indexOf(router.currentRoute.value.name ?? ""));
 const swipeContainer = ref<HTMLElement | null>(null);
 const { isSwiping, direction } = useSwipe(swipeContainer, {
   onSwipeEnd: (_: TouchEvent, direction: UseSwipeDirection) => {
@@ -57,9 +57,8 @@ const arrowClassList = computed<Record<string, boolean>>(() => {
   };
 });
 
-watch(router.currentRoute, () => {
-  currentPageIndex.value = calendarPages.indexOf(route.name as string);
-  selectedCalendar.value = route.name as string;
+watch(router.currentRoute, ({ name }) => {
+  selectedCalendar.value = name;
   selectedDay.value = null;
 });
 

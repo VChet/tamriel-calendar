@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import { createGlobalState, useStorage } from "@vueuse/core";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { ref } from "vue";
+import { RouteRecordName } from "vue-router";
 import { i18n } from "@/main";
 import tamrielEn from "@/assets/tamriel-en";
 import tamrielRu from "@/assets/tamriel-ru";
@@ -12,7 +13,7 @@ export const settings = useStorage("settings", { locale: "en" });
 
 export const useSettingsStore = createGlobalState(() => {
   const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });
-  const selectedCalendar = ref<string>("");
+  const selectedCalendar = ref<RouteRecordName | null | undefined>(null);
   const selectedDay = ref<Day | null>(null);
 
   return {

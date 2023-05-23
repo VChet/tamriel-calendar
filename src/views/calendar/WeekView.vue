@@ -43,9 +43,9 @@ const { selectedDay } = useSettingsStore();
 const week = ref(new Week(dayjs()));
 if (!selectedDay.value) {
   selectedDay.value = week.value.currentDay;
-} else if (selectedDay.value && !week.value.days.find((day) => day.weekdayName === selectedDay.value?.weekdayName)) {
-  selectedDay.value =
-    week.value.days.find((day) => day.dayName === selectedDay.value?.dayName) || week.value.currentDay;
+} else if (!week.value.days.find((day) => day.weekdayName === selectedDay.value?.weekdayName)) {
+  const dayOfWeek = week.value.days.find((day) => dayjs(day.value).isSame(selectedDay.value?.value));
+  selectedDay.value = dayOfWeek ?? week.value.currentDay;
 }
 </script>
 <style lang="scss" scoped>
