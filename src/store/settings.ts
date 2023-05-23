@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { createGlobalState, useStorage } from "@vueuse/core";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { ref } from "vue";
-import { RouteRecordName } from "vue-router";
+import { type RouteRecordName } from "vue-router";
 import { i18n } from "@/main";
 import tamrielEn from "@/assets/tamriel-en";
 import tamrielRu from "@/assets/tamriel-ru";
