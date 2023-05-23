@@ -33,12 +33,12 @@ function getDayJSLocaleData(locale: string) {
       return tamrielRu;
   }
 }
-export function setLocale(locale: string) {
+export async function setLocale(locale: string) {
   const { setFestivitiesData } = useFestivitiesStore();
 
   dayjs.locale(getDayJSLocaleData(locale));
   i18n.global.locale.value = locale;
   document.querySelector("html")?.setAttribute("lang", locale);
   settings.value.locale = locale;
-  setFestivitiesData(locale);
+  await setFestivitiesData(locale);
 }
