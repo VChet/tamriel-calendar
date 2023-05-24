@@ -8,7 +8,7 @@ import WeekView from "@/views/calendar/WeekView.vue";
 import MonthView from "@/views/calendar/MonthView.vue";
 import YearView from "@/views/calendar/YearView.vue";
 import FestivityView from "@/views/FestivityView.vue";
-import { settings, useSettingsStore } from "./store/settings";
+import { useSettingsStore } from "./store/settings";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -79,14 +79,6 @@ const router = createRouter({
       redirect: { name: "Home", params: {} }
     }
   ]
-});
-
-router.beforeEach((to, _from, next) => {
-  if (!settings.value.onboarding && to.name !== "Onboarding") {
-    next("/onboarding");
-  } else {
-    next();
-  }
 });
 
 export default router;

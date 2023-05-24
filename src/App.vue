@@ -29,7 +29,9 @@
 <script setup lang="ts">
 import { useRouter, RouterLink, RouterView } from "vue-router";
 import { IconCalendarEvent, IconComet, IconSettings } from "@tabler/icons-vue";
+import { settings } from "@/store/settings";
 const router = useRouter();
+if (!settings.value.onboarding) router.push({ name: "Onboarding" });
 </script>
 
 <style lang="scss">
