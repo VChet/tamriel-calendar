@@ -9,7 +9,10 @@ import tamrielRu from "@/assets/tamriel-ru";
 import { Day } from "@/classes/Day";
 import { useFestivitiesStore } from "./festivities";
 
-export const settings = useStorage("settings", { locale: "en" });
+export const settings = useStorage("settings", {
+  locale: "en",
+  onboarding: false
+});
 
 export const useSettingsStore = createGlobalState(() => {
   const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });

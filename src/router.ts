@@ -8,7 +8,7 @@ import WeekView from "@/views/calendar/WeekView.vue";
 import MonthView from "@/views/calendar/MonthView.vue";
 import YearView from "@/views/calendar/YearView.vue";
 import FestivityView from "@/views/FestivityView.vue";
-import { useSettingsStore } from "./store/settings";
+import { settings, useSettingsStore } from "./store/settings";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -82,8 +82,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, _from, next) => {
-  const hasOnboardingCookie = document.cookie.includes("onboarding=true");
-  if (!hasOnboardingCookie && to.name !== "Onboarding") {
+  if (!settings.value.onboarding && to.name !== "Onboarding") {
     next("/onboarding");
   } else {
     next();

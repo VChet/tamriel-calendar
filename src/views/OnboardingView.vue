@@ -10,10 +10,11 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import { settings } from "@/store/settings";
 
 const router = useRouter();
 function exitOnboarding() {
-  document.cookie = "onboarding=true";
+  settings.value.onboarding = true;
   router.push({ name: "Home" });
 }
 </script>
