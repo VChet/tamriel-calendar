@@ -9,6 +9,11 @@ const messages: I18nOptions["messages"] = {
     month: "Month",
     year: "Year",
     back: "Back",
+    onboardingPage: {
+      welcome: "Welcome!",
+      description: "The Tamriel Calendar is a system of timekeeping adopted in the Empire of Tamriel",
+      continue: "Continue"
+    },
     calendarPage: {
       festivities: "Festivities",
       summoningDays: "Daedra Summoning Days"
@@ -28,6 +33,11 @@ const messages: I18nOptions["messages"] = {
     month: "Месяц",
     year: "Год",
     back: "Назад",
+    onboardingPage: {
+      welcome: "Добро пожаловать!",
+      description: "Календарь Тамриэля — система времяисчисления, принятая в Империи Тамриэль",
+      continue: "Продолжить"
+    },
     calendarPage: {
       festivities: "Праздники",
       summoningDays: "Дни вызова даэдра"

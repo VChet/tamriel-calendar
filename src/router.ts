@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import OnboardingView from "@/views/OnboardingView.vue";
 import CalendarView from "@/views/CalendarView.vue";
 import BirthsignsView from "@/views/BirthsignsView.vue";
 import BirthsignView from "@/views/BirthsignView.vue";
@@ -16,6 +17,11 @@ const router = createRouter({
       path: "/",
       name: "Home",
       redirect: { name: "Calendar" }
+    },
+    {
+      path: "/onboarding",
+      name: "Onboarding",
+      component: OnboardingView
     },
     {
       path: "/calendar",

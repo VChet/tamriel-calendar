@@ -84,6 +84,11 @@ a {
   &--block {
     width: 100%;
   }
+  &--big {
+    padding: 20px 50px;
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
   &:hover,
   &:focus-visible {
     background-color: var(--color-button-hover);
