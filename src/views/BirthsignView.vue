@@ -8,7 +8,7 @@
     <section v-if="sign" class="container birthsign">
       <img class="birthsign__image" :src="`/img/birthsigns/${sign.image}.webp`" :alt="sign.name" />
       <h1 class="birthsign__title">{{ sign.name }}</h1>
-      <div v-if="sign.month" class="birthsign__subtitle">
+      <div v-if="dayjs(sign.month).isValid()" class="birthsign__subtitle">
         {{ $t("month") }} {{ dayjs(sign.month, "MM").format("MMMM") }}
       </div>
       <div class="birthsign__description">{{ sign.description }}</div>
