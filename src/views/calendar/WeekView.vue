@@ -2,7 +2,7 @@
   <section>
     <CalendarWeekdays />
     <ul v-if="week" class="days">
-      <li v-for="(day, index) in week.days" :key="index">
+      <li v-for="(day, index) in week.days" :key="index" :style="day.styles">
         <CalendarDay
           :day="day.value"
           :active="selectedDay?.dayName === day.dayName"
