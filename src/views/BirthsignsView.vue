@@ -6,7 +6,7 @@
         v-for="sign in birthsigns.values()"
         :key="sign.name"
         v-slot="{ navigate }"
-        :to="`/birthsign/${sign.month}`"
+        :to="{ name: 'Birthsign', params: { month: sign.month } }"
         custom
       >
         <li role="link" @click="navigate">

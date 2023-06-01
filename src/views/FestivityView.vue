@@ -1,9 +1,9 @@
 <template>
   <main v-if="festivity">
     <header class="header header--left">
-      <button class="icon-button" type="button" :title="$t('back')" @click="router.push({ name: 'Calendar' })">
+      <RouterLink class="icon-button" type="button" :title="$t('back')" :to="{ name: 'Calendar' }">
         <IconChevronLeft />
-      </button>
+      </RouterLink>
     </header>
     <section class="container festivity">
       <img
@@ -21,12 +21,11 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { IconChevronLeft } from "@tabler/icons-vue";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const route = useRoute();
-const router = useRouter();
 const { type, date } = route.query;
 const { holidays, summoningDays } = useFestivitiesStore();
 const festivity = computed(() => {

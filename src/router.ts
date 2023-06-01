@@ -38,24 +38,24 @@ const router = createRouter({
       },
       children: [
         {
-          path: "/week",
+          path: "/calendar/week",
           name: "Week",
           component: WeekView
         },
         {
-          path: "/month",
+          path: "/calendar/month",
           name: "Month",
           component: MonthView
         },
         {
-          path: "/year",
+          path: "/calendar/year",
           name: "Year",
           component: YearView
         }
       ]
     },
     {
-      path: "/festivity",
+      path: "/calendar/festivity",
       name: "Festivity",
       component: FestivityView
     },
@@ -65,7 +65,7 @@ const router = createRouter({
       component: BirthsignsView
     },
     {
-      path: "/birthsign/:sign",
+      path: "/birthsigns/:month",
       name: "Birthsign",
       component: BirthsignView
     },

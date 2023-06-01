@@ -11,13 +11,19 @@
     <header class="header">
       <ul class="tabs">
         <li>
-          <RouterLink to="/week" class="tabs__tab" active-class="tabs__tab--active">{{ $t("week") }}</RouterLink>
+          <RouterLink :to="{ name: 'Week' }" replace class="tabs__tab" active-class="tabs__tab--active">
+            {{ $t("week") }}
+          </RouterLink>
         </li>
         <li>
-          <RouterLink to="/month" class="tabs__tab" active-class="tabs__tab--active">{{ $t("month") }}</RouterLink>
+          <RouterLink :to="{ name: 'Month' }" replace class="tabs__tab" active-class="tabs__tab--active">
+            {{ $t("month") }}
+          </RouterLink>
         </li>
         <li>
-          <RouterLink to="/year" class="tabs__tab" active-class="tabs__tab--active">{{ $t("year") }}</RouterLink>
+          <RouterLink :to="{ name: 'Year' }" replace class="tabs__tab" active-class="tabs__tab--active">
+            {{ $t("year") }}
+          </RouterLink>
         </li>
       </ul>
     </header>
@@ -58,8 +64,10 @@ const arrowClassList = computed<Record<string, boolean>>(() => {
 });
 
 watch(router.currentRoute, ({ name }) => {
-  selectedCalendar.value = name;
-  selectedDay.value = null;
+  if (calendarPages.some((page) => page === name)) {
+    selectedCalendar.value = name;
+    selectedDay.value = null;
+  }
 });
 
 function navigateToPage(pageIndex: number) {

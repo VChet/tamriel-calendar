@@ -4,19 +4,19 @@
     <nav>
       <ul>
         <li>
-          <RouterLink to="/calendar" class="nav-tab" active-class="nav-tab--active">
+          <RouterLink :to="{ name: 'Calendar' }" class="nav-tab" :class="{ 'nav-tab--active': isCalendarTab }">
             <IconCalendarEvent />
             {{ $t("calendar") }}
           </RouterLink>
         </li>
         <li>
-          <RouterLink to="/birthsigns" class="nav-tab" active-class="nav-tab--active">
+          <RouterLink :to="{ name: 'Birthsigns' }" class="nav-tab" :class="{ 'nav-tab--active': isBirthsignsTab }">
             <IconComet />
             {{ $t("birthsigns") }}
           </RouterLink>
         </li>
         <li>
-          <RouterLink to="/settings" class="nav-tab" active-class="nav-tab--active">
+          <RouterLink :to="{ name: 'Settings' }" class="nav-tab" :class="{ 'nav-tab--active': isSettingsTab }">
             <IconSettings />
             {{ $t("settings") }}
           </RouterLink>
@@ -29,9 +29,18 @@
 <script setup lang="ts">
 import { useRouter, RouterLink, RouterView } from "vue-router";
 import { IconCalendarEvent, IconComet, IconSettings } from "@tabler/icons-vue";
+import { computed } from "vue";
 import { settings } from "@/store/settings";
 const router = useRouter();
 if (!settings.value.onboarding) router.push({ name: "Onboarding" });
+
+const isCalendarTab = computed(() =>
+  ["Calendar", "Week", "Month", "Year", "Festivity"].some((name) => router.currentRoute.value.name === name)
+);
+const isBirthsignsTab = computed(() =>
+  ["Birthsigns", "Birthsign"].some((name) => router.currentRoute.value.name === name)
+);
+const isSettingsTab = computed(() => router.currentRoute.value.name === "Settings");
 </script>
 
 <style lang="scss">
