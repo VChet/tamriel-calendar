@@ -81,4 +81,9 @@ const router = createRouter({
   ]
 });
 
+router.beforeEach(() => {
+  const { needRefresh, updateServiceWorker } = useSettingsStore();
+  if (needRefresh) updateServiceWorker();
+});
+
 export default router;
