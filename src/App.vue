@@ -53,7 +53,7 @@ const isSettingsTab = computed(() => router.currentRoute.value.name === "Setting
   border-top: 1px solid var(--color-border);
   ul {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     .nav-tab {
       display: inline-flex;
@@ -61,9 +61,10 @@ const isSettingsTab = computed(() => router.currentRoute.value.name === "Setting
       gap: 8px;
       align-items: center;
       padding: 10px 15px;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       font-weight: bold;
       color: #837a6b;
+      text-align: center;
 
       @media (width >= 768px) {
         flex-direction: row;
