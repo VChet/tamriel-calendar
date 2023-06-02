@@ -18,6 +18,9 @@ const messages: I18nOptions["messages"] = {
       festivities: "Festivities",
       summoningDays: "Daedra Summoning Days"
     },
+    festivityPage: {
+      summoningDay: "Daedra Summoning Day"
+    },
     settingsPage: {
       language: "Language",
       design: "Original design by",
@@ -41,6 +44,9 @@ const messages: I18nOptions["messages"] = {
     calendarPage: {
       festivities: "Праздники",
       summoningDays: "Дни вызова даэдра"
+    },
+    festivityPage: {
+      summoningDay: "День вызова даэдра"
     },
     settingsPage: {
       language: "Язык",

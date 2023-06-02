@@ -12,7 +12,10 @@
         :src="`/img/festivities/${festivity.image}.webp`"
         :alt="festivity.name"
       />
-      <h1 class="festivity__title">{{ festivity.name }}</h1>
+      <h1 class="festivity__title">
+        <template v-if="isSummoningDay">{{ $t("festivityPage.summoningDay") }}:</template>
+        {{ festivity.name }}
+      </h1>
       <div class="festivity__subtitle">{{ festivity.monthName }}</div>
       <div class="festivity__description">{{ festivity.description }}</div>
     </section>
@@ -36,6 +39,7 @@ const festivity = computed(() => {
   }
   return null;
 });
+const isSummoningDay = computed(() => type === "summoningDay");
 </script>
 <style lang="scss">
 .festivity {
