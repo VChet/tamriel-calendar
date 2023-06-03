@@ -6,7 +6,7 @@
       </RouterLink>
     </header>
     <section v-if="sign" class="container birthsign">
-      <img class="birthsign__image" :src="`/img/birthsigns/${sign.image}.webp`" :alt="sign.name" />
+      <img class="birthsign__image" :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name" />
       <h1 class="birthsign__title">{{ sign.name }}</h1>
       <div v-if="dayjs(sign.month).isValid()" class="birthsign__subtitle">
         {{ $t("month") }} {{ dayjs(sign.month, "MM").format("MMMM") }}
@@ -35,18 +35,21 @@ const sign = computed(() => birthsigns.get(route.params.month.toString()));
   &__image {
     align-self: center;
     max-width: 100%;
-    margin-bottom: 40px;
+    margin: 3.5rem 0 2.5rem;
   }
   &__title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: Literata, serif;
+    font-size: 1.625rem;
+    font-weight: 600;
   }
   &__subtitle {
-    margin-top: 16px;
-    color: #a59e8c;
+    margin-top: 0.375rem;
+    font-weight: 500;
+    color: var(--color-beige-dark);
+    opacity: 0.4;
   }
   &__description {
-    margin-top: 30px;
+    margin-top: 1rem;
   }
 }
 </style>

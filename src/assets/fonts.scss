@@ -1,0 +1,49 @@
+@font-face {
+  font-family: Literata;
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Literata Medium'), local('Literata-Medium'),
+    url('/fonts/Literata-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Literata;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Literata DemiBold'), local('Literata-DemiBold'),
+    url('/fonts/Literata-DemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Golos;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Golos Regular'), local('Golos-Regular'),
+    url('/fonts/Golos-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Golos;
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Golos Medium'), local('Golos-Medium'),
+    url('/fonts/Golos-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Golos;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Golos DemiBold'), local('Golos-DemiBold'),
+    url('/fonts/Golos-DemiBold.woff2') format('woff2');
+  font-display: swap;
+}

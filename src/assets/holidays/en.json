@@ -2,37 +2,37 @@
   {
     "name": "New Life Festival",
     "date": "01/01",
-    "image": "",
+    "image": "new-life",
     "description": "Today the people of Tamriel are having the New Life Festival in celebration of a new year. The Emperor has ordered yet another tax increase in his New Life Address, and there is much grumbling about this. Still, despite financial difficulties, the New Life tradition of free ale at all the taverns of Tamriel continues."
   },
   {
     "name": "Scour Day",
     "date": "02/01",
-    "image": "",
+    "image": "scour",
     "description": "Scour Day is a celebration held in most High Rock villages on the day after New Life. It was once the day one cleans up after New Life, but has changed into a party of its own."
   },
   {
     "name": "Ovank'a",
     "date": "12/01",
-    "image": "",
+    "image": "ovanka",
     "description": "Ovank'a is the day the people of the Alik'r Desert offer prayers to Stendarr in the hopes of a mild and merciful year. It is considered very holy."
   },
   {
     "name": "South Wind's Prayer",
     "date": "15/01",
-    "image": "",
+    "image": "winds-prayer",
     "description": "The 15th of Morning Star is a holiday taken very seriously in Tamriel, where they call it South Wind's Prayer, a plea by all the religions of Tamriel for a good planting season. Citizens with every affliction known in Tamriel flock to services in the every temples, as the clergy is known to perform free healings on this day. Only a few will be judged worthy of this service, but few can afford the temples usual price."
   },
   {
     "name": "The Day of Lights",
     "date": "16/01",
-    "image": "",
+    "image": "lights",
     "description": "The Day of Lights is celebrated as a holy day by most villages in Hammerfell on the Iliac Bay. It is a prayer for a good farming and fishing year, and is taken very seriously."
   },
   {
     "name": "Waking Day",
     "date": "18/01",
-    "image": "",
+    "image": "lights",
     "description": "The people in Yeorth Burrowland invented Waking Day in prehistoric times to wake the spirits of nature after a long, cold winter. It has evolved into a sort of orgiastic celebration of the end of winter."
   },
   {
@@ -56,7 +56,7 @@
   {
     "name": "Heart's Day",
     "date": "16/02",
-    "image": "",
+    "image": "hearts",
     "description": "Today is the 16th of Sun's Dawn, a holiday celebrated all over Tamriel as Heart's Day. It seems that in every house, the Legend of the Lovers is being sung for the younger generation. In honor of these Lovers, Polydor and Eloisa, the inns of all Tamriel offer a free room for visitors. If such kindness had been given the Lovers, it is said, it would always be springtime in the world."
   },
   {
@@ -74,7 +74,7 @@
   {
     "name": "First Planting",
     "date": "07/03",
-    "image": "",
+    "image": "planting",
     "description": "On the 7th of First Seed every year, the people of Tamriel celebrate First Planting, symbolically sowing the seeds for the autumn harvest. It is a festival of fresh beginnings, both for the crops and for the men and women of the celebrated city. Neighbors are reconciled in their disputes, resolutions are formed, bad habits dropped, the diseased cured. The clerics at the temples run a free clinic all day long to cure people of poisoning, different diseases, paralyzation, and the other banes found in the world of Tamriel."
   },
   {
@@ -92,13 +92,13 @@
   {
     "name": "Flower Day",
     "date": "25/03",
-    "image": "",
+    "image": "flower",
     "description": "Flower Day is another of the frivolous celebrations of High Rock. Children pick the new flowers of spring while older Bretons, cooped up all winter, come out to welcome the season with dancing and singing."
   },
   {
     "name": "Festival of Blades",
     "date": "26/03",
-    "image": "",
+    "image": "festival-of-blades",
     "description": "During the Festival of Blades, the people of the Alik'r Desert celebrate the victor of the first Redguard over a race of giant goblins. The story is considered a myth by most scholars, but the holiday is still very popular in the desert."
   },
   {
@@ -110,7 +110,7 @@
   {
     "name": "The Day of the Dead",
     "date": "13/04",
-    "image": "",
+    "image": "day-of-the-dead",
     "description": "The Day of the Dead is one of the more peculiar holidays of Daggerfall. The superstitious say that the dead rise on this holiday to wreak vengeance on the living. It is a fact that King Lysandus's spectre began its haunting on the Day of the Dead, 3E 404."
   },
   {
@@ -122,13 +122,13 @@
   {
     "name": "Jester's Day",
     "date": "28/04",
-    "image": "",
+    "image": "jester",
     "description": "Be warned that today is Jester's Day in the all cities of Tamriel, and pranks are being set up from one end of town to the other. It is as if a spell has been cast over the community, for even the most taciturn and dignified councilman might attempt to play a joke. The Thieves Guild finds particular attention as everyone looks for pickpockets in particular."
   },
   {
     "name": "Second Planting",
     "date": "7/05",
-    "image": "",
+    "image": "planting",
     "description": "The celebration of Second Planting is in full glory this day. It is a holiday with traditions similar to First Planting, improvements on the first seeding symbolically to suggest improvements on the soul. The free clinics of the temples are open for the second and last time this year, offering cures for those suffering from any kind of disease or affliction. Because peace and not conflict is stressed at this time, battle injuries are healed only at full price."
   },
   {
@@ -140,19 +140,19 @@
   {
     "name": "The Fire Festival",
     "date": "20/05",
-    "image": "",
+    "image": "fire-festival",
     "description": "The Fire Festival in Northmoor is one of the most attended celebrations in High Rock. It began as a pompous display of magic and military strength in ancient days and has become quite a festival."
   },
   {
     "name": "Fishing Day",
     "date": "30/05",
-    "image": "",
+    "image": "fishing",
     "description": "Fishing Day is a big celebration for the Bretons who live off the bounty of the Iliac Bay. They are not a usually flamboyant people, but on Fishing Day, they make so much noise, fish have been scared away for weeks."
   },
   {
     "name": "Drigh R'Zimb",
     "date": "01/06",
-    "image": "",
+    "image": "drigh-rzimb",
     "description": "The festival of Drigh R'Zimb, held in the hottest time of year in Abibon-Gora, is a jubilation held for the sun Daibethe itself. Scholars do not know how long Drigh R'Zimb has been held, but it is possible the Redguards brought the festival with them when they came in the first era."
   },
   {
@@ -164,19 +164,19 @@
   {
     "name": "Dancing Day",
     "date": "23/06",
-    "image": "",
+    "image": "dancing",
     "description": "Dancing Day is a time-honored holiday in Daggerfall. Who started it is questionable, but the Red Prince Atryck popularized it in the second era. It is an occasion of great pomp and merriment for all the people of Daggerfall, from the nobles down."
   },
   {
     "name": "Tibedetha",
     "date": "24/06",
-    "image": "",
+    "image": "tibedetha",
     "description": "Tibedetha is middle Tamrielic for 'Tibers Day'. It is not surprising that the lorddom of Alcaire celebrates its most famous native with a great party. Historically, Tiber Septim never returned once to his beloved birthplace."
   },
   {
     "name": "Merchants's Festival",
     "date": "10/07",
-    "image": "",
+    "image": "merchants-festival",
     "description": "The bargain shoppers of the known world are out in force today and it is little wonder, for the 10th of Sun's Height is a holiday called the Merchants's Festival. Every marketplace and equipment store has dropped their prices to at least half. The only shop not being patronized today is the Mages Guild, where prices are as exorbitant as usual. Most citizens in need of a magical item are waiting two months for the celebration of Tales and Tallows when prices will be more reasonable."
   },
   {
@@ -188,7 +188,7 @@
   {
     "name": "Sun's Rest",
     "date": "20/07",
-    "image": "",
+    "image": "suns-rest",
     "description": "You will have to wait until tomorrow if you are planning on making any equipment purchases, for all stores are closed in observance of Sun's Rest. Of course, the temples, taverns, and Mages Guild in all cities are still open their regular hours, but most citizens chose to devote this day to relaxation, not commerce or prayer. This is not a convenient arrangement for all, but the Merchants's Guild heavily fines any shop that stays open, so everyone complies."
   },
   {
@@ -218,19 +218,19 @@
   {
     "name": "Appreciation Day",
     "date": "21/08",
-    "image": "",
+    "image": "appreciation",
     "description": "Appreciation Day in Anticlere is an ancient holiday of thanksgiving for a bountiful harvest for the people of Anticlere. It is considered a holy and contemplative day, devoted to Mara, the goddess-protector of Anticlere."
   },
   {
     "name": "Harvest's End",
     "date": "27/08",
-    "image": "",
+    "image": "harvests-end",
     "description": "Perhaps no other festival fires the spirit of Tamriel as much as the one held today, Harvest's End. The work of the year is over, the seeding, sowing, and reaping. Now is the time to celebrate and enjoy the fruits of the harvest, and even visitors to the celebrated region are invited to join the farmers. The taverns offer free drinks all day long, an extravagance before the economy of the coming winter months. Underfed farm hands gorging themselves and then getting sick in the town square are the most common sights of the celebration of Harvest's End."
   },
   {
     "name": "Tales and Tallows",
     "date": "3/09",
-    "image": "",
+    "image": "tales-and-tallows",
     "description": "No other holiday divides the people of Tamriel like the 3rd of Hearth Fire. A few of the oldest, more superstitious men and women do not speak all day long for fear that the evil spirits of the dead will enter their bodies. Most citizens enjoy the holiday, calling it Tales and Tallows, but even the most lighthearted avoid the dark streets of Tamriel cities, for everyone knows the dead do walk tonight. Only the Mages Guild completely thrives on this day. In celebration of the oldest magical science, necromancy, all magical items are half price today."
   },
   {
@@ -260,7 +260,7 @@
   {
     "name": "Witches's Festival",
     "date": "13/10",
-    "image": "",
+    "image": "witches-festival",
     "description": "Today is the 13th of Frost Fall, known throughout Tamriel as the Witches's Festival when the forces of sorcery and religion clash. The Mages Guild gets most of the business since weapons and items are evaluated for their mystic potential free of charge and magic spells are one half their usual price. Demonologists, conjurers, lamias, warlocks, and thaumaturgists meet in the wilderness outside city, and the creatures created or summoned there may plague Tamriel for eons. Most wise men choose not to wander this night."
   },
   {
@@ -278,13 +278,13 @@
   {
     "name": "The Serpents Dance",
     "date": "3/11",
-    "image": "",
+    "image": "serpents-dance",
     "description": "The Serpents Dance in Satakalaam may or may not have begun as a serious religious holiday dedicated to a snake god, but this day is a reason for a great street festival."
   },
   {
     "name": "Moon Festival",
     "date": "8/11",
-    "image": "",
+    "image": "moon-festival",
     "description": "On the 8th of Suns Dusk, the Bretons of Glenumbra Moors hold the Moon Festival, a joyous holiday in honor of Secunda, goddess of the moon. Although the goddess has no active worshippers, the traditional celebration has continued through the ages as a time of feasting and merriment."
   },
   {
@@ -296,13 +296,13 @@
   {
     "name": "Warriors Festival",
     "date": "20/11",
-    "image": "",
+    "image": "warriors-festival",
     "description": "Today is the 20th of Sun's Dusk, the Warriors Festival in Tamriel. Most all the local warriors, spellswords, and rogues come to the equipment stores and blacksmiths where all weapons are half price. Unfortunately, the low prices also tempt many an untrained boy to buy his first sword and the normally quiet streets ring with amateur skirmishes."
   },
   {
     "name": "North Wind's Prayer",
     "date": "15/12",
-    "image": "",
+    "image": "winds-prayer",
     "description": "Today is the 15th of Evening Star, a holiday reverently observed by the temples as North Wind's Prayer. It is a thanksgiving to the Gods for a good harvest and a mild winter. The temples offer all their services blessing, curing, healing for half the donation usually requested."
   },
   {
@@ -320,7 +320,7 @@
   {
     "name": "New Life Festival",
     "date": "25/12",
-    "image": "",
+    "image": "new-life",
     "description": "The New Life festival comes a few days early in Wayrest with Saturalia, traditionally held on the 25th of Evening Star. Originally a holiday for a long forgotten god of debauchery, it has become a time of gift giving, parties, and parading. Visitors are encouraged to participate."
   },
   {

@@ -31,25 +31,27 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
 .year-view {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 2.5rem;
   .year {
     &__title {
-      margin-bottom: 40px;
-      font-size: 1.25rem;
-      font-weight: bold;
+      margin-bottom: 1.5rem;
+      font-family: Literata, serif;
+      font-size: 1.625rem;
+      font-weight: 600;
     }
     &__months {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px 15px;
+      gap: 1.25rem 1rem;
     }
     .month {
       &__title {
-        margin-bottom: 16px;
-        font-size: 0.875rem;
-        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-family: Literata, serif;
+        font-size: 0.75rem;
+        font-weight: 500;
         &--current {
-          color: var(--color-highlight);
+          color: var(--color-red);
         }
       }
       &__days {

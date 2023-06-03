@@ -36,24 +36,21 @@ const classList = computed<Record<string, boolean>>(() => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
-  font-size: 0.875rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-family: Literata, serif;
+  font-size: 1.125rem;
+  line-height: 1;
   user-select: none;
   border: 2px solid transparent;
   border-radius: 50%;
-
-  @media (width >= 768px) {
-    width: 40px;
-    height: 40px;
-  }
   &--festivity {
     cursor: pointer;
     &::after {
       position: absolute;
-      top: 60%;
+      top: 80%;
       font-size: 1rem;
-      color: var(--color-highlight);
+      color: var(--color-red);
       content: "✶";
     }
     &.calendar-day--active::after,
@@ -62,22 +59,17 @@ const classList = computed<Record<string, boolean>>(() => {
     }
   }
   &--small {
-    width: 16px;
-    height: 16px;
-    font-size: 0.625rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.563rem;
     cursor: default;
-
-    @media (width >= 768px) {
-      width: 24px;
-      height: 24px;
-    }
   }
   &--current {
-    color: #fff;
-    background-color: var(--color-highlight);
+    color: var(--color-white);
+    background-color: var(--color-red);
   }
   &--active {
-    border-color: var(--color-highlight);
+    border-color: var(--color-red);
   }
 }
 </style>

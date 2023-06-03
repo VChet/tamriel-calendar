@@ -9,7 +9,11 @@
           {{ festivity.description }}
         </div>
       </div>
-      <img v-if="festivity.image" :src="festivity.image" :alt="`${festivity.name} illustration`" />
+      <img
+        v-if="festivity.image"
+        :src="`/img/festivities/${festivity.image}.svg`"
+        :alt="`${festivity.name} illustration`"
+      />
     </div>
   </RouterLink>
 </template>
@@ -22,14 +26,15 @@ const type = props.festivity instanceof Holiday ? "holiday" : "summoningDay";
 </script>
 <style lang="scss">
 .festivity-card {
-  display: grid;
-  grid-template-columns: 1fr 60px;
-  gap: 15px;
-  padding: 18px;
-  background-color: #fffdf6;
+  display: flex;
+  gap: 0.75rem;
+  height: 5rem;
+  padding: 0.625rem 0.875rem 0.875rem;
+  background-color: var(--color-white);
   border-radius: 16px;
   &__title {
-    margin-bottom: 10px;
+    margin-bottom: 0.125rem;
+    font-size: 0.938rem;
     font-weight: bold;
   }
   &__description {

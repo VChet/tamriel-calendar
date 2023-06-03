@@ -94,29 +94,27 @@ function navigateToPage(pageIndex: number) {
       height: 18px;
     }
     &--left {
-      right: 10px;
+      right: 0.625rem;
     }
     &--right {
-      left: 10px;
+      left: 0.625rem;
     }
   }
   .tabs {
     display: flex;
-    gap: 18px;
+    gap: 1.125rem;
     justify-content: center;
     &__tab {
       display: inline-block;
-      padding: 6px 12px;
+      padding: 0.25rem 0.75rem;
       font-size: 0.875rem;
-      color: var(--color-text);
-
-      @media (width >= 768px) {
-        padding: 8px 14px;
-      }
+      color: var(--color-beige-dark);
       &--active {
-        color: #fff;
-        background-color: #52493a;
+        font-weight: 500;
+        color: var(--color-white);
+        background-color: var(--color-beige-dark);
         border-radius: 24px;
+        opacity: 0.8;
       }
     }
   }

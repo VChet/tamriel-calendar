@@ -16,16 +16,18 @@ const days = dayjs.weekdaysShort(true);
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 16px;
+  gap: 1rem;
   place-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   li {
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: #b4aea0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-beige-medium);
     text-transform: capitalize;
+    opacity: 0.4;
     &:nth-last-child(-n + 2) {
-      color: var(--color-highlight);
+      color: var(--color-red);
+      opacity: 0.8;
     }
   }
 }

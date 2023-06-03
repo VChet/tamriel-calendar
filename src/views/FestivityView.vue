@@ -9,7 +9,7 @@
       <img
         v-if="festivity.image"
         class="festivity__image"
-        :src="`/img/festivities/${festivity.image}.webp`"
+        :src="`/img/festivities/${festivity.image}.svg`"
         :alt="festivity.name"
       />
       <h1 class="festivity__title">
@@ -48,18 +48,21 @@ const isSummoningDay = computed(() => type === "summoningDay");
   &__image {
     align-self: center;
     max-width: 100%;
-    margin-bottom: 40px;
+    margin: 3.5rem 0 2.5rem;
   }
   &__title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: Literata, serif;
+    font-size: 1.625rem;
+    font-weight: 600;
   }
   &__subtitle {
-    margin-top: 16px;
-    color: #a59e8c;
+    margin-top: 0.375rem;
+    font-weight: 500;
+    color: var(--color-beige-dark);
+    opacity: 0.4;
   }
   &__description {
-    margin-top: 30px;
+    margin-top: 1rem;
   }
 }
 </style>

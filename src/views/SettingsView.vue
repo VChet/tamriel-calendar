@@ -45,25 +45,25 @@ watch(locale, setLocale);
 <style lang="scss">
 .settings-view {
   .container {
-    padding: 10px 0;
+    padding: 0.625rem 0;
   }
   &__header {
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
   }
   &__list {
     li {
-      padding: 15px;
+      padding: 1rem;
       &:not(:last-of-type) {
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: var(--divider);
       }
     }
     a {
-      color: var(--color-highlight);
+      color: var(--color-red);
     }
     &-language {
       display: flex;
-      gap: 12px;
+      gap: 0.75rem;
       align-items: center;
       label:has(input) {
         cursor: pointer;

@@ -1,10 +1,13 @@
+@use "./fonts";
 :root {
-  --color-background: #fbf4e1;
-  --color-text: #2c2203;
-  --color-highlight: #d63a24;
-  --color-border: #b9b2a2;
-  --color-button: #281f10;
-  --color-button-hover: #52493a;
+  --color-white: #fffefc;
+  --color-red: #d63d21;
+  --color-beige: #f9f2e0;
+  --color-beige-medium: #514b43;
+  --color-beige-dark: #1f170c;
+  --color-beige-dark-medium: #998875;
+  --color-border: #231c124d;
+  --divider: 0.5px solid var(--color-border);
 }
 *,
 *::before,
@@ -12,7 +15,7 @@
   position: relative;
   box-sizing: border-box;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Golos, Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
 * {
@@ -31,8 +34,8 @@ html {
 }
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--color-beige-dark);
+  background-color: var(--color-beige);
 }
 ul {
   padding: 0;
@@ -49,34 +52,38 @@ ul {
   font-weight: normal;
 }
 a {
-  color: var(--color-text);
+  color: var(--color-beige-dark);
   text-decoration: none;
   &.router-link-active {
-    color: var(--color-highlight);
+    color: var(--color-red);
   }
 }
 .container {
-  padding: 30px 15px;
+  padding: 1.25rem 1rem;
 }
 .header {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 10px 15px;
-  border-bottom: 1px solid var(--color-border);
+  height: 2.625rem;
+  padding: 0 1rem;
+  border-bottom: var(--divider);
   &--left {
     justify-content: flex-start;
   }
 }
 .button {
   display: inline-flex;
-  gap: 4px;
+  gap: 0.25rem;
   align-items: center;
   justify-content: center;
-  padding: 10px 30px;
-  color: #fff;
+  max-width: 300px;
+  padding: 0.625rem 1.875rem;
+  font: inherit;
+  color: var(--color-white);
   white-space: nowrap;
   cursor: pointer;
-  background: var(--color-button);
+  background: var(--color-beige-dark);
   border: none;
   border-radius: 8px;
   outline: none;
@@ -85,13 +92,12 @@ a {
     width: 100%;
   }
   &--big {
-    padding: 20px 50px;
-    font-size: 1.125rem;
-    font-weight: bold;
+    padding: 1rem 3.125rem;
+    font-weight: 500;
   }
   &:hover,
   &:focus-visible {
-    background-color: var(--color-button-hover);
+    background-color: var(--color-beige-dark-medium);
   }
   &:active {
     transform: scale(.99);
@@ -101,17 +107,17 @@ a {
   display: inline-grid;
   place-items: center;
   padding: 0;
-  color: var(--color-button);
+  color: var(--color-beige-dark);
   cursor: pointer;
   background: none;
   border: none;
   outline: none;
   svg {
-    width: 28px;
-    height: 28px;
+    width: 1.375rem;
+    height: 1.375rem;
   }
   &:hover,
   &:focus-visible {
-    color: var(--color-button-hover);
+    color: var(--color-beige-dark-medium);
   }
 }

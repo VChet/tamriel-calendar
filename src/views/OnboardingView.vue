@@ -1,8 +1,9 @@
 <template>
   <main class="container onboarding-view">
+    <img src="/img/onboarding.svg" alt="logo" />
     <h1>{{ $t("onboardingPage.welcome") }}</h1>
     <div>{{ $t("onboardingPage.description") }}</div>
-    <button class="button button--big" type="button" @click="exitOnboarding">
+    <button class="button button--block button--big" type="button" @click="exitOnboarding">
       {{ $t("onboardingPage.continue") }}
     </button>
   </main>
@@ -19,15 +20,30 @@ function exitOnboarding() {
 }
 </script>
 <style lang="scss">
+@mixin title {
+  font-family: Literata, serif;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+.onboarding-view.container {
+  padding: 0 3.75rem;
+}
 .onboarding-view {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   align-items: center;
   margin: 20vh auto;
   text-align: center;
+  img {
+    margin-bottom: 4.375rem;
+  }
   h1 {
-    font-size: 1.75rem;
+    @include title;
+
+    margin-bottom: 1.5rem;
+  }
+  button {
+    margin-top: auto;
   }
 }
 </style>

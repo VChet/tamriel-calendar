@@ -5,7 +5,7 @@
       <ul>
         <li>
           <RouterLink :to="{ name: 'Calendar' }" class="nav-tab" :class="{ 'nav-tab--active': isCalendarTab }">
-            <IconCalendarEvent />
+            <IconCalendar />
             {{ $t("calendar") }}
           </RouterLink>
         </li>
@@ -28,8 +28,10 @@
 
 <script setup lang="ts">
 import { useRouter, RouterLink, RouterView } from "vue-router";
-import { IconCalendarEvent, IconComet, IconSettings } from "@tabler/icons-vue";
 import { computed } from "vue";
+import IconCalendar from "@/components/icons/IconCalendar.vue";
+import IconComet from "@/components/icons/IconComet.vue";
+import IconSettings from "@/components/icons/IconSettings.vue";
 import { settings } from "@/store/settings";
 const router = useRouter();
 if (!settings.value.onboarding) router.push({ name: "Onboarding" });
@@ -48,9 +50,10 @@ const isSettingsTab = computed(() => router.currentRoute.value.name === "Setting
   position: sticky;
   bottom: 0;
   width: 100%;
-  padding: 0 10px;
-  background-color: var(--color-background);
-  border-top: 1px solid var(--color-border);
+  padding: 0 1.5rem;
+  background-color: var(--color-beige);
+  border-top: var(--divider);
+  opacity: 0.94;
   ul {
     display: flex;
     align-items: flex-start;
@@ -58,23 +61,21 @@ const isSettingsTab = computed(() => router.currentRoute.value.name === "Setting
     .nav-tab {
       display: inline-flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 0.25rem;
       align-items: center;
-      padding: 10px 15px;
-      font-size: 0.75rem;
+      padding: 0.625rem 1rem;
+      font-size: 0.688rem;
       font-weight: bold;
-      color: #837a6b;
+      color: var(--color-beige-dark);
       text-align: center;
+      opacity: 0.6;
 
       @media (width >= 768px) {
         flex-direction: row;
       }
       &--active {
-        color: #d83c23;
-      }
-      svg {
-        width: 30px;
-        height: 30px;
+        color: var(--color-red);
+        opacity: 1;
       }
     }
   }

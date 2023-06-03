@@ -10,7 +10,7 @@
         custom
       >
         <li role="link" @click="navigate">
-          <img :src="`/img/birthsigns/${sign.image}.webp`" :alt="sign.name" />
+          <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name" />
           {{ sign.name }}
         </li>
       </RouterLink>
@@ -26,29 +26,30 @@ const { birthsigns } = useFestivitiesStore();
 <style lang="scss">
 .birthsigns-view {
   h1 {
-    margin-bottom: 60px;
-    font-size: 1.875rem;
-    font-weight: bold;
+    margin-bottom: 3.125rem;
+    font-family: Literata, serif;
+    font-size: 1.625rem;
+    font-weight: 600;
   }
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 50px;
+    gap: 2.5rem 1.25rem;
     justify-content: space-between;
     li {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0.875rem;
       align-items: center;
       font-size: 0.75rem;
       font-weight: bold;
       cursor: pointer;
       &:hover {
-        color: var(--color-highlight);
+        color: var(--color-red);
       }
       img {
-        max-width: 120px;
-        max-height: 120px;
+        max-width: 100px;
+        max-height: 100px;
       }
     }
   }

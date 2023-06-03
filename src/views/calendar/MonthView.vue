@@ -42,22 +42,23 @@ function festivityLink(day: Day) {
 .month-view {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
   .month {
     &__title {
       display: flex;
       justify-content: space-between;
       width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: 1.875rem;
       div {
+        font-family: Literata, serif;
         font-size: 1.125rem;
-        font-weight: bold;
+        font-weight: 600;
       }
     }
     &__days {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      gap: 16px;
+      gap: 1rem;
       place-items: center;
     }
   }

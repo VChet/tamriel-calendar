@@ -16,11 +16,11 @@
       <div class="current-day__month">{{ selectedDay.monthName }}</div>
       <div class="current-day__weekday">{{ selectedDay.weekdayName }}</div>
       <section v-if="selectedDay.hasFestivity" class="current-day__festivities">
-        <div v-if="selectedDay.holiday" class="current-day__festivities">
+        <div v-if="selectedDay.holiday">
           <div class="current-day__festivities-title">{{ $t("calendarPage.festivities") }}</div>
           <FestivityCard :festivity="selectedDay.holiday" />
         </div>
-        <div v-if="selectedDay.summoningDay" class="current-day__festivities">
+        <div v-if="selectedDay.summoningDay">
           <div class="current-day__festivities-title">{{ $t("calendarPage.summoningDays") }}</div>
           <FestivityCard :festivity="selectedDay.summoningDay" />
         </div>
@@ -52,12 +52,12 @@ if (!selectedDay.value) {
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 16px;
+  gap: 1rem;
   place-items: center;
   .calendar-day {
     cursor: pointer;
     &:hover:not(&--current) {
-      color: var(--color-highlight);
+      color: var(--color-red);
     }
   }
 }
@@ -65,27 +65,33 @@ if (!selectedDay.value) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 2.5rem;
   &__day {
-    margin-bottom: 26px;
-    font-size: 4.5rem;
+    font-family: Literata, serif;
+    font-size: 5.625rem;
     font-weight: bold;
   }
   &__month {
-    margin-bottom: 16px;
-    font-size: 1.5rem;
-    font-weight: bold;
+    margin-bottom: 0.625rem;
+    font-family: Literata, serif;
+    font-size: 1.625rem;
+    font-weight: 600;
   }
   &__weekday {
+    font-weight: 500;
     color: #a49d8b;
     text-transform: capitalize;
   }
   &__festivities {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2.25rem;
     &-title {
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #d21a02;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-red);
     }
   }
 }

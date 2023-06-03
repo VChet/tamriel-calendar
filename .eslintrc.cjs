@@ -55,7 +55,7 @@ module.exports = {
         math: "always"
       }
     ],
-    "max-len": ["error", { code: 120, ignoreUrls: true }],
+    "max-len": ["error", { code: 120, ignoreUrls: true, ignorePattern: 'd="([\\s\\S]*?)"' }],
     "operator-assignment": ["error", "always"]
   }
 };
