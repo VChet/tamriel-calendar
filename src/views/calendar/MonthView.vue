@@ -60,6 +60,12 @@ function festivityLink(day: Day) {
       grid-template-columns: repeat(7, 1fr);
       gap: 1rem;
       place-items: center;
+      .calendar-day--festivity {
+        cursor: pointer;
+        &:hover:not(.calendar-day--current) {
+          color: var(--color-red);
+        }
+      }
     }
   }
 }
