@@ -2,7 +2,7 @@
   <main>
     <header class="header header--left">
       <RouterLink class="icon-button" type="button" :title="$t('back')" :to="{ name: 'Calendar' }">
-        <IconChevronLeft />
+        <icon-chevron-left />
       </RouterLink>
     </header>
     <section v-if="festivity" class="container content-card">

@@ -2,7 +2,7 @@
   <main class="container birthsigns-view">
     <h1>{{ $t("birthsigns") }}</h1>
     <ul class="birthsigns-view__list">
-      <RouterLink
+      <router-link
         v-for="sign in birthsigns.values()"
         :key="sign.name"
         v-slot="{ navigate }"
@@ -13,7 +13,7 @@
           <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name" />
           {{ sign.name }}
         </li>
-      </RouterLink>
+      </router-link>
     </ul>
   </main>
 </template>

@@ -47,6 +47,7 @@ module.exports = {
     ],
     "import/no-unresolved": ["error", { ignore: ["^virtual:"] }],
     "import/no-named-as-default-member": "off",
+    "vue/component-name-in-template-casing": ["error", "kebab-case"],
     "vue/html-self-closing": [
       "error",
       {

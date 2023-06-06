@@ -5,13 +5,13 @@
         <div>{{ month.monthName }}</div>
         <div>{{ month.yearName }}</div>
       </div>
-      <CalendarWeekdays />
+      <calendar-weekdays />
       <ul class="month__days">
         <li v-for="(day, index) in month.days" :key="index" :style="day.styles">
           <RouterLink v-if="day.hasFestivity" :to="festivityLink(day)">
-            <CalendarDay :day="day.value" :festivity="day.hasFestivity" />
+            <calendar-day :day="day.value" :festivity="day.hasFestivity" />
           </RouterLink>
-          <CalendarDay v-else :day="day.value" />
+          <calendar-day v-else :day="day.value" />
         </li>
       </ul>
     </div>

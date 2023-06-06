@@ -1,25 +1,25 @@
 <template>
-  <RouterView />
+  <router-view />
   <footer v-if="router.currentRoute.value.name !== 'Onboarding'" class="main-nav">
     <nav>
       <ul>
         <li>
-          <RouterLink :to="{ name: 'Calendar' }" class="nav-tab" :class="{ 'nav-tab--active': isCalendarTab }">
-            <IconCalendar />
+          <router-link :to="{ name: 'Calendar' }" class="nav-tab" :class="{ 'nav-tab--active': isCalendarTab }">
+            <icon-calendar />
             {{ $t("calendar") }}
-          </RouterLink>
+          </router-link>
         </li>
         <li>
-          <RouterLink :to="{ name: 'Birthsigns' }" class="nav-tab" :class="{ 'nav-tab--active': isBirthsignsTab }">
-            <IconComet />
+          <router-link :to="{ name: 'Birthsigns' }" class="nav-tab" :class="{ 'nav-tab--active': isBirthsignsTab }">
+            <icon-comet />
             {{ $t("birthsigns") }}
-          </RouterLink>
+          </router-link>
         </li>
         <li>
-          <RouterLink :to="{ name: 'Settings' }" class="nav-tab" :class="{ 'nav-tab--active': isSettingsTab }">
-            <IconSettings />
+          <router-link :to="{ name: 'Settings' }" class="nav-tab" :class="{ 'nav-tab--active': isSettingsTab }">
+            <icon-settings />
             {{ $t("settings") }}
-          </RouterLink>
+          </router-link>
         </li>
       </ul>
     </nav>

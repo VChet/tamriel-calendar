@@ -9,7 +9,7 @@
           </h2>
           <ul class="month__days">
             <li v-for="(day, dayIndex) in month.days" :key="dayIndex" class="day" :style="day.styles">
-              <CalendarDay :day="day.value" small />
+              <calendar-day :day="day.value" small />
             </li>
           </ul>
         </li>

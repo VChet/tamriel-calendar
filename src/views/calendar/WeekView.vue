@@ -1,9 +1,9 @@
 <template>
   <section>
-    <CalendarWeekdays />
+    <calendar-weekdays />
     <ul v-if="week" class="days">
       <li v-for="(day, index) in week.days" :key="index" :style="day.styles">
-        <CalendarDay
+        <calendar-day
           :day="day.value"
           :active="selectedDay?.dayName === day.dayName"
           :festivity="day.hasFestivity"
@@ -18,11 +18,11 @@
       <section v-if="selectedDay.hasFestivity" class="current-day__festivities">
         <div v-if="selectedDay.holiday">
           <div class="current-day__festivities-title">{{ $t("calendarPage.festivities") }}</div>
-          <FestivityCard :festivity="selectedDay.holiday" />
+          <festivity-card :festivity="selectedDay.holiday" />
         </div>
         <div v-if="selectedDay.summoningDay">
           <div class="current-day__festivities-title">{{ $t("calendarPage.summoningDays") }}</div>
-          <FestivityCard :festivity="selectedDay.summoningDay" />
+          <festivity-card :festivity="selectedDay.summoningDay" />
         </div>
       </section>
     </div>

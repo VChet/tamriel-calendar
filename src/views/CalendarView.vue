@@ -2,32 +2,32 @@
   <main ref="swipeContainer" class="calendar-view">
     <template v-if="isSwiping && ['left', 'right'].includes(direction)">
       <div v-if="direction === 'right' && currentPageIndex > 0" :class="arrowClassList">
-        <IconChevronLeft />
+        <icon-chevron-left />
       </div>
       <div v-if="direction === 'left' && currentPageIndex < calendarPages.length - 1" :class="arrowClassList">
-        <IconChevronRight />
+        <icon-chevron-right />
       </div>
     </template>
     <header class="header">
       <ul class="tabs">
         <li>
-          <RouterLink :to="{ name: 'Week' }" replace class="tabs__tab" active-class="tabs__tab--active">
+          <router-link :to="{ name: 'Week' }" replace class="tabs__tab" active-class="tabs__tab--active">
             {{ $t("week") }}
-          </RouterLink>
+          </router-link>
         </li>
         <li>
-          <RouterLink :to="{ name: 'Month' }" replace class="tabs__tab" active-class="tabs__tab--active">
+          <router-link :to="{ name: 'Month' }" replace class="tabs__tab" active-class="tabs__tab--active">
             {{ $t("month") }}
-          </RouterLink>
+          </router-link>
         </li>
         <li>
-          <RouterLink :to="{ name: 'Year' }" replace class="tabs__tab" active-class="tabs__tab--active">
+          <router-link :to="{ name: 'Year' }" replace class="tabs__tab" active-class="tabs__tab--active">
             {{ $t("year") }}
-          </RouterLink>
+          </router-link>
         </li>
       </ul>
     </header>
-    <RouterView class="container" />
+    <router-view class="container" />
   </main>
 </template>
 
