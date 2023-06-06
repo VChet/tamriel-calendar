@@ -1,5 +1,5 @@
 <template>
-  <RouterLink :to="{ name: 'Festivity', query: { type, date: festivity.date } }">
+  <RouterLink :to="{ name: routeName, query: { date: festivity.date } }">
     <div class="festivity-card">
       <div>
         <div class="festivity-card__title">
@@ -22,7 +22,7 @@
 import { Holiday, SummoningDay } from "@/classes/Festivity";
 
 const props = defineProps<{ festivity: Holiday | SummoningDay }>();
-const type = props.festivity instanceof Holiday ? "holiday" : "summoningDay";
+const routeName = props.festivity instanceof Holiday ? "Holiday" : "SummoningDay";
 </script>
 <style lang="scss">
 .festivity-card {

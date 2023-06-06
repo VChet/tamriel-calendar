@@ -30,9 +30,9 @@ const months = new Array(6).fill(0).map((_, index) => new Month(current.add(inde
 
 function festivityLink(day: Day) {
   if (day.holiday) {
-    return { name: "Festivity", query: { type: "holiday", date: day.holiday.date } };
+    return { name: "Holiday", query: { date: day.holiday.date } };
   } else if (day.summoningDay) {
-    return { name: "Festivity", query: { type: "summoningDay", date: day.summoningDay.date } };
+    return { name: "SummoningDay", query: { date: day.summoningDay.date } };
   } else {
     return {};
   }

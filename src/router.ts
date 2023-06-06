@@ -7,7 +7,8 @@ import SettingsView from "@/views/SettingsView.vue";
 import WeekView from "@/views/calendar/WeekView.vue";
 import MonthView from "@/views/calendar/MonthView.vue";
 import YearView from "@/views/calendar/YearView.vue";
-import FestivityView from "@/views/FestivityView.vue";
+import HolidayView from "@/views/HolidayView.vue";
+import SummoningDayView from "@/views/SummoningDayView.vue";
 import { useSettingsStore } from "./store/settings";
 
 const router = createRouter({
@@ -55,9 +56,14 @@ const router = createRouter({
       ]
     },
     {
-      path: "/calendar/festivity",
-      name: "Festivity",
-      component: FestivityView
+      path: "/calendar/holiday",
+      name: "Holiday",
+      component: HolidayView
+    },
+    {
+      path: "/calendar/summoning-day",
+      name: "SummoningDay",
+      component: SummoningDayView
     },
     {
       path: "/birthsigns",
