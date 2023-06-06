@@ -83,15 +83,15 @@ function navigateToPage(pageIndex: number) {
     z-index: 10;
     display: grid;
     place-items: center;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     color: #fff;
     background: #52493a;
     border-radius: 50%;
     transform: translateY(-50%);
     svg {
-      width: 18px;
-      height: 18px;
+      width: 1.125rem;
+      height: 1.125rem;
     }
     &--left {
       right: 0.625rem;
