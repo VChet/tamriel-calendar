@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { reactive } from "vue";
 import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
@@ -40,12 +40,12 @@ import { useSettingsStore } from "@/store/settings";
 
 const { selectedDay } = useSettingsStore();
 
-const week = ref(new Week(dayjs()));
+const week = reactive(new Week(dayjs()));
 if (!selectedDay.value) {
-  selectedDay.value = week.value.currentDay;
-} else if (!week.value.days.find((day) => day.weekdayName === selectedDay.value?.weekdayName)) {
-  const dayOfWeek = week.value.days.find((day) => dayjs(day.value).isSame(selectedDay.value?.value));
-  selectedDay.value = dayOfWeek ?? week.value.currentDay;
+  selectedDay.value = week.currentDay;
+} else if (!week.days.find((day) => day.weekdayName === selectedDay.value?.weekdayName)) {
+  const dayOfWeek = week.days.find((day) => dayjs(day.value).isSame(selectedDay.value?.value));
+  selectedDay.value = dayOfWeek ?? week.currentDay;
 }
 </script>
 <style lang="scss" scoped>
