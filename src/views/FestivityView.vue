@@ -1,11 +1,11 @@
 <template>
-  <main v-if="festivity">
+  <main>
     <header class="header header--left">
       <RouterLink class="icon-button" type="button" :title="$t('back')" :to="{ name: 'Calendar' }">
         <IconChevronLeft />
       </RouterLink>
     </header>
-    <section class="container festivity">
+    <section v-if="festivity" class="container festivity">
       <img
         v-if="festivity.image"
         class="festivity__image"
