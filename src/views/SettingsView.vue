@@ -3,11 +3,6 @@
     <header class="header settings-view__header">{{ $t("settings") }}</header>
     <article class="container">
       <ul class="settings-view__list">
-        <li v-if="needRefresh">
-          <button class="button button--block" type="button" @click="updateServiceWorker(true)">
-            {{ $t("settingsPage.update") }}
-          </button>
-        </li>
         <li class="settings-view__list-language">
           {{ $t("settingsPage.language") }}:
           <label v-for="lang in availableLocales" :key="lang.code">
@@ -16,13 +11,19 @@
           </label>
         </li>
         <li>
+          {{ $t("settingsPage.code") }}:
           <a href="https://github.com/VChet/tamriel-calendar">GitHub</a>
         </li>
         <li>
           {{ $t("settingsPage.design") }}
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
-        <li>{{ $t("settingsPage.appVersion") }}: {{ commitHash }}</li>
+        <li>
+          {{ $t("settingsPage.appVersion") }}: {{ commitHash }}.
+          <button v-if="needRefresh" class="link" type="button" @click="updateServiceWorker(true)">
+            {{ $t("settingsPage.update") }}
+          </button>
+        </li>
       </ul>
     </article>
   </main>
@@ -32,7 +33,7 @@
 import { ref, watch } from "vue";
 import { settings, setLocale, useSettingsStore } from "@/store/settings";
 
-const commitHash = import.meta.env.__COMMIT_HASH__;
+const commitHash = import.meta.env.__COMMIT_HASH__.trim();
 
 const availableLocales = [
   { code: "en", label: "English" },

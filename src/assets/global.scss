@@ -51,13 +51,6 @@ ul {
   margin: 0 auto;
   font-weight: normal;
 }
-a {
-  color: var(--color-beige-dark);
-  text-decoration: none;
-  &.router-link-active {
-    color: var(--color-red);
-  }
-}
 .container {
   padding: 1.25rem 1rem;
 }
@@ -101,6 +94,26 @@ a {
   }
   &:active {
     transform: scale(.99);
+  }
+}
+a {
+  color: var(--color-beige-dark);
+  text-decoration: none;
+  &.router-link-active {
+    color: var(--color-red);
+  }
+}
+.link {
+  font: inherit;
+  color: var(--color-red);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  &:hover,
+  &:focus-visible,
+  &.router-link-active {
+    text-decoration: underline;
   }
 }
 .icon-button {
