@@ -10,14 +10,15 @@ dayjs.extend(weekday);
 
 export class Day {
   value: dayjs.Dayjs;
-  summoningDay: SummoningDay | null;
   constructor(day: dayjs.Dayjs) {
     this.value = day;
-    this.summoningDay = summoningDays.get(day.format("DD/MM")) ?? null;
   }
 
   get holiday(): Holiday | null {
     return holidays.get(this.value.format("DD/MM")) ?? null;
+  }
+  get summoningDay(): SummoningDay | null {
+    return summoningDays.get(this.value.format("DD/MM")) ?? null;
   }
 
   get isCurrent(): boolean {
