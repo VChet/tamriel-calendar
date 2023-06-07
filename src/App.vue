@@ -37,7 +37,9 @@ const router = useRouter();
 if (!settings.value.onboarding) router.push({ name: "Onboarding" });
 
 const isCalendarTab = computed(() =>
-  ["Calendar", "Week", "Month", "Year", "Festivity"].some((name) => router.currentRoute.value.name === name)
+  ["Calendar", "Week", "Month", "Year", "Holiday", "SummoningDay"].some(
+    (name) => router.currentRoute.value.name === name
+  )
 );
 const isBirthsignsTab = computed(() =>
   ["Birthsigns", "Birthsign"].some((name) => router.currentRoute.value.name === name)
