@@ -19,7 +19,7 @@
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
         <li>
-          {{ $t("settingsPage.appVersion") }}: {{ commitHash }}.
+          {{ $t("settingsPage.appVersion") }}: {{ commitHash }} ({{ commitDate }}).
           <button v-if="needRefresh" class="link" type="button" @click="updateServiceWorker(true)">
             {{ $t("settingsPage.update") }}
           </button>
@@ -31,9 +31,11 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import dayjs from "dayjs";
 import { settings, setLocale, useSettingsStore } from "@/store/settings";
 
-const commitHash = import.meta.env.__COMMIT_HASH__.trim();
+const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
+const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).format("DD/MM/YY");
 
 const availableLocales = [
   { code: "en", label: "English" },

@@ -7,7 +7,8 @@ declare module "*.vue" {
 }
 
 interface ImportMetaEnv {
-  readonly __COMMIT_HASH__: string;
+  readonly VITE_GIT_COMMIT_HASH: string;
+  readonly VITE_GIT_COMMIT_DATE: string;
 }
 
 interface ImportMeta {

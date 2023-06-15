@@ -39,7 +39,8 @@ const pwaOptions: Partial<VitePWAOptions> = {
   workbox: { sourcemap: true }
 };
 
-const commitHash = execSync("git rev-parse --short HEAD").toString();
+const commitHash = execSync("git rev-parse --short HEAD").toString().trimEnd();
+const commitDate = execSync("git log -1 --format=%cI").toString().trimEnd();
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -50,6 +51,7 @@ export default defineConfig({
     }
   },
   define: {
-    "import.meta.env.__COMMIT_HASH__": JSON.stringify(commitHash)
+    "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(commitHash),
+    "import.meta.env.VITE_GIT_COMMIT_DATE": JSON.stringify(commitDate)
   }
 });
