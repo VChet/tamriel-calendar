@@ -25,7 +25,7 @@ const messages: I18nOptions["messages"] = {
       language: "Language",
       code: "Code",
       design: "Original design by",
-      update: "Update available",
+      update: "Update",
       appVersion: "App version"
     }
   },
@@ -53,7 +53,7 @@ const messages: I18nOptions["messages"] = {
       language: "Язык",
       code: "Код",
       design: "Оригинальный дизайн",
-      update: "Доступно обновление",
+      update: "Обновить",
       appVersion: "Версия приложения"
     }
   }
