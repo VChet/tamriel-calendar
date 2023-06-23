@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { createGlobalState, useStorage } from "@vueuse/core";
+import { createGlobalState, useLocalStorage } from "@vueuse/core";
 import type { RouteRecordName } from "vue-router";
 import dayjs from "dayjs";
 import { useRegisterSW } from "virtual:pwa-register/vue";
@@ -9,7 +9,13 @@ import { i18n } from "@/main";
 import { useEventsStore } from "./events";
 import type { Day } from "@/classes/Day";
 
-function getDayJSLocaleData(locale: string): ILocale {
+type LocaleCode = "en" | "ru";
+interface SettingsStore {
+  locale: LocaleCode
+  onboarding: boolean
+}
+
+function getDayJSLocaleData(locale: LocaleCode): ILocale {
   switch (locale) {
     case "ru": return tamrielRu;
     case "en": default: return tamrielEn;
@@ -17,12 +23,17 @@ function getDayJSLocaleData(locale: string): ILocale {
 }
 
 export const useSettingsStore = createGlobalState(() => {
-  const settings = useStorage("settings", {
+  const availableLocales: { code: LocaleCode, label: string }[] = [
+    { code: "en", label: "English" },
+    { code: "ru", label: "Русский" }
+  ];
+
+  const settings = useLocalStorage<SettingsStore>("settings", {
     locale: "en",
     onboarding: false
-  }, localStorage, { mergeDefaults: true });
+  }, { mergeDefaults: true });
 
-  async function setLocale(locale: string): Promise<void> {
+  async function setLocale(locale: LocaleCode): Promise<void> {
     const { setEventsData } = useEventsStore();
 
     dayjs.locale(getDayJSLocaleData(locale));
@@ -37,6 +48,7 @@ export const useSettingsStore = createGlobalState(() => {
   const selectedDay = ref<Day | null>(null);
 
   return {
+    availableLocales,
     settings,
     setLocale,
 

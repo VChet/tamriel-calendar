@@ -47,11 +47,7 @@ import CommonHeader from "@/components/CommonHeader.vue";
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = composeCommitDate(import.meta.env.VITE_GIT_COMMIT_DATE);
 
-const availableLocales = [
-  { code: "en", label: "English" },
-  { code: "ru", label: "Русский" }
-];
-const { settings, setLocale, needRefresh, updateServiceWorker } = useSettingsStore();
+const { availableLocales, settings, setLocale, needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, setLocale);
 </script>
