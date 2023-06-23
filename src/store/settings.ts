@@ -9,7 +9,19 @@ import tamrielRu from "@/assets/tamriel-ru";
 import { Day } from "@/classes/Day";
 import { useFestivitiesStore } from "./festivities";
 
-export const settings = useStorage("settings", {
+type LocaleCode = "en" | "ru";
+
+export const availableLocales: { code: LocaleCode; label: string }[] = [
+  { code: "en", label: "English" },
+  { code: "ru", label: "Русский" }
+];
+
+interface SettingsStore {
+  locale: LocaleCode;
+  onboarding: boolean;
+}
+
+export const settings = useStorage<SettingsStore>("settings", {
   locale: "en",
   onboarding: false
 });
@@ -36,7 +48,7 @@ function getDayJSLocaleData(locale: string) {
       return tamrielRu;
   }
 }
-export async function setLocale(locale: string) {
+export async function setLocale(locale: LocaleCode) {
   const { setFestivitiesData } = useFestivitiesStore();
 
   dayjs.locale(getDayJSLocaleData(locale));
