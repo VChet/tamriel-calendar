@@ -62,8 +62,11 @@ function festivityLink(day: Day) {
       place-items: center;
       .calendar-day--festivity {
         cursor: pointer;
-        &:hover:not(.calendar-day--current) {
-          color: var(--color-red);
+
+        @media (hover: hover) {
+          &:hover:not(.calendar-day--current) {
+            color: var(--color-red);
+          }
         }
       }
     }

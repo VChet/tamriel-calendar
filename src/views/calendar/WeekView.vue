@@ -56,8 +56,11 @@ if (!selectedDay.value) {
   place-items: center;
   .calendar-day {
     cursor: pointer;
-    &:hover:not(&--current) {
-      color: var(--color-red);
+
+    @media (hover: hover) {
+      &:hover:not(&--current) {
+        color: var(--color-red);
+      }
     }
   }
 }

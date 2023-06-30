@@ -155,10 +155,3 @@ a {
     margin-top: 1rem;
   }
 }
-
-// Disable hover styles on touch
-@media (hover: none) {
-  *:hover {
-    color: inherit !important;
-  }
-}
