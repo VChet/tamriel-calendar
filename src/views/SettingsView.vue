@@ -24,6 +24,11 @@
             {{ $t("settingsPage.update") }}
           </button>
         </li>
+        <li>
+          active:{{ isSyncActive }}
+          <button class="link" type="button" @click="registerCheck">Enable check</button>
+          <button class="link" type="button" @click="unregisterCheck">Disable check</button>
+        </li>
       </ul>
     </article>
   </main>
@@ -33,6 +38,7 @@
 import { ref, watch } from "vue";
 import dayjs from "dayjs";
 import { availableLocales, settings, setLocale, useSettingsStore } from "@/store/settings";
+import { usePeriodicSync } from "@/services/periodicSync";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).format("DD/MM/YY");
@@ -40,6 +46,18 @@ const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).format("DD/MM/YY"
 const { needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, setLocale);
+
+const { isActive, register, unregister } = usePeriodicSync("check-festivities");
+const isSyncActive = ref(false);
+async function registerCheck() {
+  await Notification.requestPermission();
+  await register();
+  isSyncActive.value = await isActive();
+}
+async function unregisterCheck() {
+  await unregister();
+  isSyncActive.value = await isActive();
+}
 </script>
 <style lang="scss">
 .settings-view {
