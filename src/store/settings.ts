@@ -30,10 +30,11 @@ export const useSettingsStore = createGlobalState(() => {
 
 function getDayJSLocaleData(locale: string) {
   switch (locale) {
-    case "en":
-      return tamrielEn;
     case "ru":
       return tamrielRu;
+    case "en":
+    default:
+      return tamrielEn;
   }
 }
 export async function setLocale(locale: string) {
