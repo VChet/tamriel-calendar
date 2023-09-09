@@ -74,7 +74,10 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       redirect: { name: "Home", params: {} }
     }
-  ]
+  ],
+  scrollBehavior(_to, _from, savedPosition) {
+    return Promise.resolve(savedPosition ?? { top: 0, left: 0 });
+  }
 });
 
 router.beforeEach(() => {
