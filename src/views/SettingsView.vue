@@ -69,7 +69,33 @@ watch(locale, setLocale);
       gap: 0.75rem;
       align-items: center;
       label:has(input) {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
         cursor: pointer;
+      }
+      input[type="radio"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        height: 1rem;
+        appearance: none;
+        border: 1px solid var(--color-beige-dark);
+        border-radius: 50%;
+        &:checked {
+          background-color: var(--color-red);
+          border-color: var(--color-red);
+          &::before {
+            display: block;
+            width: 0.5rem;
+            height: 0.5rem;
+            content: "";
+            background-color: var(--color-white);
+            border-radius: 50%;
+            transition: transform 0.2s;
+          }
+        }
       }
     }
   }
