@@ -20,8 +20,8 @@
           {{ $t("settingsPage.design") }}
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">Serafima S</a>
         </li>
-        <li>
-          {{ $t("settingsPage.appVersion") }}: {{ commitHash }} ({{ commitDate }}).
+        <li class="settings-view__list-version">
+          {{ $t("settingsPage.appVersion") }}: {{ commitHash }} ({{ commitDate }})
           <button v-if="needRefresh" class="link" type="button" @click="updateServiceWorker(true)">
             {{ $t("settingsPage.update") }}
           </button>
@@ -98,6 +98,11 @@ watch(locale, setLocale);
           }
         }
       }
+    }
+    &-version {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
     }
   }
 }
