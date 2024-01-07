@@ -8,6 +8,7 @@
 <script setup lang="ts">
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
+
 dayjs.extend(localeData);
 
 const days = dayjs.weekdaysShort(true);

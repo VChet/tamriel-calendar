@@ -1,6 +1,6 @@
 <template>
   <main class="container onboarding-view">
-    <img src="/img/onboarding.svg" alt="logo" />
+    <img src="/img/onboarding.svg" alt="logo">
     <h1>{{ $t("onboardingPage.welcome") }}</h1>
     <div>{{ $t("onboardingPage.description") }}</div>
     <button class="button button--block button--big" type="button" @click="exitOnboarding">
@@ -8,7 +8,6 @@
     </button>
   </main>
 </template>
-
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { settings } from "@/store/settings";

@@ -1,6 +1,6 @@
 import { createGlobalState } from "@vueuse/core";
 import { reactive } from "vue";
-import { type Birthsign, type Festivity } from "@/types/festivity";
+import type { Birthsign, Festivity } from "@/types/festivity";
 import { Holiday, SummoningDay } from "@/classes/Festivity";
 
 export const useFestivitiesStore = createGlobalState(() => {

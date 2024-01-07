@@ -25,14 +25,14 @@
     </nav>
   </footer>
 </template>
-
 <script setup lang="ts">
-import { useRouter, RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRouter } from "vue-router";
 import { computed } from "vue";
 import IconCalendar from "@/components/icons/IconCalendar.vue";
 import IconComet from "@/components/icons/IconComet.vue";
 import IconSettings from "@/components/icons/IconSettings.vue";
 import { settings } from "@/store/settings";
+
 const router = useRouter();
 if (!settings.value.onboarding) router.push({ name: "Onboarding" });
 
@@ -46,7 +46,6 @@ const isBirthsignsTab = computed(() =>
 );
 const isSettingsTab = computed(() => router.currentRoute.value.name === "Settings");
 </script>
-
 <style lang="scss">
 .main-nav {
   position: sticky;

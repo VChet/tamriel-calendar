@@ -11,16 +11,19 @@
         class="content-card__image"
         :src="`/img/birthsigns/${birthsign.image}.svg`"
         :alt="birthsign.name"
-      />
-      <h1 class="content-card__title">{{ birthsign.name }}</h1>
+      >
+      <h1 class="content-card__title">
+        {{ birthsign.name }}
+      </h1>
       <div v-if="dayjs(birthsign.month).isValid()" class="content-card__subtitle">
         {{ $t("month") }} {{ dayjs(birthsign.month, "MM").format("MMMM") }}
       </div>
-      <div class="content-card__description">{{ birthsign.description }}</div>
+      <div class="content-card__description">
+        {{ birthsign.description }}
+      </div>
     </section>
   </main>
 </template>
-
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import dayjs from "dayjs";

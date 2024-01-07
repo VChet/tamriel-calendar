@@ -30,9 +30,8 @@
     <router-view class="container" />
   </main>
 </template>
-
 <script setup lang="ts">
-import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
+import { type UseSwipeDirection, useSwipe } from "@vueuse/core";
 import { computed, ref, watch } from "vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";

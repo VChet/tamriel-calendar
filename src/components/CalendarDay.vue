@@ -7,17 +7,18 @@
 import { computed } from "vue";
 import dayjs from "dayjs";
 import isToday from "dayjs/plugin/isToday";
-dayjs.extend(isToday);
 
 const props = withDefaults(
   defineProps<{
-    day: dayjs.Dayjs;
-    active?: boolean;
-    festivity?: boolean;
-    small?: boolean;
+    day: dayjs.Dayjs
+    active?: boolean
+    festivity?: boolean
+    small?: boolean
   }>(),
   { small: false, festivity: false, active: false }
 );
+
+dayjs.extend(isToday);
 
 const classList = computed<Record<string, boolean>>(() => {
   const key = "calendar-day";

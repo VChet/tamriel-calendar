@@ -17,16 +17,15 @@
     </div>
   </section>
 </template>
-
 <script setup lang="ts">
 import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import { Month } from "@/classes/Month";
-import { Day } from "@/classes/Day";
+import type { Day } from "@/classes/Day";
 
 const current = dayjs();
-const months = new Array(6).fill(0).map((_, index) => new Month(current.add(index, "month")));
+const months = Array.from({ length: 6 }).fill(0).map((_, index) => new Month(current.add(index, "month")));
 
 function festivityLink(day: Day) {
   if (day.holiday) {

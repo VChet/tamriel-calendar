@@ -10,17 +10,17 @@
         custom
       >
         <li role="link" @click="navigate">
-          <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name" />
+          <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name">
           {{ sign.name }}
         </li>
       </router-link>
     </ul>
   </main>
 </template>
-
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
 import { useFestivitiesStore } from "@/store/festivities";
+
 const { birthsigns } = useFestivitiesStore();
 </script>
 <style lang="scss">

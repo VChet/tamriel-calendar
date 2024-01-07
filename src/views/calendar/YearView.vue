@@ -1,7 +1,9 @@
 <template>
   <section class="year-view">
     <div v-for="year in years" :key="year.value" class="year">
-      <h1 class="year__title">{{ year.value }}</h1>
+      <h1 class="year__title">
+        {{ year.value }}
+      </h1>
       <ul class="year__months">
         <li v-for="month in year.months" :key="month.value" class="month">
           <h2 class="month__title" :class="{ 'month__title--current': month.isCurrent }">
@@ -17,7 +19,6 @@
     </div>
   </section>
 </template>
-
 <script setup lang="ts">
 import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
@@ -26,7 +27,6 @@ import { Year } from "@/classes/Year";
 const current = dayjs();
 const years = [new Year(current), new Year(current.add(1, "year"))];
 </script>
-
 <style lang="scss">
 .year-view {
   display: flex;

@@ -11,16 +11,19 @@
         class="content-card__image"
         :src="`/img/festivities/${festivity.image}.svg`"
         :alt="festivity.name"
-      />
+      >
       <h1 class="content-card__title">
         {{ festivity.name }}
       </h1>
-      <div class="content-card__subtitle">{{ festivity.monthName }}</div>
-      <div class="content-card__description">{{ festivity.description }}</div>
+      <div class="content-card__subtitle">
+        {{ festivity.monthName }}
+      </div>
+      <div class="content-card__description">
+        {{ festivity.description }}
+      </div>
     </section>
   </main>
 </template>
-
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";

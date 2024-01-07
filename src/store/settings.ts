@@ -2,12 +2,12 @@ import dayjs from "dayjs";
 import { createGlobalState, useStorage } from "@vueuse/core";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { ref } from "vue";
-import { type RouteRecordName } from "vue-router";
+import type { RouteRecordName } from "vue-router";
+import { useFestivitiesStore } from "./festivities";
 import { i18n } from "@/main";
 import tamrielEn from "@/assets/tamriel-en";
 import tamrielRu from "@/assets/tamriel-ru";
-import { Day } from "@/classes/Day";
-import { useFestivitiesStore } from "./festivities";
+import type { Day } from "@/classes/Day";
 
 export const settings = useStorage("settings", {
   locale: "en",

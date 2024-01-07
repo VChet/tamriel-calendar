@@ -13,13 +13,13 @@
         v-if="festivity.image"
         :src="`/img/festivities/${festivity.image}.svg`"
         :alt="`${festivity.name} illustration`"
-      />
+      >
     </div>
   </RouterLink>
 </template>
-
 <script setup lang="ts">
-import { Holiday, SummoningDay } from "@/classes/Festivity";
+import type { SummoningDay } from "@/classes/Festivity";
+import { Holiday } from "@/classes/Festivity";
 
 const props = defineProps<{ festivity: Holiday | SummoningDay }>();
 const routeName = props.festivity instanceof Holiday ? "Holiday" : "SummoningDay";

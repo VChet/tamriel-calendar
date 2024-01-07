@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 import weekday from "dayjs/plugin/weekday";
-import { type CSSProperties } from "vue";
+import type { CSSProperties } from "vue";
 import { useFestivitiesStore } from "@/store/festivities";
-import { Holiday, SummoningDay } from "@/classes/Festivity";
+import type { Holiday, SummoningDay } from "@/classes/Festivity";
 
 const { holidays, summoningDays } = useFestivitiesStore();
 
@@ -17,6 +17,7 @@ export class Day {
   get holiday(): Holiday | null {
     return holidays.get(this.value.format("DD/MM")) ?? null;
   }
+
   get summoningDay(): SummoningDay | null {
     return summoningDays.get(this.value.format("DD/MM")) ?? null;
   }

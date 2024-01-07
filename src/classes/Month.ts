@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { Week } from "@/classes/Week";
-import { Day } from "@/classes/Day";
+import type { Day } from "@/classes/Day";
 
 export class Month {
   value: number;

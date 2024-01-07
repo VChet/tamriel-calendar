@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { Festivity } from "@/types/festivity";
+import type { Festivity } from "@/types/festivity";
+
 dayjs.extend(customParseFormat);
 
 class FestivityBase implements Festivity {

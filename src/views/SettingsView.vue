@@ -1,12 +1,14 @@
 <template>
   <main class="settings-view">
-    <header class="header settings-view__header">{{ $t("settings") }}</header>
+    <header class="header settings-view__header">
+      {{ $t("settings") }}
+    </header>
     <article class="container">
       <ul class="settings-view__list">
         <li class="settings-view__list-language">
           {{ $t("settingsPage.language") }}:
           <label v-for="lang in availableLocales" :key="lang.code">
-            <input v-model="locale" type="radio" :value="lang.code" />
+            <input v-model="locale" type="radio" :value="lang.code">
             {{ lang.label }}
           </label>
         </li>
@@ -28,11 +30,10 @@
     </article>
   </main>
 </template>
-
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import dayjs from "dayjs";
-import { settings, setLocale, useSettingsStore } from "@/store/settings";
+import { setLocale, settings, useSettingsStore } from "@/store/settings";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).format("DD/MM/YY");

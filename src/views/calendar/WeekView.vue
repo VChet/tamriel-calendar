@@ -12,23 +12,32 @@
       </li>
     </ul>
     <div v-if="selectedDay" class="current-day">
-      <div class="current-day__day">{{ selectedDay.dayName }}</div>
-      <div class="current-day__month">{{ selectedDay.monthName }}</div>
-      <div class="current-day__weekday">{{ selectedDay.weekdayName }}</div>
+      <div class="current-day__day">
+        {{ selectedDay.dayName }}
+      </div>
+      <div class="current-day__month">
+        {{ selectedDay.monthName }}
+      </div>
+      <div class="current-day__weekday">
+        {{ selectedDay.weekdayName }}
+      </div>
       <section v-if="selectedDay.hasFestivity" class="current-day__festivities">
         <div v-if="selectedDay.holiday">
-          <div class="current-day__festivities-title">{{ $t("calendarPage.festivities") }}</div>
+          <div class="current-day__festivities-title">
+            {{ $t("calendarPage.festivities") }}
+          </div>
           <festivity-card :festivity="selectedDay.holiday" />
         </div>
         <div v-if="selectedDay.summoningDay">
-          <div class="current-day__festivities-title">{{ $t("calendarPage.summoningDays") }}</div>
+          <div class="current-day__festivities-title">
+            {{ $t("calendarPage.summoningDays") }}
+          </div>
           <festivity-card :festivity="selectedDay.summoningDay" />
         </div>
       </section>
     </div>
   </section>
 </template>
-
 <script setup lang="ts">
 import { reactive } from "vue";
 import dayjs from "dayjs";
