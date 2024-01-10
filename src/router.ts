@@ -17,33 +17,7 @@ const router = createRouter({
     {
       path: "/calendar",
       name: "Calendar",
-      component: () => import("@/views/CalendarView.vue"),
-      redirect: { name: "Week" },
-      beforeEnter(to, _from, next) {
-        const { selectedCalendar } = useSettingsStore();
-        if (selectedCalendar.value && to.name !== selectedCalendar.value) {
-          next({ name: selectedCalendar.value });
-        } else {
-          next();
-        }
-      },
-      children: [
-        {
-          path: "/calendar/week",
-          name: "Week",
-          component: () => import("@/views/calendar/WeekView.vue")
-        },
-        {
-          path: "/calendar/month",
-          name: "Month",
-          component: () => import("@/views/calendar/MonthView.vue")
-        },
-        {
-          path: "/calendar/year",
-          name: "Year",
-          component: () => import("@/views/calendar/YearView.vue")
-        }
-      ]
+      component: () => import("@/views/CalendarView.vue")
     },
     {
       path: "/calendar/holiday",
