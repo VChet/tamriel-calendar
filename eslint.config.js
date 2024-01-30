@@ -6,7 +6,7 @@ export default antfu({
     "curly": ["error", "multi-line"],
     "no-console": "off",
     "style/arrow-parens": ["error", "always"],
-    "style/brace-style": ["error", "1tbs"],
+    "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
     "style/comma-dangle": ["error", "never"],
     "style/max-statements-per-line": "off",
     "style/operator-linebreak": ["error", "after"],
