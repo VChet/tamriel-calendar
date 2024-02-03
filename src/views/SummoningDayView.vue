@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import { IconChevronLeft } from "@tabler/icons-vue";
+import IconChevronLeft from "~icons/tabler/chevron-left";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const route = useRoute();

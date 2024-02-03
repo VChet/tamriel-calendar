@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { VitePWA, type VitePWAOptions } from "vite-plugin-pwa";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
+import Icons from "unplugin-icons/vite";
 
 const pwaOptions: Partial<VitePWAOptions> = {
   base: "/",
@@ -44,7 +45,7 @@ const commitDate = execSync("git log -1 --format=%cI").toString().trimEnd();
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), VitePWA(pwaOptions), VueI18nPlugin({})],
+  plugins: [vue(), VitePWA(pwaOptions), VueI18nPlugin({}), Icons()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))

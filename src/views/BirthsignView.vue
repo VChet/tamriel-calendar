@@ -28,7 +28,7 @@
 import { useRoute } from "vue-router";
 import dayjs from "dayjs";
 import { computed } from "vue";
-import { IconChevronLeft } from "@tabler/icons-vue";
+import IconChevronLeft from "~icons/tabler/chevron-left";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const route = useRoute();

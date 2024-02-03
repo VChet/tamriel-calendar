@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "paths": { "@/*": ["./src/*"] },
     "resolveJsonModule": true,
-    "types": ["vite/client", "vite-plugin-pwa/client"],
+    "types": ["vite/client", "vite-plugin-pwa/client", "unplugin-icons/types/vue"],
     "strict": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
