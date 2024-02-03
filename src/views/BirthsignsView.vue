@@ -44,15 +44,14 @@ const { birthsigns } = useFestivitiesStore();
       font-size: 0.75rem;
       font-weight: bold;
       cursor: pointer;
-
       @media (hover: hover) {
         &:hover {
           color: var(--color-red);
         }
       }
       img {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 6.25rem;
+        max-height: 6.25rem;
       }
     }
   }

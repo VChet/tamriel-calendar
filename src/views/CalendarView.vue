@@ -105,14 +105,16 @@ function navigateToPage(pageIndex: number) {
     justify-content: center;
     &__tab {
       display: inline-block;
+      min-width: 4rem;
       padding: 0.25rem 0.75rem;
       font-size: 0.875rem;
       color: var(--color-beige-dark);
+      text-align: center;
       &--active {
         font-weight: 500;
         color: var(--color-white);
         background-color: var(--color-beige-dark);
-        border-radius: 24px;
+        border-radius: 1.5rem;
         opacity: 0.8;
       }
     }

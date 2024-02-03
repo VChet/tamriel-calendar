@@ -102,7 +102,7 @@ watch(locale, setLocale);
     &-version {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 0.25rem;
     }
   }
 }

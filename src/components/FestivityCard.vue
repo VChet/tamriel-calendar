@@ -31,7 +31,7 @@ const routeName = props.festivity instanceof Holiday ? "Holiday" : "SummoningDay
   height: 5rem;
   padding: 0.625rem 0.875rem 0.875rem;
   background-color: var(--color-white);
-  border-radius: 16px;
+  border-radius: 1rem;
   &__title {
     margin-bottom: 0.125rem;
     font-size: 0.938rem;

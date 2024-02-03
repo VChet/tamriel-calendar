@@ -43,7 +43,7 @@ const classList = computed<Record<string, boolean>>(() => {
   font-size: 1.125rem;
   line-height: 1;
   user-select: none;
-  border: 2px solid transparent;
+  border: 0.125rem solid transparent;
   border-radius: 50%;
   &--festivity {
     cursor: pointer;

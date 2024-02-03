@@ -71,7 +71,6 @@ const isSettingsTab = computed(() => router.currentRoute.value.name === "Setting
       color: var(--color-beige-dark);
       text-align: center;
       opacity: 0.6;
-
       @media (width >= 768px) {
         flex-direction: row;
       }
