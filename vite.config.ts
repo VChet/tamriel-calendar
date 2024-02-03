@@ -53,5 +53,8 @@ export default defineConfig({
   define: {
     "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(commitHash),
     "import.meta.env.VITE_GIT_COMMIT_DATE": JSON.stringify(commitDate)
+  },
+  server: {
+    port: 7000
   }
 });
