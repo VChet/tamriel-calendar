@@ -34,7 +34,7 @@ const classList = computed<Record<string, boolean>>(() => {
 <style lang="scss">
 .calendar-day {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 2.25rem;
