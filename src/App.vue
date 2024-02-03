@@ -31,9 +31,10 @@ import { computed } from "vue";
 import IconCalendar from "@/components/icons/IconCalendar.vue";
 import IconComet from "@/components/icons/IconComet.vue";
 import IconSettings from "@/components/icons/IconSettings.vue";
-import { settings } from "@/store/settings";
+import { useSettingsStore } from "@/store/settings";
 
 const router = useRouter();
+const { settings } = useSettingsStore();
 if (!settings.value.onboarding) router.push({ name: "Onboarding" });
 
 const isCalendarTab = computed(() =>

@@ -33,7 +33,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import dayjs from "dayjs";
-import { setLocale, settings, useSettingsStore } from "@/store/settings";
+import { useSettingsStore } from "@/store/settings";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).format("DD/MM/YY");
@@ -42,7 +42,7 @@ const availableLocales = [
   { code: "en", label: "English" },
   { code: "ru", label: "Русский" }
 ];
-const { needRefresh, updateServiceWorker } = useSettingsStore();
+const { settings, setLocale, needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, setLocale);
 </script>

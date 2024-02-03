@@ -10,9 +10,10 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { settings } from "@/store/settings";
+import { useSettingsStore } from "@/store/settings";
 
 const router = useRouter();
+const { settings } = useSettingsStore();
 function exitOnboarding() {
   settings.value.onboarding = true;
   router.push({ name: "Home" });
