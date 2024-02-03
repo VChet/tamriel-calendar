@@ -31,7 +31,7 @@ import IconChevronLeft from "~icons/tabler/chevron-left";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const route = useRoute();
-const { date } = route.query;
+const date = route.query.date?.toString();
 const { holidays } = useFestivitiesStore();
-const festivity = computed(() => (date ? holidays.get(date.toString()) : null));
+const festivity = computed(() => (date ? holidays.get(date) : null));
 </script>

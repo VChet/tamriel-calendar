@@ -1,0 +1,6 @@
+{
+  "download": {
+    "folder": "src/constants/strings",
+    "files": "${lang}_${file}"
+  }
+}

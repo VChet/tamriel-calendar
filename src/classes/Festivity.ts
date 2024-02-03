@@ -1,27 +1,26 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import type { Festivity } from "@/types/festivity";
+import type { DataEntry } from "@/types/festivity";
 
 dayjs.extend(customParseFormat);
 
-class FestivityBase implements Festivity {
+class FestivityBase implements DataEntry {
   name: string;
-  date: string;
-  image: string;
   description: string;
+  date: string;
+  image?: string;
 
-  constructor(festivity: Festivity) {
+  constructor(festivity: DataEntry) {
     this.name = festivity.name;
+    this.description = festivity.description;
     this.date = festivity.date;
     this.image = festivity.image;
-    this.description = festivity.description;
   }
 
   get monthName(): string {
-    return dayjs(this.date, "DD/MM").format("D MMMM");
+    return dayjs(this.date, "MM/DD").format("D MMMM");
   }
 }
 
 export class Holiday extends FestivityBase {}
-
 export class SummoningDay extends FestivityBase {}

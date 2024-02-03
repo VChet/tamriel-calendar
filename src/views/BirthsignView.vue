@@ -15,8 +15,8 @@
       <h1 class="content-card__title">
         {{ birthsign.name }}
       </h1>
-      <div v-if="dayjs(birthsign.month).isValid()" class="content-card__subtitle">
-        {{ $t("month") }} {{ dayjs(birthsign.month, "MM").format("MMMM") }}
+      <div v-if="dayjs(birthsign.date).isValid()" class="content-card__subtitle">
+        {{ $t("month") }} {{ dayjs(birthsign.date, "MM").format("MMMM") }}
       </div>
       <div class="content-card__description">
         {{ birthsign.description }}
@@ -32,7 +32,6 @@ import IconChevronLeft from "~icons/tabler/chevron-left";
 import { useFestivitiesStore } from "@/store/festivities";
 
 const route = useRoute();
-
 const { birthsigns } = useFestivitiesStore();
 const birthsign = computed(() => birthsigns.get(route.params.month.toString()));
 </script>

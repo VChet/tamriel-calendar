@@ -15,11 +15,11 @@ export class Day {
   }
 
   get holiday(): Holiday | null {
-    return holidays.get(this.value.format("DD/MM")) ?? null;
+    return holidays.get(this.value.format("MM/DD")) ?? null;
   }
 
   get summoningDay(): SummoningDay | null {
-    return summoningDays.get(this.value.format("DD/MM")) ?? null;
+    return summoningDays.get(this.value.format("MM/DD")) ?? null;
   }
 
   get isCurrent(): boolean {

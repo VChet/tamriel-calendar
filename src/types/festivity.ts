@@ -1,13 +1,12 @@
-export interface Festivity {
+export interface BaseEntry {
   name: string
-  date: string
-  image: string
   description: string
 }
 
-export interface Birthsign {
-  name: string
-  month: string
-  image: string
-  description: string
+export interface DataEntry extends BaseEntry {
+  date: string
+  image?: string
 }
+
+export type SingleEntry<T extends object | string> = Record<string, T>;
+export type NestedEntry<T extends object | string> = Record<string, SingleEntry<T>>;

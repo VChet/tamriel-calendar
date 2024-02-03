@@ -5,8 +5,8 @@ import { ref } from "vue";
 import type { RouteRecordName } from "vue-router";
 import { useFestivitiesStore } from "./festivities";
 import { i18n } from "@/main";
-import tamrielEn from "@/assets/tamriel-en";
-import tamrielRu from "@/assets/tamriel-ru";
+import tamrielEn from "@/constants/tamriel-en";
+import tamrielRu from "@/constants/tamriel-ru";
 import type { Day } from "@/classes/Day";
 
 function getDayJSLocaleData(locale: string) {

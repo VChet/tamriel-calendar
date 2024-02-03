@@ -6,7 +6,7 @@
         v-for="sign in birthsigns.values()"
         :key="sign.name"
         v-slot="{ navigate }"
-        :to="{ name: 'Birthsign', params: { month: sign.month } }"
+        :to="{ name: 'Birthsign', params: { month: sign.date } }"
         custom
       >
         <li role="link" @click="navigate">
@@ -21,7 +21,8 @@
 import { RouterLink } from "vue-router";
 import { useFestivitiesStore } from "@/store/festivities";
 
-const { birthsigns } = useFestivitiesStore();
+const { birthsigns: data } = useFestivitiesStore();
+const birthsigns = [...data.values()].sort((a, b) => Number(a.date) - Number(b.date));
 </script>
 <style lang="scss">
 .birthsigns-view {
