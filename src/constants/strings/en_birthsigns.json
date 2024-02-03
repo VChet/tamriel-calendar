@@ -1,80 +1,54 @@
-[
-  {
+{
+  "01": {
     "name": "The Ritual",
-    "month": "01",
-    "image": "ritual",
     "description": "Those born under this sign have a variety of abilities depending on the aspects of the moons and the Divines. Those born under the Ritual use the Mara's Gift power once a day as a powerful Restore Health spell. The Blessed Word can turn the undead."
   },
-  {
+  "02": {
     "name": "The Lover",
-    "month": "02",
-    "image": "lover",
     "description": "Those born under the sign of the Lover are graceful and passionate, they can paralyze others with a kiss."
   },
-  {
+  "03": {
     "name": "The Lord",
-    "month": "03",
-    "image": "lord",
     "description": "Those born under the sign of The Lord can regenerate Health, but are vulnerable to fire."
   },
-  {
+  "04": {
     "name": "The Mage",
-    "month": "04",
-    "image": "mage",
     "description": "Those born under the Mage have more magicka and talent for all kinds of spellcasting, but are often arrogant and absent-minded."
   },
-  {
+  "05": {
     "name": "The Shadow",
-    "month": "05",
-    "image": "shadow",
     "description": "Those born under the sign of The Shadow can make themselves invisible."
   },
-  {
+  "06": {
     "name": "The Steed",
-    "month": "06",
-    "image": "steed",
     "description": "Those born under the sign of the Steed are impatient and always hurrying from one place to another."
   },
-  {
+  "07": {
     "name": "The Apprentice",
-    "month": "07",
-    "image": "apprentice",
     "description": "Those born under the sign of the apprentice have a special affinity for magick of all kinds, but are more vulnerable to magick as well."
   },
-  {
+  "08": {
     "name": "The Warrior",
-    "month": "08",
-    "image": "warrior",
     "description": "Those born under the sign of the Warrior are skilled with weapons of all kinds, but prone to short tempers."
   },
-  {
+  "09": {
     "name": "The Lady",
-    "month": "09",
-    "image": "lady",
     "description": "Those born under the sign of the Lady are kind and tolerant, they have increased Willpower and Endurance."
   },
-  {
+  "10": {
     "name": "The Tower",
-    "month": "10",
-    "image": "tower",
     "description": "Those born under the sign of The Tower can unlock doors magically."
   },
-  {
+  "11": {
     "name": "The Atronach",
-    "month": "11",
-    "image": "atronach",
     "description": "Those born under this sign are natural sorcerers with deep reserves of magicka, but they cannot generate magicka of their own."
   },
-  {
+  "12": {
     "name": "The Thief",
-    "month": "12",
-    "image": "thief",
     "description": "Those born under the sign of the Thief are not typically thieves, though they take risks more often and only rarely come to harm. They will run out of luck eventually, however, and rarely live as long as those born under other signs."
   },
-  {
+  "13": {
     "name": "The Serpent",
-    "month": "13",
-    "image": "serpent",
     "description": "Those born under this sign are the most blessed and the most cursed."
   }
-]
+}

@@ -34,5 +34,5 @@ import { useFestivitiesStore } from "@/store/festivities";
 const route = useRoute();
 const { date } = route.query;
 const { summoningDays } = useFestivitiesStore();
-const festivity = computed(() => (date ? summoningDays.get(date.toString()) : null));
+const festivity = computed(() => (date ? summoningDays.find((entry) => entry.date === date.toString()) : null));
 </script>
