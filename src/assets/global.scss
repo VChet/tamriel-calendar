@@ -40,6 +40,9 @@ ul {
   margin: 0;
   list-style: none;
 }
+svg {
+  vertical-align: bottom;
+}
 #app {
   display: grid;
   grid-template-rows: 1fr min-content;
