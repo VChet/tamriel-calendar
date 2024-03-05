@@ -19,7 +19,7 @@ registerRoute(new NavigationRoute(createHandlerBoundToURL("index.html")), new Ca
 
 // assets caching
 const imageExtensions = [".png", ".jpg", ".jpeg", ".svg", ".webp"];
-const fontExtensions = [".woff", ".woff2"];
+const fontExtensions = [".woff2"];
 registerRoute(
   ({ request }) => [...imageExtensions, ...fontExtensions].some((ext) => request.url.endsWith(ext)),
   new CacheFirst()
