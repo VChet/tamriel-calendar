@@ -31,7 +31,6 @@ html {
   }
 }
 body {
-  min-height: 100vh;
   color: var(--color-beige-dark);
   background-color: var(--color-beige);
 }
@@ -47,7 +46,7 @@ svg {
   display: grid;
   grid-template-rows: 1fr min-content;
   max-width: 80rem;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: 0;
   margin: 0 auto;
 }
