@@ -22,14 +22,6 @@ class FestivityBase implements Festivity {
   }
 }
 
-export class Holiday extends FestivityBase {
-  constructor(holiday: Festivity) {
-    super(holiday);
-  }
-}
+export class Holiday extends FestivityBase {}
 
-export class SummoningDay extends FestivityBase {
-  constructor(summoningDay: Festivity) {
-    super(summoningDay);
-  }
-}
+export class SummoningDay extends FestivityBase {}
