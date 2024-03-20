@@ -11,6 +11,7 @@
       </div>
       <img
         v-if="festivity.image"
+        class="festivity-card__image"
         :src="`/img/festivities/${festivity.image}.svg`"
         :alt="`${festivity.name} illustration`"
       >
@@ -43,6 +44,9 @@ const routeName = props.festivity instanceof Holiday ? "Holiday" : "SummoningDay
     -webkit-line-clamp: 2;
     overflow: hidden;
     font-size: 0.875rem;
+  }
+  &__image {
+    margin-left: auto;
   }
 }
 </style>
