@@ -15,7 +15,10 @@ const pwaOptions: Partial<VitePWAOptions> = {
   manifest: {
     name: "Tamriel Calendar",
     short_name: "Tamriel Calendar",
+    id: "tamriel-calendar",
     description: "Calendar with the system of timekeeping used in The Elder Scrolls universe",
+    dir: "ltr",
+    orientation: "portrait",
     theme_color: "#f9f2e0",
     background_color: "#f9f2e0",
     icons: [
@@ -33,7 +36,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
         src: "icon-512x512.png",
         sizes: "512x512",
         type: "image/png",
-        purpose: "any maskable"
+        purpose: "any"
       }
     ]
   },
