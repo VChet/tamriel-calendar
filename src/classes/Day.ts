@@ -1,10 +1,10 @@
 import dayjs from "dayjs";
 import weekday from "dayjs/plugin/weekday";
 import type { CSSProperties } from "vue";
-import { useFestivitiesStore } from "@/store/festivities";
-import type { Holiday, SummoningDay } from "@/classes/Festivity";
+import { useEventsStore } from "@/store/events";
+import type { Holiday, SummoningDay } from "@/classes/Event";
 
-const { holidays, summoningDays } = useFestivitiesStore();
+const { holidays, summoningDays } = useEventsStore();
 
 dayjs.extend(weekday);
 
@@ -26,7 +26,7 @@ export class Day {
     return dayjs().isSame(this.value, "day");
   }
 
-  get hasFestivity(): boolean {
+  get hasEvent(): boolean {
     return !!this.holiday || !!this.summoningDay;
   }
 

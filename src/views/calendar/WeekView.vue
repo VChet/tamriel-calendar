@@ -6,7 +6,7 @@
         <calendar-day
           :day="day.value"
           :active="selectedDay?.dayName === day.dayName"
-          :festivity="day.hasFestivity"
+          :event="day.hasEvent"
           @click="selectedDay = day"
         />
       </li>
@@ -21,18 +21,18 @@
       <div class="current-day__weekday">
         {{ selectedDay.weekdayName }}
       </div>
-      <section v-if="selectedDay.hasFestivity" class="current-day__festivities">
+      <section v-if="selectedDay.hasEvent" class="current-day__events">
         <div v-if="selectedDay.holiday">
-          <div class="current-day__festivities-title">
-            {{ $t("calendarPage.festivities") }}
+          <div class="current-day__events-title">
+            {{ $t("calendarPage.events") }}
           </div>
-          <festivity-card :festivity="selectedDay.holiday" />
+          <event-card :event="selectedDay.holiday" />
         </div>
         <div v-if="selectedDay.summoningDay">
-          <div class="current-day__festivities-title">
+          <div class="current-day__events-title">
             {{ $t("calendarPage.summoningDays") }}
           </div>
-          <festivity-card :festivity="selectedDay.summoningDay" />
+          <event-card :event="selectedDay.summoningDay" />
         </div>
       </section>
     </div>
@@ -43,7 +43,7 @@ import { reactive } from "vue";
 import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
-import FestivityCard from "@/components/FestivityCard.vue";
+import EventCard from "@/components/EventCard.vue";
 import { Week } from "@/classes/Week";
 import { useSettingsStore } from "@/store/settings";
 
@@ -93,7 +93,7 @@ if (!selectedDay.value) {
     color: #a49d8b;
     text-transform: capitalize;
   }
-  &__festivities {
+  &__events {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;

@@ -1,14 +1,14 @@
 import { createGlobalState } from "@vueuse/core";
 import { reactive } from "vue";
-import type { BaseEntry, DataEntry, NestedEntry, SingleEntry } from "@/types/festivity";
-import { Holiday, SummoningDay } from "@/classes/Festivity";
+import type { BaseEntry, DataEntry, NestedEntry, SingleEntry } from "@/types/event";
+import { Holiday, SummoningDay } from "@/classes/Event";
 
-export const useFestivitiesStore = createGlobalState(() => {
+export const useEventsStore = createGlobalState(() => {
   const holidays = reactive<Map<Holiday["date"], Holiday>>(new Map());
   const summoningDays = reactive<Map<SummoningDay["date"], SummoningDay>>(new Map());
   const birthsigns = reactive<Map<DataEntry["date"], DataEntry>>(new Map());
 
-  async function setFestivitiesData(locale: string) {
+  async function setEventsData(locale: string) {
     const [
       holidaysData,
       holidaysImages,
@@ -62,6 +62,6 @@ export const useFestivitiesStore = createGlobalState(() => {
     summoningDays,
     birthsigns,
 
-    setFestivitiesData
+    setEventsData
   };
 });

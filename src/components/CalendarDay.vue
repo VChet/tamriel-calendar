@@ -12,10 +12,10 @@ const props = withDefaults(
   defineProps<{
     day: dayjs.Dayjs
     active?: boolean
-    festivity?: boolean
+    event?: boolean
     small?: boolean
   }>(),
-  { small: false, festivity: false, active: false }
+  { small: false, event: false, active: false }
 );
 
 dayjs.extend(isToday);
@@ -27,7 +27,7 @@ const classList = computed<Record<string, boolean>>(() => {
     [`${key}--current`]: dayjs(props.day).isToday(),
     [`${key}--active`]: props.active,
     [`${key}--small`]: props.small,
-    [`${key}--festivity`]: props.festivity
+    [`${key}--event`]: props.event
   };
 });
 </script>
@@ -45,7 +45,7 @@ const classList = computed<Record<string, boolean>>(() => {
   user-select: none;
   border: 0.125rem solid transparent;
   border-radius: 50%;
-  &--festivity {
+  &--event {
     cursor: pointer;
     &::after {
       position: absolute;

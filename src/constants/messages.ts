@@ -15,10 +15,10 @@ const messages: I18nOptions["messages"] = {
       continue: "Continue"
     },
     calendarPage: {
-      festivities: "Festivities",
+      events: "Events",
       summoningDays: "Daedra Summoning Days"
     },
-    festivityPage: {
+    eventPage: {
       summoningDay: "Daedra Summoning Day"
     },
     settingsPage: {
@@ -45,10 +45,10 @@ const messages: I18nOptions["messages"] = {
       continue: "Продолжить"
     },
     calendarPage: {
-      festivities: "Праздники",
+      events: "Праздники",
       summoningDays: "Дни вызова даэдра"
     },
-    festivityPage: {
+    eventPage: {
       summoningDay: "День вызова даэдра"
     },
     settingsPage: {

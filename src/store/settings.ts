@@ -3,7 +3,7 @@ import { createGlobalState, useStorage } from "@vueuse/core";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { ref } from "vue";
 import type { RouteRecordName } from "vue-router";
-import { useFestivitiesStore } from "./festivities";
+import { useEventsStore } from "./events";
 import { i18n } from "@/main";
 import tamrielEn from "@/constants/tamriel-en";
 import tamrielRu from "@/constants/tamriel-ru";
@@ -23,13 +23,13 @@ export const useSettingsStore = createGlobalState(() => {
   });
 
   async function setLocale(locale: string) {
-    const { setFestivitiesData } = useFestivitiesStore();
+    const { setEventsData } = useEventsStore();
 
     dayjs.locale(getDayJSLocaleData(locale));
     i18n.global.locale.value = locale;
     document.querySelector("html")?.setAttribute("lang", locale);
     settings.value.locale = locale;
-    await setFestivitiesData(locale);
+    await setEventsData(locale);
   }
 
   const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });

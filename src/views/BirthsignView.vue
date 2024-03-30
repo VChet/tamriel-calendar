@@ -29,9 +29,9 @@ import { useRoute } from "vue-router";
 import dayjs from "dayjs";
 import { computed } from "vue";
 import IconChevronLeft from "~icons/tabler/chevron-left";
-import { useFestivitiesStore } from "@/store/festivities";
+import { useEventsStore } from "@/store/events";
 
 const route = useRoute();
-const { birthsigns } = useFestivitiesStore();
+const { birthsigns } = useEventsStore();
 const birthsign = computed(() => birthsigns.get(route.params.month.toString()));
 </script>

@@ -8,8 +8,8 @@
       <calendar-weekdays />
       <ul class="month__days">
         <li v-for="(day, index) in month.days" :key="index" :style="day.styles">
-          <RouterLink v-if="day.hasFestivity" :to="festivityLink(day)">
-            <calendar-day :day="day.value" :festivity="day.hasFestivity" />
+          <RouterLink v-if="day.hasEvent" :to="eventLink(day)">
+            <calendar-day :day="day.value" :event="day.hasEvent" />
           </RouterLink>
           <calendar-day v-else :day="day.value" />
         </li>
@@ -27,7 +27,7 @@ import type { Day } from "@/classes/Day";
 const current = dayjs();
 const months = Array.from({ length: 6 }).fill(0).map((_, index) => new Month(current.add(index, "month")));
 
-function festivityLink(day: Day) {
+function eventLink(day: Day) {
   if (day.holiday) {
     return { name: "Holiday", query: { date: day.holiday.date } };
   } else if (day.summoningDay) {
@@ -59,7 +59,7 @@ function festivityLink(day: Day) {
       grid-template-columns: repeat(7, 1fr);
       gap: 1rem;
       place-items: center;
-      .calendar-day--festivity {
+      .calendar-day--event {
         cursor: pointer;
         @media (hover: hover) {
           &:hover:not(.calendar-day--current) {

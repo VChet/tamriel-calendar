@@ -19,9 +19,9 @@
 </template>
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import { useFestivitiesStore } from "@/store/festivities";
+import { useEventsStore } from "@/store/events";
 
-const { birthsigns: data } = useFestivitiesStore();
+const { birthsigns: data } = useEventsStore();
 const birthsigns = [...data.values()].sort((a, b) => Number(a.date) - Number(b.date));
 </script>
 <style lang="scss">

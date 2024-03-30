@@ -5,21 +5,21 @@
         <icon-chevron-left />
       </RouterLink>
     </header>
-    <section v-if="festivity" class="container content-card">
+    <section v-if="event" class="container content-card">
       <img
-        v-if="festivity.image"
+        v-if="event.image"
         class="content-card__image"
-        :src="`/img/festivities/${festivity.image}.svg`"
-        :alt="festivity.name"
+        :src="`/img/events/${event.image}.svg`"
+        :alt="event.name"
       >
       <h1 class="content-card__title">
-        {{ festivity.name }}
+        {{ event.name }}
       </h1>
       <div class="content-card__subtitle">
-        {{ festivity.monthName }}
+        {{ event.monthName }}
       </div>
       <div class="content-card__description">
-        {{ festivity.description }}
+        {{ event.description }}
       </div>
     </section>
   </main>
@@ -28,10 +28,10 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import IconChevronLeft from "~icons/tabler/chevron-left";
-import { useFestivitiesStore } from "@/store/festivities";
+import { useEventsStore } from "@/store/events";
 
 const route = useRoute();
 const date = route.query.date?.toString();
-const { holidays } = useFestivitiesStore();
-const festivity = computed(() => (date ? holidays.get(date) : null));
+const { holidays } = useEventsStore();
+const event = computed(() => (date ? holidays.get(date) : null));
 </script>
