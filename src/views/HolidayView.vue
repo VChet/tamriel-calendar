@@ -1,9 +1,12 @@
 <template>
   <main>
-    <header class="header header--left">
-      <RouterLink class="icon-button" type="button" :title="$t('back')" :to="{ name: 'Calendar' }">
+    <header class="header header--space-between">
+      <router-link class="icon-button" type="button" :title="$t('back')" :to="{ name: 'Calendar' }">
         <icon-chevron-left />
-      </RouterLink>
+      </router-link>
+      <button v-if="isShareSupported" class="icon-button" type="button" @click="shareEvent">
+        <icon-share3 />
+      </button>
     </header>
     <section v-if="event" class="container content-card">
       <img
@@ -27,11 +30,23 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { useShare } from "@vueuse/core";
 import IconChevronLeft from "~icons/tabler/chevron-left";
+import IconShare3 from "~icons/tabler/share3";
 import { useEventsStore } from "@/store/events";
 
 const route = useRoute();
 const date = route.query.date?.toString();
 const { holidays } = useEventsStore();
 const event = computed(() => (date ? holidays.get(date) : null));
+
+const { share, isSupported: isShareSupported } = useShare();
+function shareEvent() {
+  if (!event.value) return;
+  share({
+    title: event.value.name,
+    text: event.value.description,
+    url: window.location.href
+  });
+}
 </script>

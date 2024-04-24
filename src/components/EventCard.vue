@@ -1,5 +1,5 @@
 <template>
-  <RouterLink :to="{ name: routeName, query: { date: event.date } }">
+  <router-link :to="{ name: routeName, query: { date: event.date } }">
     <div class="event-card">
       <div>
         <div class="event-card__title">
@@ -16,7 +16,7 @@
         :alt="`${event.name} illustration`"
       >
     </div>
-  </RouterLink>
+  </router-link>
 </template>
 <script setup lang="ts">
 import type { SummoningDay } from "@/classes/Event";

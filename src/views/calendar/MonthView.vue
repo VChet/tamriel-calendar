@@ -8,9 +8,9 @@
       <calendar-weekdays />
       <ul class="month__days">
         <li v-for="(day, index) in month.days" :key="index" :style="day.styles">
-          <RouterLink v-if="day.hasEvent" :to="eventLink(day)">
+          <router-link v-if="day.hasEvent" :to="eventLink(day)">
             <calendar-day :day="day.value" :event="day.hasEvent" />
-          </RouterLink>
+          </router-link>
           <calendar-day v-else :day="day.value" />
         </li>
       </ul>
