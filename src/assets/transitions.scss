@@ -1,0 +1,39 @@
+.transition {
+  overflow: hidden;
+}
+.router-view,
+.router-view-back {
+  &-enter-active,
+  &-leave-active {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--color-beige);
+  }
+}
+.router-view {
+  $duration: 1s;
+  &-enter-active {
+    z-index: 2;
+    transition: transform $duration ease-in-out;
+    transform: translateX(100%);
+  }
+  &-enter-to {
+    z-index: 2;
+    transform: translateX(0%);
+  }
+  &-leave-active,
+  &-leave-to {
+    z-index: -1;
+  }
+  &-back-leave-active {
+    z-index: 2;
+    transition: transform $duration ease-in-out;
+    transform: translateX(0%);
+  }
+  &-back-leave-to {
+    z-index: 2;
+    transform: translateX(100%);
+  }
+}

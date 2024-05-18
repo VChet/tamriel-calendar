@@ -27,7 +27,16 @@
         </li>
       </ul>
     </header>
-    <router-view class="container" />
+    <router-view v-slot="{ Component }" class="container">
+      <transition
+        :name="pageTransition.name"
+        :mode="pageTransition.mode"
+        @after-enter="afterEnter"
+        @after-leave="afterLeave"
+      >
+        <component :is="Component" class="transition" />
+      </transition>
+    </router-view>
   </main>
 </template>
 <script setup lang="ts">
@@ -37,20 +46,27 @@ import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import IconChevronLeft from "~icons/tabler/chevron-left";
 import IconChevronRight from "~icons/tabler/chevron-right";
 import { useSettingsStore } from "@/store/settings";
+import { useSwipeRouter } from "@/composables/swipe-router";
 
 const route = useRoute();
 const router = useRouter();
 const { selectedCalendar, selectedDay } = useSettingsStore();
 
 const calendarPages = route.matched[0].children.map(({ name }) => name);
-
+function navigateToPage(pageIndex: number) {
+  const name = calendarPages[pageIndex];
+  router.push({ name });
+}
+const { pageTransition, setPageTransition, afterEnter, afterLeave } = useSwipeRouter();
 const currentPageIndex = computed(() => calendarPages.indexOf(router.currentRoute.value.name ?? ""));
 const swipeContainer = ref<HTMLElement | null>(null);
 const { isSwiping, direction } = useSwipe(swipeContainer, {
   onSwipeEnd: (_: TouchEvent, direction: UseSwipeDirection) => {
     if (direction === "right" && currentPageIndex.value > 0) {
+      setPageTransition("back");
       navigateToPage(currentPageIndex.value - 1);
     } else if (direction === "left" && currentPageIndex.value < calendarPages.length - 1) {
+      setPageTransition("forward");
       navigateToPage(currentPageIndex.value + 1);
     }
   }
@@ -69,11 +85,6 @@ watch(router.currentRoute, ({ name }) => {
     selectedDay.value = null;
   }
 });
-
-function navigateToPage(pageIndex: number) {
-  const name = calendarPages[pageIndex];
-  router.push({ name });
-}
 </script>
 <style lang="scss">
 .calendar-view {

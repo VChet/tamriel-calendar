@@ -1,5 +1,14 @@
 <template>
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <transition
+      :name="pageTransition.name"
+      :mode="pageTransition.mode"
+      @after-enter="afterEnter"
+      @after-leave="afterLeave"
+    >
+      <component :is="Component" class="transition" />
+    </transition>
+  </router-view>
   <footer v-if="router.currentRoute.value.name !== 'Onboarding'" class="main-nav">
     <nav>
       <ul>
@@ -32,6 +41,7 @@ import IconCalendar from "@/components/icons/IconCalendar.vue";
 import IconComet from "@/components/icons/IconComet.vue";
 import IconSettings from "@/components/icons/IconSettings.vue";
 import { useSettingsStore } from "@/store/settings";
+import { useSwipeRouter } from "@/composables/swipe-router";
 
 const router = useRouter();
 const { settings } = useSettingsStore();
@@ -46,6 +56,8 @@ const isBirthsignsTab = computed(() =>
   ["Birthsigns", "Birthsign"].some((name) => router.currentRoute.value.name === name)
 );
 const isSettingsTab = computed(() => router.currentRoute.value.name === "Settings");
+
+const { pageTransition, afterEnter, afterLeave } = useSwipeRouter();
 </script>
 <style lang="scss">
 .main-nav {
