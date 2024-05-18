@@ -48,7 +48,7 @@ const commitDate = execSync("git log -1 --format=%cI").toString().trimEnd();
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), VitePWA(pwaOptions), VueI18nPlugin({}), Icons()],
+  plugins: [vue(), VitePWA(pwaOptions), VueI18nPlugin({}), Icons({ compiler: "vue3" })],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))
