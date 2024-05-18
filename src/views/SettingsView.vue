@@ -16,20 +16,17 @@
           <a href="https://github.com/VChet/tamriel-calendar">
             <icon-github />
             {{ $t("settingsPage.code") }}
-            <icon-external-link class="external-icon" />
           </a>
         </li>
         <li>
           <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">
             <icon-behance />
             {{ $t("settingsPage.design") }}
-            <icon-external-link class="external-icon" />
           </a>
         </li>
         <li>
           <a :href="$t('settingsPage.tgChannelUrl')">
             <icon-telegram /> {{ $t('settingsPage.tgChannel') }}
-            <icon-external-link class="external-icon" />
           </a>
         </li>
         <li class="settings-view__list-version">
@@ -48,7 +45,6 @@ import dayjs from "dayjs";
 import IconTelegram from "~icons/tabler/brand-telegram";
 import IconGithub from "~icons/tabler/brand-github";
 import IconBehance from "~icons/tabler/brand-behance";
-import IconExternalLink from "~icons/tabler/external-link";
 import { useSettingsStore } from "@/store/settings";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
@@ -85,11 +81,6 @@ watch(locale, setLocale);
       white-space: nowrap;
       svg {
         color: var(--color-red);
-        &.external-icon {
-          width: 1rem;
-          height: 1rem;
-          vertical-align: top;
-        }
       }
     }
     &-language {
