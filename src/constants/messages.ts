@@ -16,7 +16,8 @@ const messages: I18nOptions["messages"] = {
     },
     calendarPage: {
       events: "Events",
-      summoningDays: "Daedra Summoning Days"
+      summoningDays: "Daedra Summoning Days",
+      previousMonth: "Previous month"
     },
     eventPage: {
       summoningDay: "Daedra Summoning Day"
@@ -46,7 +47,8 @@ const messages: I18nOptions["messages"] = {
     },
     calendarPage: {
       events: "Праздники",
-      summoningDays: "Дни вызова даэдра"
+      summoningDays: "Дни вызова даэдра",
+      previousMonth: "Предыдущий месяц"
     },
     eventPage: {
       summoningDay: "День вызова даэдра"
