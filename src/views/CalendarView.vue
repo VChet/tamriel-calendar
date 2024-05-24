@@ -27,7 +27,11 @@
         </li>
       </ul>
     </header>
-    <router-view class="container" />
+    <router-view v-slot="{ Component }">
+      <keep-alive :key="settings.locale">
+        <component :is="Component" class="container" />
+      </keep-alive>
+    </router-view>
   </main>
 </template>
 <script setup lang="ts">
@@ -40,7 +44,7 @@ import { useSettingsStore } from "@/store/settings";
 
 const route = useRoute();
 const router = useRouter();
-const { selectedCalendar, selectedDay } = useSettingsStore();
+const { settings, selectedCalendar, selectedDay } = useSettingsStore();
 
 const calendarPages = route.matched[0].children.map(({ name }) => name);
 

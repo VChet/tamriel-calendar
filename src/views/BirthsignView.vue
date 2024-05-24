@@ -38,7 +38,7 @@ import { useEventsStore } from "@/store/events";
 
 const route = useRoute();
 const { birthsigns } = useEventsStore();
-const birthsign = computed(() => birthsigns.get(route.params.month.toString()));
+const birthsign = computed(() => birthsigns.get(route.params.month?.toString()));
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareBirthign() {

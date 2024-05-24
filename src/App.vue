@@ -1,5 +1,9 @@
 <template>
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <keep-alive :key="settings.locale">
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
   <footer v-if="router.currentRoute.value.name !== 'Onboarding'" class="main-nav">
     <nav>
       <ul>
