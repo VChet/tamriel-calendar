@@ -3,7 +3,7 @@
     <img src="/img/onboarding.svg" alt="logo">
     <h1>{{ $t("onboardingPage.welcome") }}</h1>
     <div>{{ $t("onboardingPage.description") }}</div>
-    <button class="button button--block button--big" type="button" @click="exitOnboarding">
+    <button v-wave class="button button--block button--big" type="button" @click="exitOnboarding">
       {{ $t("onboardingPage.continue") }}
     </button>
   </main>

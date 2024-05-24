@@ -13,20 +13,21 @@
           </label>
         </li>
         <li>
-          <a href="https://github.com/VChet/tamriel-calendar">
+          <a v-wave href="https://github.com/VChet/tamriel-calendar">
             <icon-github />
             {{ $t("settingsPage.code") }}
           </a>
         </li>
         <li>
-          <a href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">
+          <a v-wave href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">
             <icon-behance />
             {{ $t("settingsPage.design") }}
           </a>
         </li>
         <li>
-          <a :href="$t('settingsPage.tgChannelUrl')">
-            <icon-telegram /> {{ $t('settingsPage.tgChannel') }}
+          <a v-wave :href="$t('settingsPage.tgChannelUrl')">
+            <icon-telegram />
+            {{ $t('settingsPage.tgChannel') }}
           </a>
         </li>
         <li class="settings-view__list-version">
@@ -72,12 +73,16 @@ watch(locale, setLocale);
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      padding: 1rem;
+      &:not(:has(a)) {
+        padding: 1rem;
+      }
       &:not(:last-of-type) {
         border-bottom: var(--divider);
       }
     }
     a {
+      flex: 1;
+      padding: 1rem;
       white-space: nowrap;
       svg {
         color: var(--color-red);

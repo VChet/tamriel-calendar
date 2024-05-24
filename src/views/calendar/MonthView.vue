@@ -1,6 +1,6 @@
 <template>
   <section class="month-view">
-    <button v-show="isPreviousMonthAvailable" class="month-view__previous" @click="prependMonth">
+    <button v-show="isPreviousMonthAvailable" v-wave class="month-view__previous" @click="prependMonth">
       {{ $t("calendarPage.previousMonth") }}
     </button>
     <transition-group name="fade">
@@ -15,7 +15,7 @@
             <router-link v-if="day.hasEvent" :to="eventLink(day)">
               <calendar-day :day="day.value" :event="day.hasEvent" />
             </router-link>
-            <calendar-day v-else :day="day.value" />
+            <calendar-day v-else v-wave :day="day.value" />
           </li>
         </ul>
       </div>

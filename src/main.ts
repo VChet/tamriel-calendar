@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
+import VWave from "v-wave";
 import App from "./App.vue";
 import router from "./router";
 import messages from "@/constants/messages";
@@ -16,4 +17,4 @@ export const i18n = createI18n({
 const { settings, setLocale } = useSettingsStore();
 setLocale(settings.value.locale);
 
-createApp(App).use(i18n).use(router).mount("#app");
+createApp(App).use(i18n).use(router).use(VWave, { color: "#d63d21" }).mount("#app");
