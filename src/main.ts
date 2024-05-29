@@ -17,4 +17,8 @@ export const i18n = createI18n({
 const { settings, setLocale } = useSettingsStore();
 setLocale(settings.value.locale);
 
-createApp(App).use(i18n).use(router).use(VWave, { color: "#d63d21" }).mount("#app");
+createApp(App)
+  .use(i18n)
+  .use(router)
+  .use(VWave, {})
+  .mount("#app");
