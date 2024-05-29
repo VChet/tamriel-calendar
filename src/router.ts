@@ -1,6 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useSettingsStore } from "./store/settings";
 
+const OnboardingView = () => import("@/views/OnboardingView.vue");
+
+const CalendarView = () => import("@/views/CalendarView.vue");
+const WeekView = () => import("@/views/calendar/WeekView.vue");
+const MonthView = () => import("@/views/calendar/MonthView.vue");
+const YearView = () => import("@/views/calendar/YearView.vue");
+
+const HolidayView = () => import("@/views/HolidayView.vue");
+const SummoningDayView = () => import("@/views/SummoningDayView.vue");
+const BirthsignsView = () => import("@/views/BirthsignsView.vue");
+const BirthsignView = () => import("@/views/BirthsignView.vue");
+
+const SettingsView = () => import("@/views/SettingsView.vue");
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -12,12 +26,12 @@ const router = createRouter({
     {
       path: "/onboarding",
       name: "Onboarding",
-      component: () => import("@/views/OnboardingView.vue")
+      component: OnboardingView
     },
     {
       path: "/calendar",
       name: "Calendar",
-      component: () => import("@/views/CalendarView.vue"),
+      component: CalendarView,
       redirect: { name: "Week" },
       beforeEnter(to, _from, next) {
         const { selectedCalendar } = useSettingsStore();
@@ -31,44 +45,44 @@ const router = createRouter({
         {
           path: "/calendar/week",
           name: "Week",
-          component: () => import("@/views/calendar/WeekView.vue")
+          component: WeekView
         },
         {
           path: "/calendar/month",
           name: "Month",
-          component: () => import("@/views/calendar/MonthView.vue")
+          component: MonthView
         },
         {
           path: "/calendar/year",
           name: "Year",
-          component: () => import("@/views/calendar/YearView.vue")
+          component: YearView
         }
       ]
     },
     {
       path: "/calendar/holiday",
       name: "Holiday",
-      component: () => import("@/views/HolidayView.vue")
+      component: HolidayView
     },
     {
       path: "/calendar/summoning-day",
       name: "SummoningDay",
-      component: () => import("@/views/SummoningDayView.vue")
+      component: SummoningDayView
     },
     {
       path: "/birthsigns",
       name: "Birthsigns",
-      component: () => import("@/views/BirthsignsView.vue")
+      component: BirthsignsView
     },
     {
       path: "/birthsigns/:month",
       name: "Birthsign",
-      component: () => import("@/views/BirthsignView.vue")
+      component: BirthsignView
     },
     {
       path: "/settings",
       name: "Settings",
-      component: () => import("@/views/SettingsView.vue")
+      component: SettingsView
     },
     {
       path: "/:pathMatch(.*)*",
