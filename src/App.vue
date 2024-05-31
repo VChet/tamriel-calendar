@@ -1,9 +1,5 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <keep-alive :key="settings.locale">
-      <component :is="Component" />
-    </keep-alive>
-  </router-view>
+  <router-view />
   <main-nav />
 </template>
 <script setup lang="ts">
