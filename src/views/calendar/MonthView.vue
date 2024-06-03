@@ -32,7 +32,7 @@ import { Month } from "@/classes/Month";
 import type { Day } from "@/classes/Day";
 
 const current = dayjs();
-const months = reactive([new Month(current)]);
+const months = reactive(Array.from({ length: 3 }, (_, index) => new Month(current.add(index, "month"))));
 
 const isPreviousMonthAvailable = computed<boolean>(() => {
   const previousMonth = months[0].days[0].value.subtract(1, "month");
@@ -53,7 +53,7 @@ function appendMonth() {
 function canLoadMore(): boolean {
   return nextMonth.value.month() !== current.month();
 }
-useInfiniteScroll(window, appendMonth, { distance: 50, canLoadMore });
+useInfiniteScroll(window, appendMonth, { distance: 150, canLoadMore });
 
 function eventLink(day: Day) {
   if (day.holiday) {
@@ -72,7 +72,7 @@ function eventLink(day: Day) {
   gap: 1.875rem;
   &__previous {
     display: block;
-    padding-block: 0.75rem;
+    padding-block: 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-white);
