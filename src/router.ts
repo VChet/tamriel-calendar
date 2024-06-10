@@ -104,5 +104,9 @@ router.beforeEach(() => {
   const { needRefresh, updateServiceWorker } = useSettingsStore();
   if (needRefresh) updateServiceWorker();
 });
+router.afterEach((to) => {
+  const name = to.matched[0].name?.toString();
+  document.title = `${name} | Tamriel Calendar`;
+});
 
 export default router;
