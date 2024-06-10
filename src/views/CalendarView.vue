@@ -8,7 +8,7 @@
         <icon-chevron-right />
       </div>
     </template>
-    <header class="header">
+    <common-header>
       <ul class="tabs">
         <li>
           <router-link :to="{ name: 'Week' }" replace class="tabs__tab" active-class="tabs__tab--active">
@@ -26,7 +26,7 @@
           </router-link>
         </li>
       </ul>
-    </header>
+    </common-header>
     <router-view v-slot="{ Component }">
       <keep-alive :key="settings.locale">
         <component :is="Component" class="container" />
@@ -41,6 +41,7 @@ import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import IconChevronLeft from "~icons/tabler/chevron-left";
 import IconChevronRight from "~icons/tabler/chevron-right";
 import { useSettingsStore } from "@/store/settings";
+import CommonHeader from "@/components/CommonHeader.vue";
 
 const route = useRoute();
 const router = useRouter();

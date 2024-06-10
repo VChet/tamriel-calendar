@@ -51,25 +51,6 @@ svg {
 .container {
   padding: 1.25rem 1rem;
 }
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.625rem;
-  padding: 0 1rem;
-  background-color: var(--color-beige);
-  border-bottom: var(--divider);
-  opacity: 0.94;
-  &--left {
-    justify-content: flex-start;
-  }
-  &--space-between {
-    justify-content: space-between;
-  }
-}
 .button {
   display: inline-flex;
   gap: 0.25rem;

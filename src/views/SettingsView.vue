@@ -1,8 +1,8 @@
 <template>
   <main class="settings-view">
-    <header class="header settings-view__header">
+    <common-header class="settings-view__header">
       {{ $t("settings") }}
-    </header>
+    </common-header>
     <article class="container">
       <ul class="settings-view__list">
         <li class="settings-view__list-language">
@@ -47,6 +47,7 @@ import IconTelegram from "~icons/tabler/brand-telegram";
 import IconGithub from "~icons/tabler/brand-github";
 import IconBehance from "~icons/tabler/brand-behance";
 import { useSettingsStore } from "@/store/settings";
+import CommonHeader from "@/components/CommonHeader.vue";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).format("DD/MM/YY");
@@ -66,7 +67,6 @@ watch(locale, setLocale);
   }
   &__header {
     font-weight: 600;
-    text-align: center;
   }
   &__list {
     li {

@@ -1,13 +1,10 @@
 <template>
   <main>
-    <header class="header header--space-between">
-      <router-link class="icon-button" type="button" :title="$t('back')" :to="{ name: 'Calendar' }">
-        <icon-chevron-left />
-      </router-link>
+    <common-header space-between :back="{ name: 'Calendar' }">
       <button v-if="isShareSupported" class="icon-button" type="button" @click="shareEvent">
         <icon-share3 />
       </button>
-    </header>
+    </common-header>
     <section v-if="event" class="container content-card">
       <img
         v-if="event.image"
@@ -31,9 +28,9 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useShare } from "@vueuse/core";
-import IconChevronLeft from "~icons/tabler/chevron-left";
 import IconShare3 from "~icons/tabler/share3";
 import { useEventsStore } from "@/store/events";
+import CommonHeader from "@/components/CommonHeader.vue";
 
 const route = useRoute();
 const date = route.query.date?.toString();
