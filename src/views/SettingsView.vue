@@ -13,12 +13,6 @@
           </label>
         </li>
         <li>
-          <a v-wave href="https://github.com/VChet/tamriel-calendar">
-            <icon-github />
-            {{ $t("settingsPage.code") }}
-          </a>
-        </li>
-        <li>
           <a v-wave href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">
             <icon-behance />
             {{ $t("settingsPage.design") }}
@@ -31,10 +25,13 @@
           </a>
         </li>
         <li class="settings-view__list-version">
-          {{ $t("settingsPage.appVersion") }}: {{ commitHash }} ({{ commitDate }})
-          <button v-if="needRefresh" class="link" type="button" @click="updateServiceWorker(true)">
-            {{ $t("settingsPage.update") }}
-          </button>
+          <a v-wave href="https://github.com/VChet/tamriel-calendar">
+            <icon-github />
+            {{ $t("settingsPage.appVersion") }}: {{ commitHash }} - {{ commitDate }}
+            <button v-if="needRefresh" class="link" type="button" @click.stop="updateServiceWorker(true)">
+              {{ $t("settingsPage.update") }}
+            </button>
+          </a>
         </li>
       </ul>
     </article>
@@ -50,7 +47,7 @@ import { useSettingsStore } from "@/store/settings";
 import CommonHeader from "@/components/CommonHeader.vue";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
-const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).format("DD/MM/YY");
+const commitDate = dayjs(import.meta.env.VITE_GIT_COMMIT_DATE).locale("en").format("YYYY, MMM DD");
 
 const availableLocales = [
   { code: "en", label: "English" },
