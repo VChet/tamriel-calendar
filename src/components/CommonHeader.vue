@@ -1,31 +1,52 @@
 <template>
-  <header :class="classList">
-    <router-link v-if="back" class="icon-button" type="button" :title="$t('back')" :to="back">
-      <icon-chevron-left />
-    </router-link>
-    <slot />
+  <header class="common-header">
+    <template v-if="!isSearchMode">
+      <router-link v-if="back" class="icon-button common-header__back" type="button" :title="$t('back')" :to="back">
+        <icon-chevron-left />
+      </router-link>
+      <slot />
+      <div v-if="$slots.right || search" class="common-header__right">
+        <slot name="right" />
+        <button v-if="search" class="icon-button" type="button" :title="$t('search')" @click="isSearchMode = true">
+          <icon-search />
+        </button>
+      </div>
+    </template>
+    <div v-else class="search-mode">
+      <search-input v-model="searchQuery" />
+      <button class="link" type="button" @click="isSearchMode = false">
+        {{ $t('cancel') }}
+      </button>
+    </div>
   </header>
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
-import type { RouteLocationRaw } from "vue-router";
+import { type RouteLocationRaw, useRouter } from "vue-router";
+import SearchInput from "./SearchInput.vue";
+import { useSearchStore } from "@/store/search";
 import IconChevronLeft from "~icons/tabler/chevron-left";
+import IconSearch from "~icons/tabler/search";
 
 interface CommonHeaderProps {
   back?: RouteLocationRaw | null
-  spaceBetween?: boolean
+  search?: boolean
 }
-const props = withDefaults(defineProps<CommonHeaderProps>(), { back: null, spaceBetween: false });
-const classList = computed<Record<string, boolean>>(() => {
-  const key = "header";
-  return {
-    [key]: true,
-    [`${key}--space-between`]: props.spaceBetween
-  };
+withDefaults(defineProps<CommonHeaderProps>(), { back: null, search: false });
+
+const router = useRouter();
+const { searchQuery } = useSearchStore();
+const isSearchMode = computed<boolean>({
+  get: () => router.currentRoute.value.name === "Search",
+  set: (isSearch) => {
+    isSearch ?
+      router.push({ name: "Search" }) :
+      router.back();
+  }
 });
 </script>
 <style lang="scss">
-.header {
+.common-header {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -40,8 +61,23 @@ const classList = computed<Record<string, boolean>>(() => {
   &--left {
     justify-content: flex-start;
   }
-  &--space-between {
-    justify-content: space-between;
+  &__back {
+    margin-right: auto;
+  }
+  &__right {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-left: auto;
+  }
+  .search-mode {
+    display: flex;
+    gap: 0.875rem;
+    align-items: baseline;
+    width: 100%;
+    button {
+      font-size: 16px;
+    }
   }
 }
 </style>

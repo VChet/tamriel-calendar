@@ -42,9 +42,9 @@
 <script setup lang="ts">
 import { RouterLink, useRouter } from "vue-router";
 import { computed } from "vue";
-import IconCalendar from "@/components/icons/IconCalendar.vue";
-import IconComet from "@/components/icons/IconComet.vue";
-import IconSettings from "@/components/icons/IconSettings.vue";
+import IconCalendar from "./icons/IconCalendar.vue";
+import IconComet from "./icons/IconComet.vue";
+import IconSettings from "./icons/IconSettings.vue";
 import { useSettingsStore } from "@/store/settings";
 
 const router = useRouter();

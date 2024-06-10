@@ -13,14 +13,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  font-family: Golos, Arial, Helvetica, sans-serif;
-  font-weight: normal;
-}
+  }
 * {
+  margin: 0;
   -webkit-tap-highlight-color: transparent;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  &::selection {
+    color: var(--color-white);
+    background-color: var(--color-red);
+  }
 }
 html {
   font-size: 16px;
@@ -29,8 +31,17 @@ html {
   }
 }
 body {
+  font-family: Golos, Arial, Helvetica, sans-serif;
+  font-weight: normal;
   color: var(--color-beige-dark);
   background-color: var(--color-beige);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg {
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
 }
 ul {
   padding: 0;
@@ -58,7 +69,6 @@ svg {
   justify-content: center;
   max-width: 18.75rem;
   padding: 0.625rem 1.875rem;
-  font: inherit;
   color: var(--color-white);
   white-space: nowrap;
   cursor: pointer;
@@ -91,7 +101,6 @@ a {
 }
 .link {
   padding: 0;
-  font: inherit;
   color: var(--color-red);
   cursor: pointer;
   background: none;

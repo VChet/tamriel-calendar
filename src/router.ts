@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import { useSettingsStore } from "./store/settings";
 
 const OnboardingView = () => import("@/views/OnboardingView.vue");
+const SearchView = () => import("@/views/SearchView.vue");
 
 const CalendarView = () => import("@/views/CalendarView.vue");
 const WeekView = () => import("@/views/calendar/WeekView.vue");
@@ -27,6 +28,11 @@ const router = createRouter({
       path: "/onboarding",
       name: "Onboarding",
       component: OnboardingView
+    },
+    {
+      path: "/search",
+      name: "Search",
+      component: SearchView
     },
     {
       path: "/calendar",

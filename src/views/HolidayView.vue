@@ -1,9 +1,11 @@
 <template>
   <main>
-    <common-header space-between :back="{ name: 'Calendar' }">
-      <button v-if="isShareSupported" class="icon-button" type="button" @click="shareEvent">
-        <icon-share3 />
-      </button>
+    <common-header search :back="{ name: 'Calendar' }">
+      <template v-if="isShareSupported" #right>
+        <button class="icon-button" type="button" @click="shareEvent">
+          <icon-share3 />
+        </button>
+      </template>
     </common-header>
     <section v-if="event" class="container content-card">
       <img
