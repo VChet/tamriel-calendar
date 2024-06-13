@@ -8,7 +8,7 @@
         <icon-chevron-right />
       </div>
     </template>
-    <common-header>
+    <common-header search>
       <ul class="tabs">
         <li>
           <router-link :to="{ name: 'Week' }" replace class="tabs__tab" active-class="tabs__tab--active">

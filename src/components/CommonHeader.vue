@@ -1,16 +1,12 @@
 <template>
   <header class="common-header">
     <template v-if="!isSearchMode">
-      <router-link
-        v-if="backButtonRoute"
-        class="icon-button common-header__back"
-        type="button"
-        :title="$t('back')"
-        :to="backButtonRoute"
-      >
+      <router-link v-if="backButtonRoute" :title="$t('back')" :to="backButtonRoute">
         <icon-chevron-left />
       </router-link>
-      <slot />
+      <div class="common-header__main">
+        <slot />
+      </div>
       <div v-if="$slots.right || search" class="common-header__right">
         <slot name="right" />
         <button v-if="search" class="icon-button" type="button" :title="$t('search')" @click="isSearchMode = true">
@@ -74,14 +70,15 @@ const backButtonRoute = computed(() => {
   &--left {
     justify-content: flex-start;
   }
-  &__back {
-    margin-right: auto;
+  &__main {
+    display: flex;
+    flex: 1;
+    justify-content: center;
   }
   &__right {
-    display: flex;
+    display: inline-flex;
     gap: 0.75rem;
     align-items: center;
-    margin-left: auto;
   }
   .search-mode {
     display: flex;

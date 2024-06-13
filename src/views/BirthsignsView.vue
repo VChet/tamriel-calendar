@@ -1,25 +1,29 @@
 <template>
-  <main class="container birthsigns-view">
-    <h1>{{ $t("birthsigns") }}</h1>
-    <ul class="birthsigns-view__list">
-      <router-link
-        v-for="sign in birthsigns.values()"
-        :key="sign.name"
-        v-slot="{ navigate }"
-        :to="{ name: 'Birthsign', params: { month: sign.date } }"
-        custom
-      >
-        <li role="link" @click="navigate">
-          <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name">
-          {{ sign.name }}
-        </li>
-      </router-link>
-    </ul>
+  <main class="birthsigns-view">
+    <common-header search />
+    <section class="container">
+      <h1>{{ $t("birthsigns") }}</h1>
+      <ul class="birthsigns-view__list">
+        <router-link
+          v-for="sign in birthsigns.values()"
+          :key="sign.name"
+          v-slot="{ navigate }"
+          :to="{ name: 'Birthsign', params: { month: sign.date } }"
+          custom
+        >
+          <li role="link" @click="navigate">
+            <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name">
+            {{ sign.name }}
+          </li>
+        </router-link>
+      </ul>
+    </section>
   </main>
 </template>
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
 import { useEventsStore } from "@/store/events";
+import CommonHeader from "@/components/CommonHeader.vue";
 
 const { birthsigns: data } = useEventsStore();
 const birthsigns = [...data.values()].sort((a, b) => Number(a.date) - Number(b.date));
