@@ -1,7 +1,13 @@
 <template>
   <header class="common-header">
     <template v-if="!isSearchMode">
-      <router-link v-if="back" class="icon-button common-header__back" type="button" :title="$t('back')" :to="back">
+      <router-link
+        v-if="backButtonRoute"
+        class="icon-button common-header__back"
+        type="button"
+        :title="$t('back')"
+        :to="backButtonRoute"
+      >
         <icon-chevron-left />
       </router-link>
       <slot />
@@ -29,10 +35,11 @@ import IconChevronLeft from "~icons/tabler/chevron-left";
 import IconSearch from "~icons/tabler/search";
 
 interface CommonHeaderProps {
+  /** Back button fallback route */
   back?: RouteLocationRaw | null
   search?: boolean
 }
-withDefaults(defineProps<CommonHeaderProps>(), { back: null, search: false });
+const props = withDefaults(defineProps<CommonHeaderProps>(), { back: null, search: false });
 
 const router = useRouter();
 const { searchQuery } = useSearchStore();
@@ -43,6 +50,12 @@ const isSearchMode = computed<boolean>({
       router.push({ name: "Search" }) :
       router.back();
   }
+});
+
+const backButtonRoute = computed(() => {
+  if (!props.back) return null;
+  const previousRoute = router.options.history.state.back?.toString();
+  return previousRoute ?? props.back;
 });
 </script>
 <style lang="scss">

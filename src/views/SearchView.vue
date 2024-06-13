@@ -22,13 +22,11 @@
   </main>
 </template>
 <script setup lang="ts">
-import { onBeforeRouteLeave } from "vue-router";
 import CommonHeader from "../components/CommonHeader.vue";
 import EventCard from "../components/EventCard.vue";
 import { useSearchStore } from "@/store/search";
 
-const { holidaysEntries, summoningDaysEntries, searchQuery } = useSearchStore();
-onBeforeRouteLeave(() => { searchQuery.value = ""; });
+const { holidaysEntries, summoningDaysEntries } = useSearchStore();
 </script>
 <style lang="scss">
 .search-view {
