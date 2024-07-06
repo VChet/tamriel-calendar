@@ -40,23 +40,29 @@
   </section>
 </template>
 <script setup lang="ts">
-import { reactive } from "vue";
+import { onBeforeMount, reactive } from "vue";
 import dayjs from "dayjs";
+import isToday from "dayjs/plugin/isToday";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import EventCard from "@/components/EventCard.vue";
 import { Week } from "@/classes/Week";
 import { useSettingsStore } from "@/store/settings";
 
+dayjs.extend(isToday);
+
 const { selectedDay } = useSettingsStore();
 
 const week = reactive(new Week(dayjs()));
-if (!selectedDay.value) {
-  selectedDay.value = week.currentDay;
-} else if (!week.days.find((day) => day.weekdayName === selectedDay.value?.weekdayName)) {
-  const dayOfWeek = week.days.find((day) => dayjs(day.value).isSame(selectedDay.value?.value));
-  selectedDay.value = dayOfWeek ?? week.currentDay;
+function setCurrentDay() {
+  const currentDay = week.days.find(({ value }) => dayjs(value).isToday())!;
+  selectedDay.value = currentDay;
 }
+function updateCurrentDay() {
+  const currentDay = week.days.find(({ value }) => dayjs(value).isSame(selectedDay.value!.value))!;
+  selectedDay.value = currentDay;
+}
+onBeforeMount(() => { selectedDay.value ? updateCurrentDay() : setCurrentDay(); });
 </script>
 <style lang="scss" scoped>
 .days {

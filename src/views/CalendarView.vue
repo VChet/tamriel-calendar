@@ -45,7 +45,7 @@ import CommonHeader from "@/components/CommonHeader.vue";
 
 const route = useRoute();
 const router = useRouter();
-const { settings, selectedCalendar, selectedDay } = useSettingsStore();
+const { settings, selectedCalendar } = useSettingsStore();
 
 const calendarPages = route.matched[0].children.map(({ name }) => name);
 
@@ -69,10 +69,7 @@ const arrowClassList = computed<Record<string, boolean>>(() => {
 });
 
 watch(router.currentRoute, ({ name }) => {
-  if (calendarPages.some((page) => page === name)) {
-    selectedCalendar.value = name;
-    selectedDay.value = null;
-  }
+  if (calendarPages.includes(name)) selectedCalendar.value = name;
 });
 
 function navigateToPage(pageIndex: number) {
