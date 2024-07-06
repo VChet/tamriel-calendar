@@ -17,6 +17,7 @@ export default antfu({
     "ts/consistent-type-definitions": "off",
     "ts/explicit-function-return-type": "error",
     "unicorn/prefer-includes": "off",
+    "vue/v-bind-style": ["error", "shorthand", { sameNameShorthand: "always" }],
     "vue/block-order": ["error", { order: ["template", "script", "style"] }],
     "vue/component-name-in-template-casing": ["error", "kebab-case"],
     "vue/padding-line-between-blocks": ["error", "never"],

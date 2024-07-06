@@ -57,13 +57,13 @@ function canLoadMore(): boolean {
 }
 useInfiniteScroll(window, appendMonth, { distance: 150, canLoadMore });
 
-function composeEventLink(day: Day): RouteLocationRaw | null {
+function composeEventLink(day: Day): RouteLocationRaw {
   if (day.holiday) {
     return { name: "Holiday", query: { date: day.holiday.date } };
   } else if (day.summoningDay) {
     return { name: "SummoningDay", query: { date: day.summoningDay.date } };
   } else {
-    return null;
+    return {};
   }
 }
 </script>
