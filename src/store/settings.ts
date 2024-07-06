@@ -20,7 +20,7 @@ export const useSettingsStore = createGlobalState(() => {
   const settings = useStorage("settings", {
     locale: "en",
     onboarding: false
-  });
+  }, localStorage, { mergeDefaults: true });
 
   async function setLocale(locale: string) {
     const { setEventsData } = useEventsStore();
