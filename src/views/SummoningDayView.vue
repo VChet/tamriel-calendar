@@ -36,9 +36,9 @@ import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/CommonHeader.vue";
 
 const route = useRoute();
-const { date } = route.query;
+const date = route.query.date?.toString();
 const { summoningDays } = useEventsStore();
-const event = computed(() => (date ? summoningDays.get(date.toString()) : null));
+const event = computed(() => (date ? summoningDays.get(date) : null));
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareEvent() {

@@ -17,8 +17,8 @@
       <h1 class="content-card__title">
         {{ birthsign.name }}
       </h1>
-      <div v-if="dayjs(birthsign.date).isValid()" class="content-card__subtitle">
-        {{ $t("month") }} {{ dayjs(birthsign.date, "MM").format("MMMM") }}
+      <div v-if="isValidMonthIndex(birthsign.date)" class="content-card__subtitle">
+        {{ $t("month") }} {{ composeMonthNameFromDataEntry(birthsign.date) }}
       </div>
       <div class="content-card__description">
         {{ birthsign.description }}
@@ -30,10 +30,10 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useShare } from "@vueuse/core";
-import dayjs from "dayjs";
 import IconShare3 from "~icons/tabler/share3";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/CommonHeader.vue";
+import { composeMonthNameFromDataEntry, isValidMonthIndex } from "@/helpers/date";
 
 const route = useRoute();
 const { birthsigns } = useEventsStore();

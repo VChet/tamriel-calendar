@@ -1,11 +1,12 @@
-import dayjs from "dayjs";
+import type { Dayjs } from "dayjs";
 import { Month } from "@/classes/Month";
+import { isCurrentYear } from "@/helpers/date";
 
 export class Year {
-  value: number;
+  date: Dayjs;
   months: Month[] = [];
-  constructor(date: dayjs.Dayjs) {
-    this.value = date.year();
+  constructor(date: Dayjs) {
+    this.date = date;
     this.months = [];
     let current = date.startOf("year");
     while (current <= date.endOf("year")) {
@@ -14,7 +15,10 @@ export class Year {
     }
   }
 
-  get isCurrent() {
-    return dayjs().isSame(dayjs().year(this.value), "year");
+  get index(): number {
+    return this.date.year();
+  }
+  get isCurrent(): boolean {
+    return isCurrentYear(this.date);
   }
 }

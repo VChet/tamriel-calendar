@@ -1,17 +1,17 @@
 <template>
   <section class="year-view">
-    <div v-for="year in years" :key="year.value" class="year">
+    <div v-for="year in years" :key="year.index" class="year">
       <h1 class="year__title">
-        {{ year.value }}
+        {{ year.index }}
       </h1>
       <ul class="year__months">
-        <li v-for="month in year.months" :key="month.value" class="month">
+        <li v-for="month in year.months" :key="month.index" class="month">
           <h2 class="month__title" :class="{ 'month__title--current': month.isCurrent }">
             {{ month.monthName }}
           </h2>
           <ul class="month__days">
-            <li v-for="(day, dayIndex) in month.days" :key="dayIndex" class="day" :style="day.styles">
-              <calendar-day :day="day.value" small />
+            <li v-for="day in month.days" :key="day.index" class="day" :style="day.styles">
+              <calendar-day :day="day.date" small />
             </li>
           </ul>
         </li>
@@ -20,11 +20,11 @@
   </section>
 </template>
 <script setup lang="ts">
-import dayjs from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import { Year } from "@/classes/Year";
+import { currentDay } from "@/helpers/date";
 
-const current = dayjs();
+const current = currentDay();
 const years = [new Year(current), new Year(current.add(1, "year"))];
 </script>
 <style lang="scss">

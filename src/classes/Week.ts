@@ -1,18 +1,12 @@
-import dayjs from "dayjs";
-import weekOfYear from "dayjs/plugin/weekOfYear";
-import isToday from "dayjs/plugin/isToday";
+import type { Dayjs } from "dayjs";
 import { Day } from "@/classes/Day";
-
-dayjs.extend(weekOfYear);
-dayjs.extend(isToday);
+import { isCurrentDay, isCurrentWeek } from "@/helpers/date";
 
 export class Week {
-  value: number;
-  year: number;
+  date: Dayjs;
   days: Day[] = [];
-  constructor(date: dayjs.Dayjs) {
-    this.value = date.week();
-    this.year = date.year();
+  constructor(date: Dayjs) {
+    this.date = date;
     let current = date.startOf("week");
     while (current <= date.endOf("week")) {
       if (current.isSame(date, "month")) {
@@ -22,11 +16,17 @@ export class Week {
     }
   }
 
+  get index(): number {
+    return this.date.week();
+  }
+  get year(): number {
+    return this.date.year();
+  }
   get isCurrent(): boolean {
-    return dayjs().isSame(dayjs().year(this.year).week(this.value), "week");
+    return isCurrentWeek(this.date);
   }
 
   get currentDay(): Day | null {
-    return this.days.find((day) => dayjs(day.value).isToday()) ?? null;
+    return this.days.find((day) => isCurrentDay(day.date)) ?? null;
   }
 }

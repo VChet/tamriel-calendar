@@ -2,10 +2,10 @@
   <section>
     <calendar-weekdays />
     <ul v-if="week" class="days">
-      <li v-for="(day, index) in week.days" :key="index" :style="day.styles">
+      <li v-for="day in week.days" :key="day.index" :style="day.styles">
         <calendar-day
           v-wave
-          :day="day.value"
+          :day="day.date"
           :active="selectedDay?.dayName === day.dayName"
           :event="day.hasEvent"
           @click="selectedDay = day"
@@ -41,25 +41,21 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, reactive } from "vue";
-import dayjs from "dayjs";
-import isToday from "dayjs/plugin/isToday";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import EventCard from "@/components/EventCard.vue";
 import { Week } from "@/classes/Week";
 import { useSettingsStore } from "@/store/settings";
-
-dayjs.extend(isToday);
+import { currentDay } from "@/helpers/date";
 
 const { selectedDay } = useSettingsStore();
 
-const week = reactive(new Week(dayjs()));
-function setCurrentDay() {
-  const currentDay = week.days.find(({ value }) => dayjs(value).isToday())!;
-  selectedDay.value = currentDay;
+const week = reactive(new Week(currentDay()));
+function setCurrentDay(): void {
+  selectedDay.value = week.currentDay;
 }
 function updateCurrentDay() {
-  const currentDay = week.days.find(({ value }) => dayjs(value).isSame(selectedDay.value!.value))!;
+  const currentDay = week.days.find(({ date }) => date.isSame(selectedDay.value!.date))!;
   selectedDay.value = currentDay;
 }
 onBeforeMount(() => { selectedDay.value ? updateCurrentDay() : setCurrentDay(); });

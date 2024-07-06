@@ -1,49 +1,54 @@
-import dayjs from "dayjs";
-import weekday from "dayjs/plugin/weekday";
+import type { Dayjs } from "dayjs";
 import type { CSSProperties } from "vue";
 import { useEventsStore } from "@/store/events";
 import type { Holiday, SummoningDay } from "@/classes/Event";
+import {
+  composeDataEntryDate,
+  composeDayName,
+  composeMonthName,
+  composeWeekdayName,
+  isCurrentDay
+} from "@/helpers/date";
 
 const { holidays, summoningDays } = useEventsStore();
 
-dayjs.extend(weekday);
-
 export class Day {
-  value: dayjs.Dayjs;
-  constructor(day: dayjs.Dayjs) {
-    this.value = day;
+  date: Dayjs;
+  constructor(date: Dayjs) {
+    this.date = date;
+  }
+
+  get index(): number {
+    return this.date.date();
   }
 
   get holiday(): Holiday | null {
-    return holidays.get(this.value.format("MM/DD")) ?? null;
+    return holidays.get(composeDataEntryDate(this.date)) ?? null;
   }
-
   get summoningDay(): SummoningDay | null {
-    return summoningDays.get(this.value.format("MM/DD")) ?? null;
-  }
-
-  get isCurrent(): boolean {
-    return dayjs().isSame(this.value, "day");
+    return summoningDays.get(composeDataEntryDate(this.date)) ?? null;
   }
 
   get hasEvent(): boolean {
     return !!this.holiday || !!this.summoningDay;
   }
 
+  get isCurrent(): boolean {
+    return isCurrentDay(this.date);
+  }
+
   get dayName(): string {
-    return this.value.format("D");
+    return composeDayName(this.date);
   }
-
   get monthName(): string {
-    return this.value.format("MMMM");
+    return composeMonthName(this.date);
   }
-
   get weekdayName(): string {
-    return this.value.format("dddd");
+    return composeWeekdayName(this.date);
   }
 
   get styles(): CSSProperties {
-    const weekdayOffset = this.value.weekday() + 1;
+    const weekdayOffset = this.date.weekday() + 1;
     return {
       gridColumnStart: weekdayOffset > 1 ? weekdayOffset : "auto"
     };

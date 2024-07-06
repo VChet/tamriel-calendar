@@ -6,12 +6,9 @@
   </ul>
 </template>
 <script setup lang="ts">
-import dayjs from "dayjs";
-import localeData from "dayjs/plugin/localeData";
+import { weekdaysShort } from "@/helpers/date";
 
-dayjs.extend(localeData);
-
-const days = dayjs.weekdaysShort(true);
+const days = weekdaysShort();
 </script>
 <style lang="scss">
 .calendar-weekdays {

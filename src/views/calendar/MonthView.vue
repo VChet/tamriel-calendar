@@ -4,18 +4,18 @@
       {{ $t("calendarPage.previousMonth") }}
     </button>
     <transition-group name="fade">
-      <div v-for="month in months" :key="month.value" class="month">
+      <div v-for="month in months" :key="month.index" class="month">
         <div class="month__title">
           <div>{{ month.monthName }}</div>
           <div>{{ month.yearName }}</div>
         </div>
         <calendar-weekdays />
         <ul class="month__days">
-          <li v-for="(day, index) in month.days" :key="index" :style="day.styles">
-            <router-link v-if="day.hasEvent" :to="eventLink(day)">
-              <calendar-day :day="day.value" :event="day.hasEvent" />
+          <li v-for="day in month.days" :key="day.index" :style="day.styles">
+            <router-link v-if="day.hasEvent" :to="composeEventLink(day)">
+              <calendar-day :day="day.date" :event="day.hasEvent" />
             </router-link>
-            <calendar-day v-else v-wave :day="day.value" />
+            <calendar-day v-else v-wave :day="day.date" />
           </li>
         </ul>
       </div>
@@ -25,26 +25,28 @@
 <script setup lang="ts">
 import { computed, reactive } from "vue";
 import { useInfiniteScroll } from "@vueuse/core";
-import dayjs, { type Dayjs } from "dayjs";
+import type { RouteLocationRaw } from "vue-router";
+import type { Dayjs } from "dayjs";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import { Month } from "@/classes/Month";
 import type { Day } from "@/classes/Day";
+import { currentDay } from "@/helpers/date";
 
-const current = dayjs();
+const current = currentDay();
 const months = reactive(Array.from({ length: 3 }, (_, index) => new Month(current.add(index, "month"))));
 
 const isPreviousMonthAvailable = computed<boolean>(() => {
-  const previousMonth = months[0].days[0].value.subtract(1, "month");
+  const previousMonth = months[0].days[0].date.subtract(1, "month");
   return previousMonth.month() !== current.month();
 });
 function prependMonth() {
-  const firstMonth: Dayjs = months[0].days[0].value;
+  const firstMonth: Dayjs = months[0].days[0].date;
   months.unshift(new Month(firstMonth.subtract(1, "month")));
 }
 
 const nextMonth = computed<Dayjs>(() => {
-  const lastMonth = months.at(-1)!.days.at(-1)!.value;
+  const lastMonth = months.at(-1)!.days.at(-1)!.date;
   return lastMonth.add(1, "month");
 });
 function appendMonth() {
@@ -55,13 +57,13 @@ function canLoadMore(): boolean {
 }
 useInfiniteScroll(window, appendMonth, { distance: 150, canLoadMore });
 
-function eventLink(day: Day) {
+function composeEventLink(day: Day): RouteLocationRaw | null {
   if (day.holiday) {
     return { name: "Holiday", query: { date: day.holiday.date } };
   } else if (day.summoningDay) {
     return { name: "SummoningDay", query: { date: day.summoningDay.date } };
   } else {
-    return {};
+    return null;
   }
 }
 </script>

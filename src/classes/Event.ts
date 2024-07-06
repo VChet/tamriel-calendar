@@ -1,24 +1,28 @@
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
 import type { DataEntry } from "@/types/event";
-
-dayjs.extend(customParseFormat);
+import { composeMonthDayFromDataEntry } from "@/helpers/date";
 
 class EventBase implements DataEntry {
-  name: string;
-  description: string;
-  date: string;
-  image?: string;
+  event: DataEntry;
 
   constructor(event: DataEntry) {
-    this.name = event.name;
-    this.description = event.description;
-    this.date = event.date;
-    this.image = event.image;
+    this.event = event;
+  }
+
+  get name(): DataEntry["name"] {
+    return this.event.name;
+  }
+  get description(): DataEntry["description"] {
+    return this.event.description;
+  }
+  get date(): DataEntry["date"] {
+    return this.event.date;
+  }
+  get image(): DataEntry["image"] {
+    return this.event.image;
   }
 
   get monthName(): string {
-    return dayjs(this.date, "MM/DD").format("D MMMM");
+    return composeMonthDayFromDataEntry(this.date);
   }
 }
 

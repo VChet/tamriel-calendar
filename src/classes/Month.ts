@@ -1,14 +1,13 @@
-import dayjs from "dayjs";
+import type { Dayjs } from "dayjs";
 import { Week } from "@/classes/Week";
 import type { Day } from "@/classes/Day";
+import { composeMonthName, composeYearName, isCurrentMonth } from "@/helpers/date";
 
 export class Month {
-  value: number;
-  year: number;
+  date: Dayjs;
   weeks: Week[] = [];
-  constructor(date: dayjs.Dayjs) {
-    this.value = date.month();
-    this.year = date.year();
+  constructor(date: Dayjs) {
+    this.date = date;
     let current = date.startOf("month");
     while (current <= date.endOf("month")) {
       this.weeks.push(new Week(current));
@@ -16,16 +15,21 @@ export class Month {
     }
   }
 
-  get isCurrent() {
-    return dayjs().isSame(dayjs().year(this.year).month(this.value), "month");
+  get index(): number {
+    return this.date.month();
+  }
+  get year(): number {
+    return this.date.year();
+  }
+  get isCurrent(): boolean {
+    return isCurrentMonth(this.date);
   }
 
   get monthName(): string {
-    return dayjs().month(this.value).format("MMMM");
+    return composeMonthName(this.date);
   }
-
   get yearName(): string {
-    return dayjs().year(this.year).format("YYYY");
+    return composeYearName(this.date);
   }
 
   get days(): Day[] {

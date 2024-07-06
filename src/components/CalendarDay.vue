@@ -5,12 +5,12 @@
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
-import dayjs from "dayjs";
-import isToday from "dayjs/plugin/isToday";
+import type { Dayjs } from "dayjs";
+import { isCurrentDay } from "@/helpers/date";
 
 const props = withDefaults(
   defineProps<{
-    day: dayjs.Dayjs
+    day: Dayjs
     active?: boolean
     event?: boolean
     small?: boolean
@@ -18,13 +18,11 @@ const props = withDefaults(
   { small: false, event: false, active: false }
 );
 
-dayjs.extend(isToday);
-
 const classList = computed<Record<string, boolean>>(() => {
   const key = "calendar-day";
   return {
     [key]: true,
-    [`${key}--current`]: dayjs(props.day).isToday(),
+    [`${key}--current`]: isCurrentDay(props.day),
     [`${key}--active`]: props.active,
     [`${key}--small`]: props.small,
     [`${key}--event`]: props.event
