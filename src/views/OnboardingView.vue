@@ -14,7 +14,7 @@ import { useSettingsStore } from "@/store/settings";
 
 const router = useRouter();
 const { settings } = useSettingsStore();
-function exitOnboarding() {
+function exitOnboarding(): void {
   settings.value.onboarding = true;
   router.push({ name: "Home" });
 }

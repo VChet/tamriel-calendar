@@ -40,7 +40,7 @@ const { birthsigns } = useEventsStore();
 const birthsign = computed(() => birthsigns.get(route.params.month?.toString()));
 
 const { share, isSupported: isShareSupported } = useShare();
-function shareBirthsign() {
+function shareBirthsign(): void {
   if (!birthsign.value) return;
   share({
     title: birthsign.value.name,

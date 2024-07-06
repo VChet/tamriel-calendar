@@ -8,7 +8,7 @@ export const useEventsStore = createGlobalState(() => {
   const summoningDays = reactive<Map<SummoningDay["date"], SummoningDay>>(new Map());
   const birthsigns = reactive<Map<DataEntry["date"], DataEntry>>(new Map());
 
-  async function setEventsData(locale: string) {
+  async function setEventsData(locale: string): Promise<void> {
     const [
       holidaysData,
       holidaysImages,
@@ -29,7 +29,7 @@ export const useEventsStore = createGlobalState(() => {
 
     for (const month in holidaysData) {
       for (const day in holidaysData[month]) {
-        const payload = {
+        const payload: DataEntry = {
           ...holidaysData[month][day],
           date: `${month}/${day}`,
           image: holidaysImages[month]?.[day]
@@ -39,7 +39,7 @@ export const useEventsStore = createGlobalState(() => {
     }
     for (const month in summoningDaysData) {
       for (const day in summoningDaysData[month]) {
-        const payload = {
+        const payload: DataEntry = {
           ...summoningDaysData[month][day],
           date: `${month}/${day}`,
           image: summoningDaysImages[month]?.[day]
@@ -48,7 +48,7 @@ export const useEventsStore = createGlobalState(() => {
       }
     }
     for (const month in birthsignsData) {
-      const payload = {
+      const payload: DataEntry = {
         ...birthsignsData[month],
         date: month,
         image: birthsignsImages[month]

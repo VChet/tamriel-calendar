@@ -72,7 +72,7 @@ watch(router.currentRoute, ({ name }) => {
   if (calendarPages.includes(name)) selectedCalendar.value = name;
 });
 
-function navigateToPage(pageIndex: number) {
+function navigateToPage(pageIndex: number): void {
   const name = calendarPages[pageIndex];
   router.push({ name });
 }

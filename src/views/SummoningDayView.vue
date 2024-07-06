@@ -41,7 +41,7 @@ const { summoningDays } = useEventsStore();
 const event = computed(() => (date ? summoningDays.get(date) : null));
 
 const { share, isSupported: isShareSupported } = useShare();
-function shareEvent() {
+function shareEvent(): void {
   if (!event.value) return;
   share({
     title: event.value.name,

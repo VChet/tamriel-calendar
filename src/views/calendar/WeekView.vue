@@ -54,7 +54,7 @@ const week = reactive(new Week(currentDay()));
 function setCurrentDay(): void {
   selectedDay.value = week.currentDay;
 }
-function updateCurrentDay() {
+function updateCurrentDay(): void {
   const currentDay = week.days.find(({ date }) => date.isSame(selectedDay.value!.date))!;
   selectedDay.value = currentDay;
 }

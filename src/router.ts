@@ -1,3 +1,4 @@
+/* eslint-disable ts/explicit-function-return-type */
 import { createRouter, createWebHistory } from "vue-router";
 import { useSettingsStore } from "./store/settings";
 

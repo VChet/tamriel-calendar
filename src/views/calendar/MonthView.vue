@@ -40,7 +40,7 @@ const isPreviousMonthAvailable = computed<boolean>(() => {
   const previousMonth = months[0].days[0].date.subtract(1, "month");
   return previousMonth.month() !== current.month();
 });
-function prependMonth() {
+function prependMonth(): void {
   const firstMonth: Dayjs = months[0].days[0].date;
   months.unshift(new Month(firstMonth.subtract(1, "month")));
 }
@@ -49,7 +49,7 @@ const nextMonth = computed<Dayjs>(() => {
   const lastMonth = months.at(-1)!.days.at(-1)!.date;
   return lastMonth.add(1, "month");
 });
-function appendMonth() {
+function appendMonth(): void {
   months.push(new Month(nextMonth.value));
 }
 function canLoadMore(): boolean {

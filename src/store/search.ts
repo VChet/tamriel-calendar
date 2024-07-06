@@ -18,7 +18,7 @@ export const useSearchStore = createGlobalState(() => {
     summoningDaysEntries.value = [];
     if (!searchQuery.value) { return; }
     const queryRegex = new RegExp(searchQuery.value, "i");
-    const searchEntry = ({ name, description }: BaseEntry) => queryRegex.test(name) || queryRegex.test(description);
+    const searchEntry = ({ name, description }: BaseEntry): boolean => queryRegex.test(name) || queryRegex.test(description);
     holidaysEntries.value = [...holidays.values()].filter(searchEntry);
     summoningDaysEntries.value = [...summoningDays.values()].filter(searchEntry);
   }

@@ -9,7 +9,7 @@ import tamrielEn from "@/constants/tamriel-en";
 import tamrielRu from "@/constants/tamriel-ru";
 import type { Day } from "@/classes/Day";
 
-function getDayJSLocaleData(locale: string) {
+function getDayJSLocaleData(locale: string): ILocale {
   switch (locale) {
     case "ru": return tamrielRu;
     case "en": default: return tamrielEn;
@@ -22,7 +22,7 @@ export const useSettingsStore = createGlobalState(() => {
     onboarding: false
   }, localStorage, { mergeDefaults: true });
 
-  async function setLocale(locale: string) {
+  async function setLocale(locale: string): Promise<void> {
     const { setEventsData } = useEventsStore();
 
     dayjs.locale(getDayJSLocaleData(locale));

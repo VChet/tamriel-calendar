@@ -47,7 +47,7 @@ export class Day {
     return composeWeekdayName(this.date);
   }
 
-  get styles(): CSSProperties {
+  get styles(): Pick<CSSProperties, "gridColumnStart"> {
     const weekdayOffset = this.date.weekday() + 1;
     return {
       gridColumnStart: weekdayOffset > 1 ? weekdayOffset : "auto"
