@@ -1,16 +1,22 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "lib": ["esnext", "dom", "dom.iterable", "scripthost", "WebWorker"],
     "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "paths": { "@/*": ["./src/*"] },
     "resolveJsonModule": true,
     "types": ["vite/client", "vite-plugin-pwa/client", "unplugin-icons/types/vue"],
     "strict": true,
+    "noImplicitThis": true,
     "noUnusedLocals": true,
+    "importHelpers": true,
+    "noEmit": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"]
