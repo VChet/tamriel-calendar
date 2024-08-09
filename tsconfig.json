@@ -7,7 +7,7 @@
     "moduleResolution": "bundler",
     "paths": { "@/*": ["./src/*"] },
     "resolveJsonModule": true,
-    "types": ["vite/client", "vite-plugin-pwa/client", "unplugin-icons/types/vue"],
+    "types": ["vite/client", "vite-plugin-pwa/client"],
     "strict": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,

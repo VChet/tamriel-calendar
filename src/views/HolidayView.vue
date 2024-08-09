@@ -30,7 +30,7 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useShare } from "@vueuse/core";
-import IconShare3 from "~icons/tabler/share3";
+import { IconShare3 } from "@tabler/icons-vue";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/CommonHeader.vue";
 

@@ -38,8 +38,7 @@
 import { type UseSwipeDirection, useSwipe } from "@vueuse/core";
 import { computed, ref, watch } from "vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
-import IconChevronLeft from "~icons/tabler/chevron-left";
-import IconChevronRight from "~icons/tabler/chevron-right";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
 import CommonHeader from "@/components/CommonHeader.vue";
 

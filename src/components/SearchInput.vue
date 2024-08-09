@@ -10,8 +10,7 @@
 <script setup lang="ts">
 import { type InputHTMLAttributes, ref } from "vue";
 import { useFocus, useVModel } from "@vueuse/core";
-import IconX from "~icons/tabler/x";
-import IconSearch from "~icons/tabler/search";
+import { IconSearch, IconX } from "@tabler/icons-vue";
 
 interface SearchInputProps {
   modelValue: InputHTMLAttributes["value"]

@@ -25,9 +25,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { type RouteLocationRaw, useRouter } from "vue-router";
+import { IconChevronLeft, IconSearch } from "@tabler/icons-vue";
 import { useSearchStore } from "@/store/search";
-import IconChevronLeft from "~icons/tabler/chevron-left";
-import IconSearch from "~icons/tabler/search";
 import SearchInput from "./SearchInput.vue";
 
 interface CommonHeaderProps {

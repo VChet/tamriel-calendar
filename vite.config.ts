@@ -4,7 +4,6 @@ import { defineConfig } from "vite";
 import Vue from "@vitejs/plugin-vue";
 import { VitePWA } from "vite-plugin-pwa";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
-import Icons from "unplugin-icons/vite";
 import PWA_OPTIONS from "./src/constants/pwa-options";
 
 const commitHash = execSync("git rev-parse --short HEAD").toString().trimEnd();
@@ -15,8 +14,7 @@ export default defineConfig({
   plugins: [
     Vue(),
     VitePWA(PWA_OPTIONS),
-    VueI18nPlugin({}),
-    Icons({ compiler: "vue3" })
+    VueI18nPlugin({})
   ],
   resolve: {
     alias: {

@@ -14,19 +14,19 @@
         </li>
         <li>
           <a v-wave href="https://www.behance.net/gallery/110895975/Tamriel-Calendar-Mobile-App">
-            <icon-behance />
+            <icon-brand-behance />
             {{ $t("settingsPage.design") }}
           </a>
         </li>
         <li>
           <a v-wave :href="$t('settingsPage.tgChannelUrl')">
-            <icon-telegram />
+            <icon-brand-telegram />
             {{ $t('settingsPage.tgChannel') }}
           </a>
         </li>
         <li class="settings-view__list-version">
           <a v-wave href="https://github.com/VChet/tamriel-calendar">
-            <icon-github />
+            <icon-brand-github />
             {{ $t("settingsPage.appVersion") }}: {{ commitHash }} - {{ commitDate }}
             <button v-if="needRefresh" class="link" type="button" @click.stop="updateServiceWorker(true)">
               {{ $t("settingsPage.update") }}
@@ -39,9 +39,7 @@
 </template>
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import IconTelegram from "~icons/tabler/brand-telegram";
-import IconGithub from "~icons/tabler/brand-github";
-import IconBehance from "~icons/tabler/brand-behance";
+import { IconBrandBehance, IconBrandGithub, IconBrandTelegram } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
 import { composeCommitDate } from "@/helpers/date";
 import CommonHeader from "@/components/CommonHeader.vue";
