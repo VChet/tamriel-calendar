@@ -32,8 +32,8 @@ import { useRoute } from "vue-router";
 import { useShare } from "@vueuse/core";
 import IconShare3 from "~icons/tabler/share3";
 import { useEventsStore } from "@/store/events";
-import CommonHeader from "@/components/CommonHeader.vue";
 import { composeMonthNameFromDataEntry, isValidMonthIndex } from "@/helpers/date";
+import CommonHeader from "@/components/CommonHeader.vue";
 
 const route = useRoute();
 const { birthsigns } = useEventsStore();

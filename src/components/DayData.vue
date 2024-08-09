@@ -26,8 +26,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import EventCard from "@/components/EventCard.vue";
 import type { Day } from "@/classes/Day";
+import EventCard from "@/components/EventCard.vue";
 
 defineProps<{ selectedDay: Day }>();
 </script>

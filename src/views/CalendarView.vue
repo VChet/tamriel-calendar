@@ -52,10 +52,10 @@ const calendarPages = route.matched[0].children.map(({ name }) => name);
 const currentPageIndex = computed(() => calendarPages.indexOf(router.currentRoute.value.name ?? ""));
 const swipeContainer = ref<HTMLElement | null>(null);
 const { isSwiping, direction } = useSwipe(swipeContainer, {
-  onSwipeEnd: (_: TouchEvent, direction: UseSwipeDirection) => {
-    if (direction === "right" && currentPageIndex.value > 0) {
+  onSwipeEnd: (_: TouchEvent, swipeDirection: UseSwipeDirection) => {
+    if (swipeDirection === "right" && currentPageIndex.value > 0) {
       navigateToPage(currentPageIndex.value - 1);
-    } else if (direction === "left" && currentPageIndex.value < calendarPages.length - 1) {
+    } else if (swipeDirection === "left" && currentPageIndex.value < calendarPages.length - 1) {
       navigateToPage(currentPageIndex.value + 1);
     }
   }

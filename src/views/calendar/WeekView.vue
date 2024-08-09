@@ -17,12 +17,12 @@
 </template>
 <script setup lang="ts">
 import { onBeforeMount, reactive } from "vue";
-import CalendarDay from "@/components/CalendarDay.vue";
-import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
-import DayData from "@/components/DayData.vue";
 import { Week } from "@/classes/Week";
 import { useSettingsStore } from "@/store/settings";
 import { currentDay } from "@/helpers/date";
+import CalendarDay from "@/components/CalendarDay.vue";
+import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
+import DayData from "@/components/DayData.vue";
 
 const { selectedDay } = useSettingsStore();
 
@@ -31,8 +31,8 @@ function setCurrentDay(): void {
   selectedDay.value = week.currentDay;
 }
 function updateCurrentDay(): void {
-  const currentDay = week.days.find(({ date }) => date.isSame(selectedDay.value!.date))!;
-  selectedDay.value = currentDay;
+  const weekCurrentDay = week.days.find(({ date }) => date.isSame(selectedDay.value!.date))!;
+  selectedDay.value = weekCurrentDay;
 }
 onBeforeMount(() => { selectedDay.value ? updateCurrentDay() : setCurrentDay(); });
 </script>

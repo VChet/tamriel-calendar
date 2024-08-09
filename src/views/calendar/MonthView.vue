@@ -27,11 +27,11 @@ import { computed, reactive } from "vue";
 import { useInfiniteScroll } from "@vueuse/core";
 import type { RouteLocationRaw } from "vue-router";
 import type { Dayjs } from "dayjs";
-import CalendarDay from "@/components/CalendarDay.vue";
-import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import { Month } from "@/classes/Month";
 import type { Day } from "@/classes/Day";
 import { currentDay } from "@/helpers/date";
+import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
+import CalendarDay from "@/components/CalendarDay.vue";
 
 const current = currentDay();
 const months = reactive(Array.from({ length: 3 }, (_, index) => new Month(current.add(index, "month"))));
@@ -62,9 +62,8 @@ function composeEventLink(day: Day): RouteLocationRaw {
     return { name: "Holiday", query: { date: day.holiday.date } };
   } else if (day.summoningDay) {
     return { name: "SummoningDay", query: { date: day.summoningDay.date } };
-  } else {
-    return {};
   }
+  return {};
 }
 </script>
 <style lang="scss">

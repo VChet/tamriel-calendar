@@ -43,8 +43,8 @@ import IconTelegram from "~icons/tabler/brand-telegram";
 import IconGithub from "~icons/tabler/brand-github";
 import IconBehance from "~icons/tabler/brand-behance";
 import { useSettingsStore } from "@/store/settings";
-import CommonHeader from "@/components/CommonHeader.vue";
 import { composeCommitDate } from "@/helpers/date";
+import CommonHeader from "@/components/CommonHeader.vue";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = composeCommitDate(import.meta.env.VITE_GIT_COMMIT_DATE);

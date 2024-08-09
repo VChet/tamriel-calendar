@@ -19,8 +19,7 @@
   </router-link>
 </template>
 <script setup lang="ts">
-import type { SummoningDay } from "@/classes/Event";
-import { Holiday } from "@/classes/Event";
+import { Holiday, type SummoningDay } from "@/classes/Event";
 
 const props = defineProps<{ event: Holiday | SummoningDay }>();
 const routeName = props.event instanceof Holiday ? "Holiday" : "SummoningDay";
