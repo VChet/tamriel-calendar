@@ -40,9 +40,9 @@ const routeName = props.event instanceof Holiday ? "Holiday" : "SummoningDay";
   &__description {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
     overflow: hidden;
     font-size: 0.875rem;
+    -webkit-line-clamp: 2;
   }
   &__image {
     margin-left: auto;
