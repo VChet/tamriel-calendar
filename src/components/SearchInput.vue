@@ -8,7 +8,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { type InputHTMLAttributes, ref } from "vue";
+import { type InputHTMLAttributes, useTemplateRef } from "vue";
 import { useFocus, useVModel } from "@vueuse/core";
 import { IconSearch, IconX } from "@tabler/icons-vue";
 
@@ -20,7 +20,7 @@ const emit = defineEmits<{ "update:modelValue": [value: SearchInputProps["modelV
 
 const input = useVModel(props, "modelValue", emit);
 
-const inputRef = ref<HTMLInputElement | null>(null);
+const inputRef = useTemplateRef("inputRef");
 useFocus(inputRef, { initialValue: true });
 </script>
 <style lang="scss">

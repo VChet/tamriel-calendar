@@ -36,7 +36,7 @@
 </template>
 <script setup lang="ts">
 import { type UseSwipeDirection, useSwipe } from "@vueuse/core";
-import { computed, ref, watch } from "vue";
+import { computed, useTemplateRef, watch } from "vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
@@ -49,7 +49,7 @@ const { settings, selectedCalendar } = useSettingsStore();
 const calendarPages = route.matched[0].children.map(({ name }) => name);
 
 const currentPageIndex = computed(() => calendarPages.indexOf(router.currentRoute.value.name ?? ""));
-const swipeContainer = ref<HTMLElement | null>(null);
+const swipeContainer = useTemplateRef("swipeContainer");
 const { isSwiping, direction } = useSwipe(swipeContainer, {
   onSwipeEnd: (_: TouchEvent, swipeDirection: UseSwipeDirection) => {
     if (swipeDirection === "right" && currentPageIndex.value > 0) {
