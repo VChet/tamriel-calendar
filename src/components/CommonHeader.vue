@@ -29,12 +29,12 @@ import { IconChevronLeft, IconSearch } from "@tabler/icons-vue";
 import { useSearchStore } from "@/store/search";
 import SearchInput from "./SearchInput.vue";
 
-interface CommonHeaderProps {
+interface Props {
   /** Back button fallback route */
   back?: RouteLocationRaw | null
   search?: boolean
 }
-const props = withDefaults(defineProps<CommonHeaderProps>(), { back: null, search: false });
+const props = withDefaults(defineProps<Props>(), { back: null, search: false });
 
 const router = useRouter();
 const { searchQuery } = useSearchStore();

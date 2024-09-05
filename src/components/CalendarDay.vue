@@ -8,13 +8,13 @@ import { computed } from "vue";
 import type { Dayjs } from "dayjs";
 import { isCurrentDay } from "@/helpers/date";
 
-interface CalendarDayProps {
+interface Props {
   day: Dayjs
   active?: boolean
   event?: boolean
   small?: boolean
 }
-const props = withDefaults(defineProps<CalendarDayProps>(), { small: false, event: false, active: false });
+const props = withDefaults(defineProps<Props>(), { small: false, event: false, active: false });
 
 const classList = computed<Record<string, boolean>>(() => {
   const key = "calendar-day";

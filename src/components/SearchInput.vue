@@ -12,12 +12,11 @@ import { type InputHTMLAttributes, useTemplateRef } from "vue";
 import { useFocus, useVModel } from "@vueuse/core";
 import { IconSearch, IconX } from "@tabler/icons-vue";
 
-interface SearchInputProps {
+interface Props {
   modelValue: InputHTMLAttributes["value"]
 }
-const props = defineProps<SearchInputProps>();
-const emit = defineEmits<{ "update:modelValue": [value: SearchInputProps["modelValue"]] }>();
-
+const props = defineProps<Props>();
+const emit = defineEmits<{ "update:modelValue": [value: Props["modelValue"]] }>();
 const input = useVModel(props, "modelValue", emit);
 
 const inputRef = useTemplateRef("inputRef");
