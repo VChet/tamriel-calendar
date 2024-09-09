@@ -40,8 +40,8 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import { IconBrandBehance, IconBrandGithub, IconBrandTelegram } from "@tabler/icons-vue";
-import { useSettingsStore } from "@/store/settings";
 import { composeCommitDate } from "@/helpers/date";
+import { useSettingsStore } from "@/store/settings";
 import CommonHeader from "@/components/CommonHeader.vue";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;

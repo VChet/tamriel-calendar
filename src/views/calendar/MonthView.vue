@@ -28,10 +28,10 @@ import { useInfiniteScroll } from "@vueuse/core";
 import type { RouteLocationRaw } from "vue-router";
 import type { Dayjs } from "dayjs";
 import { Month } from "@/classes/Month";
-import type { Day } from "@/classes/Day";
 import { currentDay } from "@/helpers/date";
-import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
+import type { Day } from "@/classes/Day";
 import CalendarDay from "@/components/CalendarDay.vue";
+import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 
 const current = currentDay();
 const months = reactive(Array.from({ length: 3 }, (_, index) => new Month(current.add(index, "month"))));

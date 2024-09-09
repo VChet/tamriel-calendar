@@ -10,13 +10,6 @@ export default antfu({
     "import/no-useless-path-segments": ["error", {
       noUselessIndex: true
     }],
-    "import/order": ["error", {
-      "groups": ["builtin", "external", "parent", "sibling", "index"],
-      "newlines-between": "never",
-      "pathGroups": [
-        { pattern: "*.vue", patternOptions: { matchBase: true }, group: "type", position: "after" }
-      ]
-    }],
     "max-lines": ["warn", { max: 1000 }],
     "max-params": ["error", { max: 6 }],
     "no-await-in-loop": "error",
@@ -35,6 +28,39 @@ export default antfu({
     "no-script-url": "error",
     "no-useless-concat": "error",
     "no-void": "error",
+    "perfectionist/sort-imports": ["error", {
+      internalPattern: ["@/**"],
+      groups: [
+        "builtin",
+        "vue",
+        "vue-libs",
+        "external",
+        "type",
+        "internal",
+        ["parent", "sibling", "index"],
+        "internal-type",
+        ["parent-type", "sibling-type", "index-type"],
+        "vue-components",
+        "side-effect",
+        "object",
+        "unknown"
+      ],
+      customGroups: {
+        value: {
+          "vue": "vue",
+          "vue-libs": ["vue-router", "@vueuse/**/*"],
+          "vue-components": ["**/*.vue", "./**/*.vue", "../**/*.vue"]
+        },
+        type: {
+          "vue": "vue",
+          "vue-libs": ["vue-router", "@vueuse/**/*"],
+          "vue-components": ["**/*.vue", "./**/*.vue", "../**/*.vue"]
+        }
+      },
+      newlinesBetween: "ignore",
+      order: "asc",
+      type: "natural"
+    }],
     "prefer-destructuring": ["error", { array: true, object: true }],
     "require-await": "warn",
     "style/arrow-parens": ["error", "always"],

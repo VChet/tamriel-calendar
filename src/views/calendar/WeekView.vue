@@ -18,8 +18,8 @@
 <script setup lang="ts">
 import { onBeforeMount, reactive } from "vue";
 import { Week } from "@/classes/Week";
-import { useSettingsStore } from "@/store/settings";
 import { currentDay } from "@/helpers/date";
+import { useSettingsStore } from "@/store/settings";
 import CalendarDay from "@/components/CalendarDay.vue";
 import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
 import DayData from "@/components/DayData.vue";

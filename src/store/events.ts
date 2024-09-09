@@ -1,7 +1,7 @@
-import { createGlobalState } from "@vueuse/core";
 import { reactive } from "vue";
-import type { BaseEntry, DataEntry, NestedEntry, SingleEntry } from "@/types/event";
+import { createGlobalState } from "@vueuse/core";
 import { Holiday, SummoningDay } from "@/classes/Event";
+import type { BaseEntry, DataEntry, NestedEntry, SingleEntry } from "@/types/event";
 
 export const useEventsStore = createGlobalState(() => {
   const holidays = reactive<Map<Holiday["date"], Holiday>>(new Map());

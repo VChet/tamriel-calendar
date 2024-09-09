@@ -40,8 +40,8 @@
   </footer>
 </template>
 <script setup lang="ts">
-import { RouterLink, useRouter } from "vue-router";
 import { computed } from "vue";
+import { RouterLink, useRouter } from "vue-router";
 import { useSettingsStore } from "@/store/settings";
 import IconCalendar from "./icons/IconCalendar.vue";
 import IconComet from "./icons/IconComet.vue";

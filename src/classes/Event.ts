@@ -1,5 +1,5 @@
-import type { DataEntry } from "@/types/event";
 import { composeMonthDayFromDataEntry } from "@/helpers/date";
+import type { DataEntry } from "@/types/event";
 
 class EventBase implements DataEntry {
   event: DataEntry;

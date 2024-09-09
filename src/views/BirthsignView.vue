@@ -28,11 +28,11 @@
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRoute } from "vue-router";
 import { useShare } from "@vueuse/core";
+import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
-import { useEventsStore } from "@/store/events";
 import { composeMonthNameFromDataEntry, isValidMonthIndex } from "@/helpers/date";
+import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/CommonHeader.vue";
 
 const route = useRoute();

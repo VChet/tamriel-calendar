@@ -1,5 +1,5 @@
-import { createGlobalState, useDebounceFn } from "@vueuse/core";
 import { ref, watch } from "vue";
+import { createGlobalState, useDebounceFn } from "@vueuse/core";
 import { useEventsStore } from "./events";
 import type { Holiday, SummoningDay } from "@/classes/Event";
 import type { BaseEntry } from "@/types/event";

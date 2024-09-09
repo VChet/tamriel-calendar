@@ -35,8 +35,8 @@
   </main>
 </template>
 <script setup lang="ts">
-import { type UseSwipeDirection, useSwipe } from "@vueuse/core";
 import { computed, useTemplateRef, watch } from "vue";
+import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";

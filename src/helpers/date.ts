@@ -1,9 +1,9 @@
 import dayjs, { type Dayjs, type WeekdayNames } from "dayjs";
-import isToday from "dayjs/plugin/isToday";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import isToday from "dayjs/plugin/isToday";
+import localeData from "dayjs/plugin/localeData";
 import weekday from "dayjs/plugin/weekday";
 import weekOfYear from "dayjs/plugin/weekOfYear";
-import localeData from "dayjs/plugin/localeData";
 import type { DataEntry } from "@/types/event";
 
 dayjs.extend(isToday);

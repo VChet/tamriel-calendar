@@ -1,7 +1,5 @@
-import type { Dayjs } from "dayjs";
 import type { CSSProperties } from "vue";
-import { useEventsStore } from "@/store/events";
-import type { Holiday, SummoningDay } from "@/classes/Event";
+import type { Dayjs } from "dayjs";
 import {
   composeDataEntryDate,
   composeDayName,
@@ -9,6 +7,8 @@ import {
   composeWeekdayName,
   isCurrentDay
 } from "@/helpers/date";
+import { useEventsStore } from "@/store/events";
+import type { Holiday, SummoningDay } from "@/classes/Event";
 
 const { holidays, summoningDays } = useEventsStore();
 

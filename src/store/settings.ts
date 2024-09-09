@@ -1,12 +1,12 @@
-import dayjs from "dayjs";
-import { createGlobalState, useStorage } from "@vueuse/core";
-import { useRegisterSW } from "virtual:pwa-register/vue";
 import { ref } from "vue";
+import { createGlobalState, useStorage } from "@vueuse/core";
 import type { RouteRecordName } from "vue-router";
-import { useEventsStore } from "./events";
-import { i18n } from "@/main";
+import dayjs from "dayjs";
+import { useRegisterSW } from "virtual:pwa-register/vue";
 import tamrielEn from "@/constants/tamriel-en";
 import tamrielRu from "@/constants/tamriel-ru";
+import { i18n } from "@/main";
+import { useEventsStore } from "./events";
 import type { Day } from "@/classes/Day";
 
 function getDayJSLocaleData(locale: string): ILocale {

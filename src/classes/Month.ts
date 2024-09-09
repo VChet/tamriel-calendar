@@ -1,7 +1,7 @@
 import type { Dayjs } from "dayjs";
 import { Week } from "@/classes/Week";
-import type { Day } from "@/classes/Day";
 import { composeMonthName, composeYearName, isCurrentMonth } from "@/helpers/date";
+import type { Day } from "@/classes/Day";
 
 export class Month {
   date: Dayjs;
