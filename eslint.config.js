@@ -40,20 +40,20 @@ export default antfu({
         ["parent", "sibling", "index"],
         "internal-type",
         ["parent-type", "sibling-type", "index-type"],
-        "vue-components",
         "side-effect",
+        "vue-components",
         "object",
         "unknown"
       ],
       customGroups: {
         value: {
           "vue": "vue",
-          "vue-libs": ["vue-router", "@vueuse/**/*"],
+          "vue-libs": ["vue-router", "vue-i18n", "@vueuse/**/*"],
           "vue-components": ["**/*.vue", "./**/*.vue", "../**/*.vue"]
         },
         type: {
           "vue": "vue",
-          "vue-libs": ["vue-router", "@vueuse/**/*"],
+          "vue-libs": ["vue-router", "vue-i18n", "@vueuse/**/*"],
           "vue-components": ["**/*.vue", "./**/*.vue", "../**/*.vue"]
         }
       },

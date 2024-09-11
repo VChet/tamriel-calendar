@@ -1,11 +1,11 @@
 import { createApp } from "vue";
-import VWave from "v-wave";
 import { createI18n } from "vue-i18n";
+import VWave from "v-wave";
 import messages from "@/constants/messages";
 import { useSettingsStore } from "@/store/settings";
 import router from "./router";
-import App from "./App.vue";
 import "./assets/global.scss";
+import App from "./App.vue";
 
 export const i18n = createI18n({
   locale: "en",
