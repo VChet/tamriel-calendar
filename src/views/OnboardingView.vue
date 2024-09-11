@@ -39,7 +39,6 @@ function exitOnboarding(): void {
   }
   h1 {
     @include title;
-
     margin-bottom: 1.5rem;
   }
   button {
