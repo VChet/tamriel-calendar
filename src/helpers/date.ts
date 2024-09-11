@@ -1,4 +1,4 @@
-import dayjs, { type Dayjs, type WeekdayNames } from "dayjs";
+import dayjs, { type ConfigType, type Dayjs, type WeekdayNames } from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import isToday from "dayjs/plugin/isToday";
 import localeData from "dayjs/plugin/localeData";
@@ -16,11 +16,11 @@ export const currentDay = (): Dayjs => dayjs();
 // Use function to reload locale
 export const weekdaysShort = (): WeekdayNames => dayjs.weekdaysShort(true);
 
-export function isValidDate(value: string): boolean {
+export function isValidDate(value: ConfigType): boolean {
   return dayjs(value).isValid();
 }
 
-export function isValidMonthIndex(value: string, format = "MM"): boolean {
+export function isValidMonthIndex(value: ConfigType, format = "MM"): boolean {
   return dayjs(value, format, true).isValid();
 }
 
@@ -46,7 +46,7 @@ export function composeMonthNameFromDataEntry(value: DataEntry["date"]): string 
 export function composeDataEntryDate(value: Dayjs): string {
   return value.format("MM/DD");
 }
-export function composeCommitDate(value: string): string {
+export function composeCommitDate(value: ConfigType): string {
   return dayjs(value).locale("en").format("YYYY, MMM DD");
 }
 
