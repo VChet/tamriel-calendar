@@ -1,9 +1,9 @@
 {
   "recommendations": [
-    "vue.volar",
+    "christian-kohler.npm-intellisense",
     "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
     "stylelint.vscode-stylelint",
-    "sonarsource.sonarlint-vscode",
-    "christian-kohler.npm-intellisense"
+    "vue.volar"
   ]
 }
