@@ -1,4 +1,5 @@
 @use "./fonts";
+@use "./content-card";
 :root {
   --color-white: #fffefc;
   --color-red: #d63d21;
@@ -13,29 +14,35 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  }
-* {
   margin: 0;
-  -webkit-tap-highlight-color: transparent;
-  -ms-overflow-style: none;
   scrollbar-width: none;
-  &::selection {
-    color: var(--color-white);
-    background-color: var(--color-red);
-  }
+}
+*::selection {
+  color: var(--color-white);
+  background-color: var(--color-red);
 }
 html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-family: Golos, Arial, Helvetica, sans-serif;
   font-size: 16px;
+  font-weight: normal;
+  color: var(--color-beige-dark);
+  background-color: var(--color-beige);
   @media (width >= 768px) {
     font-size: 20px;
   }
 }
-body {
-  font-family: Golos, Arial, Helvetica, sans-serif;
-  font-weight: normal;
-  color: var(--color-beige-dark);
-  background-color: var(--color-beige);
-  -webkit-font-smoothing: antialiased;
+#app {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  max-width: 80rem;
+  min-height: 100dvh;
+  padding: 0;
+  margin: 0 auto;
 }
 img, svg {
   max-width: 100%;
@@ -48,20 +55,14 @@ ul {
   margin: 0;
   list-style: none;
 }
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+p, li {
+  text-wrap: pretty;
+}
 svg {
   vertical-align: bottom;
-}
-.tabler-icon {
-  width: 1.2em;
-  height: 1.2em;
-}
-#app {
-  display: grid;
-  grid-template-rows: 1fr min-content;
-  max-width: 80rem;
-  min-height: 100dvh;
-  padding: 0;
-  margin: 0 auto;
 }
 .container {
   padding: 1.25rem 1rem;
@@ -116,6 +117,10 @@ a {
     text-decoration: underline;
   }
 }
+.tabler-icon {
+  width: 1.2em;
+  height: 1.2em;
+}
 .icon-button {
   display: inline-grid;
   place-items: center;
@@ -125,35 +130,12 @@ a {
   background: none;
   border: none;
   outline: none;
-  svg {
+  .tabler-icon {
     width: 1.375rem;
     height: 1.375rem;
   }
   &:hover,
   &:focus-visible {
     color: var(--color-beige-dark-medium);
-  }
-}
-.content-card {
-  display: flex;
-  flex-direction: column;
-  &__image {
-    align-self: center;
-    max-width: 100%;
-    margin: 3.5rem 0 2.5rem;
-  }
-  &__title {
-    font-family: Literata, serif;
-    font-size: 1.625rem;
-    font-weight: 600;
-  }
-  &__subtitle {
-    margin-top: 0.375rem;
-    font-weight: 500;
-    color: var(--color-beige-dark);
-    opacity: 0.4;
-  }
-  &__description {
-    margin-top: 1rem;
   }
 }
