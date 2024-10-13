@@ -75,13 +75,7 @@ export default antfu({
     "ts/consistent-indexed-object-style": "error",
     "ts/consistent-type-definitions": "off",
     "ts/no-shadow": "error",
-    "ts/no-unused-expressions": ["error", {
-      allowShortCircuit: true,
-      allowTaggedTemplates: true,
-      allowTernary: true
-    }],
     "unicorn/prefer-includes": "off",
-    "unused-imports/no-unused-vars": "off",
     "vue/attribute-hyphenation": ["error", "always"],
     "vue/block-order": ["error", { order: ["template", "script", "style"] }],
     "vue/comma-dangle": ["error", "never"],
