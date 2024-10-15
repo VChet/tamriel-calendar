@@ -28,7 +28,7 @@
           <a v-wave href="https://github.com/VChet/tamriel-calendar">
             <icon-brand-github />
             {{ $t("settingsPage.appVersion") }}: {{ commitHash }} - {{ commitDate }}
-            <button v-if="needRefresh" class="link" type="button" @click.stop="updateServiceWorker(true)">
+            <button v-if="needRefresh" class="link" type="button" @click.prevent="updateServiceWorker(true)">
               {{ $t("settingsPage.update") }}
             </button>
           </a>
