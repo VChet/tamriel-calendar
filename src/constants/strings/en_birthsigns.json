@@ -1,54 +1,54 @@
 {
   "01": {
-    "name": "The Ritual",
-    "description": "Those born under this sign have a variety of abilities depending on the aspects of the moons and the Divines. Those born under the Ritual use the Mara's Gift power once a day as a powerful Restore Health spell. The Blessed Word can turn the undead."
+    "description": "Those born under this sign have a variety of abilities depending on the aspects of the moons and the Divines. Those born under the Ritual use the Mara's Gift power once a day as a powerful Restore Health spell. The Blessed Word can turn the undead.",
+    "name": "The Ritual"
   },
   "02": {
-    "name": "The Lover",
-    "description": "Those born under the sign of the Lover are graceful and passionate, they can paralyze others with a kiss."
+    "description": "Those born under the sign of the Lover are graceful and passionate, they can paralyze others with a kiss.",
+    "name": "The Lover"
   },
   "03": {
-    "name": "The Lord",
-    "description": "Those born under the sign of The Lord can regenerate Health, but are vulnerable to fire."
+    "description": "Those born under the sign of The Lord can regenerate Health, but are vulnerable to fire.",
+    "name": "The Lord"
   },
   "04": {
-    "name": "The Mage",
-    "description": "Those born under the Mage have more magicka and talent for all kinds of spellcasting, but are often arrogant and absent-minded."
+    "description": "Those born under the Mage have more magicka and talent for all kinds of spellcasting, but are often arrogant and absent-minded.",
+    "name": "The Mage"
   },
   "05": {
-    "name": "The Shadow",
-    "description": "Those born under the sign of The Shadow can make themselves invisible."
+    "description": "Those born under the sign of The Shadow can make themselves invisible.",
+    "name": "The Shadow"
   },
   "06": {
-    "name": "The Steed",
-    "description": "Those born under the sign of the Steed are impatient and always hurrying from one place to another."
+    "description": "Those born under the sign of the Steed are impatient and always hurrying from one place to another.",
+    "name": "The Steed"
   },
   "07": {
-    "name": "The Apprentice",
-    "description": "Those born under the sign of the apprentice have a special affinity for magick of all kinds, but are more vulnerable to magick as well."
+    "description": "Those born under the sign of the apprentice have a special affinity for magick of all kinds, but are more vulnerable to magick as well.",
+    "name": "The Apprentice"
   },
   "08": {
-    "name": "The Warrior",
-    "description": "Those born under the sign of the Warrior are skilled with weapons of all kinds, but prone to short tempers."
+    "description": "Those born under the sign of the Warrior are skilled with weapons of all kinds, but prone to short tempers.",
+    "name": "The Warrior"
   },
   "09": {
-    "name": "The Lady",
-    "description": "Those born under the sign of the Lady are kind and tolerant, they have increased Willpower and Endurance."
+    "description": "Those born under the sign of the Lady are kind and tolerant, they have increased Willpower and Endurance.",
+    "name": "The Lady"
   },
   "10": {
-    "name": "The Tower",
-    "description": "Those born under the sign of The Tower can unlock doors magically."
+    "description": "Those born under the sign of The Tower can unlock doors magically.",
+    "name": "The Tower"
   },
   "11": {
-    "name": "The Atronach",
-    "description": "Those born under this sign are natural sorcerers with deep reserves of magicka, but they cannot generate magicka of their own."
+    "description": "Those born under this sign are natural sorcerers with deep reserves of magicka, but they cannot generate magicka of their own.",
+    "name": "The Atronach"
   },
   "12": {
-    "name": "The Thief",
-    "description": "Those born under the sign of the Thief are not typically thieves, though they take risks more often and only rarely come to harm. They will run out of luck eventually, however, and rarely live as long as those born under other signs."
+    "description": "Those born under the sign of the Thief are not typically thieves, though they take risks more often and only rarely come to harm. They will run out of luck eventually, however, and rarely live as long as those born under other signs.",
+    "name": "The Thief"
   },
   "13": {
-    "name": "The Serpent",
-    "description": "Those born under this sign are the most blessed and the most cursed."
+    "description": "Those born under this sign are the most blessed and the most cursed.",
+    "name": "The Serpent"
   }
 }
