@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { i18n } from "./main";
 import { useSettingsStore } from "./store/settings";
 
 const OnboardingView = () => import("@/views/OnboardingView.vue");
@@ -27,17 +28,20 @@ const router = createRouter({
     {
       path: "/onboarding",
       name: "Onboarding",
-      component: OnboardingView
+      component: OnboardingView,
+      meta: { titleToken: "router.onboarding" }
     },
     {
       path: "/search",
       name: "Search",
-      component: SearchView
+      component: SearchView,
+      meta: { titleToken: "router.search" }
     },
     {
       path: "/calendar",
       name: "Calendar",
       component: CalendarView,
+      meta: { titleToken: "router.calendar" },
       redirect: { name: "Week" },
       beforeEnter(to, _from, next) {
         const { selectedCalendar } = useSettingsStore();
@@ -68,27 +72,32 @@ const router = createRouter({
     {
       path: "/calendar/holiday",
       name: "Holiday",
-      component: HolidayView
+      component: HolidayView,
+      meta: { titleToken: "router.holiday" }
     },
     {
       path: "/calendar/summoning-day",
       name: "SummoningDay",
-      component: SummoningDayView
+      component: SummoningDayView,
+      meta: { titleToken: "router.summoningDay" }
     },
     {
       path: "/birthsigns",
       name: "Birthsigns",
-      component: BirthsignsView
+      component: BirthsignsView,
+      meta: { titleToken: "router.birthsigns" }
     },
     {
       path: "/birthsigns/:month",
       name: "Birthsign",
-      component: BirthsignView
+      component: BirthsignView,
+      meta: { titleToken: "router.birthsign" }
     },
     {
       path: "/settings",
       name: "Settings",
-      component: SettingsView
+      component: SettingsView,
+      meta: { titleToken: "router.settings" }
     },
     {
       path: "/:pathMatch(.*)*",
@@ -105,8 +114,10 @@ router.beforeEach(() => {
   if (needRefresh) updateServiceWorker();
 });
 router.afterEach((to) => {
-  const name = to.matched[0].name?.toString();
-  document.title = `${name} | Tamriel Calendar`;
+  const token = to.matched[0].meta.titleToken;
+  document.title = token ?
+    `${i18n.global.t(token)} | ${i18n.global.t("router.title")}` :
+    i18n.global.t("router.title");
 });
 
 export default router;

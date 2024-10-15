@@ -11,6 +11,15 @@ const messages: I18nOptions["messages"] = {
     back: "Back",
     search: "Search",
     cancel: "Cancel",
+    router: {
+      title: "Tamriel Calendar",
+      onboarding: "Onboarding",
+      search: "Search",
+      calendar: "Calendar",
+      holiday: "Holiday",
+      summoningDay: "Summoning Day",
+      settings: "Settings"
+    },
     onboardingPage: {
       welcome: "Welcome!",
       description: "The Tamriel Calendar is a system of timekeeping adopted in the Empire of Tamriel",
@@ -43,6 +52,15 @@ const messages: I18nOptions["messages"] = {
     back: "Назад",
     search: "Поиск",
     cancel: "Отменить",
+    router: {
+      title: "Календарь Тамриэля",
+      onboarding: "Приветствие",
+      search: "Поиск",
+      calendar: "Календарь",
+      holiday: "Праздник",
+      summoningDay: "День вызова даэдра",
+      settings: "Настройки"
+    },
     onboardingPage: {
       welcome: "Добро пожаловать!",
       description: "Календарь Тамриэля — система времяисчисления, принятая в Империи Тамриэль",
