@@ -14,7 +14,7 @@
     "lint:css": "stylelint **/*{.scss,.vue}",
     "lint:css:fix": "npm run lint:css -- --fix",
     "lint:all": "npm run lint:ts && npm run lint:js && npm run lint:css",
-    "localazy:download": "localazy download"
+    "localazy:download": "localazy download && npm run lint:js:fix"
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "^5.2.0",

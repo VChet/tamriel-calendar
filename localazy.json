@@ -1,5 +1,6 @@
 {
   "download": {
+    "includeSourceLang": true,
     "folder": "src/constants/strings",
     "files": "${lang}_${file}"
   }
