@@ -32,6 +32,8 @@ import { computed } from "vue";
 import { useShare } from "@vueuse/core";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
+import { useHead } from "@unhead/vue";
+import { composeTitle } from "@/helpers/router";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/CommonHeader.vue";
 
@@ -39,6 +41,17 @@ const route = useRoute();
 const date = route.query.date?.toString();
 const { summoningDays } = useEventsStore();
 const event = computed(() => (date ? summoningDays.get(date) : null));
+
+const title = computed<string>(() => {
+  if (!event.value) return composeTitle(route.meta.titleToken);
+  return composeTitle(event.value.name, { raw: true });
+});
+useHead({
+  title,
+  meta: () => [
+    { name: "description", content: event.value?.description }
+  ]
+});
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareEvent(): void {

@@ -31,13 +31,26 @@ import { computed } from "vue";
 import { useShare } from "@vueuse/core";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
+import { useHead } from "@unhead/vue";
 import { composeMonthNameFromDataEntry, isValidMonthIndex } from "@/helpers/date";
+import { composeTitle } from "@/helpers/router";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/CommonHeader.vue";
 
 const route = useRoute();
 const { birthsigns } = useEventsStore();
 const birthsign = computed(() => birthsigns.get(route.params.month?.toString()));
+
+const title = computed<string>(() => {
+  if (!birthsign.value) return composeTitle(route.meta.titleToken);
+  return composeTitle(birthsign.value.name, { raw: true });
+});
+useHead({
+  title,
+  meta: () => [
+    { name: "description", content: birthsign.value?.description }
+  ]
+});
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareBirthsign(): void {

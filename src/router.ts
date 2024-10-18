@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { i18n } from "./main";
+import { composeTitle } from "./helpers/router";
 import { useSettingsStore } from "./store/settings";
 
 const OnboardingView = () => import("@/views/OnboardingView.vue");
@@ -115,9 +115,7 @@ router.beforeEach(() => {
 });
 router.afterEach((to) => {
   const token = to.matched[0].meta.titleToken;
-  document.title = token ?
-    `${i18n.global.t(token)} | ${i18n.global.t("router.title")}` :
-    i18n.global.t("router.title");
+  document.title = composeTitle(token);
 });
 
 export default router;

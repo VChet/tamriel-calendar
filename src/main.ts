@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
+import { createHead } from "@unhead/vue";
 import VWave from "v-wave";
 import messages from "@/constants/messages";
 import { useSettingsStore } from "@/store/settings";
@@ -14,11 +15,14 @@ export const i18n = createI18n({
   messages
 });
 
+const head = createHead();
+
 const { settings, setLocale } = useSettingsStore();
 setLocale(settings.value.locale);
 
 createApp(App)
   .use(i18n)
   .use(router)
+  .use(head)
   .use(VWave, {})
   .mount("#app");

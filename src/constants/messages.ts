@@ -16,6 +16,8 @@ const messages: I18nOptions["messages"] = {
       onboarding: "Onboarding",
       search: "Search",
       calendar: "Calendar",
+      birthsigns: "Birthsigns",
+      birthsign: "Birthsign",
       holiday: "Holiday",
       summoningDay: "Summoning Day",
       settings: "Settings"
@@ -57,6 +59,8 @@ const messages: I18nOptions["messages"] = {
       onboarding: "Приветствие",
       search: "Поиск",
       calendar: "Календарь",
+      birthsigns: "Знаки рождения",
+      birthsign: "Знак рождения",
       holiday: "Праздник",
       summoningDay: "День вызова даэдра",
       settings: "Настройки"
