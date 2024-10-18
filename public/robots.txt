@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://tamriel-calendar.netlify.app/sitemap.txt
