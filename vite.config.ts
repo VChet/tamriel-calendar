@@ -14,7 +14,7 @@ export default defineConfig({
   plugins: [
     Vue(),
     VitePWA(PWA_OPTIONS),
-    VueI18nPlugin({})
+    VueI18nPlugin()
   ],
   resolve: {
     alias: {
