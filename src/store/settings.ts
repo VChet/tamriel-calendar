@@ -22,25 +22,27 @@ function getDayJSLocaleData(locale: LocaleCode): ILocale {
   }
 }
 
-export const useSettingsStore = createGlobalState(() => {
-  const availableLocales: { code: LocaleCode, label: string }[] = [
-    { code: "en", label: "English" },
-    { code: "ru", label: "Русский" }
-  ];
+const LOCALES: { code: LocaleCode, locale: string, label: string }[] = [
+  { code: "en", locale: "en_US", label: "English" },
+  { code: "ru", locale: "ru_RU", label: "Русский" }
+];
 
+export const useSettingsStore = createGlobalState(() => {
   const settings = useLocalStorage<SettingsStore>("settings", {
     locale: "en",
     onboarding: false
   }, { mergeDefaults: true });
 
-  async function setLocale(locale: LocaleCode): Promise<void> {
+  async function setLocale(localeCode: LocaleCode): Promise<void> {
     const { setEventsData } = useEventsStore();
 
-    dayjs.locale(getDayJSLocaleData(locale));
-    i18n.global.locale.value = locale;
-    document.querySelector("html")?.setAttribute("lang", locale);
-    settings.value.locale = locale;
-    await setEventsData(locale);
+    dayjs.locale(getDayJSLocaleData(localeCode));
+    i18n.global.locale.value = localeCode;
+    document.querySelector("html")?.setAttribute("lang", localeCode);
+    const locale = LOCALES.find(({ code }) => code === localeCode)?.locale ?? "en_US";
+    document.querySelector("meta[property='og:locale']")?.setAttribute("content", locale);
+    settings.value.locale = localeCode;
+    await setEventsData(localeCode);
   }
 
   const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });
@@ -48,7 +50,7 @@ export const useSettingsStore = createGlobalState(() => {
   const selectedDay = ref<Day | null>(null);
 
   return {
-    availableLocales,
+    LOCALES,
     settings,
     setLocale,
 

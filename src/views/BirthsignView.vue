@@ -45,10 +45,18 @@ const title = computed<string>(() => {
   if (!birthsign.value) return composeTitle(route.meta.titleToken);
   return composeTitle(birthsign.value.name, { raw: true });
 });
+const ogImage = computed<string | null>(() => {
+  if (!birthsign.value) return null;
+  return `https://tamriel-calendar.netlify.app/img/birthsigns/${birthsign.value?.image}.svg`;
+});
 useHead({
   title,
   meta: () => [
-    { name: "description", content: birthsign.value?.description }
+    { name: "description", content: birthsign.value?.description },
+    { property: "og:title", content: title.value },
+    { property: "og:description", content: birthsign.value?.description },
+    { property: "og:image", content: ogImage.value },
+    { property: "og:url", content: `https://tamriel-calendar.netlify.app${route.fullPath}` }
   ]
 });
 

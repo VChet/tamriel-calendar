@@ -7,7 +7,7 @@
       <ul class="settings-view__list">
         <li class="settings-view__list-language">
           {{ $t("settingsPage.language") }}:
-          <label v-for="lang in availableLocales" :key="lang.code">
+          <label v-for="lang in LOCALES" :key="lang.code">
             <input v-model="locale" type="radio" :value="lang.code">
             {{ lang.label }}
           </label>
@@ -47,7 +47,7 @@ import CommonHeader from "@/components/CommonHeader.vue";
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = composeCommitDate(import.meta.env.VITE_GIT_COMMIT_DATE);
 
-const { availableLocales, settings, setLocale, needRefresh, updateServiceWorker } = useSettingsStore();
+const { LOCALES, settings, setLocale, needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, setLocale);
 </script>

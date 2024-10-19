@@ -45,10 +45,18 @@ const title = computed<string>(() => {
   if (!event.value) return composeTitle(route.meta.titleToken);
   return composeTitle(event.value.name, { raw: true });
 });
+const ogImage = computed<string | null>(() => {
+  if (!event.value) return null;
+  return `https://tamriel-calendar.netlify.app/img/events/${event.value?.image}.svg`;
+});
 useHead({
   title,
   meta: () => [
-    { name: "description", content: event.value?.description }
+    { name: "description", content: event.value?.description },
+    { property: "og:title", content: title.value },
+    { property: "og:description", content: event.value?.description },
+    { property: "og:image", content: ogImage.value },
+    { property: "og:url", content: `https://tamriel-calendar.netlify.app${route.fullPath}` }
   ]
 });
 
