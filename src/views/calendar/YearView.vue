@@ -11,7 +11,7 @@
           </h2>
           <ul class="month__days">
             <li v-for="day in month.days" :key="day.index" class="day" :style="day.styles">
-              <calendar-day :day="day.date" small />
+              <calendar-day :day="day.date" :event="day.hasEvent" small />
             </li>
           </ul>
         </li>

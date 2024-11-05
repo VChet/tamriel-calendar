@@ -41,7 +41,7 @@ const classList = computed<Record<string, boolean>>(() => {
   user-select: none;
   border: 0.125rem solid transparent;
   border-radius: 50%;
-  &--event {
+  &--event:not(.calendar-day--small) {
     cursor: pointer;
     &::after {
       position: absolute;
@@ -60,6 +60,9 @@ const classList = computed<Record<string, boolean>>(() => {
     height: 1rem;
     font-size: 0.563rem;
     cursor: default;
+    &.calendar-day--event {
+      color: var(--color-red);
+    }
   }
   &--current {
     color: var(--color-white);
