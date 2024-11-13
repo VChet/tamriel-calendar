@@ -32,6 +32,10 @@ export default defineConfig({
     "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(commitHash),
     "import.meta.env.VITE_GIT_COMMIT_DATE": JSON.stringify(commitDate)
   },
+  ssr: {
+    // SSG Vue-i18n workaround
+    noExternal: [/vue-i18n/]
+  },
   server: {
     port: 7000
   }

@@ -38,9 +38,9 @@ export const useSettingsStore = createGlobalState(() => {
 
     dayjs.locale(getDayJSLocaleData(localeCode));
     i18n.global.locale.value = localeCode;
-    document.querySelector("html")?.setAttribute("lang", localeCode);
-    const locale = LOCALES.find(({ code }) => code === localeCode)?.locale ?? "en_US";
-    document.querySelector("meta[property='og:locale']")?.setAttribute("content", locale);
+    // document.querySelector("html")?.setAttribute("lang", localeCode);
+    // const locale = LOCALES.find(({ code }) => code === localeCode)?.locale ?? "en_US";
+    // document.querySelector("meta[property='og:locale']")?.setAttribute("content", locale);
     settings.value.locale = localeCode;
     await setEventsData(localeCode);
   }

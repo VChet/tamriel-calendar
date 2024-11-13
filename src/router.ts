@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createMemoryHistory, createWebHistory, type RouteLocationNormalizedGeneric, type RouterOptions } from "vue-router";
 import { composeTitle } from "./helpers/router";
 import { useSettingsStore } from "./store/settings";
 
@@ -17,8 +17,10 @@ const BirthsignView = () => import("@/views/BirthsignView.vue");
 
 const SettingsView = () => import("@/views/SettingsView.vue");
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+export const routerOptions: RouterOptions = {
+  history: typeof window === "undefined" ?
+    createMemoryHistory(import.meta.env.BASE_URL) :
+    createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
@@ -107,15 +109,13 @@ const router = createRouter({
   scrollBehavior(_to, _from, savedPosition) {
     return Promise.resolve(savedPosition ?? { top: 0, left: 0 });
   }
-});
+};
 
-router.beforeEach(() => {
+export function beforeEach() {
   const { needRefresh, updateServiceWorker } = useSettingsStore();
   if (needRefresh) updateServiceWorker();
-});
-router.afterEach((to) => {
-  const token = to.matched[0].meta.titleToken;
-  document.title = composeTitle(token);
-});
-
-export default router;
+}
+export function afterEach(to: RouteLocationNormalizedGeneric) {
+  // const token = to.matched[0].meta.titleToken;
+  // document.title = composeTitle(token);
+}
