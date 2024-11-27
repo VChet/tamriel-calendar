@@ -1,6 +1,12 @@
 import process from "node:process";
 import antfu from "@antfu/eslint-config";
 
+const SORT_IMPORT_CUSTOM_GROUP = {
+  "vue": "^vue$",
+  "vue-libs": ["^vue-router$", "^vue-i18n$", "^@vueuse/"],
+  "vue-components": "\\.vue$"
+};
+
 export default antfu({
   toml: false,
   rules: {
@@ -29,7 +35,7 @@ export default antfu({
     "no-useless-concat": "error",
     "no-void": "error",
     "perfectionist/sort-imports": ["error", {
-      internalPattern: ["@/**"],
+      internalPattern: ["^@/"],
       groups: [
         "builtin",
         "vue",
@@ -46,16 +52,8 @@ export default antfu({
         "unknown"
       ],
       customGroups: {
-        value: {
-          "vue": "vue",
-          "vue-libs": ["vue-router", "vue-i18n", "@vueuse/**/*"],
-          "vue-components": ["**/*.vue", "./**/*.vue", "../**/*.vue"]
-        },
-        type: {
-          "vue": "vue",
-          "vue-libs": ["vue-router", "vue-i18n", "@vueuse/**/*"],
-          "vue-components": ["**/*.vue", "./**/*.vue", "../**/*.vue"]
-        }
+        value: SORT_IMPORT_CUSTOM_GROUP,
+        type: SORT_IMPORT_CUSTOM_GROUP
       },
       newlinesBetween: "ignore",
       order: "asc",
