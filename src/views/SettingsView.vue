@@ -24,14 +24,16 @@
             {{ $t('settingsPage.tgChannel') }}
           </a>
         </li>
-        <li class="settings-view__list-version">
+        <li>
           <a v-wave href="https://github.com/VChet/tamriel-calendar">
             <icon-brand-github />
             {{ $t("settingsPage.appVersion") }}: {{ commitHash }} - {{ commitDate }}
-            <button v-if="needRefresh" class="link" type="button" @click.prevent="updateServiceWorker(true)">
-              {{ $t("settingsPage.update") }}
-            </button>
           </a>
+        </li>
+        <li v-if="needRefresh">
+          <button v-wave class="link" type="button" @click="updateServiceWorker(true)">
+            {{ $t("settingsPage.update") }}
+          </button>
         </li>
       </ul>
     </article>
@@ -64,16 +66,18 @@ watch(locale, setLocale);
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      &:not(:has(a)) {
+      &:not(:has(a, button)) {
         padding: 1rem;
       }
       &:not(:last-of-type) {
         border-bottom: var(--divider);
       }
     }
-    a {
+    a,
+    button {
       flex: 1;
       padding: 1rem;
+      text-align: start;
       white-space: nowrap;
       svg {
         color: var(--color-red);
@@ -112,11 +116,6 @@ watch(locale, setLocale);
           }
         }
       }
-    }
-    &-version {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem;
     }
   }
 }

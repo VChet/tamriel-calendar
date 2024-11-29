@@ -38,7 +38,7 @@ const messages: I18nOptions["messages"] = {
     settingsPage: {
       language: "Language",
       design: "Original design by Serafima S",
-      update: "Update",
+      update: "Update App",
       appVersion: "Version",
       tgChannel: "Telegram channel",
       tgChannelUrl: "https://t.me/tamriel_calendar"
@@ -81,7 +81,7 @@ const messages: I18nOptions["messages"] = {
     settingsPage: {
       language: "Язык",
       design: "Оригинальный дизайн Serafima S",
-      update: "Обновить",
+      update: "Обновить приложение",
       appVersion: "Версия",
       tgChannel: "Канал в Telegram",
       tgChannelUrl: "https://t.me/tamriel_calendar_ru"
