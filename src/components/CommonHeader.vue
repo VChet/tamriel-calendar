@@ -24,7 +24,7 @@
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
-import { type RouteLocationRaw, useRouter } from "vue-router";
+import { useRouter, type RouteLocationRaw } from "vue-router";
 import { IconChevronLeft, IconSearch } from "@tabler/icons-vue";
 import { useSearchStore } from "@/store/search";
 import SearchInput from "./SearchInput.vue";
@@ -73,6 +73,7 @@ const backButtonRoute = computed(() => {
     display: flex;
     flex: 1;
     justify-content: center;
+    font-weight: 600;
   }
   &__right {
     display: inline-flex;

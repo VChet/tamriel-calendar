@@ -1,5 +1,6 @@
 import dayjs, { type ConfigType, type Dayjs, type WeekdayNames } from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import dayOfYear from "dayjs/plugin/dayOfYear";
 import isToday from "dayjs/plugin/isToday";
 import localeData from "dayjs/plugin/localeData";
 import weekday from "dayjs/plugin/weekday";
@@ -9,10 +10,12 @@ import type { DataEntry } from "@/types/event";
 dayjs.extend(isToday);
 dayjs.extend(customParseFormat);
 dayjs.extend(weekday);
+dayjs.extend(dayOfYear);
 dayjs.extend(weekOfYear);
 dayjs.extend(localeData);
 
 export const currentDay = (): Dayjs => dayjs();
+export const currentDayOfYear = (): number => currentDay().dayOfYear();
 // Use function to reload locale
 export const weekdaysShort = (): WeekdayNames => dayjs.weekdaysShort(true);
 

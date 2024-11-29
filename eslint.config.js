@@ -35,6 +35,11 @@ export default antfu({
     "no-script-url": "error",
     "no-useless-concat": "error",
     "no-void": "error",
+    "perfectionist/sort-named-imports": ["error", {
+      order: "asc",
+      type: "natural",
+      groupKind: "values-first"
+    }],
     "perfectionist/sort-imports": ["error", {
       internalPattern: ["^@/"],
       groups: [

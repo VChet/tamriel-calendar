@@ -2,37 +2,15 @@
   <footer v-if="router.currentRoute.value.name !== 'Onboarding'" class="main-nav">
     <nav>
       <ul>
-        <li>
+        <li v-for="{ key, pages, iconComponent } in tabs" :key>
           <router-link
             v-wave
-            :to="{ name: 'Calendar' }"
+            :to="{ name: pages[0] }"
             class="nav-tab"
-            :class="{ 'nav-tab--active': isCalendarTab }"
+            :class="{ 'nav-tab--active': pages.includes(currentRoute) }"
           >
-            <icon-calendar />
-            {{ $t("calendar") }}
-          </router-link>
-        </li>
-        <li>
-          <router-link
-            v-wave
-            :to="{ name: 'Birthsigns' }"
-            class="nav-tab"
-            :class="{ 'nav-tab--active': isBirthsignsTab }"
-          >
-            <icon-comet />
-            {{ $t("birthsigns") }}
-          </router-link>
-        </li>
-        <li>
-          <router-link
-            v-wave
-            :to="{ name: 'Settings' }"
-            class="nav-tab"
-            :class="{ 'nav-tab--active': isSettingsTab }"
-          >
-            <icon-settings />
-            {{ $t("settings") }}
+            <component :is="iconComponent" />
+            {{ $t(key) }}
           </router-link>
         </li>
       </ul>
@@ -40,8 +18,9 @@
   </footer>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, type Component } from "vue";
 import { RouterLink, useRouter } from "vue-router";
+import { IconMoon2 } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
 import IconCalendar from "./icons/IconCalendar.vue";
 import IconComet from "./icons/IconComet.vue";
@@ -51,15 +30,14 @@ const router = useRouter();
 const { settings } = useSettingsStore();
 if (!settings.value.onboarding) router.push({ name: "Onboarding" });
 
-const isCalendarTab = computed(() =>
-  ["Calendar", "Week", "Month", "Year", "Holiday", "SummoningDay"].some(
-    (name) => router.currentRoute.value.name === name
-  )
-);
-const isBirthsignsTab = computed(() =>
-  ["Birthsigns", "Birthsign"].some((name) => router.currentRoute.value.name === name)
-);
-const isSettingsTab = computed(() => router.currentRoute.value.name === "Settings");
+const currentRoute = computed(() => router.currentRoute.value.name?.toString() ?? "");
+
+const tabs: readonly { key: string, pages: string[], iconComponent: Component }[] = [
+  { key: "calendar", pages: ["Calendar", "Week", "Month", "Year", "Holiday", "SummoningDay"], iconComponent: IconCalendar },
+  { key: "moonPhase", pages: ["Moon Phase"], iconComponent: IconMoon2 },
+  { key: "birthsigns", pages: ["Birthsigns", "Birthsign"], iconComponent: IconComet },
+  { key: "settings", pages: ["Settings"], iconComponent: IconSettings }
+];
 </script>
 <style lang="scss">
 .main-nav {
@@ -71,7 +49,7 @@ const isSettingsTab = computed(() => router.currentRoute.value.name === "Setting
   opacity: 0.94;
   ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     align-items: start;
     justify-content: space-between;
     .nav-tab {

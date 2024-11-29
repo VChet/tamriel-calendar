@@ -1,6 +1,6 @@
 <template>
   <main class="settings-view">
-    <common-header class="settings-view__header">
+    <common-header>
       {{ $t("settings") }}
     </common-header>
     <article class="container">
@@ -57,9 +57,6 @@ watch(locale, setLocale);
 .settings-view {
   .container {
     padding: 0.625rem 0;
-  }
-  &__header {
-    font-weight: 600;
   }
   &__list {
     li {
