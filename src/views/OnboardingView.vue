@@ -20,11 +20,6 @@ function exitOnboarding(): void {
 }
 </script>
 <style lang="scss">
-@mixin title {
-  font-family: Literata, serif;
-  font-size: 1.625rem;
-  font-weight: 600;
-}
 .onboarding-view.container {
   padding: 0 3.75rem;
 }
@@ -32,13 +27,18 @@ function exitOnboarding(): void {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20vh auto;
+  margin: auto;
   text-align: center;
   img {
     margin-bottom: 4.375rem;
   }
   h1 {
-    @include title;
+    margin-bottom: 1.5rem;
+    font-family: Literata, serif;
+    font-size: 1.625rem;
+    font-weight: 600;
+  }
+  div {
     margin-bottom: 1.5rem;
   }
   button {
