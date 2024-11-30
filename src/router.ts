@@ -14,6 +14,7 @@ const HolidayView = () => import("@/views/HolidayView.vue");
 const SummoningDayView = () => import("@/views/SummoningDayView.vue");
 const BirthsignsView = () => import("@/views/BirthsignsView.vue");
 const BirthsignView = () => import("@/views/BirthsignView.vue");
+const MoonPhaseView = () => import("@/views/MoonPhaseView.vue");
 
 const SettingsView = () => import("@/views/SettingsView.vue");
 
@@ -80,6 +81,12 @@ const router = createRouter({
       name: "SummoningDay",
       component: SummoningDayView,
       meta: { titleToken: "router.summoningDay" }
+    },
+    {
+      path: "/moon-phase",
+      name: "Moon Phase",
+      component: MoonPhaseView,
+      meta: { titleToken: "router.moonPhase" }
     },
     {
       path: "/birthsigns",

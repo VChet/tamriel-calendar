@@ -8,7 +8,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { type InputHTMLAttributes, useTemplateRef } from "vue";
+import { useTemplateRef, type InputHTMLAttributes } from "vue";
 import { useFocus, useVModel } from "@vueuse/core";
 import { IconSearch, IconX } from "@tabler/icons-vue";
 

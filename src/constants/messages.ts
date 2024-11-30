@@ -3,6 +3,7 @@ import type { I18nOptions } from "vue-i18n";
 const messages: I18nOptions["messages"] = {
   en: {
     calendar: "Calendar",
+    moonPhase: "Moon Phase",
     birthsigns: "Birthsigns",
     settings: "Settings",
     week: "Week",
@@ -15,8 +16,9 @@ const messages: I18nOptions["messages"] = {
       title: "Tamriel Calendar",
       onboarding: "Onboarding",
       search: "Search",
-      calendar: "Calendar",
-      birthsigns: "Birthsigns",
+      calendar: "@:calendar",
+      moonPhase: "@:moonPhase",
+      birthsigns: "@:birthsigns",
       birthsign: "Birthsign",
       holiday: "Holiday",
       summoningDay: "Summoning Day",
@@ -32,6 +34,20 @@ const messages: I18nOptions["messages"] = {
       summoningDays: "Daedra Summoning Days",
       previousMonth: "Previous month"
     },
+    moonPhasePage: {
+      masser: "Masser",
+      secunda: "Secunda",
+      phases: {
+        0: "New Moon",
+        1: "Waxing Crescent",
+        2: "Waxing Half Moon",
+        3: "Waxing Gibbous",
+        4: "Full Moon",
+        5: "Waning Gibbous",
+        6: "Waning Half Moon",
+        7: "Waning Crescent"
+      }
+    },
     eventPage: {
       summoningDay: "Daedra Summoning Day"
     },
@@ -46,6 +62,7 @@ const messages: I18nOptions["messages"] = {
   },
   ru: {
     calendar: "Календарь",
+    moonPhase: "Фаза луны",
     birthsigns: "Знаки рождения",
     settings: "Настройки",
     week: "Неделя",
@@ -57,9 +74,9 @@ const messages: I18nOptions["messages"] = {
     router: {
       title: "Календарь Тамриэля",
       onboarding: "Приветствие",
-      search: "Поиск",
-      calendar: "Календарь",
-      birthsigns: "Знаки рождения",
+      calendar: "@:calendar",
+      moonPhase: "@:moonPhase",
+      birthsigns: "@:birthsigns",
       birthsign: "Знак рождения",
       holiday: "Праздник",
       summoningDay: "День вызова даэдра",
@@ -74,6 +91,20 @@ const messages: I18nOptions["messages"] = {
       events: "Праздники",
       summoningDays: "Дни вызова даэдра",
       previousMonth: "Предыдущий месяц"
+    },
+    moonPhasePage: {
+      masser: "Массер",
+      secunda: "Секунда",
+      phases: {
+        0: "Новолуние",
+        1: "Растущий серп",
+        2: "Растущая полулуна",
+        3: "Растущая луна",
+        4: "Полнолуние",
+        5: "Убывающая луна",
+        6: "Убывающая полулуна",
+        7: "Убывающий серп"
+      }
     },
     eventPage: {
       summoningDay: "День вызова даэдра"
