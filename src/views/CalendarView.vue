@@ -1,5 +1,5 @@
 <template>
-  <main ref="swipeContainer" class="calendar-view">
+  <main ref="swipeContainerElement" class="calendar-view">
     <template v-if="isSwiping && ['left', 'right'].includes(direction)">
       <div v-if="direction === 'right' && currentPageIndex > 0" :class="arrowClassList">
         <icon-chevron-left />
@@ -49,8 +49,8 @@ const { settings, selectedCalendar } = useSettingsStore();
 const calendarPages = route.matched[0].children.map(({ name }) => name);
 
 const currentPageIndex = computed(() => calendarPages.indexOf(router.currentRoute.value.name ?? ""));
-const swipeContainer = useTemplateRef("swipeContainer");
-const { isSwiping, direction } = useSwipe(swipeContainer, {
+const swipeContainerRef = useTemplateRef("swipeContainerElement");
+const { isSwiping, direction } = useSwipe(swipeContainerRef, {
   onSwipeEnd: (_: TouchEvent, swipeDirection: UseSwipeDirection) => {
     if (swipeDirection === "right" && currentPageIndex.value > 0) {
       navigateToPage(currentPageIndex.value - 1);

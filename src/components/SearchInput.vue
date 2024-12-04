@@ -1,7 +1,7 @@
 <template>
   <div class="search-input">
     <icon-search class="search-input__icon" />
-    <input ref="inputRef" v-model.trim="input" :placeholder="$t('search')" autofocus>
+    <input ref="inputElement" v-model.trim="input" :placeholder="$t('search')" autofocus>
     <button v-show="input" class="search-input__clear" @click="input = ''">
       <icon-x />
     </button>
@@ -19,7 +19,7 @@ const props = defineProps<Props>();
 const emit = defineEmits<{ "update:modelValue": [value: Props["modelValue"]] }>();
 const input = useVModel(props, "modelValue", emit);
 
-const inputRef = useTemplateRef("inputRef");
+const inputRef = useTemplateRef("inputElement");
 useFocus(inputRef, { initialValue: true });
 </script>
 <style lang="scss">
