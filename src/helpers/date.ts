@@ -18,6 +18,7 @@ export const currentDay = (): Dayjs => dayjs();
 export const currentDayOfYear = (): number => currentDay().dayOfYear();
 // Use function to reload locale
 export const weekdaysShort = (): WeekdayNames => dayjs.weekdaysShort(true);
+export const weekdaysLong = (): WeekdayNames => dayjs.weekdays(true);
 
 export function isValidDate(value: ConfigType): boolean {
   return dayjs(value).isValid();

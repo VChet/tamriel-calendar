@@ -6,9 +6,13 @@
   </ul>
 </template>
 <script setup lang="ts">
-import { weekdaysShort } from "@/helpers/date";
+import { computed } from "vue";
+import { useBreakpoints } from "@vueuse/core";
+import { weekdaysLong, weekdaysShort } from "@/helpers/date";
 
-const days = weekdaysShort();
+const breakpoints = useBreakpoints({ wide: 768 });
+const isLarge = breakpoints.greaterOrEqual("wide");
+const days = computed(() => isLarge.value ? weekdaysLong() : weekdaysShort());
 </script>
 <style lang="scss">
 .calendar-weekdays {
