@@ -1,19 +1,11 @@
 import { createApp } from "vue";
-import { createI18n } from "vue-i18n";
 import { createHead } from "@unhead/vue";
 import VWave from "v-wave";
-import messages from "@/constants/messages";
 import { useSettingsStore } from "@/store/settings";
-import router from "./router";
+import { i18n } from "./plugins/i18n";
+import router from "./plugins/router";
 import "./assets/global.scss";
 import App from "./App.vue";
-
-export const i18n = createI18n({
-  locale: "en",
-  fallbackLocale: "ru",
-  legacy: false,
-  messages
-});
 
 const head = createHead();
 

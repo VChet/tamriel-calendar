@@ -3,6 +3,7 @@
     "christian-kohler.npm-intellisense",
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
+    "lokalise.i18n-ally",
     "stylelint.vscode-stylelint",
     "vue.volar"
   ]

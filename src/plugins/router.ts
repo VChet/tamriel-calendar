@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { composeTitle } from "./helpers/router";
-import { useSettingsStore } from "./store/settings";
+import { composeTitle } from "@/helpers/router";
+import { i18n } from "@/plugins/i18n";
+import { useSettingsStore } from "@/store/settings";
 
 const OnboardingView = () => import("@/views/OnboardingView.vue");
 const SearchView = () => import("@/views/SearchView.vue");
@@ -122,7 +123,7 @@ router.beforeEach(() => {
 });
 router.afterEach((to) => {
   const token = to.matched[0].meta.titleToken;
-  document.title = composeTitle(token);
+  if (token) document.title = composeTitle(i18n.global.t(token));
 });
 
 export default router;

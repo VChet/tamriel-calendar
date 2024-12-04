@@ -29,6 +29,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useShare } from "@vueuse/core";
+import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
 import { useHead } from "@unhead/vue";
@@ -41,9 +42,10 @@ const route = useRoute();
 const { birthsigns } = useEventsStore();
 const birthsign = computed(() => birthsigns.get(route.params.month?.toString()));
 
+const { t } = useI18n();
 const title = computed<string>(() => {
-  if (!birthsign.value) return composeTitle(route.meta.titleToken);
-  return composeTitle(birthsign.value.name, { raw: true });
+  if (!birthsign.value) return composeTitle(t(route.meta.titleToken!));
+  return composeTitle(birthsign.value.name);
 });
 const ogImage = computed<string | null>(() => {
   if (!birthsign.value) return null;

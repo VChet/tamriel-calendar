@@ -3,9 +3,9 @@ import { createGlobalState, useLocalStorage } from "@vueuse/core";
 import type { RouteRecordName } from "vue-router";
 import dayjs from "dayjs";
 import { useRegisterSW } from "virtual:pwa-register/vue";
-import tamrielEn from "@/constants/tamriel-en";
-import tamrielRu from "@/constants/tamriel-ru";
-import { i18n } from "@/main";
+import enTamriel from "@/constants/dayjs/en_tamriel";
+import ruTamriel from "@/constants/dayjs/ru_tamriel";
+import { i18n } from "@/plugins/i18n";
 import { useEventsStore } from "./events";
 import type { Day } from "@/classes/Day";
 
@@ -17,8 +17,8 @@ interface SettingsStore {
 
 function getDayJSLocaleData(locale: LocaleCode): ILocale {
   switch (locale) {
-    case "ru": return tamrielRu;
-    case "en": default: return tamrielEn;
+    case "ru": return ruTamriel;
+    case "en": default: return enTamriel;
   }
 }
 
@@ -38,9 +38,9 @@ export const useSettingsStore = createGlobalState(() => {
 
     dayjs.locale(getDayJSLocaleData(localeCode));
     i18n.global.locale.value = localeCode;
-    document.querySelector("html")?.setAttribute("lang", localeCode);
+    document.querySelector<HTMLHtmlElement>("html")?.setAttribute("lang", localeCode);
     const locale = LOCALES.find(({ code }) => code === localeCode)?.locale ?? "en_US";
-    document.querySelector("meta[property='og:locale']")?.setAttribute("content", locale);
+    document.querySelector<HTMLMetaElement>("meta[property='og:locale']")?.setAttribute("content", locale);
     settings.value.locale = localeCode;
     await setEventsData(localeCode);
   }

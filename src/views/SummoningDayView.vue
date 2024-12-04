@@ -30,6 +30,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useShare } from "@vueuse/core";
+import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
 import { useHead } from "@unhead/vue";
@@ -42,9 +43,10 @@ const date = route.query.date?.toString();
 const { summoningDays } = useEventsStore();
 const event = computed(() => (date ? summoningDays.get(date) : null));
 
+const { t } = useI18n();
 const title = computed<string>(() => {
-  if (!event.value) return composeTitle(route.meta.titleToken);
-  return composeTitle(event.value.name, { raw: true });
+  if (!event.value) return composeTitle(t(route.meta.titleToken!));
+  return composeTitle(event.value.name);
 });
 const ogImage = computed<string | null>(() => {
   if (!event.value) return null;
