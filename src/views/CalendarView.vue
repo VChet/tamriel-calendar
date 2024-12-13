@@ -101,6 +101,9 @@ function navigateToPage(pageIndex: number): void {
       left: 0.625rem;
     }
   }
+  .common-header__main {
+    font-weight: initial;
+  }
   .tabs {
     display: flex;
     gap: 1.125rem;
