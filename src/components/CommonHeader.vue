@@ -40,11 +40,7 @@ const router = useRouter();
 const { searchQuery } = useSearchStore();
 const isSearchMode = computed<boolean>({
   get: () => router.currentRoute.value.name === "Search",
-  set: (isSearch) => {
-    isSearch ?
-      router.push({ name: "Search" }) :
-      router.back();
-  }
+  set: (isSearch) => { isSearch ? router.push({ name: "Search" }) : router.back(); }
 });
 
 const backButtonRoute = computed(() => {
