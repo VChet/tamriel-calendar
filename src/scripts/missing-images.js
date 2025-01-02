@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import birthsignImagesJSON from "../constants/mappings/birthsigns_images.json" with { type: "json" };
 import holidayImagesJSON from "../constants/mappings/holidays_images.json" with { type: "json" };
 import summoningDaysImagesJSON from "../constants/mappings/summoningDays_images.json" with { type: "json" };
