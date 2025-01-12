@@ -60,7 +60,7 @@ const classList = computed<Record<string, boolean>>(() => {
     height: 1rem;
     font-size: 0.563rem;
     cursor: default;
-    &.calendar-day--event {
+    &.calendar-day--event:not(.calendar-day--current) {
       color: var(--color-red);
     }
   }
