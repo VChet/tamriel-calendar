@@ -101,6 +101,7 @@ export default antfu({
     "ts/array-type": "error",
     "ts/consistent-indexed-object-style": "error",
     "ts/consistent-type-definitions": "off",
+    "ts/member-ordering": ["error", { default: { optionalityOrder: "required-first" } }],
     "ts/no-shadow": "error",
     "unicorn/prefer-includes": "off",
     "vue/attribute-hyphenation": ["error", "always"],
