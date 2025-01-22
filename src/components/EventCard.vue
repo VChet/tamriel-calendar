@@ -39,10 +39,10 @@ const routeName = props.event instanceof Holiday ? "Holiday" : "SummoningDay";
   }
   &__description {
     display: -webkit-box;
-    -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 0.875rem;
     -webkit-line-clamp: 2;
+    font-size: 0.875rem;
+    -webkit-box-orient: vertical;
   }
   &__image {
     margin-left: auto;

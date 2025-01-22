@@ -45,10 +45,10 @@ useFocus(inputRef, { initialValue: true });
     padding: 0;
     color: var(--color-beige-dark);
     cursor: pointer;
+    outline: none;
     background-color: #1f170c2e;
     border: none;
     border-radius: 50%;
-    outline: none;
     transform: translateY(-50%);
     svg {
       width: 0.75rem;
@@ -60,10 +60,10 @@ useFocus(inputRef, { initialValue: true });
     padding: 0.425rem 0.75rem 0.425rem 1.9rem;
     font-size: 0.875rem;
     color: var(--color-beige-dark);
+    outline: none;
     background-color: #1f170c0f;
     border: none;
     border-radius: 0.625rem;
-    outline: none;
     &::placeholder {
       color: var(--color-beige-dark-medium);
     }
