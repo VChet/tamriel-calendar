@@ -73,6 +73,8 @@ function composeEventLink(day: Day): RouteLocationRaw {
   gap: 1.875rem;
   &__previous {
     display: block;
+    align-self: center;
+    width: 100%;
     padding-block: 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -82,6 +84,9 @@ function composeEventLink(day: Day): RouteLocationRaw {
     border: none;
     border-radius: 1.5rem;
     opacity: 0.8;
+    @media (width >= 768px) {
+      max-width: 50%;
+    }
   }
   .fade {
     &-enter-active,

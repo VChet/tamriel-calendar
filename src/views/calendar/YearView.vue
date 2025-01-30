@@ -43,6 +43,9 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem 1rem;
+      @media (width >= 768px) {
+        grid-template-columns: repeat(6, 1fr);
+      }
     }
     .month {
       &__title {
