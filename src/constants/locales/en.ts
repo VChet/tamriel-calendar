@@ -1,5 +1,4 @@
 export default {
-  calendar: "Calendar",
   moonPhase: "Moon Phase",
   birthsigns: "Birthsigns",
   settings: "Settings",
@@ -13,7 +12,7 @@ export default {
     title: "Tamriel Calendar",
     onboarding: "Onboarding",
     search: "Search",
-    calendar: "@:calendar",
+    calendar: "Calendar",
     moonPhase: "@:moonPhase",
     birthsigns: "@:birthsigns",
     birthsign: "Birthsign",

@@ -1,5 +1,4 @@
 export default {
-  calendar: "Календарь",
   moonPhase: "Фаза луны",
   birthsigns: "Знаки рождения",
   settings: "Настройки",
@@ -13,7 +12,7 @@ export default {
     title: "Календарь Тамриэля",
     onboarding: "Приветствие",
     search: "Поиск",
-    calendar: "@:calendar",
+    calendar: "Календарь",
     moonPhase: "@:moonPhase",
     birthsigns: "@:birthsigns",
     birthsign: "Знак рождения",

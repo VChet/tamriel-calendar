@@ -52,5 +52,9 @@
   "i18n-ally.localesPaths": ["src/constants/locales"],
   "i18n-ally.enabledParsers": ["ts"],
   "i18n-ally.theme.annotation": "#e6db74",
-  "i18n-ally.theme.annotationBorder": "transparent"
+  "i18n-ally.theme.annotationBorder": "transparent",
+  "i18n-ally.keysInUse": [
+    "router.*",
+    "moonPhasePage.phases*"
+  ]
 }
