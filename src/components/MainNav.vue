@@ -2,7 +2,7 @@
   <footer v-if="router.currentRoute.value.name !== 'Onboarding'" class="main-nav">
     <nav>
       <ul>
-        <li v-for="{ key, pages, iconComponent } in tabs" :key>
+        <li v-for="{ key, title, pages, iconComponent } in tabs" :key>
           <router-link
             v-wave
             :to="{ name: pages[0] }"
@@ -10,7 +10,7 @@
             :class="{ 'nav-tab--active': pages.includes(currentRoute) }"
           >
             <component :is="iconComponent" />
-            {{ $t(key) }}
+            {{ title }}
           </router-link>
         </li>
       </ul>
@@ -19,6 +19,7 @@
 </template>
 <script setup lang="ts">
 import { computed, type Component } from "vue";
+import { useI18n } from "vue-i18n";
 import { RouterLink, useRouter } from "vue-router";
 import { IconMoon2 } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
@@ -26,18 +27,46 @@ import IconCalendar from "./icons/IconCalendar.vue";
 import IconComet from "./icons/IconComet.vue";
 import IconSettings from "./icons/IconSettings.vue";
 
+interface TabEntry {
+  key: string
+  title: string
+  pages: string[]
+  iconComponent: Component
+}
+
 const router = useRouter();
+const { t } = useI18n();
 const { settings } = useSettingsStore();
 if (!settings.value.onboarding) router.push({ name: "Onboarding" });
 
 const currentRoute = computed(() => router.currentRoute.value.name?.toString() ?? "");
 
-const tabs: readonly { key: string, pages: string[], iconComponent: Component }[] = [
-  { key: "calendar", pages: ["Calendar", "Week", "Month", "Year", "Holiday", "SummoningDay"], iconComponent: IconCalendar },
-  { key: "moonPhase", pages: ["Moon Phase"], iconComponent: IconMoon2 },
-  { key: "birthsigns", pages: ["Birthsigns", "Birthsign"], iconComponent: IconComet },
-  { key: "settings", pages: ["Settings"], iconComponent: IconSettings }
-];
+const tabs = computed<readonly TabEntry[]>(() => [
+  {
+    key: "calendar",
+    title: t("router.calendar"),
+    pages: ["Calendar", "Week", "Month", "Year", "Holiday", "SummoningDay"],
+    iconComponent: IconCalendar
+  },
+  {
+    key: "moonPhase",
+    title: t("router.moonPhase"),
+    pages: ["Moon Phase"],
+    iconComponent: IconMoon2
+  },
+  {
+    key: "birthsigns",
+    title: t("router.birthsigns"),
+    pages: ["Birthsigns", "Birthsign"],
+    iconComponent: IconComet
+  },
+  {
+    key: "settings",
+    title: t("router.settings"),
+    pages: ["Settings"],
+    iconComponent: IconSettings
+  }
+]);
 </script>
 <style lang="scss">
 .main-nav {
