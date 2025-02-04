@@ -1,5 +1,5 @@
 export default {
-  moonPhase: "Moon Phase",
+  moonPhase: "Moon Phases",
   birthsigns: "Birthsigns",
   settings: "Settings",
   week: "Week",

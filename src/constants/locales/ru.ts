@@ -1,5 +1,5 @@
 export default {
-  moonPhase: "Фаза луны",
+  moonPhase: "Фазы лун",
   birthsigns: "Знаки рождения",
   settings: "Настройки",
   week: "Неделя",

@@ -5,14 +5,14 @@
       <h1>{{ $t("moonPhase") }}</h1>
       <div class="moon-phase-view__moons">
         <div class="moon-phase-view__moons-masser">
-          {{ $t(`moonPhasePage.phases[${phases.masser}]`) }}
           <img :src="`/img/moons/masser/masser_${MoonPhase[phases.masser]}.webp`" :alt="MoonPhase[phases.masser]">
           <h2>{{ $t("moonPhasePage.masser") }}</h2>
+          {{ $t(`moonPhasePage.phases[${phases.masser}]`) }}
         </div>
         <div class="moon-phase-view__moons-secunda">
-          {{ $t(`moonPhasePage.phases[${phases.secunda}]`) }}
           <img :src="`/img/moons/secunda/secunda_${MoonPhase[phases.secunda]}.webp`" :alt="MoonPhase[phases.secunda]">
           <h2>{{ $t("moonPhasePage.secunda") }}</h2>
+          {{ $t(`moonPhasePage.phases[${phases.secunda}]`) }}
         </div>
       </div>
     </section>
@@ -54,6 +54,7 @@ const phases = computed(() => {
 </script>
 <style lang="scss">
 .moon-phase-view {
+  $size: 16rem;
   h1 {
     margin-bottom: 3.125rem;
     font-family: Literata, serif;
@@ -66,12 +67,28 @@ const phases = computed(() => {
   }
   &__moons {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    place-items: center;
+    @media (width >= 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
     > div {
       display: grid;
-      gap: 2rem;
+      grid-template-rows: repeat(3, min-content);
+      gap: 1rem;
       place-items: center;
+      @media (width >= 768px) {
+        grid-template-rows: $size min-content min-content;
+      }
+    }
+    &-masser img {
+      width: $size;
+      height: $size;
+    }
+    &-secunda img {
+      width: calc($size / 2);
+      height: calc($size / 2);
     }
   }
 }
