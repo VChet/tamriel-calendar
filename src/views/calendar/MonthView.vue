@@ -55,7 +55,7 @@ function appendMonth(): void {
 function canLoadMore(): boolean {
   return nextMonth.value.month() !== current.month();
 }
-useInfiniteScroll(window, appendMonth, { distance: 150, canLoadMore });
+useInfiniteScroll(document, appendMonth, { distance: 150, canLoadMore });
 
 function composeEventLink(day: Day): RouteLocationRaw {
   if (day.holiday) {
