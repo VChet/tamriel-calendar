@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build",
     "preview": "vite preview",
     "lint:ts": "vue-tsc --noEmit",
     "lint:js": "eslint .",
@@ -47,6 +47,7 @@
     "stylelint-order": "^6.0.4",
     "stylelint-rem-over-px": "^1.0.2",
     "typescript": "^5.7.3",
+    "vite-ssg": "^25.2.0",
     "vue-tsc": "^2.2.4",
     "workbox-core": "^7.3.0",
     "workbox-precaching": "^7.3.0",

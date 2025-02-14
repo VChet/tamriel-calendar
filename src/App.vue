@@ -1,6 +1,8 @@
 <template>
-  <router-view />
-  <main-nav />
+  <client-only>
+    <router-view />
+    <main-nav />
+  </client-only>
 </template>
 <script setup lang="ts">
 import { RouterView, useRouter } from "vue-router";
