@@ -1,8 +1,9 @@
 <template>
   <main class="birthsigns-view">
-    <common-header search />
+    <common-header search>
+      {{ $t("birthsigns") }}
+    </common-header>
     <section class="container">
-      <h1>{{ $t("birthsigns") }}</h1>
       <ul class="birthsigns-view__list">
         <router-link
           v-for="sign in birthsigns.values()"
@@ -30,12 +31,6 @@ const birthsigns = [...data.values()].sort((a, b) => Number(a.date) - Number(b.d
 </script>
 <style lang="scss">
 .birthsigns-view {
-  h1 {
-    margin-bottom: 3.125rem;
-    font-family: Literata, serif;
-    font-size: 1.625rem;
-    font-weight: 600;
-  }
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

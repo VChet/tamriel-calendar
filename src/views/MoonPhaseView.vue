@@ -1,17 +1,22 @@
 <template>
   <main class="moon-phase-view">
-    <common-header search />
+    <common-header search>
+      {{ $t("moonPhase") }}
+    </common-header>
     <section class="container">
-      <h1>{{ $t("moonPhase") }}</h1>
       <div class="moon-phase-view__moons">
         <div class="moon-phase-view__moons-masser">
           <img :src="`/img/moons/masser/masser_${MoonPhase[phases.masser]}.webp`" :alt="MoonPhase[phases.masser]">
-          <h2>{{ $t("moonPhasePage.masser") }}</h2>
+          <div class="moon-phase-view__title">
+            {{ $t("moonPhasePage.masser") }}
+          </div>
           {{ $t(`moonPhasePage.phases[${phases.masser}]`) }}
         </div>
         <div class="moon-phase-view__moons-secunda">
           <img :src="`/img/moons/secunda/secunda_${MoonPhase[phases.secunda]}.webp`" :alt="MoonPhase[phases.secunda]">
-          <h2>{{ $t("moonPhasePage.secunda") }}</h2>
+          <div class="moon-phase-view__title">
+            {{ $t("moonPhasePage.secunda") }}
+          </div>
           {{ $t(`moonPhasePage.phases[${phases.secunda}]`) }}
         </div>
       </div>
@@ -55,13 +60,7 @@ const phases = computed(() => {
 <style lang="scss">
 .moon-phase-view {
   $size: 16rem;
-  h1 {
-    margin-bottom: 3.125rem;
-    font-family: Literata, serif;
-    font-size: 1.625rem;
-    font-weight: 600;
-  }
-  h2 {
+  &__title {
     font-family: Literata, serif;
     font-size: 1.375rem;
   }
