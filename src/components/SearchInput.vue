@@ -57,7 +57,7 @@ useFocus(inputRef, { initialValue: true });
   }
   input {
     width: 100%;
-    padding: 0.425rem 0.75rem 0.425rem 1.9rem;
+    padding: 0.425rem 0.75rem 0.425rem 2.25rem;
     font-size: 0.875rem;
     color: var(--color-beige-dark);
     outline: none;
