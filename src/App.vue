@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { RouterView, useRouter } from "vue-router";
 import { useSettingsStore } from "@/store/settings";
-import MainNav from "@/components/MainNav.vue";
+import MainNav from "@/components/main-nav.vue";
 
 const router = useRouter();
 const { settings } = useSettingsStore();

@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import { Year } from "@/classes/Year";
 import { currentDay } from "@/helpers/date";
-import CalendarDay from "@/components/CalendarDay.vue";
+import CalendarDay from "@/components/calendar-day.vue";
 
 const current = currentDay();
 const years = [new Year(current), new Year(current.add(1, "year"))];

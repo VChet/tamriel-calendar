@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
 import { useEventsStore } from "@/store/events";
-import CommonHeader from "@/components/CommonHeader.vue";
+import CommonHeader from "@/components/common-header.vue";
 
 const { birthsigns: data } = useEventsStore();
 const birthsigns = [...data.values()].sort((a, b) => Number(a.date) - Number(b.date));

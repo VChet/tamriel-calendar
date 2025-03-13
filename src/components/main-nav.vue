@@ -23,9 +23,9 @@ import { useI18n } from "vue-i18n";
 import { RouterLink, useRouter } from "vue-router";
 import { IconMoon2 } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
-import IconCalendar from "./icons/IconCalendar.vue";
-import IconComet from "./icons/IconComet.vue";
-import IconSettings from "./icons/IconSettings.vue";
+import IconCalendar from "./icons/icon-calendar.vue";
+import IconComet from "./icons/icon-comet.vue";
+import IconSettings from "./icons/icon-settings.vue";
 
 interface TabEntry {
   key: string

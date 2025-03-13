@@ -30,8 +30,8 @@ import type { Dayjs } from "dayjs";
 import { Month } from "@/classes/Month";
 import { currentDay } from "@/helpers/date";
 import type { Day } from "@/classes/Day";
-import CalendarDay from "@/components/CalendarDay.vue";
-import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
+import CalendarDay from "@/components/calendar-day.vue";
+import CalendarWeekdays from "@/components/calendar-weekdays.vue";
 
 const current = currentDay();
 const months = reactive(Array.from({ length: 3 }, (_, index) => new Month(current.add(index, "month"))));

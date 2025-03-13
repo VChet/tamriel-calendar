@@ -27,7 +27,7 @@ import { computed } from "vue";
 import { useRouter, type RouteLocationRaw } from "vue-router";
 import { IconChevronLeft, IconSearch } from "@tabler/icons-vue";
 import { useSearchStore } from "@/store/search";
-import SearchInput from "./SearchInput.vue";
+import SearchInput from "./search-input.vue";
 
 interface Props {
   /** Back button fallback route */

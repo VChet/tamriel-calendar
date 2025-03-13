@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { currentDayOfYear } from "@/helpers/date";
-import CommonHeader from "@/components/CommonHeader.vue";
+import CommonHeader from "@/components/common-header.vue";
 
 enum MoonPhase {
   newMoon = 0,

@@ -23,8 +23,8 @@
 </template>
 <script setup lang="ts">
 import { useSearchStore } from "@/store/search";
-import CommonHeader from "../components/CommonHeader.vue";
-import EventCard from "../components/EventCard.vue";
+import CommonHeader from "../components/common-header.vue";
+import EventCard from "../components/event-card.vue";
 
 const { holidaysEntries, summoningDaysEntries } = useSearchStore();
 </script>

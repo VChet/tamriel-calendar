@@ -36,7 +36,7 @@ import { IconShare3 } from "@tabler/icons-vue";
 import { useHead } from "@unhead/vue";
 import { composeTitle } from "@/helpers/router";
 import { useEventsStore } from "@/store/events";
-import CommonHeader from "@/components/CommonHeader.vue";
+import CommonHeader from "@/components/common-header.vue";
 
 const route = useRoute();
 const date = route.query.date?.toString();

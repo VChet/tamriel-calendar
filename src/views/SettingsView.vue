@@ -44,7 +44,7 @@ import { ref, watch } from "vue";
 import { IconBrandBehance, IconBrandGithub, IconBrandTelegram } from "@tabler/icons-vue";
 import { composeCommitDate } from "@/helpers/date";
 import { useSettingsStore } from "@/store/settings";
-import CommonHeader from "@/components/CommonHeader.vue";
+import CommonHeader from "@/components/common-header.vue";
 
 const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
 const commitDate = composeCommitDate(import.meta.env.VITE_GIT_COMMIT_DATE);

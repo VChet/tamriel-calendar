@@ -36,7 +36,7 @@ import { useHead } from "@unhead/vue";
 import { composeMonthNameFromDataEntry, isValidMonthIndex } from "@/helpers/date";
 import { composeTitle } from "@/helpers/router";
 import { useEventsStore } from "@/store/events";
-import CommonHeader from "@/components/CommonHeader.vue";
+import CommonHeader from "@/components/common-header.vue";
 
 const route = useRoute();
 const { birthsigns } = useEventsStore();

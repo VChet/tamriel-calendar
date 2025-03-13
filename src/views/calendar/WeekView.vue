@@ -20,9 +20,9 @@ import { onBeforeMount, reactive } from "vue";
 import { Week } from "@/classes/Week";
 import { currentDay } from "@/helpers/date";
 import { useSettingsStore } from "@/store/settings";
-import CalendarDay from "@/components/CalendarDay.vue";
-import CalendarWeekdays from "@/components/CalendarWeekdays.vue";
-import DayData from "@/components/DayData.vue";
+import CalendarDay from "@/components/calendar-day.vue";
+import CalendarWeekdays from "@/components/calendar-weekdays.vue";
+import DayData from "@/components/day-data.vue";
 
 const { selectedDay } = useSettingsStore();
 

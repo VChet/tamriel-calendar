@@ -40,7 +40,7 @@ import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
-import CommonHeader from "@/components/CommonHeader.vue";
+import CommonHeader from "@/components/common-header.vue";
 
 const route = useRoute();
 const router = useRouter();
