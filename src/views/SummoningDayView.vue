@@ -33,7 +33,7 @@ import { useShare } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
-import { useHead } from "@unhead/vue/legacy";
+import { useHead } from "@unhead/vue";
 import { composeTitle } from "@/helpers/router";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";

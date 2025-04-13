@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { createGlobalState, useLocalStorage } from "@vueuse/core";
 import type { RouteRecordName } from "vue-router";
-import { useHead } from "@unhead/vue/legacy";
+import { useHead, type VueHeadClient } from "@unhead/vue";
 import dayjs from "dayjs";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import enTamriel from "@/constants/dayjs/en_tamriel";
@@ -34,7 +34,7 @@ export const useSettingsStore = createGlobalState(() => {
     onboarding: false
   }, { mergeDefaults: true });
 
-  async function setLocale(localeCode: LocaleCode): Promise<void> {
+  async function setLocale(head: VueHeadClient, localeCode: LocaleCode): Promise<void> {
     const { setEventsData } = useEventsStore();
 
     settings.value.locale = localeCode;
@@ -44,7 +44,7 @@ export const useSettingsStore = createGlobalState(() => {
     useHead({
       htmlAttrs: { lang: localeCode },
       meta: () => [{ property: "og:locale", content: locale }]
-    });
+    }, { head });
     await setEventsData(localeCode);
   }
 
