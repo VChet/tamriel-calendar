@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import { createHead } from "@unhead/vue";
+import { createHead } from "@unhead/vue/legacy";
 import VWave from "v-wave";
 import { useSettingsStore } from "@/store/settings";
 import { i18n } from "./plugins/i18n";

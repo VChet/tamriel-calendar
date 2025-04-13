@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { createGlobalState, useLocalStorage } from "@vueuse/core";
 import type { RouteRecordName } from "vue-router";
-import { useHead } from "@unhead/vue";
+import { useHead } from "@unhead/vue/legacy";
 import dayjs from "dayjs";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import enTamriel from "@/constants/dayjs/en_tamriel";
