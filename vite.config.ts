@@ -7,7 +7,7 @@ import { VitePWA } from "vite-plugin-pwa";
 import PWA_OPTIONS from "./src/constants/pwa-options";
 
 const commitHash = execSync("git rev-parse --short HEAD").toString().trimEnd();
-const commitDate = execSync("git log -1 --format=%cI").toString().trimEnd();
+const commitDate = execSync("git log -1 --format=%cd --date=\"format:%Y, %b %d\"").toString().trimEnd();
 
 // https://vitejs.dev/config/
 export default defineConfig({

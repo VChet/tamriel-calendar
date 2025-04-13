@@ -50,9 +50,6 @@ export function composeMonthNameFromDataEntry(value: DataEntry["date"]): string 
 export function composeDataEntryDate(value: Dayjs): string {
   return value.format("MM/DD");
 }
-export function composeCommitDate(value: ConfigType): string {
-  return dayjs(value).locale("en").format("YYYY, MMM DD");
-}
 
 export function composeWeekdayName(value: Dayjs): string {
   return value.format("dddd");

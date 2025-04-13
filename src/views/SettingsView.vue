@@ -27,7 +27,7 @@
         <li>
           <a v-wave href="https://github.com/VChet/tamriel-calendar">
             <icon-brand-github />
-            {{ $t("settingsPage.appVersion") }}: {{ commitHash }} - {{ commitDate }}
+            {{ $t("settingsPage.appVersion") }}: {{ VITE_GIT_COMMIT_HASH }} - {{ VITE_GIT_COMMIT_DATE }}
           </a>
         </li>
         <li v-if="needRefresh">
@@ -42,13 +42,11 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import { IconBrandBehance, IconBrandGithub, IconBrandTelegram } from "@tabler/icons-vue";
-import { composeCommitDate } from "@/helpers/date";
 import { injectHead } from "@unhead/vue";
 import { useSettingsStore } from "@/store/settings";
 import CommonHeader from "@/components/common-header.vue";
 
-const commitHash = import.meta.env.VITE_GIT_COMMIT_HASH;
-const commitDate = composeCommitDate(import.meta.env.VITE_GIT_COMMIT_DATE);
+const { VITE_GIT_COMMIT_HASH, VITE_GIT_COMMIT_DATE } = import.meta.env;
 
 const head = injectHead();
 
