@@ -11,8 +11,10 @@ import { useEventsStore } from "./events";
 import type { Day } from "@/classes/Day";
 
 type LocaleCode = "en" | "ru";
+type ColorTheme = "light" | "dark";
 interface SettingsStore {
   locale: LocaleCode
+  colorTheme: ColorTheme
   onboarding: boolean
 }
 
@@ -31,6 +33,7 @@ const LOCALES: { code: LocaleCode, locale: string, label: string }[] = [
 export const useSettingsStore = createGlobalState(() => {
   const settings = useLocalStorage<SettingsStore>("settings", {
     locale: "en",
+    colorTheme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
     onboarding: false
   }, { mergeDefaults: true });
 
@@ -48,6 +51,11 @@ export const useSettingsStore = createGlobalState(() => {
     await setEventsData(localeCode);
   }
 
+  function setColorTheme(theme: ColorTheme): void {
+    settings.value.colorTheme = theme;
+    document.documentElement.setAttribute("data-theme", theme);
+  }
+
   const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });
   const selectedCalendar = ref<RouteRecordName | null | undefined>(null);
   const selectedDay = ref<Day | null>(null);
@@ -56,6 +64,7 @@ export const useSettingsStore = createGlobalState(() => {
     LOCALES,
     settings,
     setLocale,
+    setColorTheme,
 
     selectedCalendar,
     selectedDay,

@@ -113,12 +113,12 @@ function navigateToPage(pageIndex: number): void {
       min-width: 4rem;
       padding: 0.25rem 0.75rem;
       font-size: 0.875rem;
-      color: var(--color-beige-dark);
+      color: var(--color-text);
       text-align: center;
       &--active {
         font-weight: 500;
-        color: var(--color-white);
-        background-color: var(--color-beige-dark);
+        color: var(--color-inverted-text);
+        background-color: var(--color-text);
         border-radius: 1.5rem;
         opacity: 0.8;
       }

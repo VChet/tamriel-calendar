@@ -46,7 +46,7 @@ onBeforeMount(() => { selectedDay.value ? updateCurrentDay() : setCurrentDay(); 
     cursor: pointer;
     @media (hover: hover) {
       &:hover:not(&--current) {
-        color: var(--color-red);
+        color: var(--color-accent);
       }
     }
   }

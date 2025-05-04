@@ -49,6 +49,9 @@ export default {
   },
   settingsPage: {
     language: "Язык",
+    colorTheme: "Цветовая тема",
+    light: "Светлая",
+    dark: "Темная",
     design: "Оригинальный дизайн Serafima S",
     update: "Обновить приложение",
     appVersion: "Версия",

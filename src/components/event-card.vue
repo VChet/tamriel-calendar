@@ -11,7 +11,7 @@
       </div>
       <img
         v-if="event.image"
-        class="event-card__image"
+        class="invert event-card__image"
         :src="`/img/events/${event.image}.svg`"
         :alt="`${event.name} illustration`"
       >
@@ -30,7 +30,7 @@ const routeName = props.event instanceof Holiday ? "Holiday" : "SummoningDay";
   gap: 0.75rem;
   height: 5rem;
   padding: 0.625rem 0.875rem 0.875rem;
-  background-color: var(--color-white);
+  background-color: var(--color-inverted-text);
   border-radius: 1rem;
   &__title {
     margin-bottom: 0.125rem;

@@ -38,7 +38,7 @@ const { holidaysEntries, summoningDaysEntries } = useSearchStore();
       margin-bottom: 0.5rem;
       font-size: 0.875rem;
       font-weight: 500;
-      color: var(--color-red);
+      color: var(--color-accent);
     }
     &__list {
       display: flex;

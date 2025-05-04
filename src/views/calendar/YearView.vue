@@ -54,7 +54,7 @@ const years = [new Year(current), new Year(current.add(1, "year"))];
         font-size: 0.75rem;
         font-weight: 500;
         &--current {
-          color: var(--color-red);
+          color: var(--color-accent);
         }
       }
       &__days {

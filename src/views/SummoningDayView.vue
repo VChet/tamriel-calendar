@@ -10,7 +10,7 @@
     <section v-if="event" class="container content-card">
       <img
         v-if="event.image"
-        class="content-card__image"
+        class="invert content-card__image"
         :src="`/img/events/${event.image}.svg`"
         :alt="event.name"
       >

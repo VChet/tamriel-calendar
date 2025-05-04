@@ -1,6 +1,6 @@
 <template>
   <main class="container onboarding-view">
-    <img src="/img/onboarding.svg" alt="logo">
+    <img src="/img/onboarding.svg" alt="logo" class="invert">
     <h1>{{ $t("onboardingPage.welcome") }}</h1>
     <div>{{ $t("onboardingPage.description") }}</div>
     <button v-wave class="button button--block button--big" type="button" @click="exitOnboarding">

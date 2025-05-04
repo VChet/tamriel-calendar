@@ -78,9 +78,9 @@ function composeEventLink(day: Day): RouteLocationRaw {
     padding-block: 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-white);
+    color: var(--color-inverted-text);
     cursor: pointer;
-    background-color: var(--color-beige-dark);
+    background-color: var(--color-text);
     border: none;
     border-radius: 1.5rem;
     opacity: 0.8;
@@ -123,7 +123,7 @@ function composeEventLink(day: Day): RouteLocationRaw {
         cursor: pointer;
         @media (hover: hover) {
           &:hover:not(.calendar-day--current) {
-            color: var(--color-red);
+            color: var(--color-accent);
           }
         }
       }

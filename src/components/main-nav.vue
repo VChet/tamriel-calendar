@@ -73,7 +73,7 @@ const tabs = computed<readonly TabEntry[]>(() => [
   position: sticky;
   bottom: 0;
   width: 100%;
-  background-color: var(--color-beige);
+  background-color: var(--color-background);
   border-top: var(--divider);
   opacity: 0.94;
   ul {
@@ -90,7 +90,7 @@ const tabs = computed<readonly TabEntry[]>(() => [
       padding: 0.625rem 1rem;
       font-size: 0.688rem;
       font-weight: bold;
-      color: var(--color-beige-dark);
+      color: var(--color-text);
       text-align: center;
       white-space: nowrap;
       opacity: 0.6;
@@ -98,7 +98,7 @@ const tabs = computed<readonly TabEntry[]>(() => [
         flex-direction: row;
       }
       &--active {
-        color: var(--color-red);
+        color: var(--color-accent);
         opacity: 1;
       }
     }

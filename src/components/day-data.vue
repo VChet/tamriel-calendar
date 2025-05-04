@@ -41,7 +41,7 @@ defineProps<{ selectedDay: Day }>();
     cursor: pointer;
     @media (hover: hover) {
       &:hover:not(&--current) {
-        color: var(--color-red);
+        color: var(--color-accent);
       }
     }
   }
@@ -76,7 +76,7 @@ defineProps<{ selectedDay: Day }>();
       margin-bottom: 0.5rem;
       font-size: 0.875rem;
       font-weight: 500;
-      color: var(--color-red);
+      color: var(--color-accent);
     }
   }
 }

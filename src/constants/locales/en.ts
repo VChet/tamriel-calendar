@@ -49,6 +49,9 @@ export default {
   },
   settingsPage: {
     language: "Language",
+    colorTheme: "Color theme",
+    light: "Light",
+    dark: "Dark",
     design: "Original design by Serafima S",
     update: "Update App",
     appVersion: "Version",

@@ -1,14 +1,26 @@
 @use "./fonts";
 @use "./content-card";
 :root {
-  --color-white: #fffefc;
-  --color-red: #d63d21;
-  --color-beige: #f9f2e0;
-  --color-beige-medium: #514b43;
-  --color-beige-dark: #1f170c;
-  --color-beige-dark-medium: #998875;
+  --color-text: #1f170c;
+  --color-background: #f9f2e0;
+  --color-primary: #514b43;
+  --color-secondary: #998875;
+  --color-inverted-text: #fffefc;
+  --color-accent: #d63d21;
   --color-border: #231c124d;
   --divider: 0.5px solid var(--color-border);
+  &[data-theme='dark'] {
+    --color-text: #f4ece2;
+    --color-background: #1e1706;
+    --color-primary: #bcb6ae;
+    --color-secondary: #8a7966;
+    --color-inverted-text: #050300;
+    --color-accent: #de462b;
+    --color-border: #eee7dd4d;
+    .invert {
+      filter: invert(0.8);
+    }
+  }
 }
 *,
 *::before,
@@ -18,8 +30,8 @@
   scrollbar-width: none;
 }
 *::selection {
-  color: var(--color-white);
-  background-color: var(--color-red);
+  color: var(--color-inverted-text);
+  background-color: var(--color-accent);
 }
 html {
   -webkit-font-smoothing: antialiased;
@@ -28,8 +40,8 @@ html {
   font-family: Golos, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  color: var(--color-beige-dark);
-  background-color: var(--color-beige);
+  color: var(--color-text);
+  background-color: var(--color-background);
   @media (width >= 768px) {
     font-size: 20px;
   }
@@ -69,11 +81,11 @@ svg {
   justify-content: center;
   max-width: 18.75rem;
   padding: 0.625rem 1.875rem;
-  color: var(--color-white);
+  color: var(--color-inverted-text);
   white-space: nowrap;
   cursor: pointer;
   outline: none;
-  background: var(--color-beige-dark);
+  background: var(--color-text);
   border: none;
   border-radius: 0.5rem;
   transition: transform .2s;
@@ -86,22 +98,22 @@ svg {
   }
   &:hover,
   &:focus-visible {
-    background-color: var(--color-beige-dark-medium);
+    background-color: var(--color-secondary);
   }
   &:active {
     transform: scale(.99);
   }
 }
 a {
-  color: var(--color-beige-dark);
+  color: var(--color-text);
   text-decoration: none;
   &.router-link-active {
-    color: var(--color-red);
+    color: var(--color-accent);
   }
 }
 .link {
   padding: 0;
-  color: var(--color-red);
+  color: var(--color-accent);
   cursor: pointer;
   outline: none;
   background: none;
@@ -116,7 +128,7 @@ a {
   display: inline-grid;
   place-items: center;
   padding: 0;
-  color: var(--color-beige-dark);
+  color: var(--color-text);
   cursor: pointer;
   outline: none;
   background: none;
@@ -127,6 +139,6 @@ a {
   }
   &:hover,
   &:focus-visible {
-    color: var(--color-beige-dark-medium);
+    color: var(--color-secondary);
   }
 }

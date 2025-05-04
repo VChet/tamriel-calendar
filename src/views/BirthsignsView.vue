@@ -13,7 +13,7 @@
           custom
         >
           <li role="link" @click="navigate">
-            <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name">
+            <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name" class="invert">
             {{ sign.name }}
           </li>
         </router-link>
@@ -46,7 +46,7 @@ const birthsigns = [...data.values()].sort((a, b) => Number(a.date) - Number(b.d
       cursor: pointer;
       @media (hover: hover) {
         &:hover {
-          color: var(--color-red);
+          color: var(--color-accent);
         }
       }
       img {

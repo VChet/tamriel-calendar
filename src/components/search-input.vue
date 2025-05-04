@@ -31,7 +31,7 @@ useFocus(inputRef, { initialValue: true });
     top: 50%;
     left: 0.5rem;
     font-size: 0.875rem;
-    color: var(--color-beige-dark-medium);
+    color: var(--color-secondary);
     transform: translateY(-50%);
   }
   &__clear {
@@ -43,7 +43,7 @@ useFocus(inputRef, { initialValue: true });
     width: 1.25rem;
     height: 1.25rem;
     padding: 0;
-    color: var(--color-beige-dark);
+    color: var(--color-text);
     cursor: pointer;
     outline: none;
     background-color: #1f170c2e;
@@ -59,13 +59,13 @@ useFocus(inputRef, { initialValue: true });
     width: 100%;
     padding: 0.425rem 0.75rem 0.425rem 2.25rem;
     font-size: 0.875rem;
-    color: var(--color-beige-dark);
+    color: var(--color-text);
     outline: none;
     background-color: #1f170c0f;
     border: none;
     border-radius: 0.625rem;
     &::placeholder {
-      color: var(--color-beige-dark-medium);
+      color: var(--color-secondary);
     }
   }
 }

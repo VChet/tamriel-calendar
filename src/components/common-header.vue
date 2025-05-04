@@ -59,7 +59,7 @@ const backButtonRoute = computed(() => {
   justify-content: center;
   height: 2.625rem;
   padding: 0 1rem;
-  background-color: var(--color-beige);
+  background-color: var(--color-background);
   border-bottom: var(--divider);
   opacity: 0.94;
   &--left {

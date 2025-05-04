@@ -10,7 +10,7 @@
     <section v-if="birthsign" class="container content-card">
       <img
         v-if="birthsign.image"
-        class="content-card__image"
+        class="invert content-card__image"
         :src="`/img/birthsigns/${birthsign.image}.svg`"
         :alt="birthsign.name"
       >

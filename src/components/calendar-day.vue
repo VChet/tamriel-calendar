@@ -47,7 +47,7 @@ const classList = computed<Record<string, boolean>>(() => {
       position: absolute;
       top: 80%;
       font-size: 1rem;
-      color: var(--color-red);
+      color: var(--color-accent);
       content: "✶";
     }
     &.calendar-day--active::after,
@@ -61,15 +61,15 @@ const classList = computed<Record<string, boolean>>(() => {
     font-size: 0.563rem;
     cursor: default;
     &.calendar-day--event:not(.calendar-day--current) {
-      color: var(--color-red);
+      color: var(--color-accent);
     }
   }
   &--current {
-    color: var(--color-white);
-    background-color: var(--color-red);
+    color: var(--color-inverted-text);
+    background-color: var(--color-accent);
   }
   &--active {
-    border-color: var(--color-red);
+    border-color: var(--color-accent);
   }
 }
 </style>

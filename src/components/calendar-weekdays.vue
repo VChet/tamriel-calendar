@@ -24,11 +24,11 @@ const days = computed(() => isLarge.value ? weekdaysLong() : weekdaysShort());
   li {
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--color-beige-medium);
+    color: var(--color-primary);
     text-transform: capitalize;
     opacity: 0.4;
     &:nth-last-child(-n + 2) {
-      color: var(--color-red);
+      color: var(--color-accent);
       opacity: 0.8;
     }
   }
