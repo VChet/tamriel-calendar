@@ -32,9 +32,10 @@ import { useShare } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
-import { useHead } from "@unhead/vue";
+import { useSeoMeta } from "@unhead/vue";
 import { composeMonthNameFromDataEntry, isValidMonthIndex } from "@/helpers/date";
 import { composeTitle } from "@/helpers/router";
+import head from "@/plugins/head";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
 
@@ -51,16 +52,14 @@ const ogImage = computed<string | null>(() => {
   if (!birthsign.value) return null;
   return `https://tamriel-calendar.netlify.app/img/birthsigns/${birthsign.value?.image}.svg`;
 });
-useHead({
+useSeoMeta({
   title,
-  meta: () => [
-    { name: "description", content: birthsign.value?.description },
-    { property: "og:title", content: title.value },
-    { property: "og:description", content: birthsign.value?.description },
-    { property: "og:image", content: ogImage.value },
-    { property: "og:url", content: `https://tamriel-calendar.netlify.app${route.fullPath}` }
-  ]
-});
+  description: birthsign.value?.description,
+  ogTitle: title,
+  ogDescription: birthsign.value?.description,
+  ogImage,
+  ogUrl: `https://tamriel-calendar.netlify.app${route.fullPath}`
+}, { head });
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareBirthsign(): void {

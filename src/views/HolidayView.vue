@@ -32,8 +32,9 @@ import { useShare } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
-import { useHead } from "@unhead/vue";
+import { useSeoMeta } from "@unhead/vue";
 import { composeTitle } from "@/helpers/router";
+import head from "@/plugins/head";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
 
@@ -51,16 +52,14 @@ const ogImage = computed<string | null>(() => {
   if (!event.value) return null;
   return `https://tamriel-calendar.netlify.app/img/events/${event.value?.image}.svg`;
 });
-useHead({
+useSeoMeta({
   title,
-  meta: () => [
-    { name: "description", content: event.value?.description },
-    { property: "og:title", content: title.value },
-    { property: "og:description", content: event.value?.description },
-    { property: "og:image", content: ogImage.value },
-    { property: "og:url", content: `https://tamriel-calendar.netlify.app${route.fullPath}` }
-  ]
-});
+  description: event.value?.description,
+  ogTitle: title,
+  ogDescription: event.value?.description,
+  ogImage,
+  ogUrl: `https://tamriel-calendar.netlify.app${route.fullPath}`
+}, { head });
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareEvent(): void {

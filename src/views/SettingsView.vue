@@ -50,20 +50,18 @@
 import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { IconBrandBehance, IconBrandGithub, IconBrandTelegram } from "@tabler/icons-vue";
-import { injectHead } from "@unhead/vue";
+import head from "@/plugins/head";
 import { useSettingsStore } from "@/store/settings";
 import CommonHeader from "@/components/common-header.vue";
 
 const { VITE_GIT_COMMIT_HASH, VITE_GIT_COMMIT_DATE } = import.meta.env;
-
-const head = injectHead();
 
 const { LOCALES, settings, setLocale, setColorTheme, needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, (value) => { setLocale(head, value); });
 
 const colorTheme = ref(settings.value.colorTheme);
-watch(colorTheme, setColorTheme);
+watch(colorTheme, (value) => { setColorTheme(head, value); });
 const { t } = useI18n();
 const COLOR_THEMES = computed(() => [
   { code: "light", label: t("settingsPage.light") },

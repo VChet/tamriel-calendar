@@ -51,9 +51,12 @@ export const useSettingsStore = createGlobalState(() => {
     await setEventsData(localeCode);
   }
 
-  function setColorTheme(theme: ColorTheme): void {
+  function setColorTheme(head: VueHeadClient, theme: ColorTheme): void {
     settings.value.colorTheme = theme;
-    document.documentElement.setAttribute("data-theme", theme);
+    useHead({
+      htmlAttrs: { "data-theme": theme },
+      meta: () => [{ name: "color-scheme", content: theme }]
+    }, { head });
   }
 
   const { needRefresh, updateServiceWorker } = useRegisterSW({ immediate: true });
