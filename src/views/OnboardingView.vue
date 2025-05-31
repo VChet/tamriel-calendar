@@ -10,6 +10,7 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import { useHead } from "@unhead/vue";
 import { useSettingsStore } from "@/store/settings";
 
 const router = useRouter();
@@ -18,6 +19,11 @@ function exitOnboarding(): void {
   settings.value.onboarding = true;
   router.push({ name: "Home" });
 }
+
+useHead({
+  link: [{ rel: "canonical", href: "https://tamriel-calendar.netlify.app/" }],
+  meta: [{ name: "robots", content: "noindex, nofollow" }]
+});
 </script>
 <style lang="scss">
 .onboarding-view.container {
