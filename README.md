@@ -1,9 +1,9 @@
 # Tamriel Calendar
 
-![vue](https://img.shields.io/github/package-json/dependency-version/VChet/tamriel-calendar/vue?color=42b883)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/07933add-8ad9-45b5-844b-329c23d1daf5/deploy-status)](https://app.netlify.com/sites/tamriel-calendar/deploys)
-[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
-[![Localazy](https://img.shields.io/badge/translation-localazy-066fef)](https://localazy.com/p/tamriel-calendar)
+![vue][vue-version-img]
+[![netlify-status][netlify-status-img]][netlify-status-href]
+[![localazy][localazy-img]][localazy-href]
+[![ask DeepWiki][deep-wiki-img]][deep-wiki-href]
 
 ## Disclaimer
 
@@ -18,3 +18,12 @@ Original design by [Serafima S (Behance Link)](https://www.behance.net/gallery/1
 - Install dependencies: `pnpm install`
 - Start dev-server: `pnpm run dev`
 - Build for production: `pnpm run build`
+
+<!-- Badges -->
+[vue-version-img]: https://img.shields.io/github/package-json/dependency-version/VChet/tamriel-calendar/vue?style=flat-square&color=42b883
+[netlify-status-img]: https://img.shields.io/netlify/07933add-8ad9-45b5-844b-329c23d1daf5?style=flat-square
+[netlify-status-href]: https://app.netlify.com/sites/tamriel-calendar
+[deep-wiki-img]: https://img.shields.io/badge/ask-DeepWiki-blue?style=flat-square
+[deep-wiki-href]: https://deepwiki.com/VChet/tamriel-calendar
+[localazy-img]: https://img.shields.io/badge/translation-localazy-066fef?style=flat-square
+[localazy-href]: https://localazy.com/p/tamriel-calendar
