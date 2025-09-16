@@ -1,6 +1,5 @@
 import { execSync } from "node:child_process";
 import { fileURLToPath, URL } from "node:url";
-import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import Vue from "@vitejs/plugin-vue";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
@@ -13,8 +12,7 @@ const commitDate = execSync("git log -1 --format=%cd --date=\"format:%Y, %b %d\"
 export default defineConfig({
   plugins: [
     Vue(),
-    VitePWA(PWA_OPTIONS),
-    VueI18nPlugin()
+    VitePWA(PWA_OPTIONS)
   ],
   resolve: {
     alias: {
