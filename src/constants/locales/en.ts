@@ -1,6 +1,6 @@
 export default {
   moonPhase: "Moon Phases",
-  birthsigns: "Birthsigns",
+  constellations: "Constellations",
   settings: "Settings",
   week: "Week",
   month: "Month",
@@ -14,8 +14,8 @@ export default {
     search: "Search",
     calendar: "Calendar",
     moonPhase: "@:moonPhase",
-    birthsigns: "@:birthsigns",
-    birthsign: "Birthsign",
+    constellations: "@:constellations",
+    constellation: "Constellation",
     holiday: "Holiday",
     summoningDay: "Summoning Day",
     settings: "Settings"

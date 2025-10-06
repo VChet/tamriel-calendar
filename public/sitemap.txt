@@ -2,4 +2,4 @@ https://tamriel-calendar.netlify.app/
 https://tamriel-calendar.netlify.app/calendar
 https://tamriel-calendar.netlify.app/holiday
 https://tamriel-calendar.netlify.app/summoning-day
-https://tamriel-calendar.netlify.app/birthsigns
+https://tamriel-calendar.netlify.app/constellations

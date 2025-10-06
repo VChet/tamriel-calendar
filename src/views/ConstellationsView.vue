@@ -1,19 +1,19 @@
 <template>
-  <main class="birthsigns-view">
+  <main class="constellations-view">
     <common-header search>
-      {{ $t("birthsigns") }}
+      {{ $t("constellations") }}
     </common-header>
     <section class="container">
-      <ul class="birthsigns-view__list">
+      <ul class="constellations-view__list">
         <router-link
-          v-for="sign in birthsigns.values()"
+          v-for="sign in constellations.values()"
           :key="sign.name"
           v-slot="{ navigate }"
-          :to="{ name: 'Birthsign', params: { month: sign.date } }"
+          :to="{ name: 'Constellation', params: { month: sign.date } }"
           custom
         >
           <li role="link" @click="navigate">
-            <img :src="`/img/birthsigns/${sign.image}.svg`" :alt="sign.name" class="invert">
+            <img :src="`/img/constellations/${sign.image}.svg`" :alt="sign.name" class="invert">
             {{ sign.name }}
           </li>
         </router-link>
@@ -26,11 +26,11 @@ import { RouterLink } from "vue-router";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
 
-const { birthsigns: data } = useEventsStore();
-const birthsigns = [...data.values()].sort((a, b) => Number(a.date) - Number(b.date));
+const { constellations: data } = useEventsStore();
+const constellations = [...data.values()].sort((a, b) => Number(a.date) - Number(b.date));
 </script>
 <style lang="scss">
-.birthsigns-view {
+.constellations-view {
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -1,6 +1,6 @@
 export default {
   moonPhase: "Фазы лун",
-  birthsigns: "Знаки рождения",
+  constellations: "Созвездия",
   settings: "Настройки",
   week: "Неделя",
   month: "Месяц",
@@ -14,8 +14,8 @@ export default {
     search: "Поиск",
     calendar: "Календарь",
     moonPhase: "@:moonPhase",
-    birthsigns: "@:birthsigns",
-    birthsign: "Знак рождения",
+    constellations: "@:constellations",
+    constellation: "Знак рождения",
     holiday: "Праздник",
     summoningDay: "День вызова даэдра",
     settings: "Настройки"

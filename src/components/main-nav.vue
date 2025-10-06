@@ -55,9 +55,9 @@ const tabs = computed<readonly TabEntry[]>(() => [
     iconComponent: IconMoon2
   },
   {
-    key: "birthsigns",
-    title: t("router.birthsigns"),
-    pages: ["Birthsigns", "Birthsign"],
+    key: "constellations",
+    title: t("router.constellations"),
+    pages: ["Constellations", "Constellation"],
     iconComponent: IconComet
   },
   {

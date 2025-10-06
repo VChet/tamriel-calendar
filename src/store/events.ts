@@ -6,7 +6,7 @@ import type { BaseEntry, DataEntry, NestedEntry, SingleEntry } from "@/types/eve
 export const useEventsStore = createGlobalState(() => {
   const holidays = reactive<Map<Holiday["date"], Holiday>>(new Map());
   const summoningDays = reactive<Map<SummoningDay["date"], SummoningDay>>(new Map());
-  const birthsigns = reactive<Map<DataEntry["date"], DataEntry>>(new Map());
+  const constellations = reactive<Map<DataEntry["date"], DataEntry>>(new Map());
 
   async function setEventsData(locale: string): Promise<void> {
     const [
@@ -14,17 +14,17 @@ export const useEventsStore = createGlobalState(() => {
       holidaysImages,
       summoningDaysData,
       summoningDaysImages,
-      birthsignsData,
-      birthsignsImages
+      constellationsData,
+      constellationsImages
     ] = await Promise.all([
       import(`@/constants/strings/${locale}_holidays.json`).then((module) => module.default as NestedEntry<BaseEntry>),
-      import("@/constants/mappings/holidays_images.json").then((module) => module.default as NestedEntry<string>),
+      import("@/constants/mappings/holiday_images.json").then((module) => module.default as NestedEntry<string>),
 
       import(`@/constants/strings/${locale}_summoningDays.json`).then((module) => module.default as NestedEntry<BaseEntry>),
-      import("@/constants/mappings/summoningDays_images.json").then((module) => module.default as NestedEntry<string>),
+      import("@/constants/mappings/summoningDay_images.json").then((module) => module.default as NestedEntry<string>),
 
-      import(`@/constants/strings/${locale}_birthsigns.json`).then((module) => module.default as SingleEntry<BaseEntry>),
-      import("@/constants/mappings/birthsigns_images.json").then((module) => module.default as SingleEntry<string>)
+      import(`@/constants/strings/${locale}_constellations.json`).then((module) => module.default as SingleEntry<BaseEntry>),
+      import("@/constants/mappings/constellation_images.json").then((module) => module.default as SingleEntry<string>)
     ]);
 
     for (const month in holidaysData) {
@@ -47,20 +47,20 @@ export const useEventsStore = createGlobalState(() => {
         summoningDays.set(payload.date, new SummoningDay(payload));
       }
     }
-    for (const month in birthsignsData) {
+    for (const month in constellationsData) {
       const payload: DataEntry = {
-        ...birthsignsData[month],
+        ...constellationsData[month],
         date: month,
-        image: birthsignsImages[month]
+        image: constellationsImages[month]
       };
-      birthsigns.set(payload.date, payload);
+      constellations.set(payload.date, payload);
     }
   }
 
   return {
     holidays,
     summoningDays,
-    birthsigns,
+    constellations,
 
     setEventsData
   };

@@ -1,7 +1,7 @@
-import birthsignImagesJSON from "../constants/mappings/birthsigns_images.json" with { type: "json" };
-import holidayImagesJSON from "../constants/mappings/holidays_images.json" with { type: "json" };
-import summoningDaysImagesJSON from "../constants/mappings/summoningDays_images.json" with { type: "json" };
-import birthsignsJSON from "../constants/strings/en_birthsigns.json" with { type: "json" };
+import constellationImagesJSON from "../constants/mappings/constellation_images.json" with { type: "json" };
+import holidayImagesJSON from "../constants/mappings/holiday_images.json" with { type: "json" };
+import summoningDaysImagesJSON from "../constants/mappings/summoningDay_images.json" with { type: "json" };
+import constellationsJSON from "../constants/strings/en_constellations.json" with { type: "json" };
 import holidaysJSON from "../constants/strings/en_holidays.json" with { type: "json" };
 import summoningDaysJSON from "../constants/strings/en_summoningDays.json" with { type: "json" };
 
@@ -40,7 +40,7 @@ if (summoningDaysWithoutImages.length) {
   console.info("Summoning days without image mappings:", summoningDaysWithoutImages);
 }
 
-const birthsignsWithoutImages = findItemsWithoutImages(birthsignsJSON, birthsignImagesJSON, false);
-if (birthsignsWithoutImages.length) {
-  console.info("Birthsigns without image mappings:", birthsignsWithoutImages);
+const constellationsWithoutImages = findItemsWithoutImages(constellationsJSON, constellationImagesJSON, false);
+if (constellationsWithoutImages.length) {
+  console.info("Constellations without image mappings:", constellationsWithoutImages);
 }

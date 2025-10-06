@@ -13,8 +13,8 @@ const YearView = () => import("@/views/calendar/YearView.vue");
 
 const HolidayView = () => import("@/views/HolidayView.vue");
 const SummoningDayView = () => import("@/views/SummoningDayView.vue");
-const BirthsignsView = () => import("@/views/BirthsignsView.vue");
-const BirthsignView = () => import("@/views/BirthsignView.vue");
+const ConstellationsView = () => import("@/views/ConstellationsView.vue");
+const ConstellationView = () => import("@/views/ConstellationView.vue");
 const MoonPhaseView = () => import("@/views/MoonPhaseView.vue");
 
 const SettingsView = () => import("@/views/SettingsView.vue");
@@ -90,16 +90,16 @@ const router = createRouter({
       meta: { titleToken: "router.moonPhase" }
     },
     {
-      path: "/birthsigns",
-      name: "Birthsigns",
-      component: BirthsignsView,
-      meta: { titleToken: "router.birthsigns" }
+      path: "/constellations",
+      name: "Constellations",
+      component: ConstellationsView,
+      meta: { titleToken: "router.constellations" }
     },
     {
-      path: "/birthsigns/:month",
-      name: "Birthsign",
-      component: BirthsignView,
-      meta: { titleToken: "router.birthsign" }
+      path: "/constellations/:month",
+      name: "Constellation",
+      component: ConstellationView,
+      meta: { titleToken: "router.constellation" }
     },
     {
       path: "/settings",
