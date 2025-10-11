@@ -13,6 +13,8 @@ import { useRouter } from "vue-router";
 import { useHead } from "@unhead/vue";
 import { useSettingsStore } from "@/store/settings";
 
+definePage({ meta: { titleToken: "router.onboarding" } });
+
 const router = useRouter();
 const { settings } = useSettingsStore();
 function exitOnboarding(): void {

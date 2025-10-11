@@ -15,7 +15,6 @@
         :alt="event.name"
       >
       <h1 class="content-card__title">
-        {{ $t("eventPage.summoningDay") }}:
         {{ event.name }}
       </h1>
       <div class="content-card__subtitle">
@@ -39,10 +38,12 @@ import head from "@/plugins/head";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
 
-const route = useRoute();
+definePage({ meta: { titleToken: "router.holiday" } });
+
+const route = useRoute("Holiday");
 const date = route.query.date?.toString();
-const { summoningDays } = useEventsStore();
-const event = computed(() => (date ? summoningDays.get(date) : null));
+const { holidays } = useEventsStore();
+const event = computed(() => (date ? holidays.get(date) : null));
 
 const { t } = useI18n();
 const title = computed<string>(() => {

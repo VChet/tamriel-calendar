@@ -39,7 +39,9 @@ import head from "@/plugins/head";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
 
-const route = useRoute();
+definePage({ meta: { titleToken: "router.constellation" } });
+
+const route = useRoute("Constellations Month");
 const { constellations } = useEventsStore();
 const constellation = computed(() => constellations.get(route.params.month?.toString()));
 

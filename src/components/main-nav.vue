@@ -23,6 +23,7 @@ import { useI18n } from "vue-i18n";
 import { RouterLink, useRouter } from "vue-router";
 import { IconMoon2 } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
+import type { RouteNamedKeys } from "@/types/router";
 import IconCalendar from "./icons/icon-calendar.vue";
 import IconComet from "./icons/icon-comet.vue";
 import IconSettings from "./icons/icon-settings.vue";
@@ -30,7 +31,7 @@ import IconSettings from "./icons/icon-settings.vue";
 interface TabEntry {
   key: string
   title: string
-  pages: string[]
+  pages: RouteNamedKeys[]
   iconComponent: Component
 }
 
@@ -41,11 +42,11 @@ if (!settings.value.onboarding) router.push({ name: "Onboarding" });
 
 const currentRoute = computed(() => router.currentRoute.value.name?.toString() ?? "");
 
-const tabs = computed<readonly TabEntry[]>(() => [
+const tabs = computed<TabEntry[]>(() => [
   {
     key: "calendar",
     title: t("router.calendar"),
-    pages: ["Calendar", "Week", "Month", "Year", "Holiday", "SummoningDay"],
+    pages: ["Calendar", "Calendar Week", "Calendar Month", "Calendar Year", "Holiday", "Summoning Day"],
     iconComponent: IconCalendar
   },
   {
@@ -57,7 +58,7 @@ const tabs = computed<readonly TabEntry[]>(() => [
   {
     key: "constellations",
     title: t("router.constellations"),
-    pages: ["Constellations", "Constellation"],
+    pages: ["Constellations", "Constellations Month"],
     iconComponent: IconComet
   },
   {
