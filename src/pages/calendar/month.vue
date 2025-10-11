@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { computed, reactive } from "vue";
 import { useInfiniteScroll } from "@vueuse/core";
-import type { RouteLocationRaw } from "vue-router";
+import type { RouterLinkProps } from "vue-router";
 import type { Dayjs } from "dayjs";
 import { Month } from "@/classes/Month";
 import { currentDay } from "@/helpers/date";
@@ -57,11 +57,11 @@ function canLoadMore(): boolean {
 }
 useInfiniteScroll(document, appendMonth, { distance: 150, canLoadMore });
 
-function composeEventLink(day: Day): RouteLocationRaw {
+function composeEventLink(day: Day): RouterLinkProps["to"] {
   if (day.holiday) {
     return { name: "Holiday", query: { date: day.holiday.date } };
   } else if (day.summoningDay) {
-    return { name: "SummoningDay", query: { date: day.summoningDay.date } };
+    return { name: "Summoning Day", query: { date: day.summoningDay.date } };
   }
   return {};
 }

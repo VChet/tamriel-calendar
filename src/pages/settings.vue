@@ -54,6 +54,8 @@ import head from "@/plugins/head";
 import { useSettingsStore } from "@/store/settings";
 import CommonHeader from "@/components/common-header.vue";
 
+definePage({ meta: { titleToken: "router.settings" } });
+
 const { VITE_GIT_COMMIT_HASH, VITE_GIT_COMMIT_DATE } = import.meta.env;
 
 const { LOCALES, settings, setLocale, setColorTheme, needRefresh, updateServiceWorker } = useSettingsStore();

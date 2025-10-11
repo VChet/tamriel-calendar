@@ -26,6 +26,8 @@ import { useSearchStore } from "@/store/search";
 import CommonHeader from "../components/common-header.vue";
 import EventCard from "../components/event-card.vue";
 
+definePage({ meta: { titleToken: "router.search" } });
+
 const { holidaysEntries, summoningDaysEntries } = useSearchStore();
 </script>
 <style lang="scss">

@@ -9,7 +9,7 @@
           v-for="sign in constellations.values()"
           :key="sign.name"
           v-slot="{ navigate }"
-          :to="{ name: 'Constellation', params: { month: sign.date } }"
+          :to="{ name: 'Constellations Month', params: { month: sign.date } }"
           custom
         >
           <li role="link" @click="navigate">
@@ -25,6 +25,8 @@
 import { RouterLink } from "vue-router";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
+
+definePage({ meta: { titleToken: "router.constellations" } });
 
 const { constellations: data } = useEventsStore();
 const constellations = [...data.values()].sort((a, b) => Number(a.date) - Number(b.date));

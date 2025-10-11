@@ -28,6 +28,8 @@ import { computed } from "vue";
 import { currentDayOfYear } from "@/helpers/date";
 import CommonHeader from "@/components/common-header.vue";
 
+definePage({ meta: { titleToken: "router.moonPhase" } });
+
 enum MoonPhase {
   newMoon = 0,
   oneWax,

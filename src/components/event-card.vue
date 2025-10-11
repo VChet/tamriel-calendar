@@ -22,7 +22,7 @@
 import { Holiday, type SummoningDay } from "@/classes/Event";
 
 const props = defineProps<{ event: Holiday | SummoningDay }>();
-const routeName = props.event instanceof Holiday ? "Holiday" : "SummoningDay";
+const routeName = props.event instanceof Holiday ? "Holiday" : "Summoning Day";
 </script>
 <style lang="scss">
 .event-card {
