@@ -10,7 +10,7 @@ import { i18n } from "@/plugins/i18n";
 import { useEventsStore } from "./events";
 import type { Day } from "@/classes/Day";
 
-type LocaleCode = "en" | "ru";
+type LocaleCode = typeof i18n.global.availableLocales[number];
 type ColorTheme = "light" | "dark";
 interface SettingsStore {
   locale: LocaleCode
