@@ -1,10 +1,10 @@
 import { execSync } from "node:child_process";
 import { fileURLToPath, URL } from "node:url";
 import Vue from "@vitejs/plugin-vue";
-import VueRouter from "unplugin-vue-router/vite";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
-import type { TreeNode } from "unplugin-vue-router";
+import VueRouter from "vue-router/vite";
+import type { TreeNode } from "vue-router/unplugin";
 import PWA_OPTIONS from "./src/constants/pwa-options";
 
 const commitHash = execSync("git rev-parse --short HEAD").toString().trimEnd();
