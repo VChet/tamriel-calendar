@@ -1,14 +1,27 @@
 import process from "node:process";
 import antfu from "@antfu/eslint-config";
 
-const SORT_IMPORT_CUSTOM_GROUP = {
-  "vue": "^vue$",
-  "vue-libs": ["^vue-router$", "^vue-i18n$", "^@vueuse/"],
-  "vue-components": "\\.vue$"
-};
+const SORT_IMPORT_CUSTOM_GROUPS = [{
+  groupName: "vue",
+  anyOf: [
+    { selector: "type", elementNamePattern: "^vue$" },
+    { elementNamePattern: "^vue$" }
+  ]
+}, {
+  groupName: "vue-libs",
+  anyOf: [
+    { selector: "type", elementNamePattern: ["^vue-router$", "^vue-i18n$", "^@vueuse/"] },
+    { elementNamePattern: ["^vue-router$", "^vue-i18n$", "^@vueuse/"] }
+  ]
+}, {
+  groupName: "vue-components",
+  anyOf: [
+    { selector: "type", elementNamePattern: "\\.vue$" },
+    { elementNamePattern: "\\.vue$" }
+  ]
+}];
 
 export default antfu({
-  toml: false,
   isInEditor: false,
   ignores: ["src/scripts/*.js", "**/typed-router.ts"]
 }, {
@@ -38,7 +51,7 @@ export default antfu({
     "perfectionist/sort-named-imports": ["error", {
       order: "asc",
       type: "natural",
-      groupKind: "values-first"
+      groups: ["value-import", "type-import"]
     }],
     "perfectionist/sort-imports": ["error", {
       internalPattern: ["^@/"],
@@ -46,22 +59,20 @@ export default antfu({
         "builtin",
         "vue",
         "vue-libs",
-        "external",
-        "type",
-        "internal",
-        ["parent", "sibling", "index"],
-        "internal-type",
-        ["parent-type", "sibling-type", "index-type"],
+        "value-external",
+        "type-import",
+        "value-internal",
+        ["value-parent", "value-sibling", "value-index"],
+        "type-internal",
+        ["type-parent", "type-sibling", "type-index"],
         "side-effect",
         "vue-components",
-        "object",
+        "ts-equals-import",
         "unknown"
       ],
-      customGroups: {
-        value: SORT_IMPORT_CUSTOM_GROUP,
-        type: SORT_IMPORT_CUSTOM_GROUP
-      },
-      newlinesBetween: "ignore",
+      customGroups: SORT_IMPORT_CUSTOM_GROUPS,
+      newlinesBetween: 0,
+      newlinesInside: 0,
       order: "asc",
       type: "natural"
     }],
