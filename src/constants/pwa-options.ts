@@ -18,12 +18,28 @@ const manifest: Partial<ManifestOptions> = {
 
 const pwaOptions: Partial<VitePWAOptions> = {
   base: "/",
-  strategies: "injectManifest",
-  srcDir: "src",
-  filename: "sw.ts",
+  strategies: "generateSW",
+  registerType: "autoUpdate",
   includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
   manifest,
-  workbox: { sourcemap: true }
+  workbox: {
+    sourcemap: true,
+    cleanupOutdatedCaches: true,
+    navigateFallback: "/index.html",
+    runtimeCaching: [
+      {
+        urlPattern: /\.(?:png|jpe?g|svg|webp|woff2)$/,
+        handler: "CacheFirst",
+        options: {
+          cacheName: "asset-cache",
+          expiration: {
+            maxEntries: 60,
+            maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+          }
+        }
+      }
+    ]
+  }
 };
 
 export default pwaOptions;
