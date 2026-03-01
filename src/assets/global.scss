@@ -88,7 +88,7 @@ svg {
   background: var(--color-text);
   border: none;
   border-radius: 0.5rem;
-  transition: transform .2s;
+  transition: transform 0.2s;
   &--block {
     width: 100%;
   }
@@ -101,7 +101,7 @@ svg {
     background-color: var(--color-secondary);
   }
   &:active {
-    transform: scale(.99);
+    transform: scale(0.99);
   }
 }
 a {

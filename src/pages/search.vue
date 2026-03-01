@@ -45,7 +45,7 @@ const { holidaysEntries, summoningDaysEntries } = useSearchStore();
     &__list {
       display: flex;
       flex-direction: column;
-      gap: .5rem;
+      gap: 0.5rem;
     }
   }
 }
