@@ -10,6 +10,8 @@ import PWA_OPTIONS from "./src/constants/pwa-options";
 const commitHash = execSync("git rev-parse --short HEAD").toString().trimEnd();
 const commitDate = execSync("git log -1 --format=%cd --date=\"format:%Y, %b %d\"").toString().trimEnd();
 
+const BRACKETS_REGEX = /[-[\]]+/g;
+const SPACE_REGEX = /\s+/;
 function getRouteName(node: TreeNode): string {
   if (!node.parent) return "";
 
@@ -18,8 +20,8 @@ function getRouteName(node: TreeNode): string {
   if (rawSegment === "index") return parentName;
 
   const name = rawSegment
-    .replace(/[-[\]]+/g, " ") // replace -[] with space
-    .split(/\s+/)
+    .replace(BRACKETS_REGEX, " ") // replace -[] with space
+    .split(SPACE_REGEX)
     .filter(Boolean)
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
