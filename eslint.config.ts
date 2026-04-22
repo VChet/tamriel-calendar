@@ -111,10 +111,15 @@ export default antfu({
     "style/semi": ["error", "always"],
     "ts/array-type": "error",
     "ts/consistent-indexed-object-style": "error",
-    "ts/consistent-type-definitions": "off",
+    "ts/consistent-type-definitions": ["error", "interface"],
     "ts/member-ordering": ["error", { default: { optionalityOrder: "required-first" } }],
     "ts/no-shadow": "error",
     "unicorn/prefer-includes": "off",
+    "yaml/quotes": ["error", { prefer: "double" }]
+  }
+}, {
+  files: ["**/*.vue"],
+  rules: {
     "vue/attribute-hyphenation": ["error", "always"],
     "vue/block-order": ["error", { order: ["template", "script", "style"] }],
     "vue/comma-dangle": ["error", "never"],
@@ -129,7 +134,11 @@ export default antfu({
     "vue/padding-line-between-blocks": ["error", "never"],
     "vue/require-emit-validator": "warn",
     "vue/v-bind-style": ["error", "shorthand", { sameNameShorthand: "always" }],
-    "vue/v-on-style": ["error", "shorthand"],
-    "yaml/quotes": ["error", { prefer: "double" }]
+    "vue/v-on-style": ["error", "shorthand"]
+  }
+}, {
+  files: ["**/*.md"],
+  rules: {
+    "perfectionist/sort-imports": "off"
   }
 });
