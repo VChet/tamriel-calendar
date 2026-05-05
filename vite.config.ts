@@ -1,6 +1,8 @@
 import { execSync } from "node:child_process";
+import process from "node:process";
 import { fileURLToPath, URL } from "node:url";
 import Vue from "@vitejs/plugin-vue";
+import namedPort from "named-port";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import VueRouter from "vue-router/vite";
@@ -10,6 +12,8 @@ import PWA_OPTIONS from "./src/constants/pwa-options";
 const commitHash = execSync("git rev-parse --short HEAD").toString().trimEnd();
 const commitDate = execSync("git log -1 --format=%cd --date=\"format:%Y, %b %d\"").toString().trimEnd();
 
+const BRACKETS_REGEX = /[-[\]]+/g;
+const SPACE_REGEX = /\s+/;
 function getRouteName(node: TreeNode): string {
   if (!node.parent) return "";
 
@@ -18,8 +22,8 @@ function getRouteName(node: TreeNode): string {
   if (rawSegment === "index") return parentName;
 
   const name = rawSegment
-    .replace(/[-[\]]+/g, " ") // replace -[] with space
-    .split(/\s+/)
+    .replace(BRACKETS_REGEX, " ") // replace -[] with space
+    .split(SPACE_REGEX)
     .filter(Boolean)
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -45,6 +49,6 @@ export default defineConfig({
     "import.meta.env.VITE_GIT_COMMIT_DATE": JSON.stringify(commitDate)
   },
   server: {
-    port: 7000
+    port: namedPort(process.env.npm_package_name!, { min: 7000, max: 10000 })
   }
 });
