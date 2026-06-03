@@ -14,10 +14,15 @@ import type {
   ParamValueZeroOrMore,
   ParamValueZeroOrOne,
 } from 'vue-router'
+import type {
+  _ExtractParamParserType,
+} from 'vue-router/experimental'
 
 declare module 'vue-router' {
   interface TypesConfig {
-    ParamParsers: never
+    _ParamParsers: {}
+    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap
+    _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap
   }
 }
 
@@ -137,6 +142,8 @@ declare module 'vue-router/auto-routes' {
         | 'Home'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/calendar.vue': {
       routes:
@@ -146,11 +153,15 @@ declare module 'vue-router/auto-routes' {
         | 'Calendar Year'
       views:
         | 'default'
+      pathParamNames:
+        | never
     }
     'src/pages/calendar/month.vue': {
       routes:
         | 'Calendar Month'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/calendar/week.vue': {
@@ -158,11 +169,15 @@ declare module 'vue-router/auto-routes' {
         | 'Calendar Week'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/calendar/year.vue': {
       routes:
         | 'Calendar Year'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/constellations/index.vue': {
@@ -170,17 +185,23 @@ declare module 'vue-router/auto-routes' {
         | 'Constellations'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/constellations/[month].vue': {
       routes:
         | 'Constellations Month'
       views:
         | never
+      pathParamNames:
+        | 'month'
     }
     'src/pages/holiday.vue': {
       routes:
         | 'Holiday'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/moon-phase.vue': {
@@ -188,11 +209,15 @@ declare module 'vue-router/auto-routes' {
         | 'Moon Phase'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/onboarding.vue': {
       routes:
         | 'Onboarding'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/search.vue': {
@@ -200,17 +225,23 @@ declare module 'vue-router/auto-routes' {
         | 'Search'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/settings.vue': {
       routes:
         | 'Settings'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/summoning-day.vue': {
       routes:
         | 'Summoning Day'
       views:
+        | never
+      pathParamNames:
         | never
     }
   }
