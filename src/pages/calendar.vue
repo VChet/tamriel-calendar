@@ -37,7 +37,7 @@
 <script setup lang="ts">
 import { computed, useTemplateRef, watch } from "vue";
 import { useSwipe, type UseSwipeDirection } from "@vueuse/core";
-import { RouterLink, RouterView, useRouter } from "vue-router";
+import { RouterLink, RouterView, useRouter, type RouteLocationRaw } from "vue-router";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-vue";
 import { useSettingsStore } from "@/store/settings";
 import type { RouteNamedKeys } from "@/types/router";
@@ -46,12 +46,10 @@ import CommonHeader from "@/components/common-header.vue";
 definePage({
   meta: { titleToken: "router.calendar" },
   redirect: { name: "Calendar Week" },
-  beforeEnter(to, _from, next) {
+  beforeEnter(to) {
     const { selectedCalendar } = useSettingsStore();
     if (selectedCalendar.value && to.name !== selectedCalendar.value) {
-      next({ name: selectedCalendar.value });
-    } else {
-      next();
+      return { name: selectedCalendar.value } as RouteLocationRaw;
     }
   }
 });

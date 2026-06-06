@@ -1,10 +1,10 @@
 export default {
   extends: [
     "stylelint-config-standard-scss",
+    "@stylistic/stylelint-config",
     "stylelint-config-recess-order"
   ],
   plugins: [
-    "@stylistic/stylelint-plugin",
     "stylelint-declaration-block-no-ignored-properties",
     "stylelint-order",
     "stylelint-rem-over-px"
@@ -13,8 +13,7 @@ export default {
   overrides: [{ files: ["**/*.vue"], customSyntax: "postcss-html" }],
   ignoreFiles: ["dist"],
   rules: {
-    "@stylistic/color-hex-case": "lower",
-    "@stylistic/number-leading-zero": "always",
+    "@stylistic/selector-list-comma-newline-after": "always-multi-line",
     "at-rule-empty-line-before": "never",
     "declaration-empty-line-before": "never",
     "plugin/declaration-block-no-ignored-properties": true,
