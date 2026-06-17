@@ -35,7 +35,7 @@ function getRouteName(node: TreeNode): string {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    VueRouter({ dts: "./src/types/typed-router.ts", getRouteName }),
+    VueRouter({ dts: "./src/types/lib/typed-router.ts", getRouteName }),
     Vue(),
     VitePWA(PWA_OPTIONS)
   ],
