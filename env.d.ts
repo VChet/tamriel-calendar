@@ -1,5 +1,5 @@
 interface ImportMetaEnv {
-  readonly VITE_GIT_COMMIT_HASH: string
+  readonly VITE_GIT_COMMIT_SHA: string
   readonly VITE_GIT_COMMIT_DATE: string
 }
 

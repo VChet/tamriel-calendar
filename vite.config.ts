@@ -1,4 +1,4 @@
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import process from "node:process";
 import { fileURLToPath, URL } from "node:url";
 import Vue from "@vitejs/plugin-vue";
@@ -9,8 +9,8 @@ import VueRouter from "vue-router/vite";
 import type { TreeNode } from "vue-router/unplugin";
 import PWA_OPTIONS from "./src/constants/pwa-options";
 
-const commitHash = execSync("git rev-parse --short HEAD").toString().trimEnd();
-const commitDate = execSync("git log -1 --format=%cd --date=\"format:%Y, %b %d\"").toString().trimEnd();
+const commitSHA = execFileSync("git", ["rev-parse", "--short", "HEAD"], { encoding: "utf8" }).trim();
+const commitDate = execFileSync("git", ["log", "-1", "--format=%cI"], { encoding: "utf8" }).trim();
 
 const BRACKETS_REGEX = /[-[\]]+/g;
 const SPACE_REGEX = /\s+/;
@@ -45,7 +45,7 @@ export default defineConfig({
     }
   },
   define: {
-    "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(commitHash),
+    "import.meta.env.VITE_GIT_COMMIT_SHA": JSON.stringify(commitSHA),
     "import.meta.env.VITE_GIT_COMMIT_DATE": JSON.stringify(commitDate)
   },
   server: {

@@ -34,7 +34,7 @@
         <li>
           <a v-wave href="https://github.com/VChet/tamriel-calendar">
             <icon-brand-github />
-            {{ $t("settingsPage.appVersion") }}: {{ VITE_GIT_COMMIT_HASH }} - {{ VITE_GIT_COMMIT_DATE }}
+            {{ $t("settingsPage.appVersion") }}: {{ VITE_GIT_COMMIT_SHA }} - {{ commitDate }}
           </a>
         </li>
         <li v-if="needRefresh">
@@ -56,8 +56,6 @@ import CommonHeader from "@/components/common-header.vue";
 
 definePage({ meta: { titleToken: "router.settings" } });
 
-const { VITE_GIT_COMMIT_HASH, VITE_GIT_COMMIT_DATE } = import.meta.env;
-
 const { LOCALES, settings, setLocale, setColorTheme, needRefresh, updateServiceWorker } = useSettingsStore();
 const locale = ref(settings.value.locale);
 watch(locale, (value) => { setLocale(head, value); });
@@ -69,6 +67,15 @@ const COLOR_THEMES = computed(() => [
   { code: "light", label: t("settingsPage.light") },
   { code: "dark", label: t("settingsPage.dark") }
 ]);
+
+const { VITE_GIT_COMMIT_SHA, VITE_GIT_COMMIT_DATE } = import.meta.env;
+const commitDate = computed<string>(() => {
+  return new Intl.DateTimeFormat(locale.value, {
+    year: "numeric",
+    month: "long",
+    day: "2-digit"
+  }).format(new Date(VITE_GIT_COMMIT_DATE));
+});
 </script>
 <style lang="scss">
 .settings-view {
