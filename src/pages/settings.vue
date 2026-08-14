@@ -73,7 +73,7 @@ const commitDate = computed<string>(() => {
   return new Intl.DateTimeFormat(locale.value, {
     year: "numeric",
     month: "long",
-    day: "2-digit"
+    day: "numeric"
   }).format(new Date(VITE_GIT_COMMIT_DATE));
 });
 </script>
