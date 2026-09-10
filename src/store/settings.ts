@@ -56,8 +56,7 @@ export const useSettingsStore = createGlobalState(() => {
     useHead({
       htmlAttrs: { "data-theme": theme },
       meta: () => [
-        { name: "color-scheme", content: theme },
-        { name: "theme-color", content: theme === "light" ? "#f9f2e0" : "#1e1706" }
+        { name: "color-scheme", content: theme === "light" ? "light dark" : "dark light" }
       ]
     }, { head });
   }

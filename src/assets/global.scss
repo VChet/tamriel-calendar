@@ -1,6 +1,7 @@
 @use "./fonts";
 @use "./content-card";
 :root {
+  color-scheme: light;
   --color-text: #1f170c;
   --color-background: #f9f2e0;
   --color-primary: #514b43;
@@ -10,6 +11,7 @@
   --color-border: #231c124d;
   --divider: 0.5px solid var(--color-border);
   &[data-theme="dark"] {
+    color-scheme: dark;
     --color-text: #f4ece2;
     --color-background: #1e1706;
     --color-primary: #bcb6ae;

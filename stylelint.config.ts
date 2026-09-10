@@ -15,6 +15,7 @@ export default {
   rules: {
     "@stylistic/selector-list-comma-newline-after": "always-multi-line",
     "at-rule-empty-line-before": "never",
+    "custom-property-empty-line-before": "never",
     "declaration-empty-line-before": "never",
     "plugin/declaration-block-no-ignored-properties": true,
     "rem-over-px/rem-over-px": [true, { ignore: ["0.5px", "1px", "font-size 16px", "font-size 20px"] }],

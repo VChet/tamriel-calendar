@@ -7,7 +7,7 @@ const manifest: Partial<ManifestOptions> = {
   description: "Calendar with the system of timekeeping used in The Elder Scrolls universe",
   dir: "ltr",
   orientation: "portrait",
-  theme_color: "#f9f2e0",
+  theme_color: "#1e1706",
   background_color: "#f9f2e0",
   icons: [
     { src: "icon-192x192.png", sizes: "192x192", type: "image/png" },
