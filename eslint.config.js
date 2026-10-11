@@ -23,7 +23,8 @@ const SORT_IMPORT_CUSTOM_GROUPS = [{
 
 export default antfu({
   isInEditor: false,
-  ignores: ["src/scripts/*.js", "**/typed-router.ts"]
+  ignores: ["src/scripts/*.js", "**/typed-router.ts"],
+  globals: { definePage: "readonly" }
 }, {
   name: "javascript/overrides",
   rules: {
@@ -108,15 +109,23 @@ export default antfu({
     "style/lines-between-class-members": "off",
     "style/max-statements-per-line": "off",
     "style/operator-linebreak": ["error", "after"],
-    "style/quotes": ["error", "double"],
+    "style/quotes": ["error", "double", { avoidEscape: true, allowTemplateLiterals: "avoidEscape" }],
     "style/semi": ["error", "always"],
+    "unicorn/prefer-includes": "off",
+    "unused-imports/no-unused-vars": "off",
+    "yaml/quotes": ["error", { prefer: "double" }]
+  }
+}, {
+  name: "typescript/overrides",
+  files: ["**/*.?([cm])ts", "**/*.?([cm])tsx", "**/*.vue"],
+  languageOptions: { parserOptions: { projectService: true } },
+  rules: {
     "ts/array-type": "error",
     "ts/consistent-indexed-object-style": "error",
     "ts/consistent-type-definitions": ["error", "interface"],
     "ts/member-ordering": ["error", { default: { optionalityOrder: "required-first" } }],
-    "ts/no-shadow": "error",
-    "unicorn/prefer-includes": "off",
-    "yaml/quotes": ["error", { prefer: "double" }]
+    "ts/no-deprecated": "warn",
+    "ts/no-shadow": "error"
   }
 }, {
   name: "vue/overrides",

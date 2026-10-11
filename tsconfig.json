@@ -6,6 +6,7 @@
     "paths": { "@/*": ["./src/*"] },
     "resolveJsonModule": true,
     "types": ["vite/client", "vite-plugin-pwa/client"],
+    "allowImportingTsExtensions": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "importHelpers": true,
@@ -13,5 +14,5 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["**/*.js", "**/*.ts", "**/*.vue"]
 }
