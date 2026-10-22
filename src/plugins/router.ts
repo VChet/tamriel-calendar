@@ -6,10 +6,7 @@ import { useSettingsStore } from "@/store/settings";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
-  scrollBehavior(_to, _from, savedPosition) {
-    return Promise.resolve(savedPosition ?? { top: 0, left: 0 });
-  }
+  routes
 });
 
 router.beforeEach(() => {
