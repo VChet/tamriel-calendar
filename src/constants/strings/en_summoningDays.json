@@ -1,87 +1,87 @@
 {
   "01": {
     "01": {
-      "description": "Clavicus Vile is one of the seventeen most powerful Daedra known as Daedric Princes. He is best known for granting wishes, often in ways that turn out poorly for the recipient.",
+      "description": "Clavicus Vile is one of the Daedric Princes. He is known for granting wishes, often in ways that turn out poorly for the recipient.",
       "name": "Clavicus Vile"
     },
     "13": {
-      "description": "Meridia (who once bore the name Merid-Nunda) is one of the Daedra whose sphere of influence is beyond the control of mortals. She is associated with the energy of living beings and, unlike most Daedra, is not considered unequivocally evil.",
+      "description": "Meridia, once known as Merid-Nunda, is a Daedric Prince associated with the energy of living beings. Unlike many Daedric Princes, she is not universally regarded as evil.",
       "name": "Meridia"
     }
   },
   "02": {
     "02": {
-      "description": "Sheogorath is the Daedric Prince of Madness, known by the nicknames Madman, Mad Lord, Mad Star, Prince of Madness. His Plan in Oblivion is the Shivering Islands or the House of Madness. The islands are divided into two realms: Mania, home of the mad, adoring luxury, lovers of the arts and lavish revelry, and Dementia, a dark, dark, horror-filled land inhabited to match the twisted nature.",
+      "description": "Sheogorath is the Daedric Prince of Madness. His realm in Oblivion, the Shivering Isles, is divided into Mania, whose inhabitants embrace luxury, art, and revelry, and the darker, horror-filled Dementia.",
       "name": "Sheogorath"
     },
     "16": {
-      "description": "Sanguine is the Prince of drunkenness and debauchery. His sphere is the darker sides of human nature, such as lust, laziness, gluttony and greed. Although Sanguine likes jokes, he likes even more to push mortals into the path of vice through temptation and humiliation. He patronizes sinners and is often depicted with a bottle of wine or beer in his hand.",
+      "description": "Sanguine is the Daedric Prince of debauchery and excess. His sphere includes lust, sloth, gluttony, and greed. He delights in tempting mortals into vice and is often depicted holding a bottle of wine or beer.",
       "name": "Sanguine"
     }
   },
   "03": {
     "05": {
-      "description": "Hermaeus Mora, or Herma Mora, is a Daedric prince whose sphere is the prediction of fate, past and future by reading the stars and the firmament. He is the lord of knowledge and memory.",
+      "description": "Hermaeus Mora, also called Herma-Mora, is the Daedric Prince of knowledge and memory. He is also associated with fate and the past and future.",
       "name": "Hermaeus Mora"
     },
     "21": {
-      "description": "Azura, whose sphere is dawn and dusk, is the Queen of the realm of twilight; known by such names as the Prince of Moon Shadow, Queen of the Evening Sky, and Mother of the Rose. She is the sister of Nocturnal. Azura is one of the most gracious and benevolent of the Daedra Lords, but she is also fierce and ruthless.",
+      "description": "Azura's sphere is dawn and dusk, and she is associated with twilight. Her titles include Queen of the Evening Sky and Mother of the Rose. She is often considered benevolent, but can also be fierce and ruthless.",
       "name": "Azura"
     }
   },
   "04": {
     "09": {
-      "description": "Peryite is one of the seventeen Daedra Princes who live in Oblivion. His sphere of influence is the natural order, disease, and epidemics.",
+      "description": "Peryite is a Daedric Prince whose sphere includes the natural order, disease, and pestilence.",
       "name": "Peryite"
     }
   },
   "05": {
     "09": {
-      "description": "Namira is a Daedra Princess whose sphere is ancient darkness. She is also known as the Lady of Decay, the Spirit of the Daedra, and the Goddess of Darkness. Namira is the lord of various dark spirits. She is often associated with spiders, insects, slugs, and other disgusting creatures that inspire instinctive disgust in mortals.",
+      "description": "Namira is a Daedric Prince associated with ancient darkness and decay. She is also called the Lady of Decay and the Goddess of Darkness, and is associated with spiders, insects, slugs, and other creatures that inspire disgust.",
       "name": "Namira"
     }
   },
   "06": {
     "05": {
-      "description": "Hircine is one of the Daedra princes whose domain is hunting, jousting Daedra, the greatest game, stalking and sacrificing mortals.",
+      "description": "Hircine is the Daedric Prince of the hunt. His sphere includes hunting, stalking prey, and the pursuit of the greatest game.",
       "name": "Hircine"
     }
   },
   "07": {
     "10": {
-      "description": "Vaermina, or the Dreamweaver, is one of the Daedra Princes. Her sphere of influence includes dreams, nightmares, fears, and torture, as well as ominous omens and stealing memories.",
+      "description": "Vaermina, also known as the Dreamweaver, is a Daedric Prince associated with dreams, nightmares, and ominous visions. She is also known for stealing memories.",
       "name": "Vaermina"
     }
   },
   "09": {
     "08": {
-      "description": "Nocturnal is a Daedric Princess whose realm is night and darkness. She is also known as the Lady Luck, Mistress of Shadows, and Ur-dra.",
+      "description": "Nocturnal is a Daedric Prince associated with night and darkness. Her titles include the Lady Luck, Mistress of Shadows, and Ur-dra.",
       "name": "Nocturnal"
     }
   },
   "10": {
     "08": {
-      "description": "Malacath is a Daedric Prince, protector of the scorned and rejected, guardian of the Faithful Oaths and Blood Curses. Malacath patronizes the orsimers.",
+      "description": "Malacath is a Daedric Prince and protector of the scorned and rejected. He is associated with oaths and blood curses and is a patron of the Orsimer.",
       "name": "Malacath"
     },
     "13": {
-      "description": "Princess Daedra Mephala is known as the Spinner of the Nets, the Spinner, and the Spiderwoman. Her domain is lies, sex, murder, secrets and conspiracies, and she also likes to seduce mortals and meddle in their affairs.",
+      "description": "Mephala, a Daedric Prince, is known as the Spinner, the Webspinner, and the Spider. Her sphere includes lies, sex, murder, secrets, and conspiracies; she also meddles in mortal affairs.",
       "name": "Mephala"
     }
   },
   "11": {
     "02": {
-      "description": "Boethiah is an insidious god whose sphere is deception and conspiracy, dastardly murder, treason, and the overthrow of power.",
+      "description": "Boethiah is a Daedric Prince associated with deception, conspiracy, murder, treason, and the overthrow of power.",
       "name": "Boethiah"
     },
     "20": {
-      "description": "Mehrunes Dagon is the Daedric Prince of Destruction, change, revolution, energy and ambition. He is associated with natural hazards such as fire, earthquakes and floods. Dagon is an important deity in Morrowind, where he is associated with its landscape, so unsuitable for life. In most cultures, however, Dagon is simply the god of bloodshed and treachery.",
+      "description": "Mehrunes Dagon is the Daedric Prince of destruction, change, revolution, energy, and ambition. He is associated with disasters such as fire, earthquakes, and floods.",
       "name": "Mehrunes Dagon"
     }
   },
   "12": {
     "20": {
-      "description": "Molag Bal is a Daedric Prince of domination and enslavement of mortals. He is also known as the Prince of Intrigue and the Reaper of Souls. His main ambition is to reap and consume the souls of mortals, to subjugate them to his power, and to sow the seeds of discord in the mortal world. Molag Bal is the father of all vampires.",
+      "description": "Molag Bal is the Daedric Prince of domination and enslavement, also known as the Prince of Intrigue and the Reaper of Souls. He seeks to claim mortal souls, subjugate them, and sow discord. He is associated with the origin of vampirism.",
       "name": "Molag Bal"
     }
   }

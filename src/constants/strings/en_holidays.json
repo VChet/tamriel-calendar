@@ -13,7 +13,7 @@
       "name": "Ovank'a"
     },
     "15": {
-      "description": "The 15th of Morning Star is a holiday taken very seriously in Tamriel, where they call it South Wind's Prayer, a plea by all the religions of Tamriel for a good planting season. Citizens with every affliction known in Tamriel flock to services in the every temples, as the clergy is known to perform free healings on this day. Only a few will be judged worthy of this service, but few can afford the temples usual price.",
+      "description": "The 15th of Morning Star is a holiday taken very seriously in Tamriel, where it is known as South Wind's Prayer. People of every religion pray for a good planting season. Those suffering from ailments flock to the temples, whose clergy are known to offer free healing on this day. Only a few are judged worthy of this service, but few can afford the temples' usual prices.",
       "name": "South Wind's Prayer"
     },
     "16": {
@@ -39,7 +39,7 @@
       "name": "Day of Release"
     },
     "16": {
-      "description": "A holiday celebrated all over Tamriel. It seems that in every house, the Legend of the Lovers is being sung for the younger generation. In honor of these Lovers, Polydor and Eloisa, the inns of all Tamriel offer a free room for visitors. If such kindness had been given the Lovers, it is said, it would always be springtime in the world.",
+      "description": "Heart's Day is celebrated throughout Tamriel on the 16th of Sun's Dawn. In every house, the Legend of the Lovers is sung for the younger generation. In honor of the lovers Polydor and Eloisa, inns across Tamriel offer visitors a free room. It is said that if the lovers had received such kindness, it would always be springtime in the world.",
       "name": "Heart's Day"
     },
     "27": {
@@ -93,7 +93,7 @@
   },
   "05": {
     "01": {
-      "description": "Vigyld is a rite practiced by the Psijic Order on first of Second Seed. Its purpose is to empower salutary spirits and debilitate unclean ones.",
+      "description": "Vigyld is a rite practiced by the Psijic Order on the first day of Second Seed. Its purpose is to empower salutary spirits and weaken unclean ones.",
       "name": "Rite of Vigyld"
     },
     "07": {
@@ -133,15 +133,15 @@
   },
   "07": {
     "10": {
-      "description": "The bargain shoppers of the known world are out in force and it is little wonder, for the 10th of Sun's Height is a holiday called the Merchants's Festival. Every marketplace and equipment store has dropped their prices to at least half. The only shop not being patronized is the Mages Guild, where prices are as exorbitant as usual. Most citizens in need of a magical item are waiting two months for the celebration of Tales and Tallows when prices will be more reasonable.",
-      "name": "Merchants's Festival"
+      "description": "Bargain shoppers are out in force on the 10th of Sun's Height, the holiday called the Merchants' Festival. Every marketplace and equipment store has cut its prices by at least half. The only place without a rush of customers is the Mages Guild, where prices remain as exorbitant as usual. Most citizens in need of a magical item wait two months, until Tales and Tallows, when prices will be more reasonable.",
+      "name": "Merchants' Festival"
     },
     "12": {
-      "description": "During Divad Etep't, the people of Antiphyllos mourn the death of the one of the greatest of the early Redguard heroes, Divad, son of Frandar of the Hel Ansei. His deeds are questioned by historians, but his tomb in Antiphyllos is almost certainly genuine.",
+      "description": "During Divad Etep't, the people of Antiphyllos mourn the death of one of the greatest early Redguard heroes, Divad, son of Frandar of the Hel Ansei. Historians question his deeds, but his tomb in Antiphyllos is almost certainly genuine.",
       "name": "Divad Etep't"
     },
     "20": {
-      "description": "You will have to wait until next day if you are planning on making any equipment purchases, for all stores are closed in observance of Sun's Rest. Of course, the temples, taverns, and Mages Guild in all cities are still open their regular hours, but most citizens chose to devote this day to relaxation, not commerce or prayer. This is not a convenient arrangement for all, but the Merchants's Guild heavily fines any shop that stays open, so everyone complies.",
+      "description": "You will have to wait until the next day to purchase equipment, as all stores are closed in observance of Sun's Rest. The temples, taverns, and Mages Guild in every city remain open their regular hours, but most citizens choose to devote the day to relaxation, not commerce or prayer. This is not convenient for everyone, but the Merchants' Guild heavily fines any shop that stays open, so all comply.",
       "name": "Sun's Rest"
     },
     "29": {
@@ -167,7 +167,7 @@
       "name": "Appreciation Day"
     },
     "27": {
-      "description": "Perhaps no other festival fires the spirit of Tamriel as much as the Harvest's End. The work of the year is over, the seeding, sowing, and reaping. Now is the time to celebrate and enjoy the fruits of the harvest, and even visitors to the celebrated region are invited to join the farmers. The taverns offer free drinks all day long, an extravagance before the economy of the coming winter months. Underfed farm hands gorging themselves and then getting sick in the town square are the most common sights of the celebration of Harvest's End.",
+      "description": "Perhaps no other festival fires the spirit of Tamriel as much as Harvest's End. The year's work of seeding, sowing, and reaping is over. Now is the time to celebrate and enjoy the harvest, and visitors are invited to join the farmers. Taverns offer free drinks all day, an extravagance before the lean winter months. Farmhands gorging themselves and then getting sick in the town square are a common sight at Harvest's End.",
       "name": "Harvest's End"
     }
   },
@@ -177,7 +177,7 @@
       "name": "The Rites of Moawita"
     },
     "03": {
-      "description": "No other holiday divides the people of Tamriel like the 3rd of Hearth Fire. A few of the oldest, more superstitious men and women do not speak all day long for fear that the evil spirits of the dead will enter their bodies. Most citizens enjoy the holiday, calling it Tales and Tallows, but even the most lighthearted avoid the dark streets of Tamriel cities, for everyone knows the dead do walk tonight. Only the Mages Guild completely thrives on this day. In celebration of the oldest magical science, necromancy, all magical items are half price this day.",
+      "description": "No other holiday divides the people of Tamriel like the 3rd of Hearthfire. A few of the oldest and most superstitious people do not speak all day for fear that evil spirits of the dead will enter their bodies. Most citizens enjoy Tales and Tallows, but even the most lighthearted avoid the dark streets of Tamriel's cities, for everyone knows the dead walk tonight. Only the Mages Guild thrives on this day. In celebration of necromancy, one of the oldest magical arts, all magical items are half price.",
       "name": "Tales and Tallows"
     },
     "06": {
@@ -185,11 +185,11 @@
       "name": "Khurat"
     },
     "12": {
-      "description": "Riglametha is celebrated on the twelfth of Hearth Fire every year in Lainlyn as a celebration of Lainlyns many blessings. Pageants are held on such themes as the Ghraewaj, when the daedra worshippers in Lainlyn were changed to harpies for their blasphemy.",
+      "description": "Riglametha is celebrated on the 12th of Hearthfire in Lainlyn to honor the town's many blessings. Pageants depict events such as the Ghraewaj, when Lainlyn's Daedra worshippers were changed into harpies for their blasphemy.",
       "name": "Riglametha"
     },
     "14": {
-      "description": "The Burning of King Olaf, also called the Fire Festival, has been performed for a very long time in Skyrim's history. The festival includes the burning of an effigy meant to represent King Olaf One-Eye, who was sentenced to be burned for betraying Solitude.",
+      "description": "The Burning of King Olaf, also called the Fire Festival, has been observed in Skyrim for generations. The festival includes burning an effigy of King Olaf One-Eye. According to the festival's legend, Olaf was sentenced to be burned for betraying Solitude.",
       "name": "The Burning of King Olaf"
     },
     "19": {
@@ -199,15 +199,15 @@
   },
   "10": {
     "05": {
-      "description": "The fifth of Frost Fall marks Dirij Tereur for the people of the Alik'r Desert. It is a sacred day honoring Frandar Hunding, the traditional spiritual leader of the Redguards who led them to Hammerfell in the first era. Stories are read from Hunding's Book of Circles, and the temples in the region are filled to capacity.",
+      "description": "The fifth of Frostfall marks Dirij Tereur for the people of the Alik'r Desert. It is a sacred day honoring Frandar Hunding, the traditional spiritual leader of the Redguards who led them to Hammerfell in the First Era. Stories are read from Hunding's Book of Circles, and the temples in the region are filled to capacity.",
       "name": "Dirij Tereur"
     },
     "13": {
-      "description": "The 13th of Frost Fall, known throughout Tamriel as the Witches's Festival when the forces of sorcery and religion clash. The Mages Guild gets most of the business since weapons and items are evaluated for their mystic potential free of charge and magic spells are one half their usual price. Demonologists, conjurers, lamias, warlocks, and thaumaturgists meet in the wilderness outside city, and the creatures created or summoned there may plague Tamriel for eons. Most wise men choose not to wander this night.",
-      "name": "Witches's Festival"
+      "description": "The 13th of Frostfall is known throughout Tamriel as the Witches' Festival, when the forces of sorcery and religion clash. The Mages Guild gets most of the business: weapons and items are evaluated for their mystic potential free of charge, and spells cost half their usual price. Demonologists, conjurers, lamias, warlocks, and thaumaturgists meet in the wilderness outside the cities, and the creatures they create or summon may plague Tamriel for eons. Most wise people choose not to wander that night.",
+      "name": "Witches' Festival"
     },
     "23": {
-      "description": "On the 23rd of Frost Fall in the 121st year of the third era, the empress Kintyra Septim II met her death in the imperial dungeons in Glenpoint on the orders of her cousin and usurper Cephorus I. Her death is remembered in Glenpoint as the day called Broken Diamonds. It is a day of silent prayer for the wisdom and benevolence of the imperial family of Tamriel.",
+      "description": "On the 23rd of Frostfall in 3E 123, Empress Kintyra Septim II was killed in her cell in Glenpoint. Her cousin, the usurper Uriel Septim III, ordered her death, though the identity of her killer is unknown. Glenpoint remembers the day as Broken Diamonds, a day of silent prayer for the wisdom and benevolence of Tamriel's imperial family.",
       "name": "Broken Diamonds"
     },
     "30": {
@@ -221,7 +221,7 @@
       "name": "The Serpents Dance"
     },
     "08": {
-      "description": "On the 8th of Suns Dusk, the Bretons of Glenumbra Moors hold the Moon Festival, a joyous holiday in honor of Secunda, goddess of the moon. Although the goddess has no active worshippers, the traditional celebration has continued through the ages as a time of feasting and merriment.",
+      "description": "On the 8th of Sun's Dusk, the Bretons of Glenumbra Moors hold the Moon Festival, a joyous holiday in honor of Secunda, whom they revere as a moon goddess. Although she has no active worshippers, the traditional celebration has continued through the ages as a time of feasting and merriment.",
       "name": "Moon Festival"
     },
     "18": {
@@ -235,11 +235,11 @@
   },
   "12": {
     "15": {
-      "description": "A holiday reverently observed by the temples as North Wind's Prayer. It is a thanksgiving to the Gods for a good harvest and a mild winter. The temples offer all their services blessing, curing, healing for half the donation usually requested.",
+      "description": "The temples reverently observe this holiday as North Wind's Prayer, giving thanks to the gods for a good harvest and a mild winter. They offer blessings, cures, and healing for half the usual donation.",
       "name": "North Wind's Prayer"
     },
     "18": {
-      "description": "Baranth Do is celebrated on the 18th of Evening. Star by the Redguards of the Alik'r Desert. Its meaning is 'Goodbye to the Beast of Last Year'. Pageants featuring demonic representations of the old year are popular, and revelry to honor the new year is everywhere.",
+      "description": "Baranth Do is celebrated on the 18th of Evening Star by the Redguards of the Alik'r Desert. Its name means 'Goodbye to the Beast of Last Year'. Pageants featuring demonic representations of the old year are popular, and revelry honors the coming year.",
       "name": "Baranth Do"
     },
     "24": {
