@@ -1,38 +1,62 @@
 import { reactive } from "vue";
 import { createGlobalState } from "@vueuse/core";
 import { Holiday, SummoningDay } from "@/classes/Event";
+import constellationImages from "@/constants/mappings/constellation_images.json";
+import holidayImages from "@/constants/mappings/holiday_images.json";
+import summoningDaysImages from "@/constants/mappings/summoningDay_images.json";
+import enConstellations from "@/constants/strings/en_constellations.json";
+import enHolidays from "@/constants/strings/en_holidays.json";
+import enSummoningDays from "@/constants/strings/en_summoningDays.json";
+import ruConstellations from "@/constants/strings/ru_constellations.json";
+import ruHolidays from "@/constants/strings/ru_holidays.json";
+import ruSummoningDays from "@/constants/strings/ru_summoningDays.json";
+import { composeSlug } from "@/helpers/router";
 import type { BaseEntry, DataEntry, NestedEntry, SingleEntry } from "@/types/event";
+
+type LocaleCode = "en" | "ru";
+
+const HOLIDAYS: Record<LocaleCode, NestedEntry<BaseEntry>> = {
+  en: enHolidays,
+  ru: ruHolidays
+};
+const SUMMONING_DAYS: Record<LocaleCode, NestedEntry<BaseEntry>> = {
+  en: enSummoningDays,
+  ru: ruSummoningDays
+};
+const CONSTELLATIONS: Record<LocaleCode, SingleEntry<BaseEntry>> = {
+  en: enConstellations,
+  ru: ruConstellations
+};
+const HOLIDAY_IMAGES: NestedEntry<string> = holidayImages;
+const SUMMONING_DAY_IMAGES: NestedEntry<string> = summoningDaysImages;
+const CONSTELLATION_IMAGES: SingleEntry<string> = constellationImages;
+
+function getEnglishName(entry: BaseEntry | undefined, date: string): string {
+  if (!entry) throw new Error(`Missing English name for entry on ${date}`);
+  return entry.name;
+}
 
 export const useEventsStore = createGlobalState(() => {
   const holidays = reactive<Map<Holiday["date"], Holiday>>(new Map());
   const summoningDays = reactive<Map<SummoningDay["date"], SummoningDay>>(new Map());
   const constellations = reactive<Map<DataEntry["date"], DataEntry>>(new Map());
 
-  async function setEventsData(locale: string): Promise<void> {
-    const [
-      holidaysData,
-      holidaysImages,
-      summoningDaysData,
-      summoningDaysImages,
-      constellationsData,
-      constellationsImages
-    ] = await Promise.all([
-      import(`@/constants/strings/${locale}_holidays.json`).then((module) => module.default as NestedEntry<BaseEntry>),
-      import("@/constants/mappings/holiday_images.json").then((module) => module.default as NestedEntry<string>),
+  function setEventsData(locale: LocaleCode): void {
+    const holidaysData = HOLIDAYS[locale];
+    const summoningDaysData = SUMMONING_DAYS[locale];
+    const constellationsData = CONSTELLATIONS[locale];
 
-      import(`@/constants/strings/${locale}_summoningDays.json`).then((module) => module.default as NestedEntry<BaseEntry>),
-      import("@/constants/mappings/summoningDay_images.json").then((module) => module.default as NestedEntry<string>),
-
-      import(`@/constants/strings/${locale}_constellations.json`).then((module) => module.default as SingleEntry<BaseEntry>),
-      import("@/constants/mappings/constellation_images.json").then((module) => module.default as SingleEntry<string>)
-    ]);
+    holidays.clear();
+    summoningDays.clear();
+    constellations.clear();
 
     for (const month in holidaysData) {
       for (const day in holidaysData[month]) {
         const payload: DataEntry = {
           ...holidaysData[month][day],
+          slug: composeSlug(getEnglishName(HOLIDAYS.en[month]?.[day], `${month}/${day}`)),
           date: `${month}/${day}`,
-          image: holidaysImages[month]?.[day]
+          image: HOLIDAY_IMAGES[month]?.[day]
         };
         holidays.set(payload.date, new Holiday(payload));
       }
@@ -41,8 +65,9 @@ export const useEventsStore = createGlobalState(() => {
       for (const day in summoningDaysData[month]) {
         const payload: DataEntry = {
           ...summoningDaysData[month][day],
+          slug: composeSlug(getEnglishName(SUMMONING_DAYS.en[month]?.[day], `${month}/${day}`)),
           date: `${month}/${day}`,
-          image: summoningDaysImages[month]?.[day]
+          image: SUMMONING_DAY_IMAGES[month]?.[day]
         };
         summoningDays.set(payload.date, new SummoningDay(payload));
       }
@@ -50,8 +75,9 @@ export const useEventsStore = createGlobalState(() => {
     for (const month in constellationsData) {
       const payload: DataEntry = {
         ...constellationsData[month],
+        slug: composeSlug(getEnglishName(CONSTELLATIONS.en[month], month)),
         date: month,
-        image: constellationsImages[month]
+        image: CONSTELLATION_IMAGES[month]
       };
       constellations.set(payload.date, payload);
     }

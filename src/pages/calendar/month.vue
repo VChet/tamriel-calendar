@@ -59,9 +59,9 @@ useInfiniteScroll(document, appendMonth, { distance: 150, canLoadMore });
 
 function composeEventLink(day: Day): RouterLinkProps["to"] {
   if (day.holiday) {
-    return { name: "Holiday", query: { date: day.holiday.date } };
+    return { name: "Holiday Slug", params: { slug: day.holiday.slug } };
   } else if (day.summoningDay) {
-    return { name: "Summoning Day", query: { date: day.summoningDay.date } };
+    return { name: "Summoning Day Slug", params: { slug: day.summoningDay.slug } };
   }
   return {};
 }

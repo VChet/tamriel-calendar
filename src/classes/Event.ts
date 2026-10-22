@@ -14,6 +14,9 @@ class EventBase implements DataEntry {
   get description(): DataEntry["description"] {
     return this.event.description;
   }
+  get slug(): DataEntry["slug"] {
+    return this.event.slug;
+  }
   get date(): DataEntry["date"] {
     return this.event.date;
   }

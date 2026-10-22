@@ -37,7 +37,7 @@ export const useSettingsStore = createGlobalState(() => {
     onboarding: false
   }, { mergeDefaults: true });
 
-  async function setLocale(head: VueHeadClient, localeCode: LocaleCode): Promise<void> {
+  function setLocale(head: VueHeadClient, localeCode: LocaleCode): void {
     const { setEventsData } = useEventsStore();
 
     settings.value.locale = localeCode;
@@ -48,7 +48,7 @@ export const useSettingsStore = createGlobalState(() => {
       htmlAttrs: { lang: localeCode },
       meta: () => [{ property: "og:locale", content: locale }]
     }, { head });
-    await setEventsData(localeCode);
+    setEventsData(localeCode);
   }
 
   function setColorTheme(head: VueHeadClient, theme: ColorTheme): void {

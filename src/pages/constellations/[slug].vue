@@ -27,48 +27,43 @@
   </main>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
 import { useShare } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
 import { useSeoMeta } from "@unhead/vue";
 import { composeMonthNameFromDataEntry, isValidMonthIndex } from "@/helpers/date";
-import { composeTitle } from "@/helpers/router";
+import { composeTitle, findBySlug } from "@/helpers/router";
 import head from "@/plugins/head";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
 
 definePage({ meta: { titleToken: "router.constellation" } });
 
-const route = useRoute("Constellations Month");
+const route = useRoute("Constellations Slug");
 const { constellations } = useEventsStore();
-const constellation = computed(() => constellations.get(route.params.month?.toString()));
+const constellation = findBySlug(constellations.values(), route.params.slug);
 
 const { t } = useI18n();
-const title = computed<string>(() => {
-  if (!constellation.value) return composeTitle(t(route.meta.titleToken!));
-  return composeTitle(constellation.value.name);
-});
-const ogImage = computed<string | null>(() => {
-  if (!constellation.value) return null;
-  return `https://tamriel-calendar.netlify.app/img/constellations/${constellation.value?.image}.svg`;
-});
+const title = composeTitle(constellation?.name ?? t(route.meta.titleToken!));
+const ogImage = constellation?.image ?
+  `https://tamriel-calendar.netlify.app/img/constellations/${constellation.image}.svg` :
+  null;
 useSeoMeta({
   title,
-  description: constellation.value?.description,
+  description: constellation?.description,
   ogTitle: title,
-  ogDescription: constellation.value?.description,
+  ogDescription: constellation?.description,
   ogImage,
   ogUrl: `https://tamriel-calendar.netlify.app${route.fullPath}`
 }, { head });
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareConstellation(): void {
-  if (!constellation.value) return;
+  if (!constellation) return;
   share({
-    title: constellation.value.name,
-    text: constellation.value.description,
+    title: constellation.name,
+    text: constellation.description,
     url: window.location.href
   });
 }

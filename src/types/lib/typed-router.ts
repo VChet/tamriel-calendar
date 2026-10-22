@@ -75,18 +75,18 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    'Constellations Month': RouteRecordInfo<
-      'Constellations Month',
-      '/constellations/:month',
-      { month: ParamValue<true> },
-      { month: ParamValue<false> },
+    'Constellations Slug': RouteRecordInfo<
+      'Constellations Slug',
+      '/constellations/:slug',
+      { slug: ParamValue<true> },
+      { slug: ParamValue<false> },
       | never
     >,
-    'Holiday': RouteRecordInfo<
-      'Holiday',
-      '/holiday',
-      Record<never, never>,
-      Record<never, never>,
+    'Holiday Slug': RouteRecordInfo<
+      'Holiday Slug',
+      '/holiday/:slug',
+      { slug: ParamValue<true> },
+      { slug: ParamValue<false> },
       | never
     >,
     'Moon Phase': RouteRecordInfo<
@@ -117,11 +117,11 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    'Summoning Day': RouteRecordInfo<
-      'Summoning Day',
-      '/summoning-day',
-      Record<never, never>,
-      Record<never, never>,
+    'Summoning Day Slug': RouteRecordInfo<
+      'Summoning Day Slug',
+      '/summoning-day/:slug',
+      { slug: ParamValue<true> },
+      { slug: ParamValue<false> },
       | never
     >,
   }
@@ -188,21 +188,21 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/constellations/[month].vue': {
+    'src/pages/constellations/[slug].vue': {
       routes:
-        | 'Constellations Month'
+        | 'Constellations Slug'
       views:
         | never
       pathParamNames:
-        | 'month'
+        | 'slug'
     }
-    'src/pages/holiday.vue': {
+    'src/pages/holiday/[slug].vue': {
       routes:
-        | 'Holiday'
+        | 'Holiday Slug'
       views:
         | never
       pathParamNames:
-        | never
+        | 'slug'
     }
     'src/pages/moon-phase.vue': {
       routes:
@@ -236,13 +236,13 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/summoning-day.vue': {
+    'src/pages/summoning-day/[slug].vue': {
       routes:
-        | 'Summoning Day'
+        | 'Summoning Day Slug'
       views:
         | never
       pathParamNames:
-        | never
+        | 'slug'
     }
   }
 

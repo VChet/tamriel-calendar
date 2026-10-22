@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: routeName, query: { date: event.date } }">
+  <router-link :to="{ name: routeName, params: { slug: event.slug } }">
     <div class="event-card">
       <div>
         <div class="event-card__title">
@@ -22,7 +22,7 @@
 import { Holiday, type SummoningDay } from "@/classes/Event";
 
 const props = defineProps<{ event: Holiday | SummoningDay }>();
-const routeName = props.event instanceof Holiday ? "Holiday" : "Summoning Day";
+const routeName = props.event instanceof Holiday ? "Holiday Slug" : "Summoning Day Slug";
 </script>
 <style lang="scss">
 .event-card {

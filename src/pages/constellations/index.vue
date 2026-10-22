@@ -9,7 +9,7 @@
           v-for="sign in constellations.values()"
           :key="sign.name"
           v-slot="{ navigate }"
-          :to="{ name: 'Constellations Month', params: { month: sign.date } }"
+          :to="{ name: 'Constellations Slug', params: { slug: sign.slug } }"
           custom
         >
           <li role="link" @click="navigate">

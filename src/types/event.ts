@@ -4,6 +4,7 @@ export interface BaseEntry {
 }
 
 export interface DataEntry extends BaseEntry {
+  slug: string
   date: string
   image?: string
 }

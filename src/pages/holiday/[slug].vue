@@ -15,7 +15,6 @@
         :alt="event.name"
       >
       <h1 class="content-card__title">
-        {{ $t("eventPage.summoningDay") }}:
         {{ event.name }}
       </h1>
       <div class="content-card__subtitle">
@@ -28,48 +27,42 @@
   </main>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
 import { useShare } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { IconShare3 } from "@tabler/icons-vue";
 import { useSeoMeta } from "@unhead/vue";
-import { composeTitle } from "@/helpers/router";
+import { composeTitle, findBySlug } from "@/helpers/router";
 import head from "@/plugins/head";
 import { useEventsStore } from "@/store/events";
 import CommonHeader from "@/components/common-header.vue";
 
-definePage({ meta: { titleToken: "router.summoningDay" } });
+definePage({ meta: { titleToken: "router.holiday" } });
 
-const route = useRoute("Summoning Day");
-const date = route.query.date?.toString();
-const { summoningDays } = useEventsStore();
-const event = computed(() => (date ? summoningDays.get(date) : null));
+const route = useRoute("Holiday Slug");
+const { holidays } = useEventsStore();
+const event = findBySlug(holidays.values(), route.params.slug);
 
 const { t } = useI18n();
-const title = computed<string>(() => {
-  if (!event.value) return composeTitle(t(route.meta.titleToken!));
-  return composeTitle(event.value.name);
-});
-const ogImage = computed<string | null>(() => {
-  if (!event.value) return null;
-  return `https://tamriel-calendar.netlify.app/img/events/${event.value?.image}.svg`;
-});
+const title = composeTitle(event?.name ?? t(route.meta.titleToken!));
+const ogImage = event?.image ?
+  `https://tamriel-calendar.netlify.app/img/events/${event.image}.svg` :
+  null;
 useSeoMeta({
   title,
-  description: event.value?.description,
+  description: event?.description,
   ogTitle: title,
-  ogDescription: event.value?.description,
+  ogDescription: event?.description,
   ogImage,
   ogUrl: `https://tamriel-calendar.netlify.app${route.fullPath}`
 }, { head });
 
 const { share, isSupported: isShareSupported } = useShare();
 function shareEvent(): void {
-  if (!event.value) return;
+  if (!event) return;
   share({
-    title: event.value.name,
-    text: event.value.description,
+    title: event.name,
+    text: event.description,
     url: window.location.href
   });
 }

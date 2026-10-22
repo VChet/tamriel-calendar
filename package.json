@@ -17,6 +17,7 @@
     "localazy:download": "localazy download && npm run lint:js:fix"
   },
   "dependencies": {
+    "@sindresorhus/slugify": "^3.0.1",
     "@unhead/vue": "^3.4.3",
     "@vitejs/plugin-vue": "^6.0.10",
     "@vueuse/core": "^15.0.0",

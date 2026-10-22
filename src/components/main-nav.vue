@@ -46,7 +46,14 @@ const tabs = computed<TabEntry[]>(() => [
   {
     key: "calendar",
     title: t("router.calendar"),
-    pages: ["Calendar", "Calendar Week", "Calendar Month", "Calendar Year", "Holiday", "Summoning Day"],
+    pages: [
+      "Calendar",
+      "Calendar Week",
+      "Calendar Month",
+      "Calendar Year",
+      "Holiday Slug",
+      "Summoning Day Slug"
+    ],
     iconComponent: IconCalendar
   },
   {
@@ -58,7 +65,7 @@ const tabs = computed<TabEntry[]>(() => [
   {
     key: "constellations",
     title: t("router.constellations"),
-    pages: ["Constellations", "Constellations Month"],
+    pages: ["Constellations", "Constellations Slug"],
     iconComponent: IconComet
   },
   {
