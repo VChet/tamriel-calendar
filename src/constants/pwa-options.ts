@@ -1,4 +1,4 @@
-import type { ManifestOptions, VitePWAOptions } from "vite-plugin-pwa";
+import type { ManifestOptions, VitePWAOptions } from "@unplugin-pwa/core";
 
 const manifest: Partial<ManifestOptions> = {
   name: "Tamriel Calendar",
@@ -11,8 +11,7 @@ const manifest: Partial<ManifestOptions> = {
   background_color: "#f9f2e0",
   icons: [
     { src: "icon-192x192.png", sizes: "192x192", type: "image/png" },
-    { src: "icon-512x512.png", sizes: "512x512", type: "image/png" },
-    { src: "icon-512x512.png", sizes: "512x512", type: "image/png", purpose: "any" }
+    { src: "icon-512x512.png", sizes: "512x512", type: "image/png" }
   ]
 };
 
@@ -22,7 +21,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   registerType: "autoUpdate",
   includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
   manifest,
-  workbox: {
+  generateSW: {
     sourcemap: true,
     cleanupOutdatedCaches: true,
     navigateFallback: "/index.html",

@@ -2,3 +2,4 @@ enginesNode: true
 format: repo
 reject:
   - typescript
+  - "@stylistic/stylelint-config"

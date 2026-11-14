@@ -38,7 +38,7 @@
           </a>
         </li>
         <li v-if="needRefresh">
-          <button v-wave class="link" type="button" @click="updateServiceWorker(true)">
+          <button v-wave class="link" type="button" @click="updateServiceWorker()">
             {{ $t("settingsPage.update") }}
           </button>
         </li>

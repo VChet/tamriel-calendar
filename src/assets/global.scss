@@ -56,10 +56,14 @@ html {
   padding: 0;
   margin: 0 auto;
 }
-img, svg {
+img,
+svg {
   max-width: 100%;
 }
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 ul {
@@ -67,7 +71,8 @@ ul {
   margin: 0;
   list-style: none;
 }
-p, li {
+p,
+li {
   text-wrap: pretty;
 }
 svg {

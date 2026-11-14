@@ -1,16 +1,12 @@
 minimumReleaseAge: 0
 minimumReleaseAgeExcludePrune: true
-
 trustPolicy: no-downgrade
-trustPolicyExclude:
-  - "@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1"
-  - semver@6.3.1
+
+publicHoistPattern:
+  - "@vite-pwa/workbox-swkit"
+  - "@vite-pwa/workbox-window"
 
 ignoreScripts: true
 shellEmulator: true
 pmOnFail: ignore
 packages: [.]
-
-overrides:
-  is-core-module: "npm:@nolyfill/is-core-module@^1"
-  string.prototype.matchall: "npm:@nolyfill/string.prototype.matchall@^1"

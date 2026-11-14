@@ -3,7 +3,6 @@
 ![vue][vue-version-img]
 [![netlify-status][netlify-status-img]][netlify-status-href]
 [![localazy][localazy-img]][localazy-href]
-[![ask DeepWiki][deep-wiki-img]][deep-wiki-href]
 
 ## Disclaimer
 
@@ -23,7 +22,5 @@ Original design by [Serafima S (Behance Link)](https://www.behance.net/gallery/1
 [vue-version-img]: https://img.shields.io/github/package-json/dependency-version/VChet/tamriel-calendar/vue?style=flat-square&color=42b883
 [netlify-status-img]: https://img.shields.io/netlify/07933add-8ad9-45b5-844b-329c23d1daf5?style=flat-square
 [netlify-status-href]: https://app.netlify.com/sites/tamriel-calendar
-[deep-wiki-img]: https://img.shields.io/badge/ask-DeepWiki-blue?style=flat-square
-[deep-wiki-href]: https://deepwiki.com/VChet/tamriel-calendar
 [localazy-img]: https://img.shields.io/badge/translation-localazy-066fef?style=flat-square
 [localazy-href]: https://localazy.com/p/tamriel-calendar

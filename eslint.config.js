@@ -30,6 +30,7 @@ export default antfu({
   rules: {
     "antfu/consistent-list-newline": "off",
     "antfu/if-newline": "off",
+    "antfu/reasonable-newline": "off",
     "curly": ["error", "multi-line"],
     "import/consistent-type-specifier-style": "off",
     "max-lines": ["warn", { max: 1000 }],

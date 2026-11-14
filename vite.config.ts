@@ -1,9 +1,9 @@
 import { execFileSync } from "node:child_process";
 import { fileURLToPath, URL } from "node:url";
+import { VitePWA } from "@unplugin-pwa/vite";
 import Vue from "@vitejs/plugin-vue";
 import namedPort from "named-port";
 import { defineConfig } from "vite";
-import { VitePWA } from "vite-plugin-pwa";
 import VueRouter from "vue-router/vite";
 import type { TreeNode } from "vue-router/unplugin";
 import pkg from "./package.json" with { type: "json" };
